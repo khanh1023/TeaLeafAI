@@ -1,5 +1,6 @@
 import { CLASSES } from './classes.js';
-import { rgbaToRGB, predictionResult } from './inference-utils.js';
+import { predictionResult } from './inference-utils.js';
+import { readImagePixels } from './image-preprocessing.js';
 
 export const ENGINE = import.meta.env.VITE_INFERENCE_MODE === 'api' ? 'api' : 'browser';
 export const BASE = ENGINE === 'api'
@@ -60,33 +61,6 @@ async function loadSession(onProgress) {
   return sessionPromise;
 }
 
-async function pixels(file) {
-  let image;
-  let url;
-  try {
-    if (typeof createImageBitmap === 'function') image = await createImageBitmap(file, {imageOrientation:'from-image'});
-    else {
-      url = URL.createObjectURL(file);
-      image = new Image();
-      image.src = url;
-      await image.decode();
-    }
-    const canvas = document.createElement('canvas');
-    canvas.width = canvas.height = 224;
-    const context = canvas.getContext('2d', {willReadFrequently:true});
-    if (!context) throw new Error('Trình duyệt không hỗ trợ xử lý ảnh.');
-    context.fillStyle = '#fff';
-    context.fillRect(0,0,224,224);
-    context.drawImage(image,0,0,224,224);
-    return rgbaToRGB(context.getImageData(0,0,224,224).data);
-  } catch {
-    throw new Error('Không đọc được ảnh. Hãy chọn ảnh JPG, PNG hoặc WEBP hợp lệ.');
-  } finally {
-    image?.close?.();
-    if (url) URL.revokeObjectURL(url);
-  }
-}
-
 export async function diagnose(file, {onProgress} = {}) {
   if (!file || !['image/jpeg','image/png','image/webp'].includes(file.type)) throw new Error('Chỉ hỗ trợ ảnh JPG, PNG hoặc WEBP.');
   if (file.size > 8 * 1024 * 1024) throw new Error('Ảnh không được vượt quá 8 MB.');
@@ -101,7 +75,9 @@ export async function diagnose(file, {onProgress} = {}) {
     return {...result, engine:'api'};
   }
   try {
-    const [session, data, ort] = await Promise.all([loadSession(onProgress),pixels(file),import('onnxruntime-web/wasm')]);
+    onProgress?.({message:'Đang đọc và chuẩn bị ảnh…',percent:5});
+    const data = await readImagePixels(file);
+    const [session, ort] = await Promise.all([loadSession(onProgress),import('onnxruntime-web/wasm')]);
     onProgress?.({message:'Đang phân tích ảnh trên thiết bị…',percent:75});
     const output = await session.run({images:new ort.Tensor('float32',data,[1,224,224,3])});
     const result = predictionResult(output.probabilities.data);
