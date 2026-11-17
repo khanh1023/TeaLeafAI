@@ -1,22 +1,16 @@
-# Môi trường ảo và dependencies
+# Python
+__pycache__/
+*.py[cod]
 .venv/
 venv/
-env/
-node_modules/
-
-# Dataset và file mô hình (thường rất nặng)
-dataset/
-datasets/
-*.keras
-*.h5
-*.pkl
-
-# File cấu hình bảo mật / biến môi trường
 .env
-
-# Các file hệ thống / cache của Python và IDE
-__pycache__/
-*.pyc
-.vscode/
-.idea/
+# Dataset and model binaries are not committed
+DuLieuGoc/
+training/dataset/
+backend/models/*.keras
+backend/models/*.h5
+backend/models/*.weights.h5
+# Frontend
+frontend/node_modules/
+frontend/dist/
 .DS_Store

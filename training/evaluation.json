@@ -1,4 +1,6 @@
 {
+  "model": "MobileNetV2",
+  "num_classes": 8,
   "classes": [
     "algal_leaf",
     "anthracnose",
