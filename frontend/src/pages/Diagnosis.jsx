@@ -1,5 +1,5 @@
 import {useRef,useState} from "react";import {Upload,Image as ImageIcon,LoaderCircle,AlertCircle,CheckCircle2,X} from "lucide-react";import {diagnose} from "../api";
-const vi={blister_blight:"Bệnh phồng lá",grey_blight:"Bệnh đốm xám",algal_spot:"Bệnh đốm tảo",brown_blight:"Bệnh đốm nâu",healthy:"Lá khỏe mạnh"};
+import {LABELS as vi} from "../classes";
 export default function Diagnosis(){const ref=useRef(null);const[file,setFile]=useState(null),[preview,setPreview]=useState(""),[busy,setBusy]=useState(false),[error,setError]=useState(""),[result,setResult]=useState(null);
 function select(f){if(!f)return;setError("");setResult(null);if(!["image/jpeg","image/png","image/webp"].includes(f.type)){setError("Chỉ hỗ trợ ảnh JPG, PNG hoặc WEBP.");return;}if(f.size>8*1024*1024){setError("Ảnh không được vượt quá 8 MB.");return;}if(preview)URL.revokeObjectURL(preview);setFile(f);setPreview(URL.createObjectURL(f));}
 function clear(){if(preview)URL.revokeObjectURL(preview);setFile(null);setPreview("");setResult(null);if(ref.current)ref.current.value="";}
