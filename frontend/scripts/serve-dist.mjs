@@ -3,7 +3,7 @@ import { readFile, stat } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 import { spawn } from 'node:child_process';
-const root = fileURLToPath(new URL('../dist/', import.meta.url));
+const root = path.resolve(fileURLToPath(new URL('../dist/', import.meta.url)));
 const port = Number(process.env.PORT || 5173);
 const mime = {'.html':'text/html; charset=utf-8','.js':'text/javascript; charset=utf-8','.mjs':'text/javascript; charset=utf-8','.css':'text/css; charset=utf-8','.json':'application/json','.svg':'image/svg+xml','.wasm':'application/wasm','.png':'image/png','.onnx':'application/octet-stream'};
 const server = http.createServer(async (req,res) => {
@@ -24,7 +24,7 @@ const server = http.createServer(async (req,res) => {
 });
 server.on('error',error => { console.error(`Cannot start TeaLeafAI: ${error.message}. Close the old server or use another PORT.`);process.exit(1); });
 server.listen(port,'127.0.0.1',() => {
-  const url = `http://127.0.0.1:${port}`;
+  const url = `http://127.0.0.1:${server.address().port}`;
   console.log(`TeaLeafAI is ready: ${url}\nKeep this window open. Ctrl+C to stop. No Python or API key needed.`);
   if (process.argv.includes('--open')) {
     const command = process.platform === 'win32' ? ['cmd',['/c','start','',url]] : process.platform === 'darwin' ? ['open',[url]] : ['xdg-open',[url]];
