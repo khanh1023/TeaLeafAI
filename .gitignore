@@ -1,0 +1,16 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+# Dataset and model binaries are not committed
+DuLieuGoc/
+training/dataset/
+backend/models/*.keras
+backend/models/*.h5
+backend/models/*.weights.h5
+# Frontend
+frontend/node_modules/
+frontend/dist/
+.DS_Store

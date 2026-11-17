@@ -1,0 +1,158 @@
+{
+  "classes": [
+    "algal_leaf",
+    "anthracnose",
+    "bird_eye_spot",
+    "brown_blight",
+    "gray_light",
+    "healthy",
+    "red_leaf_spot",
+    "white_spot"
+  ],
+  "accuracy": 0.8175182481751825,
+  "classification_report": {
+    "algal_leaf": {
+      "precision": 0.9230769230769231,
+      "recall": 0.6666666666666666,
+      "f1-score": 0.7741935483870968,
+      "support": 18.0
+    },
+    "anthracnose": {
+      "precision": 0.7333333333333333,
+      "recall": 0.7333333333333333,
+      "f1-score": 0.7333333333333333,
+      "support": 15.0
+    },
+    "bird_eye_spot": {
+      "precision": 0.7142857142857143,
+      "recall": 0.6666666666666666,
+      "f1-score": 0.6896551724137931,
+      "support": 15.0
+    },
+    "brown_blight": {
+      "precision": 0.6428571428571429,
+      "recall": 1.0,
+      "f1-score": 0.782608695652174,
+      "support": 18.0
+    },
+    "gray_light": {
+      "precision": 0.875,
+      "recall": 0.9333333333333333,
+      "f1-score": 0.9032258064516129,
+      "support": 15.0
+    },
+    "healthy": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 12.0
+    },
+    "red_leaf_spot": {
+      "precision": 1.0,
+      "recall": 0.9090909090909091,
+      "f1-score": 0.9523809523809523,
+      "support": 22.0
+    },
+    "white_spot": {
+      "precision": 0.7894736842105263,
+      "recall": 0.6818181818181818,
+      "f1-score": 0.7317073170731707,
+      "support": 22.0
+    },
+    "accuracy": 0.8175182481751825,
+    "macro avg": {
+      "precision": 0.834753349720455,
+      "recall": 0.8238636363636364,
+      "f1-score": 0.8208881032115166,
+      "support": 137.0
+    },
+    "weighted avg": {
+      "precision": 0.8349964960126313,
+      "recall": 0.8175182481751825,
+      "f1-score": 0.817267131413713,
+      "support": 137.0
+    }
+  },
+  "confusion_matrix": [
+    [
+      12,
+      0,
+      0,
+      3,
+      0,
+      0,
+      0,
+      3
+    ],
+    [
+      0,
+      11,
+      3,
+      0,
+      1,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      4,
+      10,
+      0,
+      1,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      18,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      1,
+      0,
+      14,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      12,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      20,
+      1
+    ],
+    [
+      1,
+      0,
+      0,
+      6,
+      0,
+      0,
+      0,
+      15
+    ]
+  ]
+}
