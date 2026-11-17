@@ -4,6 +4,7 @@ import random
 import shutil
 import json
 import re
+import hashlib
 
 # ==========================================
 # 1. CẤU HÌNH ĐƯỜNG DẪN
@@ -92,7 +93,7 @@ def collect_images():
         cls: [] for cls in CLASSES
     }
 
-    for folder in SOURCE.iterdir():
+    for folder in sorted(SOURCE.iterdir()):
 
         if not folder.is_dir():
             continue
@@ -108,13 +109,33 @@ def collect_images():
             continue
 
         images = [
-            p for p in folder.rglob("*")
+            p for p in sorted(folder.rglob("*"))
             if p.is_file()
             and p.suffix.lower() in EXTENSIONS
         ]
 
         collected[class_name].extend(images)
 
+    # Identical files must not appear in both train and test. Also reject
+    # contradictory labels for the same exact image instead of hiding them.
+    seen = {}
+    for cls in CLASSES:
+        unique = []
+        for path in collected[cls]:
+            digest = hashlib.sha256(path.read_bytes()).hexdigest()
+            previous = seen.get(digest)
+            if previous is not None:
+                previous_class, previous_path = previous
+                if previous_class != cls:
+                    raise ValueError(
+                        f"Ảnh trùng nội dung nhưng khác nhãn: {previous_path} ({previous_class}) "
+                        f"và {path} ({cls}). Hãy xác minh nhãn trước khi chia dữ liệu."
+                    )
+                print(f"Bỏ bản sao trùng nội dung: {path}")
+                continue
+            seen[digest] = (cls, path)
+            unique.append(path)
+        collected[cls] = unique
     return collected
 
 
@@ -195,8 +216,11 @@ def split_dataset(collected):
 
         n = len(paths)
 
-        n_train = int(n * RATIOS[0])
-        n_val = int(n * RATIOS[1])
+        if n < 3:
+            raise ValueError(f"Lớp {cls} cần ít nhất 3 ảnh độc lập.")
+        n_val = max(1, int(n * RATIOS[1]))
+        n_test = max(1, int(n * RATIOS[2]))
+        n_train = n - n_val - n_test
 
         chunks = {
             "train": paths[:n_train],
@@ -218,11 +242,8 @@ def split_dataset(collected):
 
             for i, src in enumerate(chunk):
 
-                out = target / src.name
-
-                # Tránh trùng tên ảnh
-                if out.exists():
-                    out = target / f"{src.stem}_{i}{src.suffix.lower()}"
+                # A unique index prevents any basename collision from subfolders.
+                out = target / f"{i:06d}_{src.stem}{src.suffix.lower()}"
 
                 shutil.copy2(src, out)
 

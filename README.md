@@ -1,106 +1,154 @@
-# Tea Leaf AI
+# TeaLeafAI · Nhận diện bệnh lá chè
 
-Website hỗ trợ phân loại ảnh lá chè thành 8 lớp (7 bệnh và lá khỏe mạnh) bằng MobileNetV2.
+Website tiếng Việt phân loại ảnh lá chè bằng MobileNetV2 thành **8 lớp: 7 bệnh và lá khỏe mạnh**. Bản mặc định chạy mô hình **ngay trong trình duyệt** bằng ONNX Runtime Web: không cần tài khoản, API key, dịch vụ AI trả phí hay máy chủ Python.
 
-## 1. Kiến trúc
-- `frontend/`: React + Vite, triển khai giao diện trên Vercel.
-- `backend/`: FastAPI, nhận ảnh và chạy dự đoán.
-- `training/`: chia dataset, huấn luyện và đánh giá mô hình local.
-- `DuLieuGoc/`: bạn tự tạo và đặt dữ liệu gốc ở đây (không đưa lên Git).
+- Website: https://tea-leaf-ai.vercel.app
+- Tải bản chạy sẵn: https://github.com/khanh1023/TeaLeafAI/releases/latest
+- Mã nguồn: https://github.com/khanh1023/TeaLeafAI
 
-## 2. Tám lớp dữ liệu
-1. `algal_leaf` - Bệnh đốm tảo
-2. `anthracnose` - Bệnh thán thư
-3. `bird_eye_spot` - Bệnh đốm mắt chim
-4. `brown_blight` - Bệnh đốm nâu
-5. `gray_light` - Bệnh đốm xám
-6. `healthy` - Lá khỏe mạnh
-7. `red_leaf_spot` - Bệnh đốm đỏ
-8. `white_spot` - Bệnh đốm trắng
+## 1. Cách chạy dễ nhất trên Windows
 
-Giữ nguyên tên và thứ tự 8 nhãn trên để khớp đầu ra mô hình và `backend/models/classes.json`. Thư mục nguồn có thể dùng dấu cách hoặc dấu gạch dưới, ví dụ `algal leaf` hoặc `algal_leaf`. Nhãn `gray_light` được giữ theo bộ dữ liệu nguồn; cần kiểm tra nhãn bệnh đốm xám trước khi sử dụng. Danh sách và tên hiển thị trên giao diện nằm trong `frontend/src/classes.js`.
+1. Cài **Node.js LTS 22 trở lên** từ https://nodejs.org nếu máy chưa có.
+2. Tải `TeaLeafAI-ready.zip` trong mục **Releases**, giải nén toàn bộ.
+3. Nhấp đúp **`CHAY-WEBSITE.cmd`**. Trình duyệt mở tại http://127.0.0.1:5173.
+4. Vào **Chẩn đoán** → chọn hoặc kéo thả ảnh → **Phân tích ảnh**.
 
-## 3. Chuẩn bị dữ liệu
-Tạo cấu trúc:
-```
-TeaLeafAI/
-  DuLieuGoc/
-    algal_leaf/
-    anthracnose/
-    bird_eye_spot/
-    brown_blight/
-    gray_light/
-    healthy/
-    red_leaf_spot/
-    white_spot/
-  training/
-```
-Các thư mục nguồn có thể chứa ảnh trực tiếp hoặc thư mục con. Cài Python 3.10 hoặc 3.11, mở terminal tại thư mục `training`:
-```
-python -m venv .venv
-# Windows:
-.venv\Scripts\activate
-pip install -r requirements.txt
-python prepare_dataset.py
-```
-Chương trình yêu cầu gõ YES để tạo lại `training/dataset`. Tập gốc không bị xóa. Nếu thêm ảnh, hãy thêm vào `DuLieuGoc` rồi chạy lại script. Việc chia ngẫu nhiên từng file phù hợp khi ảnh độc lập; nếu nhiều ảnh cùng một cây/lá/phiên chụp, cần chia theo nhóm nguồn để tránh rò rỉ dữ liệu.
+Giữ cửa sổ chạy mở trong lúc sử dụng; nhấn Ctrl+C để dừng. Bản ZIP đã có giao diện được build, mô hình và WebAssembly nên không cần cài Python hoặc tải thư viện npm để dùng bản chạy sẵn. Node chỉ dùng để phục vụ file website trên máy. Không mở trực tiếp `index.html` bằng `file://` vì trình duyệt cần HTTP để tải mô hình.
 
-## 4. Huấn luyện local
-Từ thư mục `training`:
-```
-python train.py
-```
-Mô hình dùng MobileNetV2 pretrained ImageNet, đầu vào 224x224, batch 32, tối đa 20 epoch, đóng băng backbone ở giai đoạn đầu. Kết quả tốt nhất lưu tại `backend/models/tea_leaf_mobilenetv2.keras` và danh sách lớp lưu trong `backend/models/classes.json`.
+Nếu tải mã nguồn thay vì bản Release, file `.cmd` sẽ cài thư viện và build ở lần chạy đầu; cần Internet cho bước này. Nếu báo cổng 5173 đã dùng, đóng cửa sổ TeaLeafAI cũ rồi chạy lại.
 
-Không thể đảm bảo độ chính xác trước khi có dữ liệu đủ tốt. Cần đủ dữ liệu cho cả 8 lớp trước khi huấn luyện. Khi thay đổi bộ nhãn của mô hình cũ, cần chia lại dữ liệu và huấn luyện lại; chỉ sửa `classes.json` không chuyển được mô hình 5 lớp thành 8 lớp. Nên đánh giá bằng test set độc lập:
-```
-python evaluate.py
+## 2. Chạy từ mã nguồn để phát triển
+
+Tại thư mục dự án, Windows PowerShell:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\start.ps1
 ```
 
-## 5. Chạy backend
-Mở terminal mới tại `backend`:
-```
-python -m venv .venv
-.venv\Scripts\activate
-pip install -r requirements.txt
-uvicorn app.main:app --reload --host 127.0.0.1 --port 8000
-```
-API docs: http://127.0.0.1:8000/docs
-Health: http://127.0.0.1:8000/api/health
+Lệnh chỉ áp dụng ExecutionPolicy cho tiến trình chạy file này, không đổi thiết lập hệ thống. Linux/macOS:
 
-## 6. Chạy frontend
-Mở terminal mới tại `frontend`:
+```bash
+bash scripts/start.sh
 ```
-npm install
-copy .env.example .env
+
+Hoặc chạy từng lệnh riêng:
+
+```bash
+cd frontend
+npm ci
 npm run dev
 ```
-Mở URL do Vite hiển thị, thường là http://localhost:5173. `.env` cần `VITE_API_URL=http://127.0.0.1:8000`.
 
-## 7. GitHub
-Tại thư mục gốc:
+Sau đó mở địa chỉ Vite hiển thị, thường là http://localhost:5173. Xem hướng dẫn chi tiết tại [docs/LOCAL_SETUP.md](docs/LOCAL_SETUP.md).
+
+## 3. Chức năng có sẵn
+
+- Chọn hoặc kéo thả ảnh JPG, PNG, WEBP, tối đa 8 MB.
+- AI chạy trên thiết bị, hiển thị tiến trình khởi tạo và thông báo lỗi rõ ràng.
+- Kết quả gồm nhãn dự đoán, điểm mô hình và xác suất của đủ 8 lớp.
+- Thư viện phân loại, hướng dẫn chụp ảnh và trang kiểm tra hệ thống.
+- Lịch sử lưu trong trình duyệt (tối đa 100 kết quả); xóa từng mục hoặc toàn bộ, xuất CSV; xuất kết quả riêng ra JSON.
+- Giao diện thích ứng điện thoại và máy tính, có hỗ trợ bàn phím.
+- Tài khoản/đồng bộ không nằm trong bản này; không có trang quản trị huấn luyện công khai. Huấn luyện chỉ chạy bằng Python trên máy riêng.
+
+**Riêng tư:** ở chế độ mặc định `browser`, ảnh không được gửi lên API hoặc lưu lên máy chủ. Trình duyệt tải mô hình ONNX khoảng 9 MB và runtime WASM khoảng 11 MB ở lần dùng đầu, rồi xử lý ảnh trong bộ nhớ của thiết bị. Lịch sử chỉ giữ tên ảnh, thời gian và kết quả, không giữ ảnh. Đổi trình duyệt hoặc xóa dữ liệu trình duyệt sẽ mất lịch sử. Dữ liệu này không được đồng bộ.
+
+## 4. Tám nhãn theo đúng thứ tự mô hình
+
+| Nhãn | Tên hiển thị |
+| --- | --- |
+| `algal_leaf` | Bệnh đốm tảo |
+| `anthracnose` | Bệnh thán thư |
+| `bird_eye_spot` | Bệnh đốm mắt chim |
+| `brown_blight` | Bệnh đốm nâu |
+| `gray_light` | Bệnh đốm xám |
+| `healthy` | Lá khỏe mạnh |
+| `red_leaf_spot` | Bệnh đốm đỏ |
+| `white_spot` | Bệnh đốm trắng |
+
+Giữ nguyên `gray_light` theo bộ dữ liệu nguồn; cần xác minh tên bệnh tương ứng. Không đổi thứ tự `classes.json` mà không huấn luyện và xuất lại mô hình.
+
+## 5. Triển khai miễn phí
+
+Website mặc định chỉ gồm file tĩnh, vì vậy không cần Render hay máy chủ TensorFlow. Có thể dùng Vercel Hobby hoặc Cloudflare Pages Free trong giới hạn gói hiện hành. Xem [docs/FREE_HOSTING.md](docs/FREE_HOSTING.md).
+
+**Vercel (repo này đã có website):**
+
+- Import `khanh1023/TeaLeafAI` hoặc dùng project hiện có.
+- Root Directory: `frontend`; Framework: `Vite`.
+- Build Command: `npm run build`; Output Directory: `dist`.
+- Node.js: `22.x` trở lên.
+- Không cần biến môi trường. Mặc định là `browser`, kể cả khi còn `VITE_API_URL` cũ. Chỉ đặt `VITE_INFERENCE_MODE=api` khi chủ động sử dụng API riêng.
+- Push nhánh `main` để Vercel tự build nếu đã liên kết repo.
+
+## 6. Kiến trúc
+
+```text
+frontend/                   React + Vite + onnxruntime-web
+  public/model/             ONNX, manifest kiểm tra SHA-256, thứ tự nhãn
+  scripts/prepare-runtime   Sao chép runtime từ dependency đã khóa phiên bản
+  scripts/serve-dist.mjs    Chạy bản build sẵn, không cần npm install
+backend/                    FastAPI tùy chọn + mô hình Keras gốc
+training/                   Chuẩn bị dữ liệu, train, đánh giá, xuất ONNX
+scripts/                    Chạy phát triển trên Windows/Linux/macOS
+tests/                      Kiểm tra backend và chuẩn bị dataset
+.github/workflows/          Kiểm tra tự động khi push/PR
 ```
-git init
-git add .
-git commit -m "Initial Tea Leaf AI project"
-git branch -M main
-git remote add origin https://github.com/<TEN_TAI_KHOAN>/<TEN_REPO>.git
-git push -u origin main
+
+Ảnh đầu vào: RGB float32, kích thước 224×224, **pixel thô 0–255**. Mô hình đã chứa lớp `Rescaling(1/127.5, offset=-1)`, vì vậy không chuẩn hóa ảnh thêm lần nữa. Đã sửa lỗi backend cũ chuẩn hóa hai lần. Bản ONNX được so với Keras trên 9 ảnh; nhãn top-1 khớp toàn bộ, sai số xác suất lớn nhất khoảng `2.64e-6`. Kiểm tra này chứng minh việc chuyển định dạng, **không phải đánh giá độ chính xác trên dữ liệu mới**.
+
+## 7. Backend Python tùy chọn
+
+Chỉ cần khi tích hợp hệ thống khác hoặc chủ động chuyển sang API. Python 3.11/3.12 được khuyến nghị.
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\start.ps1 -WithBackend
 ```
-Không commit dataset gốc, dataset đã chia, file mô hình, `.venv`, `node_modules` hoặc file `.env`.
 
-## 8. Vercel
-1. Push source lên GitHub.
-2. Vercel > Add New > Project > Import repository.
-3. Root Directory chọn `frontend`.
-4. Framework preset chọn Vite.
-5. Build command `npm run build`, Output Directory `dist`.
-6. Environment Variables thêm `VITE_API_URL` bằng URL backend được triển khai công khai.
-7. Deploy.
+Hoặc Linux/macOS:
 
-**Quan trọng:** Vercel chỉ host frontend trong cấu hình này. Backend FastAPI và file mô hình cần chạy ở một máy chủ Python có thể truy cập từ Internet. Nếu `VITE_API_URL` vẫn là `127.0.0.1`, website công khai sẽ không thể gọi backend trên máy tính của bạn. Có thể demo local bằng cách chạy cả frontend và backend trên máy cá nhân; để chẩn đoán công khai, cần triển khai backend riêng và cấu hình CORS cho domain Vercel.
+```bash
+bash scripts/start.sh --with-backend
+```
 
-## 9. Giới hạn phiên bản khởi đầu
-- Lịch sử hiện lưu trong localStorage của trình duyệt, chưa có tài khoản hoặc đồng bộ.
-- Trang Admin là trang hướng dẫn/kiểm tra API; việc huấn luyện thực hiện bằng lệnh Python local.
-- Dự đoán chỉ là hỗ trợ tham khảo. Cần kiểm định dữ liệu, mô hình và tư vấn chuyên gia trước khi dùng quyết định xử lý cây trồng.
+Backend chạy cổng 9000, frontend chạy 5173. Khi dùng API, ảnh được gửi tới URL API cấu hình; giao diện hiển thị chế độ này. Không đưa `.env`, mật khẩu hoặc token lên GitHub.
+
+## 8. Huấn luyện, dữ liệu và giới hạn
+
+Đặt ảnh gốc trong `DuLieuGoc`, theo tên lớp tương ứng (dấu cách hoặc gạch dưới được chấp nhận). Chỉ chạy khi cần huấn luyện lại:
+
+```powershell
+cd training
+python -m venv .venv
+.\.venv\Scripts\python.exe -m pip install -r requirements.txt
+.\.venv\Scripts\python.exe prepare_dataset.py
+.\.venv\Scripts\python.exe train.py
+.\.venv\Scripts\python.exe evaluate.py
+```
+
+Linux/macOS: thay `.\.venv\Scripts\python.exe` bằng `.venv/bin/python`.
+
+`prepare_dataset.py` yêu cầu gõ YES trước khi tạo lại dataset chia 70/15/15. Script loại ảnh trùng nội dung trong cùng lớp và dừng nếu cùng một ảnh có nhãn mâu thuẫn; không sửa hay xóa dữ liệu gốc. Nếu các ảnh cùng cây/lá/phiên chụp, phải chia theo nhóm nguồn để tránh rò rỉ dữ liệu.
+
+**Vấn đề thực tế đã tìm thấy:** `Anthracnose/IMG_20220503_150405.jpg` và `bird eye spot/IMG_20220503_150405.jpg` có cùng nội dung nhưng khác nhãn. Cần người có chuyên môn xác minh trước khi huấn luyện lại. Dữ liệu gốc được giữ nguyên. File `training/evaluation.json` là báo cáo cũ của dự án, chưa được coi là kiểm định độc lập hoặc cam kết độ chính xác ngoài thực tế.
+
+Sau khi huấn luyện lại, xuất mô hình browser bằng [training/export_browser_model.py](training/export_browser_model.py), theo [docs/LOCAL_SETUP.md](docs/LOCAL_SETUP.md). Commit ONNX mới và manifest cùng nhau, rồi build lại website.
+
+Mô hình chỉ phân loại trong 8 nhóm đã học; **không có bộ phát hiện “không phải lá chè” đáng tin cậy**. Ảnh vật thể khác vẫn có thể nhận điểm cao. Điểm mô hình không phải xác suất bệnh đã được kiểm định. Không dùng kết quả riêng lẻ để quyết định thuốc hoặc điều trị cây trồng; cần kiểm tra thực địa và chuyên gia.
+
+## 9. Kiểm tra
+
+```bash
+cd frontend
+npm test
+npm run build
+```
+
+Python, tại thư mục gốc:
+
+```bash
+python -m pip install -r tests/requirements.txt
+python -m unittest discover -s tests -v
+```
+
+Bộ kiểm tra nhẹ không cần tải TensorFlow. CI chạy các lệnh này khi push hoặc mở PR.

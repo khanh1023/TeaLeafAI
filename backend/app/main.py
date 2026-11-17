@@ -1,303 +1,146 @@
-
+"""Optional FastAPI inference service; the public website can also run AI locally."""
 from pathlib import Path
-import json
 import io
+import json
+import logging
 import os
+from threading import Lock
 
 import numpy as np
-from PIL import Image, UnidentifiedImageError
-
-from fastapi import FastAPI, UploadFile, File, HTTPException
+from PIL import Image, ImageOps, UnidentifiedImageError
+from fastapi import FastAPI, File, HTTPException, UploadFile
 from fastapi.middleware.cors import CORSMiddleware
-
-
-# ==========================================
-# 1. CẤU HÌNH ĐƯỜNG DẪN
-# ==========================================
+from starlette.concurrency import run_in_threadpool
 
 ROOT = Path(__file__).resolve().parents[1]
-
 MODEL_PATH = ROOT / "models" / "tea_leaf_mobilenetv2.keras"
 CLASSES_PATH = ROOT / "models" / "classes.json"
-
 MAX_BYTES = 8 * 1024 * 1024
+MAX_PIXELS = 25_000_000
 IMG_SIZE = (224, 224)
-
 FALLBACK_CLASSES = [
-    "algal_leaf",
-    "anthracnose",
-    "bird_eye_spot",
-    "brown_blight",
-    "gray_light",
-    "healthy",
-    "red_leaf_spot",
-    "white_spot"
+    "algal_leaf", "anthracnose", "bird_eye_spot", "brown_blight",
+    "gray_light", "healthy", "red_leaf_spot", "white_spot",
 ]
-
 LABELS = {
-    "algal_leaf": "Bệnh đốm tảo",
-    "anthracnose": "Bệnh thán thư",
-    "bird_eye_spot": "Bệnh đốm mắt chim",
-    "brown_blight": "Bệnh đốm nâu",
-    "gray_light": "Bệnh đốm xám",
-    "healthy": "Lá khỏe mạnh",
-    "red_leaf_spot": "Bệnh đốm đỏ",
-    "white_spot": "Bệnh đốm trắng"
+    "algal_leaf": "Bệnh đốm tảo", "anthracnose": "Bệnh thán thư",
+    "bird_eye_spot": "Bệnh đốm mắt chim", "brown_blight": "Bệnh đốm nâu",
+    "gray_light": "Bệnh đốm xám", "healthy": "Lá khỏe mạnh",
+    "red_leaf_spot": "Bệnh đốm đỏ", "white_spot": "Bệnh đốm trắng",
 }
-
-
-# ==========================================
-# 2. KHỞI TẠO FASTAPI
-# ==========================================
-
-app = FastAPI(
-    title="Tea Leaf AI API",
-    version="1.0.0"
-)
-
-
-# ==========================================
-# 3. CẤU HÌNH CORS
-# ==========================================
-
-origins = [
-    x.strip()
-    for x in os.getenv(
-        "CORS_ORIGINS",
-        "http://localhost:5173,http://127.0.0.1:5173"
-    ).split(",")
-    if x.strip()
-]
-
+app = FastAPI(title="Tea Leaf AI API", version="2.0.0")
+origins = [x.strip() for x in os.getenv(
+    "CORS_ORIGINS", "http://localhost:5173,http://127.0.0.1:5173"
+).split(",") if x.strip()]
 app.add_middleware(
-    CORSMiddleware,
-    allow_origins=origins,
-    allow_credentials=False,
-    allow_methods=["*"],
-    allow_headers=["*"]
+    CORSMiddleware, allow_origins=origins, allow_credentials=False,
+    allow_methods=["GET", "POST"], allow_headers=["*"],
 )
-
-
-# ==========================================
-# 4. BIẾN MÔ HÌNH
-# ==========================================
-
 _model = None
-_classes = FALLBACK_CLASSES
+_classes = FALLBACK_CLASSES.copy()
+_model_lock = Lock()
+logger = logging.getLogger(__name__)
 
 
-# ==========================================
-# 5. TẢI MÔ HÌNH AI
-# ==========================================
+def validate_classes(classes):
+    """The class order is part of the trained model's output contract."""
+    if classes != FALLBACK_CLASSES:
+        raise ValueError("classes.json phải đúng tên và thứ tự 8 lớp của mô hình.")
+    return classes
+
 
 def get_model():
-
     global _model, _classes
-
-    if _model is None:
-
-        if not MODEL_PATH.exists():
-            raise HTTPException(
-                status_code=503,
-                detail="Không tìm thấy mô hình AI. "
-                       "Vui lòng kiểm tra file "
-                       "tea_leaf_mobilenetv2.keras."
-            )
-
-        if not CLASSES_PATH.exists():
-            raise HTTPException(
-                status_code=503,
-                detail="Không tìm thấy file classes.json."
-            )
-
+    with _model_lock:
+        if _model is not None:
+            return _model
+        if not MODEL_PATH.exists() or not CLASSES_PATH.exists():
+            raise HTTPException(503, "Thiếu mô hình hoặc classes.json trong backend/models.")
         try:
+            classes = validate_classes(json.loads(CLASSES_PATH.read_text(encoding="utf-8")))
             import tensorflow as tf
-
-            loaded_classes = json.loads(
-                CLASSES_PATH.read_text(encoding="utf-8")
-            )
-
-            if not isinstance(loaded_classes, list) or not loaded_classes:
-                raise ValueError("classes.json không hợp lệ.")
-
-            loaded_model = tf.keras.models.load_model(
-                MODEL_PATH,
-                compile=False
-            )
-
-            output_shape = loaded_model.output_shape
-
-            if output_shape[-1] != len(loaded_classes):
-                raise ValueError(
-                    "Số đầu ra mô hình không khớp số lớp trong classes.json."
-                )
-
-            _classes = loaded_classes
-            _model = loaded_model
-
-        except Exception as exc:
-            raise HTTPException(
-                status_code=500,
-                detail=f"Không tải được mô hình AI: {str(exc)}"
-            )
-
+            model = tf.keras.models.load_model(MODEL_PATH, compile=False)
+            if tuple(model.input_shape[1:]) != (*IMG_SIZE, 3):
+                raise ValueError("Mô hình cần ảnh RGB 224x224.")
+            if model.output_shape[-1] != len(classes):
+                raise ValueError("Số đầu ra mô hình không khớp 8 lớp.")
+            _classes, _model = classes, model
+        except HTTPException:
+            raise
+        except Exception:
+            logger.exception("Cannot load tea leaf model")
+            raise HTTPException(503, "Không tải được mô hình AI. Kiểm tra mô hình và thư viện TensorFlow.")
     return _model
 
 
-# ==========================================
-# 6. API TRANG CHỦ
-# ==========================================
+def preprocess_image(raw):
+    """Return raw RGB float pixels; Rescaling is already INSIDE the saved model."""
+    try:
+        with Image.open(io.BytesIO(raw)) as original:
+            if original.format not in {"JPEG", "PNG", "WEBP"}:
+                raise HTTPException(415, "Chỉ chấp nhận ảnh JPG, PNG hoặc WEBP.")
+            if original.width * original.height > MAX_PIXELS:
+                raise HTTPException(413, "Ảnh có quá nhiều điểm ảnh (tối đa 25 megapixel).")
+            image = ImageOps.exif_transpose(original).convert("RGB")
+            image = image.resize(IMG_SIZE, Image.Resampling.BILINEAR)
+            return np.expand_dims(np.asarray(image, dtype=np.float32), axis=0)
+    except HTTPException:
+        raise
+    except (UnidentifiedImageError, OSError, ValueError, Image.DecompressionBombError):
+        raise HTTPException(400, "Tệp tải lên không phải ảnh hợp lệ.")
+
+
+def format_prediction(predictions, classes):
+    predictions = np.asarray(predictions, dtype=np.float64)
+    if predictions.shape != (len(classes),) or not np.all(np.isfinite(predictions)):
+        raise HTTPException(500, "Đầu ra mô hình không hợp lệ.")
+    if np.any(predictions < 0) or np.any(predictions > 1) or not np.isclose(predictions.sum(), 1, atol=1e-3):
+        raise HTTPException(500, "Xác suất đầu ra mô hình không hợp lệ.")
+    key = classes[int(np.argmax(predictions))]
+    return {
+        "predicted_class": key, "predicted_label": LABELS[key],
+        "confidence": float(np.max(predictions)),
+        "probabilities": {c: float(p) for c, p in zip(classes, predictions)},
+    }
+
+
+def predict(raw):
+    arr = preprocess_image(raw)
+    model = get_model()
+    try:
+        predictions = model(arr, training=False).numpy()[0]
+    except Exception:
+        logger.exception("Tea leaf inference failed")
+        raise HTTPException(500, "Không thể phân tích ảnh. Vui lòng thử lại.")
+    return format_prediction(predictions, _classes)
+
 
 @app.get("/")
 def root():
+    return {"name": "Tea Leaf AI API", "status": "running", "docs": "/docs"}
 
-    return {
-        "name": "Tea Leaf AI API",
-        "status": "running",
-        "docs": "/docs"
-    }
-
-
-# ==========================================
-# 7. API KIỂM TRA KẾT NỐI
-# ==========================================
 
 @app.get("/api/health")
 def health():
-
     return {
-        "status": "ok",
-        "model_loaded": _model is not None,
+        "status": "ok", "model_loaded": _model is not None,
         "model_file_exists": MODEL_PATH.exists(),
-        "classes_file_exists": CLASSES_PATH.exists(),
-        "classes": _classes
+        "classes_file_exists": CLASSES_PATH.exists(), "classes": _classes,
+        "input_range": "0..255 (normalization is embedded in the model)",
     }
 
-
-# ==========================================
-# 8. API PHÂN TÍCH ẢNH LÁ CHÈ
-# ==========================================
 
 @app.post("/api/diagnosis")
 async def diagnosis(file: UploadFile = File(...)):
-
-    # Kiểm tra định dạng ảnh
-    if file.content_type not in {
-        "image/jpeg",
-        "image/png",
-        "image/webp"
-    }:
-
-        raise HTTPException(
-            status_code=415,
-            detail="Chỉ chấp nhận ảnh JPG, PNG hoặc WEBP."
-        )
-
-    # Đọc ảnh
-    raw = await file.read()
-
-    if not raw:
-
-        raise HTTPException(
-            status_code=400,
-            detail="Bạn chưa tải ảnh lên."
-        )
-
-    # Kiểm tra dung lượng
-    if len(raw) > MAX_BYTES:
-
-        raise HTTPException(
-            status_code=413,
-            detail="Ảnh vượt quá giới hạn 8 MB."
-        )
-
-    # Đọc và xử lý ảnh
     try:
-
-        image = (
-            Image.open(io.BytesIO(raw))
-            .convert("RGB")
-            .resize(IMG_SIZE)
-        )
-
-    except (UnidentifiedImageError, OSError):
-
-        raise HTTPException(
-            status_code=400,
-            detail="Tệp tải lên không phải ảnh hợp lệ."
-        )
-
-    # Tải mô hình
-    model = get_model()
-
-    # ======================================
-    # TIỀN XỬ LÝ ẢNH
-    # Đồng bộ với train.py
-    # ======================================
-
-    arr = np.asarray(
-        image,
-        dtype=np.float32
-    )
-
-    arr = arr / 127.5 - 1.0
-
-    arr = np.expand_dims(
-        arr,
-        axis=0
-    )
-
-    # ======================================
-    # DỰ ĐOÁN
-    # ======================================
-
-    try:
-
-        predictions = model.predict(
-            arr,
-            verbose=0
-        )[0]
-
-    except Exception as exc:
-
-        raise HTTPException(
-            status_code=500,
-            detail=f"Lỗi khi phân tích ảnh: {str(exc)}"
-        )
-
-    if len(predictions) != len(_classes):
-
-        raise HTTPException(
-            status_code=500,
-            detail="Số đầu ra mô hình không khớp số lớp."
-        )
-
-    # Xác định lớp có xác suất cao nhất
-    idx = int(np.argmax(predictions))
-
-    key = _classes[idx]
-
-    confidence = float(predictions[idx])
-
-    # ======================================
-    # TRẢ KẾT QUẢ
-    # ======================================
-
-    return {
-        "predicted_class": key,
-
-        "predicted_label": LABELS.get(
-            key,
-            key
-        ),
-
-        "confidence": confidence,
-
-        "probabilities": {
-            c: float(p)
-            for c, p in zip(
-                _classes,
-                predictions
-            )
-        }
-    }
+        if file.content_type not in {"image/jpeg", "image/png", "image/webp"}:
+            raise HTTPException(415, "Chỉ chấp nhận ảnh JPG, PNG hoặc WEBP.")
+        # Bound the memory used even when Content-Length is missing or forged.
+        raw = await file.read(MAX_BYTES + 1)
+        if not raw:
+            raise HTTPException(400, "Bạn chưa tải ảnh lên.")
+        if len(raw) > MAX_BYTES:
+            raise HTTPException(413, "Ảnh vượt quá giới hạn 8 MB.")
+        return await run_in_threadpool(predict, raw)
+    finally:
+        await file.close()

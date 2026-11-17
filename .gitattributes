@@ -1,0 +1,7 @@
+*.onnx binary
+*.keras binary
+*.png binary
+*.jpg binary
+*.cmd text eol=crlf
+*.ps1 text eol=crlf
+*.sh text eol=lf

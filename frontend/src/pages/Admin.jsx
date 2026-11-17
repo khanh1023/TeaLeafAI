@@ -1,2 +1,26 @@
-import {useEffect,useState} from "react";import {Server,FolderOpen,BrainCircuit,ExternalLink,RefreshCw} from "lucide-react";import {health,BASE} from "../api";
-export default function Admin(){const[state,setState]=useState("Đang kiểm tra..."),[info,setInfo]=useState(null);async function check(){setState("Đang kiểm tra...");try{const d=await health();setInfo(d);setState("Đã kết nối");}catch(e){setInfo(null);setState("Chưa kết nối");}}useEffect(()=>{check();},[]);return <section className="page"><div className="page-title"><span className="eyebrow">ADMIN WORKSPACE</span><h1>Khu vực quản trị</h1><p>Quản lý quy trình dữ liệu và mô hình huấn luyện local.</p></div><div className="admin-grid"><article className="panel"><Server/><h2>Trạng thái API</h2><p className={info?"status-good":"status-bad"}>{state}</p><small>API URL: {BASE}</small><button className="btn pale" onClick={check}><RefreshCw size={16}/> Kiểm tra lại</button></article><article className="panel"><FolderOpen/><h2>Quản lý dataset</h2><p>Đặt ảnh gốc trong DuLieuGoc, mỗi thư mục con là một lớp. Chạy prepare_dataset.py để chia 70/15/15.</p><code>python prepare_dataset.py</code></article><article className="panel"><BrainCircuit/><h2>Huấn luyện mô hình</h2><p>Huấn luyện trên máy tính bằng TensorFlow, sau đó lưu mô hình vào backend/models.</p><code>python train.py</code></article><article className="panel"><ExternalLink/><h2>Đánh giá mô hình</h2><p>Sử dụng tập test độc lập để tính Accuracy, Precision, Recall, F1-score và ma trận nhầm lẫn.</p><code>python evaluate.py</code></article></div><div className="notice">Phiên bản đầu tiên thực hiện huấn luyện bằng lệnh Python trên máy tính, không chạy tác vụ huấn luyện trực tiếp trong trình duyệt. Trang quản trị này cung cấp hướng dẫn và kiểm tra kết nối API.</div></section>}
+import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import { Laptop, RefreshCw, CheckCircle2, CircleAlert, FileJson, Github, ShieldCheck, ArrowUpRight } from 'lucide-react';
+import { health, ENGINE, BASE } from '../api';
+import { CLASSES } from '../classes';
+
+export default function Admin() {
+  const [info, setInfo] = useState(null);
+  const [busy, setBusy] = useState(true);
+  const [error, setError] = useState('');
+  async function check() {
+    setBusy(true); setError('');
+    try { setInfo(await health()); }
+    catch (exception) { setInfo(null); setError(exception.message || 'Chưa kiểm tra được hệ thống.'); }
+    finally { setBusy(false); }
+  }
+  useEffect(() => { check(); }, []);
+  return <section className="page"><div className="page-title"><span className="eyebrow">THÔNG TIN CÔNG KHAI VỀ ỨNG DỤNG</span><h1>Hệ thống Tea Leaf AI</h1><p>Kiểm tra chế độ chạy, mô hình và các nhãn phân loại. Trang này cung cấp thông tin hệ thống, không có quyền quản trị dữ liệu người khác.</p></div>
+    <div className={`system-status ${error ? 'has-error' : ''}`}><div className="system-status-icon">{busy ? <RefreshCw className="spin"/> : error ? <CircleAlert/> : <CheckCircle2/>}</div><div><span className="eyebrow">TRẠNG THÁI</span><h2>{busy ? 'Đang kiểm tra hệ thống…' : error ? 'Chưa sẵn sàng' : 'Sẵn sàng để phân tích'}</h2><p>{error || (ENGINE === 'api' ? 'Ứng dụng đang kết nối với máy chủ API.' : 'AI chạy trực tiếp trong trình duyệt, không cần thuê máy chủ.')}</p></div><button className="btn outline" disabled={busy} onClick={check}><RefreshCw size={17} className={busy ? 'spin' : ''}/> Kiểm tra lại</button></div>
+    <div className="admin-grid"><article className="panel"><Laptop size={27}/><h2>Chế độ {ENGINE === 'api' ? 'API' : 'trình duyệt'}</h2><p>{ENGINE === 'api' ? 'Ảnh được gửi tới API đã cấu hình để mô hình phân tích.' : 'Bản mặc định chạy mô hình trên thiết bị của bạn. Không cần tài khoản, API trả phí hay môi trường Python.'}</p><dl className="system-details"><div><dt>Bộ xử lý</dt><dd>{ENGINE === 'api' ? 'FastAPI + TensorFlow' : 'ONNX Runtime Web'}</dd></div><div><dt>Mô hình</dt><dd>MobileNetV2 · 8 lớp</dd></div><div><dt>Đầu vào</dt><dd>Ảnh RGB · 224 × 224</dd></div><div><dt>Đã tải vào bộ nhớ</dt><dd>{info?.model_loaded ? 'Đã tải' : 'Tải khi phân tích ảnh'}</dd></div>{ENGINE === 'api' && <div><dt>API</dt><dd className="break-word">{BASE}</dd></div>}</dl></article>
+      <article className="panel"><FileJson size={27}/><h2>8 nhãn được sử dụng</h2><p>Tên và thứ tự nhãn thống nhất giữa mô hình, mã huấn luyện và giao diện.</p><ol className="class-list">{CLASSES.map((item) => <li key={item.key}><span>{item.label}</span><code>{item.key}</code></li>)}</ol></article>
+      <article className="panel"><ShieldCheck size={27}/><h2>Giới hạn cần biết</h2><p>Mô hình chưa có lớp loại trừ ảnh không phải lá chè. Điểm dự đoán chưa được hiệu chuẩn thành xác suất bệnh thực tế.</p><p>Không tuyên bố độ chính xác cho ảnh vườn chè mới. Cần kiểm định bằng dữ liệu độc lập và chuyên gia nông nghiệp trước khi ứng dụng vào xử lý cây.</p><Link className="text-link" to="/huong-dan">Hướng dẫn đọc kết quả <ArrowUpRight size={16}/></Link></article>
+      <article className="panel"><Github size={27}/><h2>Mã nguồn và tự triển khai</h2><p>Mã nguồn có quy trình chạy local, huấn luyện Python và bản web tĩnh. Có thể triển khai bản web bằng dịch vụ lưu trữ tĩnh miễn phí theo hướng dẫn trong README.</p><a className="btn pale" href="https://github.com/khanh1023/TeaLeafAI" target="_blank" rel="noreferrer">Xem mã nguồn GitHub <ArrowUpRight size={16}/></a><p><a className="text-link" href="https://github.com/khanh1023/TeaLeafAI/releases/latest" target="_blank" rel="noreferrer">Tải bản chạy sẵn cho máy tính <ArrowUpRight size={16}/></a></p><p className="small-text">Không cần huấn luyện lại để chạy thử mô hình được đóng gói sẵn.</p></article>
+    </div>
+  </section>;
+}
