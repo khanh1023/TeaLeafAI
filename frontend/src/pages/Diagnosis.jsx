@@ -5,6 +5,7 @@ import { diagnose, ENGINE } from '../api';
 import { CLASSES, LABELS } from '../classes';
 import { addHistory, downloadFile } from '../history';
 import CameraCapture from '../components/CameraCapture';
+import DiseaseAdvice from '../components/DiseaseAdvice';
 
 const remoteApi = ENGINE === 'api';
 
@@ -106,6 +107,7 @@ export default function Diagnosis() {
         </>}
       </div>
     </div>
+    {result && <DiseaseAdvice diseaseKey={result.predicted_class} confidence={result.confidence}/>}
     {cameraOpen && <CameraCapture onCapture={select} onClose={closeCamera} onNativeCamera={() => { closeCamera(); nativeCamera.current?.click(); }}/>}
     <p className="notice"><AlertCircle size={18}/><span>Đây là công cụ hỗ trợ tham khảo, chưa phải kết luận bệnh. Điểm mô hình không phải xác suất bệnh đã được kiểm định. Ảnh không phải lá chè vẫn có thể bị gán vào một trong 8 nhóm; không dùng kết quả này để tự quyết định phun thuốc.</span></p>
   </section>;

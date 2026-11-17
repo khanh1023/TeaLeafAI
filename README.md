@@ -47,7 +47,9 @@ Sau đó mở địa chỉ Vite hiển thị, thường là http://localhost:517
 - Chụp lá chè bằng camera ngay trên website: ưu tiên camera sau, đổi camera, xem lại ảnh rồi phân tích; có tùy chọn dùng camera gốc của điện thoại. Camera trực tiếp cần HTTPS (Vercel đã có) hoặc localhost, và quyền camera của bạn. Không thu âm.
 - AI chạy trên thiết bị, hiển thị tiến trình khởi tạo và thông báo lỗi rõ ràng.
 - Kết quả gồm nhãn dự đoán, điểm mô hình và xác suất của đủ 8 lớp.
-- Thư viện phân loại, hướng dẫn chụp ảnh và trang kiểm tra hệ thống.
+- Thư viện 8 thẻ tóm tắt; bấm từng thẻ để xem dấu hiệu, xử lý ban đầu, phòng ngừa và tài liệu tham khảo.
+- Gợi ý xử lý/chăm sóc tương ứng hiển thị ngay dưới kết quả phân tích, kể cả nhóm lá khỏe; kết quả điểm thấp và nhãn cần xác minh có lưu ý riêng.
+- Hướng dẫn chụp ảnh và trang kiểm tra hệ thống.
 - Lịch sử lưu trong trình duyệt (tối đa 100 kết quả); xóa từng mục hoặc toàn bộ, xuất CSV; xuất kết quả riêng ra JSON.
 - Giao diện thích ứng điện thoại và máy tính, có hỗ trợ bàn phím.
 - Tài khoản/đồng bộ không nằm trong bản này; không có trang quản trị huấn luyện công khai. Huấn luyện chỉ chạy bằng Python trên máy riêng.

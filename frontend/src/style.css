@@ -71,3 +71,44 @@ h1,h2,h3{font-style:normal;letter-spacing:normal;word-spacing:normal;font-kernin
 .preview{display:block;min-width:0}
 .preview img{display:block;width:100%;height:100%;min-width:0;min-height:0;max-width:100%;max-height:100%;object-fit:contain}
 @media(max-width:660px){.diagnosis-layout{grid-template-columns:minmax(0,1fr)}}
+
+/* Disease library: concise cards, linked detail pages and post-analysis care. */
+.library-card-link{display:flex;flex-direction:column;transition:transform .15s,border-color .15s,box-shadow .15s}
+.library-card-link:hover{transform:translateY(-3px);border-color:#83a575;box-shadow:0 8px 24px #183f3110}
+.library-summary{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.library-card-cta{display:flex;align-items:center;justify-content:space-between;gap:10px;font-size:15px;font-weight:700;color:var(--green);padding-top:17px;border-top:1px solid var(--line);margin-top:auto}
+.disease-back{margin-bottom:22px;font-size:16px}
+.disease-intro{display:flex;align-items:flex-start;gap:22px;padding:30px;background:#edf4e6;border:1px solid #dce7d1;border-radius:18px;margin-bottom:22px}
+.disease-intro-icon{display:grid;place-items:center;flex-shrink:0;width:72px;height:72px;border-radius:18px;background:#dfeccb;color:#4f783d}
+.disease-intro h1{font-size:clamp(28px,3.5vw,42px);line-height:1.3;margin:8px 0}
+.disease-intro p{font-size:17px;line-height:1.8;max-width:780px;color:#536b49;margin:14px 0 0}
+.disease-detail-grid,.advice-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+.disease-detail-grid>.panel,.advice-grid>div{min-width:0}
+.disease-detail-grid h2,.advice-grid h3{display:flex;align-items:flex-start;gap:10px;line-height:1.5;font-size:19px}
+.disease-detail-grid h2 svg,.advice-grid h3 svg{color:var(--green);margin-top:3px}
+.disease-detail-grid h3{font-size:17px;margin:24px 0 12px}
+.disease-list,.care-steps{padding-left:24px;margin:14px 0;color:#4f6548;font-size:16px;line-height:1.85}
+.disease-list li,.care-steps li{padding-left:5px;margin-bottom:13px}
+.care-steps li::marker{color:var(--green);font-weight:700}
+.care-steps-panel{background:#f5f9f0}
+.disease-body{color:#4f6548;font-size:16px;line-height:1.85}
+.disease-page>.warning-note{margin-bottom:22px;font-size:15px}
+.disease-sources{padding:26px 0;border-bottom:1px solid var(--line)}
+.disease-sources h2{font-size:20px}
+.disease-sources p{font-size:14px;color:#64765a;line-height:1.8}
+.disease-sources ul{padding-left:20px;line-height:1.8;font-size:15px}
+.disease-sources li{margin:10px 0}
+.disease-sources a{color:var(--green);text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere}
+.disease-sources svg{vertical-align:middle;margin-left:5px}
+.disease-bottom-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.related-diseases{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.related-diseases a{padding:8px 12px;background:#edf4e6;border:1px solid #dde7d4;border-radius:20px;font-size:14px;color:#436839}
+.result-advice{margin-top:24px;border-color:#cbdcbd}
+.advice-heading{display:flex;gap:14px;align-items:flex-start}
+.advice-heading h2{font-size:23px;line-height:1.5;margin:6px 0 0}
+.advice-heading .step-badge{margin-top:4px}
+.advice-intro{font-size:16px;color:#536b49;line-height:1.8}
+.advice-identity-note,.advice-expert{font-size:14px;color:#657759;line-height:1.8;padding:12px 15px;background:#f4f7ef;border-radius:9px}
+.advice-grid{margin:20px 0 12px;gap:30px}
+.advice-grid h3{margin:0 0 12px}
+@media(max-width:660px){.disease-intro{padding:22px;gap:15px;flex-direction:column}.disease-intro-icon{width:54px;height:54px}.disease-intro p{font-size:16px}.disease-detail-grid,.advice-grid{grid-template-columns:minmax(0,1fr);gap:18px}.advice-heading h2{font-size:20px}.disease-bottom-actions{flex-direction:column}.related-diseases a{font-size:13px}.library-card-cta{font-size:14px}.library-card-link .library-summary{font-size:15px}.library-card-cta svg{width:16px}}
