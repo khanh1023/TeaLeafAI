@@ -32,7 +32,7 @@ page.on('request', request => requests.push({ url:request.url(), method:request.
 page.on('console', entry => { if(entry.type()==='error') console.error('Browser console:',entry.text()); });
 try {
   await page.goto(`${base.replace(/\/$/,'')}/chan-doan`, { waitUntil:'networkidle' });
-  await page.locator('input[type=file]').setInputFiles(sample);
+  await page.getByLabel('Chọn ảnh lá chè', {exact:true}).setInputFiles(sample);
   const run = page.getByRole('button', { name:/Phân tích ảnh/ });
   await run.click();
   await page.getByText('So sánh 8 nhóm phân loại', {exact:true}).waitFor({timeout:120000});

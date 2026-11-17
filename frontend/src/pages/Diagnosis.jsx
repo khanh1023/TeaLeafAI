@@ -1,14 +1,18 @@
-import { useEffect, useRef, useState } from 'react';
-import { Upload, Image as ImageIcon, LoaderCircle, AlertCircle, ScanSearch, X, ShieldCheck, Download, ArrowRight, CheckCircle2 } from 'lucide-react';
+import { useCallback, useEffect, useRef, useState } from 'react';
+import { Upload, Image as ImageIcon, LoaderCircle, AlertCircle, ScanSearch, X, ShieldCheck, Download, ArrowRight, CheckCircle2, Camera } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { diagnose, ENGINE } from '../api';
 import { CLASSES, LABELS } from '../classes';
 import { addHistory, downloadFile } from '../history';
+import CameraCapture from '../components/CameraCapture';
 
 const remoteApi = ENGINE === 'api';
 
 export default function Diagnosis() {
   const input = useRef(null);
+  const nativeCamera = useRef(null);
+  const [cameraOpen, setCameraOpen] = useState(false);
+  const closeCamera = useCallback(() => setCameraOpen(false), []);
   const [file, setFile] = useState(null);
   const [preview, setPreview] = useState('');
   const [busy, setBusy] = useState(false);
@@ -72,7 +76,7 @@ export default function Diagnosis() {
 
   const probabilities = result ? [...CLASSES].map((item) => ({ ...item, value: result.probabilities?.[item.key] || 0 })).sort((a, b) => b.value - a.value) : [];
   return <section className="page">
-    <div className="page-title"><span className="eyebrow">TỪ MỘT CHIẾC LÁ, HIỂU THÊM VỀ VƯỜN CHÈ</span><h1>Phân tích ảnh lá chè</h1><p>Chọn một ảnh rõ nét. AI sẽ đối chiếu với 8 nhóm trong dữ liệu huấn luyện.</p></div>
+    <div className="page-title"><span className="eyebrow">TỪ MỘT CHIẾC LÁ, HIỂU THÊM VỀ VƯỜN CHÈ</span><h1>Phân tích ảnh lá chè</h1><p>Chọn ảnh có sẵn hoặc chụp bằng camera. AI sẽ đối chiếu với 8 nhóm trong dữ liệu huấn luyện.</p></div>
     <div className="diagnosis-layout">
       <div className="panel upload-panel">
         <div className="panel-heading"><span className="step-badge">01</span><h2>Ảnh lá chè của bạn</h2></div>
@@ -80,6 +84,9 @@ export default function Diagnosis() {
           {!preview ? <button className="dropzone" disabled={busy} onClick={() => input.current?.click()}><span className="upload-symbol"><Upload size={30}/></span><b>Kéo thả ảnh vào đây</b><span>hoặc <u>chọn ảnh từ thiết bị</u></span><small>JPG, PNG, WEBP · tối đa 8 MB</small></button> : <div className="preview"><img src={preview} alt={`Ảnh lá chè đã chọn: ${file?.name}`}/><button className="remove" type="button" aria-label="Bỏ ảnh đã chọn" disabled={busy} onClick={clear}><X size={18}/></button></div>}
         </div>
         <input ref={input} type="file" accept="image/jpeg,image/png,image/webp" aria-label="Chọn ảnh lá chè" hidden onChange={(event) => select(event.target.files?.[0])}/>
+        <input ref={nativeCamera} type="file" accept="image/jpeg" capture="environment" aria-label="Chụp ảnh bằng camera điện thoại" hidden onChange={event => { select(event.target.files?.[0]); event.target.value = ''; }}/>
+        <div className="photo-source-actions"><button type="button" className="btn outline" disabled={busy} onClick={() => setCameraOpen(true)}><Camera size={20}/> Chụp bằng camera</button>{file && <button type="button" className="btn pale" disabled={busy} onClick={() => input.current?.click()}><Upload size={18}/> Chọn ảnh khác</button>}</div>
+        <p className="camera-source-hint">Đi thực địa? Chạm “Chụp bằng camera”, cho phép camera rồi chụp lá rõ nét. Bạn sẽ được xem lại ảnh trước khi phân tích.</p>
         {file && <div className="file-caption"><ImageIcon size={16}/><span>{file.name}</span><small>{(file.size / 1024 / 1024).toFixed(2)} MB</small></div>}
         <button className="btn primary full" disabled={!file || busy} onClick={run}>{busy ? <><LoaderCircle className="spin" size={19}/> Đang phân tích…</> : <><ScanSearch size={19}/> Phân tích ảnh <ArrowRight size={17}/></>}</button>
         {busy && <p className="progress-message" role="status">{progress}<small>Lần đầu cần tải mô hình. Vui lòng giữ trang mở.</small></p>}
@@ -99,6 +106,7 @@ export default function Diagnosis() {
         </>}
       </div>
     </div>
+    {cameraOpen && <CameraCapture onCapture={select} onClose={closeCamera} onNativeCamera={() => { closeCamera(); nativeCamera.current?.click(); }}/>}
     <p className="notice"><AlertCircle size={18}/><span>Đây là công cụ hỗ trợ tham khảo, chưa phải kết luận bệnh. Điểm mô hình không phải xác suất bệnh đã được kiểm định. Ảnh không phải lá chè vẫn có thể bị gán vào một trong 8 nhóm; không dùng kết quả này để tự quyết định phun thuốc.</span></p>
   </section>;
 }

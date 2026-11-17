@@ -11,7 +11,7 @@ Website tiếng Việt phân loại ảnh lá chè bằng MobileNetV2 thành **8
 1. Cài **Node.js LTS 22 trở lên** từ https://nodejs.org nếu máy chưa có.
 2. Tải `TeaLeafAI-ready.zip` trong mục **Releases**, giải nén toàn bộ.
 3. Nhấp đúp **`CHAY-WEBSITE.cmd`**. Trình duyệt mở tại http://127.0.0.1:5173.
-4. Vào **Chẩn đoán** → chọn hoặc kéo thả ảnh → **Phân tích ảnh**.
+4. Vào **Phân tích** → chọn hoặc kéo thả ảnh → **Phân tích ảnh**.
 
 Giữ cửa sổ chạy mở trong lúc sử dụng; nhấn Ctrl+C để dừng. Bản ZIP đã có giao diện được build, mô hình và WebAssembly nên không cần cài Python hoặc tải thư viện npm để dùng bản chạy sẵn. Node chỉ dùng để phục vụ file website trên máy. Không mở trực tiếp `index.html` bằng `file://` vì trình duyệt cần HTTP để tải mô hình.
 
@@ -44,6 +44,7 @@ Sau đó mở địa chỉ Vite hiển thị, thường là http://localhost:517
 ## 3. Chức năng có sẵn
 
 - Chọn hoặc kéo thả ảnh JPG, PNG, WEBP, tối đa 8 MB.
+- Chụp lá chè bằng camera ngay trên website: ưu tiên camera sau, đổi camera, xem lại ảnh rồi phân tích; có tùy chọn dùng camera gốc của điện thoại. Camera trực tiếp cần HTTPS (Vercel đã có) hoặc localhost, và quyền camera của bạn. Không thu âm.
 - AI chạy trên thiết bị, hiển thị tiến trình khởi tạo và thông báo lỗi rõ ràng.
 - Kết quả gồm nhãn dự đoán, điểm mô hình và xác suất của đủ 8 lớp.
 - Thư viện phân loại, hướng dẫn chụp ảnh và trang kiểm tra hệ thống.

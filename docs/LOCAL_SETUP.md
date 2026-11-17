@@ -101,3 +101,9 @@ Trong bộ dữ liệu gốc hiện tại có ít nhất một ảnh trùng hệ
 - `DuLieuGoc/bird eye spot/IMG_20220503_150405.jpg`
 
 Không tự đổi nhãn hoặc xóa dữ liệu gốc. Cần người có chuyên môn xác minh nhãn và dọn các bản sao trước khi huấn luyện lại. Script chuẩn bị dữ liệu sẽ dừng và nêu rõ hai đường dẫn khi gặp trường hợp này. Website vẫn sử dụng mô hình đã có, với giới hạn dự đoán tham khảo được hiển thị.
+
+## Chụp ảnh bằng camera
+
+Vào Phân tích → Chụp bằng camera → cho phép camera → giữ lá rõ nét trong khung hình → Chụp ảnh. Xem lại ảnh đầu vào rồi nhấn Phân tích ảnh. Nút Đổi camera chuyển giữa camera trước/sau nếu thiết bị hỗ trợ. Camera tắt khi đóng cửa sổ, chụp xong hoặc chuyển trang ra nền; website không dùng microphone.
+
+Nếu camera trực tiếp bị chặn, chọn Dùng camera của điện thoại hoặc đóng cửa sổ để chọn ảnh có sẵn. Camera trực tiếp cần HTTPS hoặc localhost; mở website bằng HTTP qua địa chỉ IP trong mạng nội bộ có thể không cấp quyền camera. Lần dùng đầu vẫn cần Internet để tải mô hình và runtime; không tuyên bố ứng dụng đã có chế độ ngoại tuyến đầy đủ.
