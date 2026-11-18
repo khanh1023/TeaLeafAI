@@ -1,0 +1,201 @@
+{
+  "figures": [
+    {
+      "stem": "hinh-2-1-quy-trinh-he-thong",
+      "caption": "Hình 2.1. Quy trình phân tích ảnh lá chè của hệ thống TeaLeafAI",
+      "section": "2.1.3. Đầu vào, đầu ra và yêu cầu hệ thống",
+      "source": "Tác giả xây dựng từ mã nguồn TeaLeafAI.",
+      "note": "Đặt sau đoạn giới thiệu quy trình xử lý. Lịch sử chỉ lưu thông tin kết quả, không lưu ảnh."
+    },
+    {
+      "stem": "hinh-2-2-tam-nhom-la-che",
+      "caption": "Hình 2.2. Ảnh minh họa tám nhóm phân loại trong bộ dữ liệu",
+      "section": "2.2.3. Phân loại và gán nhãn dữ liệu",
+      "source": "Bộ dữ liệu gốc TeaLeafAI và Billah cùng cộng sự (2025), Mendeley Data V2, DOI: 10.17632/rrff4vb35m.2, CC BY 4.0.",
+      "note": "Đây là minh họa nhãn dữ liệu. Không sử dụng hình này như tài liệu xác minh tác nhân bệnh."
+    },
+    {
+      "stem": "hinh-2-3-tien-xu-ly-anh",
+      "caption": "Hình 2.3. Các bước tiền xử lý ảnh đầu vào",
+      "section": "2.2.4. Tiền xử lý ảnh và chuẩn hóa kích thước",
+      "source": "Tác giả xây dựng từ ảnh UNADJUSTEDNONRAW_thumb_20d.jpg trong bộ dữ liệu gốc TeaLeafAI.",
+      "note": "Ảnh gốc có kích thước 768 × 1024 pixel. Việc thay đổi kích thước không phải phép cắt ảnh; không chuẩn hóa đầu vào hai lần."
+    },
+    {
+      "stem": "hinh-2-4-tang-cuong-du-lieu",
+      "caption": "Hình 2.4. Minh họa tăng cường dữ liệu trên ảnh lá chè",
+      "section": "2.2.5. Tăng cường dữ liệu (Data Augmentation)",
+      "source": "Tác giả tạo bằng đúng phép biến đổi trong training/train_expanded.py từ ảnh healthy của bộ dữ liệu gốc.",
+      "note": "Hai biến thể minh họa giai đoạn huấn luyện bộ phân loại trên backbone đóng băng. Giai đoạn tinh chỉnh có cấu hình tăng cường riêng trong finetune_expanded.py."
+    },
+    {
+      "stem": "hinh-2-5-chia-tap-du-lieu",
+      "caption": "Hình 2.5. Phân chia bộ dữ liệu huấn luyện, kiểm định và kiểm thử",
+      "section": "2.2.6. Chia tập dữ liệu huấn luyện, kiểm định và kiểm thử",
+      "source": "Tác giả xây dựng từ training/reports/expanded-dataset-summary.json của TeaLeafAI.",
+      "note": "Tỷ lệ thực tế là 70,14% / 14,88% / 14,97%; sai lệch nhỏ do số ảnh nguyên và phải giữ nhóm ảnh gần trùng cùng một tập."
+    },
+    {
+      "stem": "hinh-2-6-kien-truc-mobilenetv2",
+      "caption": "Hình 2.6. Kiến trúc mô hình MobileNetV2 được sử dụng trong đề tài",
+      "section": "2.3.3. Lựa chọn mô hình MobileNetV2 cho bài toán phân loại bệnh lá chè",
+      "source": "Tác giả xây dựng từ training/train_expanded.py và training/finetune_expanded.py của TeaLeafAI.",
+      "note": "Đọc sơ đồ từ trái sang phải ở hàng trên, xuống hàng dưới rồi từ phải sang trái. GAP là phép lấy trung bình toàn cục trên hai chiều không gian."
+    }
+  ],
+  "selected_samples": [
+    {
+      "id": "60d832a018767c20",
+      "label": "algal_leaf",
+      "source": "mendeley_rrff_v2",
+      "original": "Tea Compressed Dataset/Tea Algal Spot/Algal Spot (1).png",
+      "raw_sha256": "60d832a018767c20681d0d98b7755ae8f727f4112886810ca1e468fab2caa70e",
+      "pixel_sha256": "de535c3239277477e66d6b1811428322baf66aaf81b5a8ad6292dd587593ca8d",
+      "phash": "854c7ae87a9323b6",
+      "original_size": [
+        512,
+        512
+      ],
+      "sha256": "c2bd67a03892fcde7bc7c17bbd0b05aa68fabfefb35bb32f79bdcea2f1c96700",
+      "group": "60d832a018767c20",
+      "split": "train",
+      "path": "train/algal_leaf/mendeley_rrff_v2-60d832a018767c20.jpg"
+    },
+    {
+      "id": "b73bdf0d6702dbde",
+      "label": "anthracnose",
+      "source": "original",
+      "original": "DuLieuGoc/Anthracnose/IMG_20220503_143328.jpg",
+      "raw_sha256": "b73bdf0d6702dbdedf0b0d91c180ae3fe72dddcd0a03978c73590c7555b1cc49",
+      "pixel_sha256": "3f2fc7ffa6a604d27ea9a9788b0d48b0719891bf03e27c86acff89546b50ab76",
+      "phash": "ab1e95c1d0e89ac7",
+      "original_size": [
+        4160,
+        3120
+      ],
+      "sha256": "aa1a04e0aee1697672daf5cd45ee4e38603e10003d69f667a7485fa59b35c870",
+      "group": "b73bdf0d6702dbde",
+      "split": "train",
+      "path": "train/anthracnose/original-b73bdf0d6702dbde.jpg"
+    },
+    {
+      "id": "9c720cfd5295db67",
+      "label": "bird_eye_spot",
+      "source": "original",
+      "original": "DuLieuGoc/bird eye spot/IMG_20220503_154020.jpg",
+      "raw_sha256": "9c720cfd5295db67c193ca5261068a3bf8a3beaa0265e7577f31f4cf29ddbdfa",
+      "pixel_sha256": "31edfe9d49a2b9501c5a4c940c9dbcb0526d6551618ebfdf8b44cfbe32c38bdd",
+      "phash": "aa1db5d896599ac1",
+      "original_size": [
+        3120,
+        4160
+      ],
+      "sha256": "9576fa5e1f461fd0c40345493e65d2f12427cb93b1a84d85421efa1b8fc63368",
+      "group": "9c720cfd5295db67",
+      "split": "train",
+      "path": "train/bird_eye_spot/original-9c720cfd5295db67.jpg"
+    },
+    {
+      "id": "4a17b9dfa361ab74",
+      "label": "brown_blight",
+      "source": "mendeley_rrff_v2",
+      "original": "Tea Compressed Dataset/Tea Brown Blight/Brown Blight (10).png",
+      "raw_sha256": "4a17b9dfa361ab7492defce2eae36877661d0c996f8f0fab5048e87aec95b85f",
+      "pixel_sha256": "d85df685318b6a3fe1ca46811cba57ca7cf69479490b5049f046c3303306c586",
+      "phash": "911b5ee068076bee",
+      "original_size": [
+        512,
+        512
+      ],
+      "sha256": "ee277347c6e4b8a90a11ffd2b66e40cfd81b8c8a359c9ac19bf5bc1d1748a9fe",
+      "group": "4a17b9dfa361ab74",
+      "split": "train",
+      "path": "train/brown_blight/mendeley_rrff_v2-4a17b9dfa361ab74.jpg"
+    },
+    {
+      "id": "04a66015923dc9dd",
+      "label": "gray_light",
+      "source": "original",
+      "original": "DuLieuGoc/gray light/IMG_20220503_135331.jpg",
+      "raw_sha256": "04a66015923dc9dd81d88ad85b7fc8d48b9ebce167b2f6a2c84ed64595212bc8",
+      "pixel_sha256": "9349dd85df2a2ca6525443b0241aaaa41365ee059c2b634a8e022f2ced8637b5",
+      "phash": "b6b4c14b92bc1b78",
+      "original_size": [
+        3120,
+        4160
+      ],
+      "sha256": "a9617f4caa73660f047101d231e66f10b90b97296472dd412e87160508079818",
+      "group": "04a66015923dc9dd",
+      "split": "train",
+      "path": "train/gray_light/original-04a66015923dc9dd.jpg"
+    },
+    {
+      "id": "d0f5daa525912fc9",
+      "label": "healthy",
+      "source": "original",
+      "original": "DuLieuGoc/healthy/UNADJUSTEDNONRAW_thumb_20d.jpg",
+      "raw_sha256": "d0f5daa525912fc9e3d66bf0ef8f9f733b5d3b5ce73ac591d2131796e0539fb2",
+      "pixel_sha256": "5de86cf1da26ca65496e9368bfab142f1557178ee9a56abb1ee8307e4338d99f",
+      "phash": "ab37f59084da8ae1",
+      "original_size": [
+        768,
+        1024
+      ],
+      "sha256": "23649af576e006a07f4fafa7720e8de8081e0e159079f4c39fadee34fbcdbd5a",
+      "group": "d0f5daa525912fc9",
+      "split": "train",
+      "path": "train/healthy/original-d0f5daa525912fc9.jpg"
+    },
+    {
+      "id": "10ae37dcffeb3a70",
+      "label": "red_leaf_spot",
+      "source": "mendeley_rrff_v2",
+      "original": "Tea Compressed Dataset/Tea Red Spot/Red Spot (1).png",
+      "raw_sha256": "10ae37dcffeb3a70911cc70c0e28a80483972c103ff26b65b900da8578c4c0e2",
+      "pixel_sha256": "bbbf2919c5e29be753e3237f1196c14c4c3c6e1a714e590c055647c0d59ac945",
+      "phash": "926b6d94936a4ea5",
+      "original_size": [
+        512,
+        512
+      ],
+      "sha256": "6cdecb4dfaa165d0ca6c3a3134ae1a15913035bd40bf97b5d0c6fe20e728d864",
+      "group": "10ae37dcffeb3a70",
+      "split": "train",
+      "path": "train/red_leaf_spot/mendeley_rrff_v2-10ae37dcffeb3a70.jpg"
+    },
+    {
+      "id": "043994eb3437a80e",
+      "label": "white_spot",
+      "source": "original",
+      "original": "DuLieuGoc/white spot/UNADJUSTEDNONRAW_thumb_100.jpg",
+      "raw_sha256": "043994eb3437a80ef712a1592f8e73a286b721370119f9a19ed0899470e2c3ed",
+      "pixel_sha256": "cc5cc994b599c85e781c1ed5bcdf75d080746554acb9f9329b6a6dbf840530f8",
+      "phash": "aaeba00dd79588dc",
+      "original_size": [
+        768,
+        1024
+      ],
+      "sha256": "b3fb86f18ddeb13b3c43487043a4954cbae22d9b8629b5b1da7b65417a95d3d5",
+      "group": "043994eb3437a80e",
+      "split": "train",
+      "path": "train/white_spot/original-043994eb3437a80e.jpg"
+    }
+  ],
+  "augmentation_parameters": [
+    {
+      "view": 1,
+      "horizontal_flip": false,
+      "angle": 13.614854620544442,
+      "brightness": 1.0460418587136335,
+      "contrast": 0.9592783321060045
+    },
+    {
+      "view": 2,
+      "horizontal_flip": true,
+      "angle": -11.603846945786294,
+      "brightness": 1.0681084448814815,
+      "contrast": 0.8991560145532947
+    }
+  ],
+  "dataset_manifest_sha256": "585cabd7be1741675fa5bed31c14116b9f72f7eca11d40610313ddb15cd48707"
+}
