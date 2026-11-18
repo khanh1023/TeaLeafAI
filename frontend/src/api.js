@@ -39,7 +39,7 @@ async function loadSession(onProgress) {
   if (loadedSession) return loadedSession;
   if (!sessionPromise) sessionPromise = (async () => {
     const manifest = await metadata();
-    onProgress?.({message:'Đang tải mô hình AI về thiết bị (khoảng 9 MB)…',percent:10});
+    onProgress?.({message:`Đang tải mô hình AI về thiết bị (${(manifest.size_bytes / 1024 / 1024).toFixed(1)} MB)…`,percent:10});
     const [ort, response] = await Promise.all([
       import('onnxruntime-web/wasm'),
       fetch(asset(`model/${manifest.file}?v=${manifest.sha256.slice(0,12)}`))
@@ -82,7 +82,8 @@ export async function diagnose(file, {onProgress} = {}) {
     const output = await session.run({images:new ort.Tensor('float32',data,[1,224,224,3])});
     const result = predictionResult(output.probabilities.data);
     onProgress?.({message:'Hoàn tất',percent:100});
-    return result;
+    const manifest = await metadata();
+    return {...result, model_version:manifest.model_version || manifest.sha256.slice(0,12)};
   } catch (error) {
     console.error('TeaLeafAI inference:', error);
     if (error instanceof TypeError || /wasm|backend|memory|WebAssembly/i.test(error.message)) {

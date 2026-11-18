@@ -98,7 +98,7 @@ tests/                      Kiểm tra backend và chuẩn bị dataset
 .github/workflows/          Kiểm tra tự động khi push/PR
 ```
 
-Ảnh đầu vào: RGB float32, kích thước 224×224, **pixel thô 0–255**. Mô hình đã chứa lớp `Rescaling(1/127.5, offset=-1)`, vì vậy không chuẩn hóa ảnh thêm lần nữa. Đã sửa lỗi backend cũ chuẩn hóa hai lần. Bản ONNX được so với Keras trên 9 ảnh; nhãn top-1 khớp toàn bộ, sai số xác suất lớn nhất khoảng `2.64e-6`. Kiểm tra này chứng minh việc chuyển định dạng, **không phải đánh giá độ chính xác trên dữ liệu mới**.
+Ảnh đầu vào: RGB float32, kích thước 224×224, **pixel thô 0–255**. Mô hình đã chứa lớp `Rescaling(1/127.5, offset=-1)`, vì vậy không chuẩn hóa ảnh thêm lần nữa. Đã sửa lỗi backend cũ chuẩn hóa hai lần. Bản ONNX hiện tại được so với Keras trên 9 ảnh; nhãn top-1 khớp toàn bộ, sai số xác suất lớn nhất khoảng `8.17e-6`. Kiểm tra này chứng minh việc chuyển định dạng, **không phải đánh giá độ chính xác trên dữ liệu mới**.
 
 ## 7. Backend Python tùy chọn
 
@@ -118,22 +118,15 @@ Backend chạy cổng 9000, frontend chạy 5173. Khi dùng API, ảnh được 
 
 ## 8. Huấn luyện, dữ liệu và giới hạn
 
-Đặt ảnh gốc trong `DuLieuGoc`, theo tên lớp tương ứng (dấu cách hoặc gạch dưới được chấp nhận). Chỉ chạy khi cần huấn luyện lại:
+Mô hình đang dùng đã được huấn luyện lại với **2.197 ảnh**, gồm **673 ảnh healthy**, nhiều hơn từng lớp bệnh. Bộ chia theo nhóm ảnh gần trùng có 1.541 ảnh train, 327 validation và 329 test (xấp xỉ 70/15/15). Dữ liệu gốc được giữ nguyên; ảnh trùng nội dung có nhãn mâu thuẫn không tham gia lần huấn luyện này.
 
-```powershell
-cd training
-python -m venv .venv
-.\.venv\Scripts\python.exe -m pip install -r requirements.txt
-.\.venv\Scripts\python.exe prepare_dataset.py
-.\.venv\Scripts\python.exe train.py
-.\.venv\Scripts\python.exe evaluate.py
-```
+- [Tải bộ dữ liệu đã chia](https://github.com/khanh1023/TeaLeafAI/raw/refs/heads/main/downloads/TeaLeafAI-training-data.zip), khoảng 75 MiB; tải riêng với bản website.
+- [Nguồn ảnh, giấy phép và lệnh tái tạo/huấn luyện](docs/TRAINING_DATA.md).
+- [Báo cáo huấn luyện](training/REPORT.md), [số liệu chi tiết](training/evaluation.json) và [môi trường phần mềm](docs/MOI_TRUONG_PHAN_MEM.md).
 
-Linux/macOS: thay `.\.venv\Scripts\python.exe` bằng `.venv/bin/python`.
+Accuracy test nội bộ là **69,30% trên 329 ảnh**, macro F1 **0,6453**. Đây là kết quả trên các nguồn dữ liệu công khai đã chia, chưa phải kiểm định thực địa độc lập. Không so sánh trực tiếp với báo cáo cũ vì bộ ảnh và cách chia đã thay đổi. Thêm ảnh không tự bảo đảm tăng độ chính xác. Báo cáo cũ được lưu tại `training/reports/previous-evaluation.json`.
 
-`prepare_dataset.py` yêu cầu gõ YES trước khi tạo lại dataset chia 70/15/15. Script loại ảnh trùng nội dung trong cùng lớp và dừng nếu cùng một ảnh có nhãn mâu thuẫn; không sửa hay xóa dữ liệu gốc. Nếu các ảnh cùng cây/lá/phiên chụp, phải chia theo nhóm nguồn để tránh rò rỉ dữ liệu.
-
-**Vấn đề thực tế đã tìm thấy:** `Anthracnose/IMG_20220503_150405.jpg` và `bird eye spot/IMG_20220503_150405.jpg` có cùng nội dung nhưng khác nhãn. Cần người có chuyên môn xác minh trước khi huấn luyện lại. Dữ liệu gốc được giữ nguyên. File `training/evaluation.json` là báo cáo cũ của dự án, chưa được coi là kiểm định độc lập hoặc cam kết độ chính xác ngoài thực tế.
+Quy trình mở rộng dùng `download_expansion_sources.py`, `expand_dataset.py`, `train_expanded.py` và `finetune_expanded.py`. Các script cũ `prepare_dataset.py`, `train.py`, `evaluate.py` vẫn được giữ để tham khảo; không chạy lại bộ chia cũ lên dữ liệu đã chia nếu muốn tái tạo báo cáo mới.
 
 Sau khi huấn luyện lại, xuất mô hình browser bằng [training/export_browser_model.py](training/export_browser_model.py), theo [docs/LOCAL_SETUP.md](docs/LOCAL_SETUP.md). Commit ONNX mới và manifest cùng nhau, rồi build lại website.
 

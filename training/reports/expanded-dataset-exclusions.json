@@ -1,0 +1,2749 @@
+[
+  {
+    "source": "original",
+    "original": "DuLieuGoc/bird eye spot/IMG_20220503_150405.jpg",
+    "reason": "exact_duplicate_or_conflicting_label",
+    "matches": "c83b1f961811f492",
+    "label": "bird_eye_spot"
+  },
+  {
+    "source": "original",
+    "original": "DuLieuGoc/gray light/IMG_20220503_142632.jpg",
+    "reason": "exact_duplicate_or_conflicting_label",
+    "matches": "e43e17ddb926c601",
+    "label": "gray_light"
+  },
+  {
+    "source": "original",
+    "original": "DuLieuGoc/gray light/IMG_20220503_142658.jpg",
+    "reason": "exact_duplicate_or_conflicting_label",
+    "matches": "3b9aef20fcbf7484",
+    "label": "gray_light"
+  },
+  {
+    "source": "mendeley_rrff_v2",
+    "original": "Tea Compressed Dataset/Tea Algal Spot/Algal Spot (3).png",
+    "reason": "exact_duplicate_or_conflicting_label",
+    "matches": "463b78e9303176b7",
+    "label": "algal_leaf"
+  },
+  {
+    "source": "mendeley_rrff_v2",
+    "original": "Tea Compressed Dataset/Tea Algal Spot/Algal Spot (32).png",
+    "reason": "exact_duplicate_or_conflicting_label",
+    "matches": "bd04338d08d52c6f",
+    "label": "algal_leaf"
+  },
+  {
+    "source": "mendeley_rrff_v2",
+    "original": "Tea Compressed Dataset/Tea Algal Spot/Algal Spot (33).png",
+    "reason": "exact_duplicate_or_conflicting_label",
+    "matches": "7afaba5a45101336",
+    "label": "algal_leaf"
+  },
+  {
+    "source": "mendeley_rrff_v2",
+    "original": "Tea Compressed Dataset/Tea Algal Spot/Algal Spot (34).png",
+    "reason": "exact_duplicate_or_conflicting_label",
+    "matches": "1064bcfe293e5932",
+    "label": "algal_leaf"
+  },
+  {
+    "source": "mendeley_rrff_v2",
+    "original": "Tea Compressed Dataset/Tea Algal Spot/Algal Spot (35).png",
+    "reason": "exact_duplicate_or_conflicting_label",
+    "matches": "6c51da315f1b4587",
+    "label": "algal_leaf"
+  },
+  {
+    "source": "mendeley_rrff_v2",
+    "original": "Tea Compressed Dataset/Tea Algal Spot/Algal Spot (36).png",
+    "reason": "exact_duplicate_or_conflicting_label",
+    "matches": "f51c3417b8a56848",
+    "label": "algal_leaf"
+  },
+  {
+    "source": "mendeley_rrff_v2",
+    "original": "Tea Compressed Dataset/Tea Algal Spot/Algal Spot (38).png",
+    "reason": "exact_duplicate_or_conflicting_label",
+    "matches": "81cd3d71de1bbd24",
+    "label": "algal_leaf"
+  },
+  {
+    "source": "mendeley_rrff_v2",
+    "original": "Tea Compressed Dataset/Tea Algal Spot/Algal Spot (40).png",
+    "reason": "exact_duplicate_or_conflicting_label",
+    "matches": "642878d2198ad01d",
+    "label": "algal_leaf"
+  },
+  {
+    "source": "mendeley_rrff_v2",
+    "original": "Tea Compressed Dataset/Tea Algal Spot/Algal Spot (42).png",
+    "reason": "exact_duplicate_or_conflicting_label",
+    "matches": "ed5dd84f40139b09",
+    "label": "algal_leaf"
+  },
+  {
+    "source": "mendeley_rrff_v2",
+    "original": "Tea Compressed Dataset/Tea Algal Spot/Algal Spot (43).png",
+    "reason": "exact_duplicate_or_conflicting_label",
+    "matches": "7a5acdadebc9b0c9",
+    "label": "algal_leaf"
+  },
+  {
+    "source": "mendeley_rrff_v2",
+    "original": "Tea Compressed Dataset/Tea Algal Spot/Algal Spot (44).png",
+    "reason": "exact_duplicate_or_conflicting_label",
+    "matches": "d5ecbe1a9ac1317f",
+    "label": "algal_leaf"
+  },
+  {
+    "source": "mendeley_rrff_v2",
+    "original": "Tea Compressed Dataset/Tea Algal Spot/Algal Spot (46).png",
+    "reason": "exact_duplicate_or_conflicting_label",
+    "matches": "2af34feb0f74e207",
+    "label": "algal_leaf"
+  },
+  {
+    "source": "mendeley_rrff_v2",
+    "original": "Tea Compressed Dataset/Tea Algal Spot/Algal Spot (47).png",
+    "reason": "exact_duplicate_or_conflicting_label",
+    "matches": "2a3d5993d826ac7e",
+    "label": "algal_leaf"
+  },
+  {
+    "source": "mendeley_rrff_v2",
+    "original": "Tea Compressed Dataset/Tea Algal Spot/Algal Spot (49).png",
+    "reason": "exact_duplicate_or_conflicting_label",
+    "matches": "d81a9cc7c325cf09",
+    "label": "algal_leaf"
+  },
+  {
+    "source": "mendeley_rrff_v2",
+    "original": "Tea Compressed Dataset/Tea Algal Spot/Algal Spot (5).png",
+    "reason": "exact_duplicate_or_conflicting_label",
+    "matches": "620e0cf9fbc6d07b",
+    "label": "algal_leaf"
+  },
+  {
+    "source": "mendeley_rrff_v2",
+    "original": "Tea Compressed Dataset/Tea Algal Spot/Algal Spot (50).png",
+    "reason": "exact_duplicate_or_conflicting_label",
+    "matches": "51ccfd1c6a05b299",
+    "label": "algal_leaf"
+  },
+  {
+    "source": "mendeley_rrff_v2",
+    "original": "Tea Compressed Dataset/Tea Algal Spot/Algal Spot (52).png",
+    "reason": "exact_duplicate_or_conflicting_label",
+    "matches": "f8d99654fa8f9b0a",
+    "label": "algal_leaf"
+  },
+  {
+    "source": "mendeley_rrff_v2",
+    "original": "Tea Compressed Dataset/Tea Algal Spot/Algal Spot (54).png",
+    "reason": "exact_duplicate_or_conflicting_label",
+    "matches": "64f0d2a5c0ba5fa4",
+    "label": "algal_leaf"
+  },
+  {
+    "source": "mendeley_rrff_v2",
+    "original": "Tea Compressed Dataset/Tea Algal Spot/Algal Spot (60).png",
+    "reason": "exact_duplicate_or_conflicting_label",
+    "matches": "e8dc62f87ab3d111",
+    "label": "algal_leaf"
+  },
+  {
+    "source": "mendeley_rrff_v2",
+    "original": "Tea Compressed Dataset/Tea Algal Spot/Algal Spot (61).png",
+    "reason": "exact_duplicate_or_conflicting_label",
+    "matches": "6a076750664261b2",
+    "label": "algal_leaf"
+  },
+  {
+    "source": "mendeley_rrff_v2",
+    "original": "Tea Compressed Dataset/Tea Algal Spot/Algal Spot (62).png",
+    "reason": "exact_duplicate_or_conflicting_label",
+    "matches": "b3741b1cdbf2763e",
+    "label": "algal_leaf"
+  },
+  {
+    "source": "mendeley_rrff_v2",
+    "original": "Tea Compressed Dataset/Tea Algal Spot/Algal Spot (63).png",
+    "reason": "exact_duplicate_or_conflicting_label",
+    "matches": "a5bb922644611580",
+    "label": "algal_leaf"
+  },
+  {
+    "source": "mendeley_rrff_v2",
+    "original": "Tea Compressed Dataset/Tea Algal Spot/Algal Spot (64).png",
+    "reason": "exact_duplicate_or_conflicting_label",
+    "matches": "ee64db97682c37d4",
+    "label": "algal_leaf"
+  },
+  {
+    "source": "mendeley_rrff_v2",
+    "original": "Tea Compressed Dataset/Tea Algal Spot/Algal Spot (66).png",
+    "reason": "exact_duplicate_or_conflicting_label",
+    "matches": "2eaf7a0485cb4b9d",
+    "label": "algal_leaf"
+  },
+  {
+    "source": "mendeley_rrff_v2",
+    "original": "Tea Compressed Dataset/Tea Algal Spot/Algal Spot (67).png",
+    "reason": "exact_duplicate_or_conflicting_label",
+    "matches": "fdfbd5d6ddd027b9",
+    "label": "algal_leaf"
+  },
+  {
+    "source": "mendeley_rrff_v2",
+    "original": "Tea Compressed Dataset/Tea Algal Spot/Algal Spot (68).png",
+    "reason": "exact_duplicate_or_conflicting_label",
+    "matches": "0768207d1d8eeeb7",
+    "label": "algal_leaf"
+  },
+  {
+    "source": "mendeley_rrff_v2",
+    "original": "Tea Compressed Dataset/Tea Algal Spot/Algal Spot (7).png",
+    "reason": "exact_duplicate_or_conflicting_label",
+    "matches": "554c1ff8c34c4db2",
+    "label": "algal_leaf"
+  },
+  {
+    "source": "mendeley_rrff_v2",
+    "original": "Tea Compressed Dataset/Tea Algal Spot/Algal Spot (72).png",
+    "reason": "exact_duplicate_or_conflicting_label",
+    "matches": "f8af46ad4d8bd538",
+    "label": "algal_leaf"
+  },
+  {
+    "source": "mendeley_rrff_v2",
+    "original": "Tea Compressed Dataset/Tea Algal Spot/Algal Spot (73).png",
+    "reason": "exact_duplicate_or_conflicting_label",
+    "matches": "42adb7d1eb7aa1f6",
+    "label": "algal_leaf"
+  },
+  {
+    "source": "mendeley_rrff_v2",
+    "original": "Tea Compressed Dataset/Tea Algal Spot/Algal Spot (74).png",
+    "reason": "exact_duplicate_or_conflicting_label",
+    "matches": "f1ace6b2d7cd60e6",
+    "label": "algal_leaf"
+  },
+  {
+    "source": "mendeley_rrff_v2",
+    "original": "Tea Compressed Dataset/Tea Algal Spot/Algal Spot (75).png",
+    "reason": "exact_duplicate_or_conflicting_label",
+    "matches": "7aec20d211d8b719",
+    "label": "algal_leaf"
+  },
+  {
+    "source": "mendeley_rrff_v2",
+    "original": "Tea Compressed Dataset/Tea Algal Spot/Algal Spot (76).png",
+    "reason": "exact_duplicate_or_conflicting_label",
+    "matches": "1993429fc5860cca",
+    "label": "algal_leaf"
+  },
+  {
+    "source": "mendeley_rrff_v2",
+    "original": "Tea Compressed Dataset/Tea Algal Spot/Algal Spot (77).png",
+    "reason": "exact_duplicate_or_conflicting_label",
+    "matches": "b422e4068248acd9",
+    "label": "algal_leaf"
+  },
+  {
+    "source": "mendeley_rrff_v2",
+    "original": "Tea Compressed Dataset/Tea Algal Spot/Algal Spot (78).png",
+    "reason": "exact_duplicate_or_conflicting_label",
+    "matches": "c7e55439eb08d71c",
+    "label": "algal_leaf"
+  },
+  {
+    "source": "mendeley_rrff_v2",
+    "original": "Tea Compressed Dataset/Tea Algal Spot/Algal Spot (8).png",
+    "reason": "exact_duplicate_or_conflicting_label",
+    "matches": "554c1ff8c34c4db2",
+    "label": "algal_leaf"
+  },
+  {
+    "source": "mendeley_rrff_v2",
+    "original": "Tea Compressed Dataset/Tea Algal Spot/Algal Spot (80).png",
+    "reason": "exact_duplicate_or_conflicting_label",
+    "matches": "2ead9bf1cb0cbbfd",
+    "label": "algal_leaf"
+  },
+  {
+    "source": "mendeley_rrff_v2",
+    "original": "Tea Compressed Dataset/Tea Algal Spot/Algal Spot (82).png",
+    "reason": "exact_duplicate_or_conflicting_label",
+    "matches": "430a2cdec12d5e09",
+    "label": "algal_leaf"
+  },
+  {
+    "source": "mendeley_rrff_v2",
+    "original": "Tea Compressed Dataset/Tea Algal Spot/Algal Spot (84).png",
+    "reason": "exact_duplicate_or_conflicting_label",
+    "matches": "17686b5d2da4c969",
+    "label": "algal_leaf"
+  },
+  {
+    "source": "mendeley_rrff_v2",
+    "original": "Tea Compressed Dataset/Tea Algal Spot/Algal Spot (86).png",
+    "reason": "exact_duplicate_or_conflicting_label",
+    "matches": "8b5b688bc27e0ad5",
+    "label": "algal_leaf"
+  },
+  {
+    "source": "mendeley_rrff_v2",
+    "original": "Tea Compressed Dataset/Tea Algal Spot/Algal Spot (89).png",
+    "reason": "exact_duplicate_or_conflicting_label",
+    "matches": "c3d3c2bb036af5d9",
+    "label": "algal_leaf"
+  },
+  {
+    "source": "mendeley_rrff_v2",
+    "original": "Tea Compressed Dataset/Tea Algal Spot/Algal Spot (9).png",
+    "reason": "exact_duplicate_or_conflicting_label",
+    "matches": "554c1ff8c34c4db2",
+    "label": "algal_leaf"
+  },
+  {
+    "source": "mendeley_rrff_v2",
+    "original": "Tea Compressed Dataset/Tea Algal Spot/Algal Spot (91).png",
+    "reason": "exact_duplicate_or_conflicting_label",
+    "matches": "e7e3fd05bc28420d",
+    "label": "algal_leaf"
+  },
+  {
+    "source": "mendeley_rrff_v2",
+    "original": "Tea Compressed Dataset/Tea Algal Spot/Algal Spot (93).png",
+    "reason": "exact_duplicate_or_conflicting_label",
+    "matches": "94e9bfd8e92ce866",
+    "label": "algal_leaf"
+  },
+  {
+    "source": "mendeley_rrff_v2",
+    "original": "Tea Compressed Dataset/Tea Algal Spot/Algal Spot (95).png",
+    "reason": "exact_duplicate_or_conflicting_label",
+    "matches": "ee05eadf545ba7ab",
+    "label": "algal_leaf"
+  },
+  {
+    "source": "mendeley_rrff_v2",
+    "original": "Tea Compressed Dataset/Tea Algal Spot/Algal Spot (97).png",
+    "reason": "exact_duplicate_or_conflicting_label",
+    "matches": "e92cf1338093b47f",
+    "label": "algal_leaf"
+  },
+  {
+    "source": "mendeley_rrff_v2",
+    "original": "Tea Compressed Dataset/Tea Algal Spot/Algal Spot (99).png",
+    "reason": "exact_duplicate_or_conflicting_label",
+    "matches": "60d832a018767c20",
+    "label": "algal_leaf"
+  },
+  {
+    "source": "mendeley_rrff_v2",
+    "original": "Tea Compressed Dataset/Tea Grey Blight/Grey Blight (46) (Custom).png",
+    "reason": "exact_duplicate_or_conflicting_label",
+    "matches": "913aa2fb69c391c2",
+    "label": "gray_light"
+  },
+  {
+    "source": "mendeley_rrff_v2",
+    "original": "Tea Compressed Dataset/Tea Red Spot/Red Spot (35).png",
+    "reason": "exact_duplicate_or_conflicting_label",
+    "matches": "c6ac5e8c19199523",
+    "label": "red_leaf_spot"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1375.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_479.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_649.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_617.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_188.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_825.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1867.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_820.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1062.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_18.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1033.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_90.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_655.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1275.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1282.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1425.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_714.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_993.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_23.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_407.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1102.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1604.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1233.jpg",
+    "reason": "exact_duplicate_or_conflicting_label",
+    "matches": "59087689980e95fd",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_524.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1566.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_335.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1675.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_629.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1042.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1486.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1732.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_576.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_402.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_153.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_759.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1630.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_2107.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1686.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1268.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1197.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_868.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1356.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1456.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_2244.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_588.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1846.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1581.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_804.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_688.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1290.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_195.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_2270.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1051.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_443.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_751.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1158.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1128.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_42.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_921.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1256.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_115.jpg",
+    "reason": "exact_duplicate_or_conflicting_label",
+    "matches": "3ea0a8c26cb192ac",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_832.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1252.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1647.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_2242.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_494.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1535.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_640.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1108.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1903.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_582.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_2249.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1006.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1836.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_778.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_2081.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1160.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_2077.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1246.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1153.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1013.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_752.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1207.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1567.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_686.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_777.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_20.jpg",
+    "reason": "exact_duplicate_or_conflicting_label",
+    "matches": "0abe5ebc5cfe300e",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1405.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_2255.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1348.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_2213.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_310.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_814.jpg",
+    "reason": "exact_duplicate_or_conflicting_label",
+    "matches": "64f08f1c4180d5ee",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_412.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_4.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1305.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1772.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_757.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_872.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_30.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_2031.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1667.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_539.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_87.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_85.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_258.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_812.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_585.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_952.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_2044.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_625.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_24.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1607.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1738.jpg",
+    "reason": "exact_duplicate_or_conflicting_label",
+    "matches": "2ab8fbffaeaf3e2f",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1257.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_2084.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1032.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1778.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_19.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_358.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_780.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1536.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_569.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_2017.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_973.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1532.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1756.jpg",
+    "reason": "exact_duplicate_or_conflicting_label",
+    "matches": "5ea6edc558542533",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1881.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_448.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1559.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1705.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_126.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_611.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_77.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_423.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1570.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_2049.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1509.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_2020.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1507.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_798.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_830.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_496.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1244.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_801.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_768.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1695.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1501.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1044.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_514.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_817.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_2029.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_2171.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_2206.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_2068.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_684.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1791.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_680.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_142.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_2001.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_2085.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_541.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_2121.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1606.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1441.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_641.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1409.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_919.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1143.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_824.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_699.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1782.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_584.jpg",
+    "reason": "exact_duplicate_or_conflicting_label",
+    "matches": "f69d43c3c0f11b66",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1839.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_11.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_702.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1218.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1763.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_586.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_2136.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_495.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1916.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_2141.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_2123.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1172.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_2098.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_743.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1180.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_159.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_958.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_910.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1310.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_782.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_2229.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1673.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_344.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1736.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_722.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_2120.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_243.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_97.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_773.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1793.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_268.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_544.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_202.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_2024.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1814.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1353.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_102.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_528.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1216.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_971.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_2041.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_667.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_2193.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1765.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_462.jpg",
+    "reason": "exact_duplicate_or_conflicting_label",
+    "matches": "83346b98ddc4c356",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1000.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1249.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_556.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1399.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1561.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1349.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1788.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1784.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_336.jpg",
+    "reason": "exact_duplicate_or_conflicting_label",
+    "matches": "556630c3ae2a5193",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1541.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_468.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1325.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1526.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1516.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_661.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1055.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_520.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1580.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1342.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_750.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_2058.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_71.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_553.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_507.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1770.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_408.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_662.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_2181.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_547.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1795.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1683.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1640.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_613.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_797.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_2169.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_2147.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1845.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_879.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1758.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_25.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1398.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_132.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_871.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_39.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1694.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1265.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_740.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_36.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_2028.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1803.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1558.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_2178.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_186.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1669.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1951.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1380.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_498.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_419.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1869.jpg",
+    "reason": "exact_duplicate_or_conflicting_label",
+    "matches": "59087689980e95fd",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_233.jpg",
+    "reason": "exact_duplicate_or_conflicting_label",
+    "matches": "92a28f6f5ad01559",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1932.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1603.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_2258.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_525.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_388.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1021.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1188.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_2163.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_432.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1168.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_2205.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_2037.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1709.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1977.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1693.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1436.jpg",
+    "reason": "exact_duplicate_or_conflicting_label",
+    "matches": "f69d43c3c0f11b66",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_72.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_697.jpg",
+    "reason": "exact_duplicate_or_conflicting_label",
+    "matches": "556630c3ae2a5193",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1012.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_108.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1167.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_211.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1689.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1681.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_350.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_606.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1701.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1538.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_2002.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1565.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1554.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1533.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_181.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_790.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1410.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1093.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1065.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_924.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_630.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_446.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_632.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1337.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_807.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_942.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_382.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_907.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1885.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1978.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1127.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_922.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_428.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1982.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_156.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1151.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_732.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1383.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_2070.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1623.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1156.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_2210.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1764.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1584.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_545.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1635.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1823.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_2097.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1110.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1068.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1598.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_2063.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1745.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_599.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_474.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_454.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_2132.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_315.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_808.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1148.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1797.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_365.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_357.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_208.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1098.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1704.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1975.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1198.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1107.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_815.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1601.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1970.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_114.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_2204.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_492.jpg",
+    "reason": "exact_duplicate_or_conflicting_label",
+    "matches": "92a28f6f5ad01559",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_2027.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_2092.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_269.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_99.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1152.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_932.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1636.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_930.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1602.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_138.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_645.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_902.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_647.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1273.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_361.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1512.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1411.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_612.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1115.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_724.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1921.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_354.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "tea_bangladesh_v4",
+    "original": "Healthy_1684.jpg",
+    "reason": "healthy_near_duplicate_not_added",
+    "label": "healthy"
+  },
+  {
+    "source": "original",
+    "original": "DuLieuGoc/Anthracnose/IMG_20220503_150405.jpg",
+    "label": "anthracnose",
+    "reason": "conflicting_exact_label_quarantine"
+  },
+  {
+    "source": "mendeley_rrff_v2",
+    "original": "Tea Compressed Dataset/Tea Healthy/Healthy (40) (Custom).png",
+    "label": "healthy",
+    "reason": "conflicting_exact_label_quarantine"
+  }
+]

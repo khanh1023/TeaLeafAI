@@ -53,7 +53,7 @@ const content = {
     actions:['Chụp cả tâm, viền đốm và toàn lá trước khi quyết định cách xử lý.', 'Giảm lá ướt lâu, giữ tán thông thoáng và chăm sóc cây cân đối.', 'Đối chiếu mẫu với cán bộ kỹ thuật nếu tổn thương tiếp tục lan.'],
     prevention:['Hạn chế gây thương tích khi thu hái và vệ sinh dụng cụ.', 'Theo dõi lá mới thay vì chỉ xem các vết đã khô.'],
     expert:'Cần xác minh nếu lá rụng nhiều, chồi suy hoặc hình ảnh không khớp mô tả.',
-    identityNote:'gray_light là tên được giữ từ dữ liệu nguồn. Mô tả dưới đây tham khảo nhóm grey blight, chưa chứng minh mọi ảnh mang nhãn này đều đúng bệnh đốm xám.',
+    identityNote:'Hãy đối chiếu kết quả với dấu hiệu thực tế trên cây trước khi chọn cách xử lý.',
     sources:['blight','teaWorld','labels']
   },
   healthy: {
@@ -72,7 +72,7 @@ const content = {
     actions:['Chụp lại dưới ánh sáng tự nhiên, không dùng bộ lọc màu hay đèn flash mạnh.', 'Kiểm tra mặt dưới lá và các lá bên cạnh để tìm dấu hiệu sâu, nhện hoặc tổn thương khác.', 'Theo dõi đốm mới và hỏi cán bộ kỹ thuật trước khi chọn biện pháp đặc trị.'],
     prevention:['Duy trì chăm sóc cân đối, kiểm tra vườn định kỳ.', 'Ghi lại diễn biến tổn thương để phân biệt bệnh với stress hoặc sâu hại.'],
     expert:'Cần xác minh nếu sắc đỏ lan rộng, lá rụng hoặc nhiều bụi cùng bị ảnh hưởng.',
-    identityNote:'Đây là nhóm nhãn red_leaf_spot của mô hình. Bộ ảnh chưa được xác minh tác nhân cho từng mẫu; hướng dẫn ưu tiên quan sát và chăm sóc ban đầu.',
+    identityNote:'Hãy đối chiếu kết quả với dấu hiệu thực tế trên cây trước khi chọn cách xử lý.',
     sources:['labels','upasi']
   },
   white_spot: {
@@ -82,7 +82,7 @@ const content = {
     actions:['Chụp lại không dùng flash, lấy nét ở ranh giới vùng sáng và mô xanh.', 'Kiểm tra cả hai mặt lá; không tự coi mọi mảng trắng là một bệnh nấm.', 'Nếu là tổn thương thật, thu gom lá bệnh đã rụng, giữ tán thoáng và mang ảnh hoặc mẫu tới cán bộ kỹ thuật khi lan rộng.'],
     prevention:['Giảm lá ướt kéo dài và giữ vệ sinh khu vực quanh bụi.', 'Lưu ảnh trong các lần quan sát để phân biệt vết cũ với đốm mới.'],
     expert:'Cần hỗ trợ nếu nhiều lá mới có đốm sáng, lá biến dạng hoặc rụng, hoặc không phân biệt được tổn thương với cặn bám.',
-    identityNote:'white_spot là nhóm nhãn của dữ liệu, không phải kết luận về mọi dạng mảng trắng. Cần kiểm tra thực tế trước khi chọn thuốc hoặc biện pháp đặc trị.',
+    identityNote:'Hãy đối chiếu kết quả với dấu hiệu thực tế trên cây trước khi chọn cách xử lý.',
     sources:['labels','teaWorld']
   }
 };

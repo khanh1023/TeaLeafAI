@@ -24,8 +24,15 @@
     "red_leaf_spot",
     "white_spot"
   ],
-  "sha256": "37eb67e0b7a5379f68f9059359424a3af0927fd76eb5cd3ee9c1c6d15929599b",
-  "size_bytes": 8949135,
-  "parity_max_absolute_error": 2.637505531311035e-06,
-  "parity_samples": 9
+  "sha256": "b0ab25d82c74a52882e87c4d0d0fb3d7120ab4c7834ffe36d1a1e4e8990d32ea",
+  "size_bytes": 9580347,
+  "parity_max_absolute_error": 8.165836334228516e-06,
+  "parity_samples": 9,
+  "model_version": "mobilenetv2-expanded-20261117",
+  "trained_at": "2026-11-17T14:53:40.586411+00:00",
+  "dataset_manifest_sha256": "585cabd7be1741675fa5bed31c14116b9f72f7eca11d40610313ddb15cd48707",
+  "training_images": 2197,
+  "test_accuracy": 0.6930091185410334,
+  "test_macro_f1": 0.6452781104275389,
+  "evaluation_scope": "Internal held-out group split; not independently field-validated."
 }

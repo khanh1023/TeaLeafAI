@@ -1,0 +1,90 @@
+{
+  "seed": 42,
+  "target_ratios": {
+    "train": 0.7,
+    "val": 0.15,
+    "test": 0.15
+  },
+  "split_method": "20-fold stratified group assignment: 14 train / 3 validation / 3 test folds",
+  "group_rule": "rotation/mirror-canonical green-region pHash Hamming <=4; same group stays in one split",
+  "healthy_extra_requested": 400,
+  "healthy_extra_accepted": 400,
+  "total_images": 2197,
+  "counts": {
+    "anthracnose": 99,
+    "algal_leaf": 265,
+    "bird_eye_spot": 99,
+    "brown_blight": 305,
+    "gray_light": 281,
+    "healthy": 673,
+    "red_leaf_spot": 333,
+    "white_spot": 142
+  },
+  "split_counts": {
+    "train": {
+      "anthracnose": 69,
+      "algal_leaf": 185,
+      "bird_eye_spot": 70,
+      "brown_blight": 216,
+      "gray_light": 197,
+      "healthy": 472,
+      "red_leaf_spot": 232,
+      "white_spot": 100
+    },
+    "val": {
+      "anthracnose": 15,
+      "algal_leaf": 41,
+      "bird_eye_spot": 15,
+      "brown_blight": 44,
+      "gray_light": 42,
+      "healthy": 100,
+      "red_leaf_spot": 49,
+      "white_spot": 21
+    },
+    "test": {
+      "anthracnose": 15,
+      "algal_leaf": 39,
+      "bird_eye_spot": 14,
+      "brown_blight": 45,
+      "gray_light": 42,
+      "healthy": 101,
+      "red_leaf_spot": 52,
+      "white_spot": 21
+    }
+  },
+  "actual_ratios": {
+    "train": 0.7014110150204825,
+    "val": 0.14883932635411926,
+    "test": 0.14974965862539827
+  },
+  "groups": 2134,
+  "largest_group": 5,
+  "excluded_count": 447,
+  "exact_conflict_ids": [
+    "c6ac5e8c19199523",
+    "c83b1f961811f492"
+  ],
+  "sources": [
+    {
+      "id": "rrff4vb35m-v2",
+      "file": "tea-compressed.zip",
+      "url": "https://data.mendeley.com/public-files/datasets/rrff4vb35m/files/db2e8fe7-0f9f-419e-b1c7-6eaf3564a518/file_downloaded",
+      "sha256": "90e694b5eb3d0ad22ea018d578f39775a94ea9ab919172e8ea627bc12d49215b",
+      "dataset_url": "https://data.mendeley.com/datasets/rrff4vb35m/2",
+      "citation": "Billah, Sagor, Sultana & Uddin (2025), DOI 10.17632/rrff4vb35m.2",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    {
+      "id": "tea-bangladesh-v4",
+      "file": "tea-bangladesh.parquet",
+      "url": "https://huggingface.co/datasets/Project-AgML/tea_leaf_disease_classification_bangladesh/resolve/eb53d418d10a4bdf8cbab95928aad905aa62a368/data/train-00000-of-00001.parquet",
+      "sha256": "67fe2cc3aa6ed34e804ee9c7da9a6e39327eef2c33275905aeeb20abf5690613",
+      "dataset_url": "https://data.mendeley.com/datasets/tt2smzrzrs/4",
+      "mirror": "https://huggingface.co/datasets/Project-AgML/tea_leaf_disease_classification_bangladesh",
+      "citation": "Ahmad (2024), DOI 10.17632/tt2smzrzrs.4; Project-AgML mirror",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    }
+  ]
+}

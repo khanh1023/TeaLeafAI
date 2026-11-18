@@ -19,3 +19,8 @@ frontend/dist/
 frontend/public/runtime/
 .pytest_cache/
 training/.export-venv/
+
+# Training source caches and candidate runs
+training/.cache/
+training/source-cache/
+training/runs/

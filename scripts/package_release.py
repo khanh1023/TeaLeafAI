@@ -11,7 +11,7 @@ args = parser.parse_args()
 if not (ROOT / 'frontend/dist/index.html').exists():
     raise SystemExit('Run npm ci and npm run build in frontend first.')
 allowed = {'.github', 'backend', 'docs', 'examples', 'frontend', 'scripts', 'tests', 'training'}
-excluded = {'.git', 'node_modules', '.venv', 'venv', '.export-venv', '__pycache__', '.pytest_cache', 'dataset', 'DuLieuGoc'}
+excluded = {'.git', 'node_modules', '.venv', 'venv', '.export-venv', '__pycache__', '.pytest_cache', 'dataset', 'DuLieuGoc', '.cache', 'source-cache', 'runs'}
 files = []
 for p in ROOT.rglob('*'):
     rel = p.relative_to(ROOT)
