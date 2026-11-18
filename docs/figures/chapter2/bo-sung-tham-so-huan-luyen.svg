@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="648pt" height="504pt" viewBox="0 0 648 504" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-11-18T14:51:11.812367</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.10.8, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 504
+L 648 504
+L 648 0
+L 0 0
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 35.2836 384.54696
+L 301.8384 384.54696
+Q 310.4568 384.54696 310.4568 377.80848
+L 310.4568 75.53952
+Q 310.4568 68.80104 301.8384 68.80104
+L 35.2836 68.80104
+Q 26.6652 68.80104 26.6652 75.53952
+L 26.6652 377.80848
+Q 26.6652 384.54696 35.2836 384.54696
+z
+" clip-path="url(#p89c481636d)" style="fill: #eef5ef; stroke: #216b50; stroke-width: 1.5; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 346.1616 384.54696
+L 612.7164 384.54696
+Q 621.3348 384.54696 621.3348 377.80848
+L 621.3348 75.53952
+Q 621.3348 68.80104 612.7164 68.80104
+L 346.1616 68.80104
+Q 337.5432 68.80104 337.5432 75.53952
+L 337.5432 377.80848
+Q 337.5432 384.54696 346.1616 384.54696
+z
+" clip-path="url(#p89c481636d)" style="fill: #eef5ef; stroke: #216b50; stroke-width: 1.5; stroke-linejoin: miter"/>
+   </g>
+   <g id="text_1">
+    <text style="font-weight: 700; font-size: 15px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #183c32" x="324" y="34.146" transform="rotate(-0 324 34.146)">THAM SỐ HUẤN LUYỆN THỰC TẾ CỦA TEALEAFAI</text>
+   </g>
+   <g id="text_2">
+    <text style="font-weight: 700; font-size: 13.5px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #183c32" x="168.2532" y="96.7176" transform="rotate(-0 168.2532 96.7176)">GIAI ĐOẠN 1</text>
+   </g>
+   <g id="text_3">
+    <text style="font-weight: 700; font-size: 12.5px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #183c32" x="168.2532" y="123.1902" transform="rotate(-0 168.2532 123.1902)">Huấn luyện bộ phân loại</text>
+   </g>
+   <g id="text_4">
+    <text style="font-size: 12px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #183c32" x="50.058" y="170.06025" transform="rotate(-0 50.058 170.06025)">Backbone: đóng băng</text>
+   </g>
+   <g id="text_5">
+    <text style="font-size: 12px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #183c32" x="50.058" y="199.66209" transform="rotate(-0 50.058 199.66209)">Optimizer: Adam</text>
+   </g>
+   <g id="text_6">
+    <text style="font-size: 12px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #183c32" x="50.058" y="230.015805" transform="rotate(-0 50.058 230.015805)">Learning rate đầu: 0,001</text>
+   </g>
+   <g id="text_7">
+    <text style="font-size: 12px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #183c32" x="50.058" y="259.34577" transform="rotate(-0 50.058 259.34577)">Batch size: 32</text>
+   </g>
+   <g id="text_8">
+    <text style="font-size: 12px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #183c32" x="50.058" y="289.699485" transform="rotate(-0 50.058 289.699485)">Epoch tối đa: 20 · Đã chạy: 14</text>
+   </g>
+   <g id="text_9">
+    <text style="font-size: 12px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #183c32" x="50.058" y="319.02945" transform="rotate(-0 50.058 319.02945)">EarlyStopping: patience = 5</text>
+   </g>
+   <g id="text_10">
+    <text style="font-size: 12px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #183c32" x="50.058" y="349.11129" transform="rotate(-0 50.058 349.11129)">Dropout: 0,3 và 0,2</text>
+   </g>
+   <g id="text_11">
+    <text style="font-weight: 700; font-size: 13.5px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #183c32" x="479.1312" y="96.7176" transform="rotate(-0 479.1312 96.7176)">GIAI ĐOẠN 2</text>
+   </g>
+   <g id="text_12">
+    <text style="font-weight: 700; font-size: 12.5px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #183c32" x="479.1312" y="123.1902" transform="rotate(-0 479.1312 123.1902)">Tinh chỉnh mô hình</text>
+   </g>
+   <g id="text_13">
+    <text style="font-size: 12px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #183c32" x="360.936" y="170.332125" transform="rotate(-0 360.936 170.332125)">30 lớp cuối; giữ cố định BN</text>
+   </g>
+   <g id="text_14">
+    <text style="font-size: 12px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #183c32" x="360.936" y="199.66209" transform="rotate(-0 360.936 199.66209)">Optimizer: Adam</text>
+   </g>
+   <g id="text_15">
+    <text style="font-size: 12px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #183c32" x="360.936" y="230.015805" transform="rotate(-0 360.936 230.015805)">Learning rate đầu: 0,00001</text>
+   </g>
+   <g id="text_16">
+    <text style="font-size: 12px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #183c32" x="360.936" y="259.34577" transform="rotate(-0 360.936 259.34577)">Batch size: 16</text>
+   </g>
+   <g id="text_17">
+    <text style="font-size: 12px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #183c32" x="360.936" y="289.699485" transform="rotate(-0 360.936 289.699485)">Epoch tối đa: 6 · Đã chạy: 6</text>
+   </g>
+   <g id="text_18">
+    <text style="font-size: 12px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #183c32" x="360.936" y="319.02945" transform="rotate(-0 360.936 319.02945)">EarlyStopping: patience = 3</text>
+   </g>
+   <g id="text_19">
+    <text style="font-size: 12px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #183c32" x="360.936" y="348.704415" transform="rotate(-0 360.936 348.704415)">Chọn checkpoint theo val_loss</text>
+   </g>
+   <g id="text_20">
+    <text style="font-size: 10.9px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #183c32" x="324" y="419.202" transform="rotate(-0 324 419.202)">Loss: Sparse Categorical Crossentropy · Seed = 42 · Có trọng số cân bằng lớp</text>
+   </g>
+   <g id="text_21">
+    <text style="font-size: 10.8px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #56665e" x="324" y="445.6746" transform="rotate(-0 324 445.6746)">Lưu checkpoint có val_loss nhỏ nhất; giảm learning rate khi val_loss không cải thiện.</text>
+   </g>
+   <g id="text_22">
+    <text style="font-size: 10.7px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #56665e" x="324" y="472.1472" transform="rotate(-0 324 472.1472)">Tập test chỉ dùng để đánh giá; không dùng để cập nhật trọng số hoặc chọn checkpoint.</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p89c481636d">
+   <rect x="16.2" y="10.08" width="615.6" height="481.32"/>
+  </clipPath>
+ </defs>
+</svg>

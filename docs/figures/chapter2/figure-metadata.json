@@ -36,11 +36,39 @@
       "note": "Tỷ lệ thực tế là 70,14% / 14,88% / 14,97%; sai lệch nhỏ do số ảnh nguyên và phải giữ nhóm ảnh gần trùng cùng một tập."
     },
     {
+      "stem": "bo-sung-tong-quan-cnn",
+      "caption": "Hình 2.6. Tổng quan CNN trong phân loại ảnh lá chè",
+      "section": "2.3.1. Tổng quan về mạng nơ-ron tích chập CNN",
+      "source": "Tác giả xây dựng; ảnh đầu vào lấy từ bộ dữ liệu gốc TeaLeafAI.",
+      "note": "Dùng để giới thiệu vai trò của trích xuất đặc trưng và bộ phân loại. Kiến trúc MobileNetV2 thực tế được trình bày bằng hình riêng."
+    },
+    {
+      "stem": "bo-sung-tich-chap-relu-pooling",
+      "caption": "Hình 2.7. Minh họa phép tích chập, hàm ReLU và Max pooling",
+      "section": "2.3.2. Cấu trúc và nguyên lý hoạt động của CNN trong phân loại ảnh",
+      "source": "Tác giả xây dựng và tính toán trực tiếp từ các ma trận minh họa.",
+      "note": "Bộ lọc được nhân từng phần tử rồi cộng trên mỗi cửa sổ. ReLU đưa giá trị âm về 0; Max pooling lấy giá trị lớn nhất. Đây là ví dụ lý thuyết, không phải bản đồ kích hoạt trích từ mô hình đã huấn luyện."
+    },
+    {
       "stem": "hinh-2-6-kien-truc-mobilenetv2",
-      "caption": "Hình 2.6. Kiến trúc mô hình MobileNetV2 được sử dụng trong đề tài",
+      "caption": "Hình 2.8. Kiến trúc mô hình MobileNetV2 được sử dụng trong đề tài",
       "section": "2.3.3. Lựa chọn mô hình MobileNetV2 cho bài toán phân loại bệnh lá chè",
       "source": "Tác giả xây dựng từ training/train_expanded.py và training/finetune_expanded.py của TeaLeafAI.",
       "note": "Đọc sơ đồ từ trái sang phải ở hàng trên, xuống hàng dưới rồi từ phải sang trái. GAP là phép lấy trung bình toàn cục trên hai chiều không gian."
+    },
+    {
+      "stem": "bo-sung-khoi-mobilenetv2",
+      "caption": "Hình 2.9. Khối Inverted Residual và Linear Bottleneck của MobileNetV2",
+      "section": "2.3.3. Lựa chọn mô hình MobileNetV2 cho bài toán phân loại bệnh lá chè",
+      "source": "Tác giả vẽ lại theo Sandler và cộng sự (2018), MobileNetV2: Inverted Residuals and Linear Bottlenecks, CVPR; https://arxiv.org/abs/1801.04381.",
+      "note": "Hình mô tả một khối điển hình có kết nối tắt. Không phải mọi khối đều có t = 6 hoặc kết nối tắt. Phép chiếu cuối là tuyến tính, không đặt ReLU6 sau phép chiếu."
+    },
+    {
+      "stem": "bo-sung-tham-so-huan-luyen",
+      "caption": "Hình 2.10. Các tham số của hai giai đoạn huấn luyện mô hình",
+      "section": "2.4.1. Thiết lập các tham số huấn luyện",
+      "source": "Tác giả tổng hợp từ training/train_expanded.py, training/finetune_expanded.py và training/evaluation.json.",
+      "note": "Phân biệt số epoch tối đa và số epoch thực chạy. Giai đoạn 1 huấn luyện trên đặc trưng đã lưu của backbone đóng băng; giai đoạn 2 tinh chỉnh các lớp cuối. Cả hai chọn checkpoint bằng validation loss."
     }
   ],
   "selected_samples": [

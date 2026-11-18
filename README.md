@@ -126,6 +126,8 @@ Mô hình đang dùng đã được huấn luyện lại với **2.197 ảnh**, 
 
 Accuracy test nội bộ là **69,30% trên 329 ảnh**, macro F1 **0,6453**. Đây là kết quả trên các nguồn dữ liệu công khai đã chia, chưa phải kiểm định thực địa độc lập. Không so sánh trực tiếp với báo cáo cũ vì bộ ảnh và cách chia đã thay đổi. Thêm ảnh không tự bảo đảm tăng độ chính xác. Báo cáo cũ được lưu tại `training/reports/previous-evaluation.json`.
 
+[Đánh giá lại ngày 18/11/2026](training/reports/reevaluation/REPORT.md) tái lập **228/329 ảnh đúng (69,30%)** với Keras/ONNX Python. Đường xử lý ảnh trên trình duyệt Chromium đạt **220/329 (66,87%)**; cần phân biệt hai cách tiền xử lý khi trích số liệu. Mức 94,5% trên 400 ảnh trong bản Word người dùng cung cấp chưa được tái lập bằng mô hình và bộ test hiện tại.
+
 Quy trình mở rộng dùng `download_expansion_sources.py`, `expand_dataset.py`, `train_expanded.py` và `finetune_expanded.py`. Các script cũ `prepare_dataset.py`, `train.py`, `evaluate.py` vẫn được giữ để tham khảo; không chạy lại bộ chia cũ lên dữ liệu đã chia nếu muốn tái tạo báo cáo mới.
 
 Sau khi huấn luyện lại, xuất mô hình browser bằng [training/export_browser_model.py](training/export_browser_model.py), theo [docs/LOCAL_SETUP.md](docs/LOCAL_SETUP.md). Commit ONNX mới và manifest cùng nhau, rồi build lại website.

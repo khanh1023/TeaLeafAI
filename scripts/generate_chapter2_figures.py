@@ -65,6 +65,9 @@ def arrow(ax, start, end):
 def save(fig, stem, caption, section, source, note):
     for suffix in ['png', 'svg', 'pdf']:
         fig.savefig(OUT / f'{stem}.{suffix}', dpi=300)
+        if suffix == 'svg':
+            svg = OUT / f'{stem}.svg'
+            svg.write_text('\n'.join(line.rstrip() for line in svg.read_text().splitlines())+'\n')
     plt.close(fig)
     FIGURES.append(dict(stem=stem, caption=caption, section=section, source=source, note=note))
 
@@ -245,13 +248,25 @@ save(fig, 'hinh-2-6-kien-truc-mobilenetv2', 'Hình 2.6. Kiến trúc mô hình M
      'Đọc sơ đồ từ trái sang phải ở hàng trên, xuống hàng dưới rồi từ phải sang trái. GAP là phép lấy trung bình toàn cục trên hai chiều không gian.')
 
 
+from chapter2_cnn_figures import add_cnn_figures
+add_cnn_figures(ROOT, save, canvas, box, arrow, prepared)
+
+# Keep old image URLs stable; number editable Word captions in section order.
+FIGURES.sort(key=lambda f: tuple(int(part) for part in f['section'].split('. ', 1)[0].split('.')))
+for number, item in enumerate(FIGURES, 1):
+    caption = item['caption']
+    if caption.startswith('Hình 2.'):
+        caption = caption.split('. ', 1)[1]
+    item['caption'] = f'Hình 2.{number}. {caption}'
+
 metadata = dict(figures=FIGURES, selected_samples=samples, augmentation_parameters=parameters,
                 dataset_manifest_sha256=hashlib.sha256((ROOT/'training/reports/expanded-dataset-manifest.json').read_bytes()).hexdigest())
 (OUT/'figure-metadata.json').write_text(json.dumps(metadata, ensure_ascii=False, indent=2))
 
 readme = ['# Hình minh họa chương 2 — TeaLeafAI', '',
           'PNG: 300 dpi, phù hợp chèn Word. SVG/PDF: bản vector cho sơ đồ và biểu đồ; phần ảnh mẫu vẫn là ảnh raster.',
-          'File Word có sáu hình và chú thích dạng văn bản có thể sửa. Không có ảnh AI tạo ra thay cho mẫu bệnh.', '']
+          f'File Word có {len(FIGURES)} hình và chú thích dạng văn bản có thể sửa. Chú thích được đánh số theo thứ tự mục; tên file cũ giữ nguyên để các liên kết đã chia sẻ tiếp tục hoạt động.',
+          'Không có ảnh AI tạo ra thay cho mẫu bệnh. Sơ đồ CNN tổng quát được phân biệt với kiến trúc MobileNetV2 thực tế.', '']
 for f in FIGURES:
     readme.extend([f'## {f["caption"]}', '', f'- Vị trí chèn: **{f["section"]}**.',
                    f'- PNG: [{f["stem"]}.png]({f["stem"]}.png).', f'- Nguồn: {f["source"]}',
@@ -261,7 +276,7 @@ readme.extend(['## Sử dụng trong Word', '',
                'Chú thích hình đặt ngoài ảnh bằng References → Insert Caption để Word đánh số tự động.',
                'Các hình dùng nhãn kế thừa bộ dữ liệu, không khẳng định mọi ảnh đã được giám định tác nhân bệnh.',
                'Ảnh gốc thuộc bộ dữ liệu đã có của dự án; ảnh bổ sung Mendeley được ghi nguồn theo CC BY 4.0.',
-               'Xem thêm [nguồn dữ liệu](../../TRAINING_DATA.md).', '',
+               'Xem thêm [nguồn dữ liệu](https://github.com/khanh1023/TeaLeafAI/blob/main/docs/TRAINING_DATA.md).', '',
                '## Tạo lại hình', '',
                'Cần bộ dữ liệu đã chia tại training/dataset và ảnh gốc trong DuLieuGoc.',
                'Cài matplotlib, pillow, numpy, python-docx rồi chạy `python scripts/generate_chapter2_figures.py` từ thư mục gốc.', ''])

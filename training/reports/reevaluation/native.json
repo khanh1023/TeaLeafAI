@@ -1,0 +1,371 @@
+{
+  "evaluated_at": "2026-11-18T14:46:31.261982+00:00",
+  "model_version": "mobilenetv2-expanded-20261117",
+  "classes": [
+    "algal_leaf",
+    "anthracnose",
+    "bird_eye_spot",
+    "brown_blight",
+    "gray_light",
+    "healthy",
+    "red_leaf_spot",
+    "white_spot"
+  ],
+  "keras_sha256": "cbcc9b33a4d054c3f26d1c2135421aa6d311b813087bfa4563fd9f44b183b1f4",
+  "onnx_sha256": "b0ab25d82c74a52882e87c4d0d0fb3d7120ab4c7834ffe36d1a1e4e8990d32ea",
+  "dataset_manifest_sha256": "585cabd7be1741675fa5bed31c14116b9f72f7eca11d40610313ddb15cd48707",
+  "checks": {
+    "test_images_sha256_verified": true,
+    "groups_disjoint": true,
+    "exact_hashes_disjoint": true,
+    "class_order_verified": true,
+    "retrained": false,
+    "split_changed": false
+  },
+  "preprocessing": "Curated RGB JPEG -> Pillow bilinear resize 224x224 -> float32 raw 0–255; embedded Rescaling.",
+  "test_counts": {
+    "anthracnose": 15,
+    "algal_leaf": 39,
+    "bird_eye_spot": 14,
+    "brown_blight": 45,
+    "gray_light": 42,
+    "healthy": 101,
+    "red_leaf_spot": 52,
+    "white_spot": 21
+  },
+  "keras": {
+    "accuracy": 0.6930091185410334,
+    "correct": 228,
+    "incorrect": 101,
+    "test_images": 329,
+    "balanced_accuracy": 0.6605355178374981,
+    "macro_precision": 0.6423816321400355,
+    "macro_recall": 0.6605355178374981,
+    "macro_f1": 0.6452781104275389,
+    "weighted_precision": 0.7024362780729158,
+    "weighted_recall": 0.6930091185410334,
+    "weighted_f1": 0.6933047572355886,
+    "classification_report": {
+      "algal_leaf": {
+        "precision": 0.5,
+        "recall": 0.38461538461538464,
+        "f1-score": 0.43478260869565216,
+        "support": 39.0
+      },
+      "anthracnose": {
+        "precision": 0.6923076923076923,
+        "recall": 0.6,
+        "f1-score": 0.6428571428571429,
+        "support": 15.0
+      },
+      "bird_eye_spot": {
+        "precision": 0.6111111111111112,
+        "recall": 0.7857142857142857,
+        "f1-score": 0.6875,
+        "support": 14.0
+      },
+      "brown_blight": {
+        "precision": 0.5686274509803921,
+        "recall": 0.6444444444444445,
+        "f1-score": 0.6041666666666666,
+        "support": 45.0
+      },
+      "gray_light": {
+        "precision": 0.4489795918367347,
+        "recall": 0.5238095238095238,
+        "f1-score": 0.4835164835164835,
+        "support": 42.0
+      },
+      "healthy": {
+        "precision": 0.9489795918367347,
+        "recall": 0.9207920792079208,
+        "f1-score": 0.9346733668341709,
+        "support": 101.0
+      },
+      "red_leaf_spot": {
+        "precision": 0.7619047619047619,
+        "recall": 0.6153846153846154,
+        "f1-score": 0.6808510638297872,
+        "support": 52.0
+      },
+      "white_spot": {
+        "precision": 0.6071428571428571,
+        "recall": 0.8095238095238095,
+        "f1-score": 0.6938775510204082,
+        "support": 21.0
+      },
+      "accuracy": 0.6930091185410334,
+      "macro avg": {
+        "precision": 0.6423816321400355,
+        "recall": 0.6605355178374981,
+        "f1-score": 0.6452781104275389,
+        "support": 329.0
+      },
+      "weighted avg": {
+        "precision": 0.7024362780729158,
+        "recall": 0.6930091185410334,
+        "f1-score": 0.6933047572355886,
+        "support": 329.0
+      }
+    },
+    "confusion_matrix": [
+      [
+        15,
+        0,
+        0,
+        4,
+        11,
+        1,
+        2,
+        6
+      ],
+      [
+        0,
+        9,
+        5,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        3,
+        11,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        2,
+        0,
+        0,
+        29,
+        4,
+        1,
+        4,
+        5
+      ],
+      [
+        5,
+        1,
+        2,
+        8,
+        22,
+        1,
+        3,
+        0
+      ],
+      [
+        2,
+        0,
+        0,
+        2,
+        4,
+        93,
+        0,
+        0
+      ],
+      [
+        4,
+        0,
+        0,
+        7,
+        7,
+        2,
+        32,
+        0
+      ],
+      [
+        2,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1,
+        17
+      ]
+    ]
+  },
+  "onnx_native": {
+    "accuracy": 0.6930091185410334,
+    "correct": 228,
+    "incorrect": 101,
+    "test_images": 329,
+    "balanced_accuracy": 0.6605355178374981,
+    "macro_precision": 0.6423816321400355,
+    "macro_recall": 0.6605355178374981,
+    "macro_f1": 0.6452781104275389,
+    "weighted_precision": 0.7024362780729158,
+    "weighted_recall": 0.6930091185410334,
+    "weighted_f1": 0.6933047572355886,
+    "classification_report": {
+      "algal_leaf": {
+        "precision": 0.5,
+        "recall": 0.38461538461538464,
+        "f1-score": 0.43478260869565216,
+        "support": 39.0
+      },
+      "anthracnose": {
+        "precision": 0.6923076923076923,
+        "recall": 0.6,
+        "f1-score": 0.6428571428571429,
+        "support": 15.0
+      },
+      "bird_eye_spot": {
+        "precision": 0.6111111111111112,
+        "recall": 0.7857142857142857,
+        "f1-score": 0.6875,
+        "support": 14.0
+      },
+      "brown_blight": {
+        "precision": 0.5686274509803921,
+        "recall": 0.6444444444444445,
+        "f1-score": 0.6041666666666666,
+        "support": 45.0
+      },
+      "gray_light": {
+        "precision": 0.4489795918367347,
+        "recall": 0.5238095238095238,
+        "f1-score": 0.4835164835164835,
+        "support": 42.0
+      },
+      "healthy": {
+        "precision": 0.9489795918367347,
+        "recall": 0.9207920792079208,
+        "f1-score": 0.9346733668341709,
+        "support": 101.0
+      },
+      "red_leaf_spot": {
+        "precision": 0.7619047619047619,
+        "recall": 0.6153846153846154,
+        "f1-score": 0.6808510638297872,
+        "support": 52.0
+      },
+      "white_spot": {
+        "precision": 0.6071428571428571,
+        "recall": 0.8095238095238095,
+        "f1-score": 0.6938775510204082,
+        "support": 21.0
+      },
+      "accuracy": 0.6930091185410334,
+      "macro avg": {
+        "precision": 0.6423816321400355,
+        "recall": 0.6605355178374981,
+        "f1-score": 0.6452781104275389,
+        "support": 329.0
+      },
+      "weighted avg": {
+        "precision": 0.7024362780729158,
+        "recall": 0.6930091185410334,
+        "f1-score": 0.6933047572355886,
+        "support": 329.0
+      }
+    },
+    "confusion_matrix": [
+      [
+        15,
+        0,
+        0,
+        4,
+        11,
+        1,
+        2,
+        6
+      ],
+      [
+        0,
+        9,
+        5,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        3,
+        11,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        2,
+        0,
+        0,
+        29,
+        4,
+        1,
+        4,
+        5
+      ],
+      [
+        5,
+        1,
+        2,
+        8,
+        22,
+        1,
+        3,
+        0
+      ],
+      [
+        2,
+        0,
+        0,
+        2,
+        4,
+        93,
+        0,
+        0
+      ],
+      [
+        4,
+        0,
+        0,
+        7,
+        7,
+        2,
+        32,
+        0
+      ],
+      [
+        2,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1,
+        17
+      ]
+    ]
+  },
+  "parity": {
+    "top1_disagreements": 0,
+    "max_absolute_probability_error": 1.1801719665527344e-05
+  },
+  "software_versions": {
+    "tensorflow": "2.21.0",
+    "onnxruntime": "1.32.0"
+  },
+  "limitations": [
+    "Same internal held-out source split used in development; repeated evaluation is not an independent field study.",
+    "Groups approximate image similarity; not all original plant or session identities are known.",
+    "Labels are inherited from source datasets, not independently diagnosed for every image.",
+    "Canvas/browser resizing is evaluated separately; different preprocessing can change predictions."
+  ],
+  "agreement_with_original_evaluation": {
+    "top1_disagreements": 0,
+    "max_absolute_probability_error": 0.0
+  },
+  "elapsed_seconds": 15.110552849000669
+}

@@ -1,0 +1,107 @@
+{
+  "sample_selection": "First 10 native/browser top-1 disagreements in frozen manifest order; diagnostic, not a new accuracy benchmark.",
+  "samples": [
+    {
+      "id": "176169ff806b6330",
+      "cpu_label_on_canvas_pixels": "anthracnose",
+      "browser_label": "anthracnose",
+      "native_label_on_pillow_pixels": "bird_eye_spot",
+      "same_pixels_top1_match": true,
+      "max_probability_error": 1.430511474609375e-06,
+      "mean_absolute_input_pixel_difference": 0.7449843287467957,
+      "canvas_rgb_sha256": "0aea30839521662933e46f456953cdef0d1a3f029f528a80e1956f187f735436"
+    },
+    {
+      "id": "ddbe66e7d29187cb",
+      "cpu_label_on_canvas_pixels": "anthracnose",
+      "browser_label": "anthracnose",
+      "native_label_on_pillow_pixels": "gray_light",
+      "same_pixels_top1_match": true,
+      "max_probability_error": 1.4603137969970703e-06,
+      "mean_absolute_input_pixel_difference": 0.6632586717605591,
+      "canvas_rgb_sha256": "fab8254b32211eb7bef9516a6db7819227002951c346284f18a95721a5adf029"
+    },
+    {
+      "id": "de46ea6cd9bf97b4",
+      "cpu_label_on_canvas_pixels": "algal_leaf",
+      "browser_label": "algal_leaf",
+      "native_label_on_pillow_pixels": "white_spot",
+      "same_pixels_top1_match": true,
+      "max_probability_error": 1.5497207641601562e-06,
+      "mean_absolute_input_pixel_difference": 0.7397760152816772,
+      "canvas_rgb_sha256": "e275a118493d4c51337494c063ebee7f87f72f47aa5c783db24b5179f732245d"
+    },
+    {
+      "id": "19c05ed76f76c9ba",
+      "cpu_label_on_canvas_pixels": "healthy",
+      "browser_label": "healthy",
+      "native_label_on_pillow_pixels": "white_spot",
+      "same_pixels_top1_match": true,
+      "max_probability_error": 8.344650268554688e-07,
+      "mean_absolute_input_pixel_difference": 0.8991416692733765,
+      "canvas_rgb_sha256": "1935bb3c58b3d86399d6814731f35a0bae0fce3eb085985425fb23b595077447"
+    },
+    {
+      "id": "5749465c21746ff4",
+      "cpu_label_on_canvas_pixels": "anthracnose",
+      "browser_label": "anthracnose",
+      "native_label_on_pillow_pixels": "bird_eye_spot",
+      "same_pixels_top1_match": true,
+      "max_probability_error": 1.7881393432617188e-06,
+      "mean_absolute_input_pixel_difference": 0.9452195167541504,
+      "canvas_rgb_sha256": "ee8459561226bef6fb773c8dfed296c6aceaa4a7b2de24b787ce2aef784b485b"
+    },
+    {
+      "id": "44b5cf57435b93f2",
+      "cpu_label_on_canvas_pixels": "anthracnose",
+      "browser_label": "anthracnose",
+      "native_label_on_pillow_pixels": "bird_eye_spot",
+      "same_pixels_top1_match": true,
+      "max_probability_error": 7.748603820800781e-07,
+      "mean_absolute_input_pixel_difference": 0.8074644207954407,
+      "canvas_rgb_sha256": "674df75ac3f5ef9a4a3656491849e1a9571f21c67066e4cf0e7ac76c48b645ac"
+    },
+    {
+      "id": "aa50e228f176d654",
+      "cpu_label_on_canvas_pixels": "anthracnose",
+      "browser_label": "anthracnose",
+      "native_label_on_pillow_pixels": "white_spot",
+      "same_pixels_top1_match": true,
+      "max_probability_error": 3.2186508178710938e-06,
+      "mean_absolute_input_pixel_difference": 0.5394212603569031,
+      "canvas_rgb_sha256": "2d92efff6729a2419427a9f73a7bdb2e2316435e4404ab5ccdbacf13079c4ecd"
+    },
+    {
+      "id": "070c06b83cc1f61b",
+      "cpu_label_on_canvas_pixels": "bird_eye_spot",
+      "browser_label": "bird_eye_spot",
+      "native_label_on_pillow_pixels": "gray_light",
+      "same_pixels_top1_match": true,
+      "max_probability_error": 5.364418029785156e-07,
+      "mean_absolute_input_pixel_difference": 0.9445883631706238,
+      "canvas_rgb_sha256": "f710118dbe2b97b3a6c0e3ab78b91c6d36511299a94fa7504ca478b6180fc5be"
+    },
+    {
+      "id": "2ac122d250e3d582",
+      "cpu_label_on_canvas_pixels": "anthracnose",
+      "browser_label": "anthracnose",
+      "native_label_on_pillow_pixels": "gray_light",
+      "same_pixels_top1_match": true,
+      "max_probability_error": 1.1920928955078125e-07,
+      "mean_absolute_input_pixel_difference": 0.8472709655761719,
+      "canvas_rgb_sha256": "8148f7cecfc23ef2a96475a1f95fe1a0390a530d43f090c53071ac11a60bda80"
+    },
+    {
+      "id": "81afc59d87437fb3",
+      "cpu_label_on_canvas_pixels": "anthracnose",
+      "browser_label": "anthracnose",
+      "native_label_on_pillow_pixels": "gray_light",
+      "same_pixels_top1_match": true,
+      "max_probability_error": 4.76837158203125e-07,
+      "mean_absolute_input_pixel_difference": 0.9314413070678711,
+      "canvas_rgb_sha256": "097357ccde553df379f39dd707e60aa85ac437ea4fb49d85066137aa3398af6d"
+    }
+  ],
+  "top1_disagreements_on_same_pixels": 0,
+  "maximum_probability_error_on_same_pixels": 3.2186508178710938e-06
+}

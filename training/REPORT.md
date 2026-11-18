@@ -55,6 +55,8 @@ Tỷ lệ thực tế 70,14% / 14,88% / 14,97%, do giữ ảnh gần trùng cùn
 
 ## Bản dùng trên web
 
+Đánh giá lại ngày 18/11/2026 giữ nguyên checkpoint và tập test: Python tái lập **69,30%**, còn pipeline Canvas + ONNX Runtime Web trên Chromium đạt **66,87%**. Xem [báo cáo đối chiếu và kết quả từng ảnh](reports/reevaluation/REPORT.md). Chỉ số trong phần test ở trên dùng tiền xử lý Pillow; không đồng nhất với mọi trình duyệt.
+
 - Model version: `mobilenetv2-expanded-20261117`.
 - ONNX SHA-256: `b0ab25d82c74a52882e87c4d0d0fb3d7120ab4c7834ffe36d1a1e4e8990d32ea`.
 - So sánh Keras/ONNX: 9 mẫu, sai số tối đa `8.17e-06`, top-1 trùng khớp.
