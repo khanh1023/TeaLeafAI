@@ -16,6 +16,12 @@ File SHA256SUMS.txt chứa mã kiểm tra tính toàn vẹn. Không có dữ li�
 
 Bản cập nhật bổ sung sơ đồ tổng quan CNN, ví dụ tích chập–ReLU–Max pooling, khối Inverted Residual của MobileNetV2, tham số và quy trình huấn luyện/theo dõi mô hình. Chú thích trong Word được đánh số theo thứ tự mục; các đường dẫn ảnh cũ vẫn dùng được.
 
+## Phân loại ảnh sử dụng học sâu — mục 1.4.3
+
+- [Tải hình PNG 300 dpi](../docs/figures/chapter1/phan-loai-anh-su-dung-hoc-sau.png).
+- [Tải file Word kèm hình và chú thích](https://github.com/khanh1023/TeaLeafAI/raw/refs/heads/main/downloads/TeaLeafAI-phan-loai-anh-hoc-sau.docx).
+- [Xem nguồn và bản SVG/PDF](../docs/figures/chapter1/README.md).
+
 ## Đánh giá lại độ chính xác
 
 - [Tải bảng đánh giá và ma trận nhầm lẫn trong Word](https://github.com/khanh1023/TeaLeafAI/raw/refs/heads/main/downloads/TeaLeafAI-danh-gia-lai.docx).
