@@ -149,3 +149,47 @@ def add_cnn_figures(root, save, canvas, box, arrow, leaf):
          '2.4.1. Thiết lập các tham số huấn luyện',
          'Tác giả tổng hợp từ training/train_expanded.py, training/finetune_expanded.py và training/evaluation.json.',
          'Phân biệt số epoch tối đa và số epoch thực chạy. Giai đoạn 1 huấn luyện trên đặc trưng đã lưu của backbone đóng băng; giai đoạn 2 tinh chỉnh các lớp cuối. Cả hai chọn checkpoint bằng validation loss.')
+
+    # Training control and monitoring apply within each stage, before held-out evaluation.
+    fig, ax = canvas(9.5)
+    fig.set_size_inches(8, 9.5)
+    ax.text(.5, .972, 'QUY TRÌNH HUẤN LUYỆN VÀ THEO DÕI MÔ HÌNH',
+            ha='center', fontsize=14.3, weight='bold')
+    ys = [.83, .705, .58, .455, .33, .205, .08]
+    stages = [
+        ('1. Bộ dữ liệu đã chia', 'Train: 1.541 · Validation: 327 · Test: 329'),
+        ('2. Khởi tạo mô hình', 'RGB 224 × 224 · MobileNetV2 ImageNet'),
+        ('3. Huấn luyện bộ phân loại', f'Đóng băng backbone · Tối đa {training["maximum_epochs"]} epoch'),
+        ('4. Tinh chỉnh mô hình', f'30 lớp cuối · Tối đa {fine["maximum_epochs"]} epoch · Giữ cố định BN'),
+        ('5. Tải checkpoint được chọn', 'Chọn theo validation loss của giai đoạn'),
+        ('6. Đánh giá trên tập test', 'Accuracy · Precision · Recall · F1 · Ma trận nhầm lẫn'),
+        ('7. Xuất mô hình để triển khai', 'Keras → ONNX · Kiểm tra đầu ra sau chuyển đổi'),
+    ]
+    for y, (title, body) in zip(ys, stages):
+        box(ax, .025, y, .57, .095, title, body, fontsize=13.5)
+    for upper, lower in zip(ys, ys[1:]):
+        arrow(ax, (.31, upper-.002), (.31, lower+.097))
+    box(ax, .665, .855, .31, .075, 'Tăng cường dữ liệu\nchỉ ở tập train', fontsize=11.5)
+    ax.add_patch(FancyBboxPatch((.665, .405), .31, .42,
+                               boxstyle='round,pad=.008,rounding_size=.014',
+                               facecolor='#eef5ef', edgecolor=GREEN, linewidth=1.5))
+    ax.text(.82, .78, 'THEO DÕI MỖI EPOCH', ha='center', fontsize=10.6, weight='bold')
+    ax.text(.82, .715, 'Train / Validation:\nAccuracy và Loss',
+            ha='center', va='center', fontsize=11.9, linespacing=1.6)
+    ax.text(.82, .62, 'ModelCheckpoint\nLưu val_loss nhỏ nhất',
+            ha='center', va='center', fontsize=11.3, linespacing=1.6)
+    ax.text(.82, .535, 'ReduceLROnPlateau\nGiảm learning rate',
+            ha='center', va='center', fontsize=11.3, linespacing=1.6)
+    ax.text(.82, .45, 'EarlyStopping\nDừng khi không cải thiện',
+            ha='center', va='center', fontsize=11.3, linespacing=1.6)
+    for y in [ys[2]+.0475, ys[3]+.0475]:
+        arrow(ax, (.604, y), (.653, y))
+    box(ax, .665, .195, .31, .145, 'Vai trò tập test',
+        'Ngoài huấn luyện\nChỉ dùng để đánh giá', fontsize=12.4)
+    ax.text(.82, .125, 'BN: Batch\nNormalization', ha='center', fontsize=11.2, color=GRAY, linespacing=1.5)
+    ax.text(.5, .025, 'Theo dõi validation trong từng giai đoạn; giữ nguyên bộ chia dữ liệu.',
+            ha='center', fontsize=10.5, color=GRAY)
+    save(fig, 'bo-sung-quy-trinh-huan-luyen', 'Quy trình huấn luyện và theo dõi mô hình',
+         '2.4.2. Quy trình huấn luyện và theo dõi mô hình',
+         'Tác giả xây dựng từ training/train_expanded.py, training/finetune_expanded.py và training/export_browser_model.py.',
+         'Các callback theo dõi sau mỗi epoch trong hai giai đoạn. Checkpoint được chọn bằng validation loss; tập test phục vụ đánh giá. Số epoch trong sơ đồ là giới hạn tối đa, không phải số epoch thực chạy.')

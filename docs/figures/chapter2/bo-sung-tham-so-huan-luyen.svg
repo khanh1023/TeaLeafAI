@@ -6,7 +6,7 @@
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>
     <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-    <dc:date>2026-11-18T14:51:11.812367</dc:date>
+    <dc:date>2026-11-19T08:51:03.157868</dc:date>
     <dc:format>image/svg+xml</dc:format>
     <dc:creator>
      <cc:Agent>
@@ -40,7 +40,7 @@ Q 26.6652 68.80104 26.6652 75.53952
 L 26.6652 377.80848
 Q 26.6652 384.54696 35.2836 384.54696
 z
-" clip-path="url(#p89c481636d)" style="fill: #eef5ef; stroke: #216b50; stroke-width: 1.5; stroke-linejoin: miter"/>
+" clip-path="url(#pf62105fbe0)" style="fill: #eef5ef; stroke: #216b50; stroke-width: 1.5; stroke-linejoin: miter"/>
    </g>
    <g id="patch_3">
     <path d="M 346.1616 384.54696
@@ -53,7 +53,7 @@ Q 337.5432 68.80104 337.5432 75.53952
 L 337.5432 377.80848
 Q 337.5432 384.54696 346.1616 384.54696
 z
-" clip-path="url(#p89c481636d)" style="fill: #eef5ef; stroke: #216b50; stroke-width: 1.5; stroke-linejoin: miter"/>
+" clip-path="url(#pf62105fbe0)" style="fill: #eef5ef; stroke: #216b50; stroke-width: 1.5; stroke-linejoin: miter"/>
    </g>
    <g id="text_1">
     <text style="font-weight: 700; font-size: 15px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #183c32" x="324" y="34.146" transform="rotate(-0 324 34.146)">THAM SỐ HUẤN LUYỆN THỰC TẾ CỦA TEALEAFAI</text>
@@ -124,7 +124,7 @@ z
   </g>
  </g>
  <defs>
-  <clipPath id="p89c481636d">
+  <clipPath id="pf62105fbe0">
    <rect x="16.2" y="10.08" width="615.6" height="481.32"/>
   </clipPath>
  </defs>

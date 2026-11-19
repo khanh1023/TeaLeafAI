@@ -69,6 +69,13 @@
       "section": "2.4.1. Thiết lập các tham số huấn luyện",
       "source": "Tác giả tổng hợp từ training/train_expanded.py, training/finetune_expanded.py và training/evaluation.json.",
       "note": "Phân biệt số epoch tối đa và số epoch thực chạy. Giai đoạn 1 huấn luyện trên đặc trưng đã lưu của backbone đóng băng; giai đoạn 2 tinh chỉnh các lớp cuối. Cả hai chọn checkpoint bằng validation loss."
+    },
+    {
+      "stem": "bo-sung-quy-trinh-huan-luyen",
+      "caption": "Hình 2.11. Quy trình huấn luyện và theo dõi mô hình",
+      "section": "2.4.2. Quy trình huấn luyện và theo dõi mô hình",
+      "source": "Tác giả xây dựng từ training/train_expanded.py, training/finetune_expanded.py và training/export_browser_model.py.",
+      "note": "Các callback theo dõi sau mỗi epoch trong hai giai đoạn. Checkpoint được chọn bằng validation loss; tập test phục vụ đánh giá. Số epoch trong sơ đồ là giới hạn tối đa, không phải số epoch thực chạy."
     }
   ],
   "selected_samples": [

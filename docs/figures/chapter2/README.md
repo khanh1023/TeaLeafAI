@@ -1,7 +1,7 @@
 # Hình minh họa chương 2 — TeaLeafAI
 
 PNG: 300 dpi, phù hợp chèn Word. SVG/PDF: bản vector cho sơ đồ và biểu đồ; phần ảnh mẫu vẫn là ảnh raster.
-File Word có 10 hình và chú thích dạng văn bản có thể sửa. Chú thích được đánh số theo thứ tự mục; tên file cũ giữ nguyên để các liên kết đã chia sẻ tiếp tục hoạt động.
+File Word có 11 hình và chú thích dạng văn bản có thể sửa. Chú thích được đánh số theo thứ tự mục; tên file cũ giữ nguyên để các liên kết đã chia sẻ tiếp tục hoạt động.
 Không có ảnh AI tạo ra thay cho mẫu bệnh. Sơ đồ CNN tổng quát được phân biệt với kiến trúc MobileNetV2 thực tế.
 
 ## Hình 2.1. Quy trình phân tích ảnh lá chè của hệ thống TeaLeafAI
@@ -73,6 +73,13 @@ Không có ảnh AI tạo ra thay cho mẫu bệnh. Sơ đồ CNN tổng quát �
 - PNG: [bo-sung-tham-so-huan-luyen.png](bo-sung-tham-so-huan-luyen.png).
 - Nguồn: Tác giả tổng hợp từ training/train_expanded.py, training/finetune_expanded.py và training/evaluation.json.
 - Ghi chú: Phân biệt số epoch tối đa và số epoch thực chạy. Giai đoạn 1 huấn luyện trên đặc trưng đã lưu của backbone đóng băng; giai đoạn 2 tinh chỉnh các lớp cuối. Cả hai chọn checkpoint bằng validation loss.
+
+## Hình 2.11. Quy trình huấn luyện và theo dõi mô hình
+
+- Vị trí chèn: **2.4.2. Quy trình huấn luyện và theo dõi mô hình**.
+- PNG: [bo-sung-quy-trinh-huan-luyen.png](bo-sung-quy-trinh-huan-luyen.png).
+- Nguồn: Tác giả xây dựng từ training/train_expanded.py, training/finetune_expanded.py và training/export_browser_model.py.
+- Ghi chú: Các callback theo dõi sau mỗi epoch trong hai giai đoạn. Checkpoint được chọn bằng validation loss; tập test phục vụ đánh giá. Số epoch trong sơ đồ là giới hạn tối đa, không phải số epoch thực chạy.
 
 ## Sử dụng trong Word
 
