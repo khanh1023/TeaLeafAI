@@ -16,6 +16,11 @@ File SHA256SUMS.txt chứa mã kiểm tra tính toàn vẹn. Không có dữ li�
 
 Bản cập nhật bổ sung sơ đồ tổng quan CNN, ví dụ tích chập–ReLU–Max pooling, khối Inverted Residual của MobileNetV2, tham số và quy trình huấn luyện/theo dõi mô hình. Chú thích trong Word được đánh số theo thứ tự mục; các đường dẫn ảnh cũ vẫn dùng được.
 
+## Đặc điểm hình ảnh của lá chè bị bệnh — mục 1.3.3
+
+- [Tải hình PNG 300 dpi](../docs/figures/chapter1/dac-diem-hinh-anh-la-che-bi-benh.png).
+- [Tải file Word kèm hình và nguồn ảnh](https://github.com/khanh1023/TeaLeafAI/raw/refs/heads/main/downloads/TeaLeafAI-dac-diem-la-che-bi-benh.docx).
+
 ## Phân loại ảnh sử dụng học sâu — mục 1.4.3
 
 - [Tải hình PNG 300 dpi](../docs/figures/chapter1/phan-loai-anh-su-dung-hoc-sau.png).

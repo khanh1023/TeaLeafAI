@@ -1,0 +1,128 @@
+{
+  "section": "1.3.3. Đặc điểm hình ảnh của lá chè bị bệnh",
+  "display_operations": [
+    "RGB source photos, unchanged colors",
+    "aspect ratio preserved with letterboxing",
+    "circles and arrows mark visible features; no synthetic lesions"
+  ],
+  "source_attribution": "Nguồn: (a) bộ dữ liệu gốc TeaLeafAI; (b, c) Billah, Sagor, Sultana và Uddin (2025), Real-Life Dataset of Tea Plant Leaf Disease Classification, Mendeley Data V2, DOI: 10.17632/rrff4vb35m.2, giấy phép CC BY 4.0.",
+  "panels": [
+    {
+      "panel": "(a) Đốm trên phiến lá",
+      "visible_feature": "Các đốm có màu khác vùng mô xung quanh",
+      "source_record": {
+        "id": "b73bdf0d6702dbde",
+        "label": "anthracnose",
+        "source": "original",
+        "original": "DuLieuGoc/Anthracnose/IMG_20220503_143328.jpg",
+        "raw_sha256": "b73bdf0d6702dbdedf0b0d91c180ae3fe72dddcd0a03978c73590c7555b1cc49",
+        "pixel_sha256": "3f2fc7ffa6a604d27ea9a9788b0d48b0719891bf03e27c86acff89546b50ab76",
+        "phash": "ab1e95c1d0e89ac7",
+        "original_size": [
+          4160,
+          3120
+        ],
+        "sha256": "aa1a04e0aee1697672daf5cd45ee4e38603e10003d69f667a7485fa59b35c870",
+        "group": "b73bdf0d6702dbde",
+        "split": "train",
+        "path": "train/anthracnose/original-b73bdf0d6702dbde.jpg"
+      },
+      "annotations": {
+        "id": "b73bdf0d6702dbde",
+        "title": "(a) Đốm trên phiến lá",
+        "description": "Các đốm có màu khác\nvùng mô xung quanh",
+        "circle": [
+          246,
+          235,
+          32
+        ],
+        "arrow_start": [
+          395,
+          365
+        ],
+        "arrow_end": [
+          271,
+          264
+        ]
+      }
+    },
+    {
+      "panel": "(b) Vùng lá biến màu",
+      "visible_feature": "Phiến lá có vùng vàng, xanh nhạt xen kẽ",
+      "source_record": {
+        "id": "60d832a018767c20",
+        "label": "algal_leaf",
+        "source": "mendeley_rrff_v2",
+        "original": "Tea Compressed Dataset/Tea Algal Spot/Algal Spot (1).png",
+        "raw_sha256": "60d832a018767c20681d0d98b7755ae8f727f4112886810ca1e468fab2caa70e",
+        "pixel_sha256": "de535c3239277477e66d6b1811428322baf66aaf81b5a8ad6292dd587593ca8d",
+        "phash": "854c7ae87a9323b6",
+        "original_size": [
+          512,
+          512
+        ],
+        "sha256": "c2bd67a03892fcde7bc7c17bbd0b05aa68fabfefb35bb32f79bdcea2f1c96700",
+        "group": "60d832a018767c20",
+        "split": "train",
+        "path": "train/algal_leaf/mendeley_rrff_v2-60d832a018767c20.jpg"
+      },
+      "annotations": {
+        "id": "60d832a018767c20",
+        "title": "(b) Vùng lá biến màu",
+        "description": "Phiến lá có vùng vàng,\nxanh nhạt xen kẽ",
+        "circle": [
+          274,
+          276,
+          43
+        ],
+        "arrow_start": [
+          435,
+          155
+        ],
+        "arrow_end": [
+          307,
+          247
+        ]
+      }
+    },
+    {
+      "panel": "(c) Mảng mô nâu, khô",
+      "visible_feature": "Mảng nâu xám, bề mặt có biểu hiện khô",
+      "source_record": {
+        "id": "4a17b9dfa361ab74",
+        "label": "brown_blight",
+        "source": "mendeley_rrff_v2",
+        "original": "Tea Compressed Dataset/Tea Brown Blight/Brown Blight (10).png",
+        "raw_sha256": "4a17b9dfa361ab7492defce2eae36877661d0c996f8f0fab5048e87aec95b85f",
+        "pixel_sha256": "d85df685318b6a3fe1ca46811cba57ca7cf69479490b5049f046c3303306c586",
+        "phash": "911b5ee068076bee",
+        "original_size": [
+          512,
+          512
+        ],
+        "sha256": "ee277347c6e4b8a90a11ffd2b66e40cfd81b8c8a359c9ac19bf5bc1d1748a9fe",
+        "group": "4a17b9dfa361ab74",
+        "split": "train",
+        "path": "train/brown_blight/mendeley_rrff_v2-4a17b9dfa361ab74.jpg"
+      },
+      "annotations": {
+        "id": "4a17b9dfa361ab74",
+        "title": "(c) Mảng mô nâu, khô",
+        "description": "Mảng nâu xám, bề mặt\ncó biểu hiện khô",
+        "circle": [
+          265,
+          290,
+          43
+        ],
+        "arrow_start": [
+          95,
+          389
+        ],
+        "arrow_end": [
+          233,
+          320
+        ]
+      }
+    }
+  ]
+}
