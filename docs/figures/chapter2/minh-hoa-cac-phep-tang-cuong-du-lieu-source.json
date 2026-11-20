@@ -1,0 +1,40 @@
+{
+  "source_record": {
+    "id": "d0f5daa525912fc9",
+    "label": "healthy",
+    "source": "original",
+    "original": "DuLieuGoc/healthy/UNADJUSTEDNONRAW_thumb_20d.jpg",
+    "raw_sha256": "d0f5daa525912fc9e3d66bf0ef8f9f733b5d3b5ce73ac591d2131796e0539fb2",
+    "pixel_sha256": "5de86cf1da26ca65496e9368bfab142f1557178ee9a56abb1ee8307e4338d99f",
+    "phash": "ab37f59084da8ae1",
+    "original_size": [
+      768,
+      1024
+    ],
+    "sha256": "23649af576e006a07f4fafa7720e8de8081e0e159079f4c39fadee34fbcdbd5a",
+    "group": "d0f5daa525912fc9",
+    "split": "train",
+    "path": "train/healthy/original-d0f5daa525912fc9.jpg"
+  },
+  "baseline": "RGB JPEG -> Pillow bilinear resize 224x224",
+  "parameters": {
+    "rotation_degrees_counterclockwise": 15,
+    "rotation_fill": "original top-left pixel",
+    "horizontal_mirror": true,
+    "brightness_factor": 1.25,
+    "center_crop_box_xyxy": [
+      17,
+      17,
+      207,
+      207
+    ],
+    "crop_output_size": [
+      224,
+      224
+    ],
+    "contrast_factor": 1.4
+  },
+  "scope": "Common-method illustration, not the executed training augmentation configuration",
+  "variants_independent": true,
+  "source_attribution": "Nguồn: Tác giả tạo các biến thể bằng Pillow từ ảnh UNADJUSTEDNONRAW_thumb_20d.jpg trong bộ dữ liệu gốc TeaLeafAI."
+}
