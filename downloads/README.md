@@ -20,6 +20,8 @@ Bản cập nhật bổ sung sơ đồ tổng quan CNN, ví dụ tích chập–
 
 [Hình minh họa sáu ảnh về các phép tăng cường dữ liệu phổ biến](../docs/figures/chapter2/minh-hoa-cac-phep-tang-cuong-du-lieu.png) · [File Word kèm hình và chú thích](https://github.com/khanh1023/TeaLeafAI/raw/refs/heads/main/downloads/TeaLeafAI-tang-cuong-du-lieu.docx). Dùng cho mục 2.2.5; đây là hình minh họa phương pháp, có ghi rõ khác biệt với cấu hình thực nghiệm.
 
+[Hai hình giải thích các lớp và chu trình huấn luyện CNN](../docs/figures/chapter2/cnn-cau-truc-va-huan-luyen.md) · [File Word kèm hai hình và công thức](https://github.com/khanh1023/TeaLeafAI/raw/refs/heads/main/downloads/TeaLeafAI-cau-truc-va-huan-luyen-CNN.docx). Dùng cho mục 2.3.2; có phân biệt sơ đồ CNN tổng quát với MobileNetV2 thực tế.
+
 ## Đặc điểm hình ảnh của lá chè bị bệnh — mục 1.3.3
 
 - [Tải hình PNG 300 dpi](../docs/figures/chapter1/dac-diem-hinh-anh-la-che-bi-benh.png).
