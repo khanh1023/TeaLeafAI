@@ -10,6 +10,8 @@ File SHA256SUMS.txt chứa mã kiểm tra tính toàn vẹn. Không có dữ li�
 
 ## Hình minh họa chương 2
 
+[Sơ đồ đầu vào và đầu ra của hệ thống](../docs/figures/chapter2/dau-vao-dau-ra-he-thong.png) · [File Word kèm hình và chú thích](https://github.com/khanh1023/TeaLeafAI/raw/refs/heads/main/downloads/TeaLeafAI-dau-vao-dau-ra.docx). Dùng cho mục 2.1.3; tách rõ đầu ra dự đoán một ảnh và đầu ra đánh giá trên tập kiểm thử.
+
 - [File Word gồm 11 hình, vị trí chèn, chú thích và nguồn ảnh](https://github.com/khanh1023/TeaLeafAI/raw/refs/heads/main/downloads/TeaLeafAI-hinh-chuong-2.docx).
 - [Trọn bộ hình PNG 300 dpi, SVG, PDF và Word](https://github.com/khanh1023/TeaLeafAI/raw/refs/heads/main/downloads/TeaLeafAI-hinh-chuong-2.zip).
 - [Xem từng hình và hướng dẫn chèn vào báo cáo](../docs/figures/chapter2/README.md).
