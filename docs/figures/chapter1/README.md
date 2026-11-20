@@ -13,3 +13,7 @@ PNG 300 dpi để chèn Word; SVG/PDF là bản vector. Hai luồng tách biệt
 ## Đặc điểm hình ảnh của lá chè bị bệnh — mục 1.3.3
 
 [Xem hình, nguồn ảnh và chú thích](dac-diem-hinh-anh-la-che-bi-benh.md). Hình gồm ba ảnh thật minh họa đốm lá, vùng biến màu và mảng mô nâu có biểu hiện khô; không gán tác nhân bệnh chỉ từ hình thái.
+
+## Phân loại ảnh bằng phương pháp truyền thống — mục 1.4.1
+
+[Xem hình, nguồn và chú thích](phan-loai-anh-phuong-phap-truyen-thong.md). Sơ đồ thể hiện trích chọn đặc trưng màu sắc, hình dạng, kết cấu và áp dụng ngưỡng hoặc quy tắc định trước.

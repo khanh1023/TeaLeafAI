@@ -1,0 +1,22 @@
+{
+  "section": "1.4.1. Phân loại ảnh bằng phương pháp truyền thống",
+  "source_record": {
+    "id": "4a17b9dfa361ab74",
+    "label": "brown_blight",
+    "source": "mendeley_rrff_v2",
+    "original": "Tea Compressed Dataset/Tea Brown Blight/Brown Blight (10).png",
+    "raw_sha256": "4a17b9dfa361ab7492defce2eae36877661d0c996f8f0fab5048e87aec95b85f",
+    "pixel_sha256": "d85df685318b6a3fe1ca46811cba57ca7cf69479490b5049f046c3303306c586",
+    "phash": "911b5ee068076bee",
+    "original_size": [
+      512,
+      512
+    ],
+    "sha256": "ee277347c6e4b8a90a11ffd2b66e40cfd81b8c8a359c9ac19bf5bc1d1748a9fe",
+    "group": "4a17b9dfa361ab74",
+    "split": "train",
+    "path": "train/brown_blight/mendeley_rrff_v2-4a17b9dfa361ab74.jpg"
+  },
+  "figure_type": "Conceptual handcrafted-feature and deterministic-rule pipeline; no measured classification output",
+  "source_attribution": "Nguồn: Tác giả xây dựng sơ đồ. Ảnh lá chè trích từ Billah, Sagor, Sultana và Uddin (2025), Real-Life Dataset of Tea Plant Leaf Disease Classification, Mendeley Data V2, DOI: 10.17632/rrff4vb35m.2, CC BY 4.0."
+}
