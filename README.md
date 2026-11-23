@@ -130,6 +130,8 @@ Accuracy test nội bộ là **69,30% trên 329 ảnh**, macro F1 **0,6453**. Đ
 
 [Đánh giá train/validation/test/All ngày 22/11/2026](training/reports/evaluation-20261122/README.md) giữ nguyên mô hình và bộ chia, kèm sáu phép thử biến đổi ảnh. [Tải nội dung mục 3.3 trong Word](https://github.com/khanh1023/TeaLeafAI/raw/refs/heads/main/downloads/TeaLeafAI-muc-3-3-danh-gia.docx) hoặc [bản đầy đủ 3.2–3.3 gồm 11 hình và bảng chỉnh sửa được](https://github.com/khanh1023/TeaLeafAI/raw/refs/heads/main/downloads/TeaLeafAI-chuong-3-ket-qua-danh-gia.docx). Tài liệu được biên soạn ngày 23/11/2026 từ các kết quả đo, không huấn luyện lại.
 
+[Notebook Colab so sánh MobileNetV2, ResNet50 và VGG16](https://colab.research.google.com/github/khanh1023/TeaLeafAI/blob/main/training/Compare_Models_Colab.ipynb) chuẩn bị thí nghiệm chuyển giao cùng bộ chia, xuất bảng Word và hình sau khi chạy đủ ba mạng. [Xem quy trình](docs/MODEL_COMPARISON.md). Notebook chưa chứa kết quả thực nghiệm mới và không thay mô hình đang triển khai.
+
 Quy trình mở rộng dùng `download_expansion_sources.py`, `expand_dataset.py`, `train_expanded.py` và `finetune_expanded.py`. Các script cũ `prepare_dataset.py`, `train.py`, `evaluate.py` vẫn được giữ để tham khảo; không chạy lại bộ chia cũ lên dữ liệu đã chia nếu muốn tái tạo báo cáo mới.
 
 Sau khi huấn luyện lại, xuất mô hình browser bằng [training/export_browser_model.py](training/export_browser_model.py), theo [docs/LOCAL_SETUP.md](docs/LOCAL_SETUP.md). Commit ONNX mới và manifest cùng nhau, rồi build lại website.

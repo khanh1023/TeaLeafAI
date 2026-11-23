@@ -1,5 +1,11 @@
 # Tải TeaLeafAI chạy sẵn
 
+## So sánh ba mô hình — Google Colab
+
+[Mở notebook MobileNetV2/ResNet50/VGG16](https://colab.research.google.com/github/khanh1023/TeaLeafAI/blob/main/training/Compare_Models_Colab.ipynb) · [Tải notebook](https://raw.githubusercontent.com/khanh1023/TeaLeafAI/main/downloads/TeaLeafAI-so-sanh-mo-hinh.ipynb) · [Quy trình và cách đọc kết quả](../docs/MODEL_COMPARISON.md).
+
+Chọn GPU rồi Run all để chạy thí nghiệm mới trên cùng bộ chia 70/15/15; sau khi hoàn thành sẽ xuất Word, bảng, biểu đồ và số liệu thật. Notebook hiện chưa có kết quả huấn luyện. GPU miễn phí phụ thuộc hạn mức Colab.
+
 [Tải TeaLeafAI-ready.zip](https://github.com/khanh1023/TeaLeafAI/raw/refs/heads/main/downloads/TeaLeafAI-ready.zip) — khoảng 43 MiB, gồm mã nguồn, mô hình và website đã build.
 
 Windows: cài Node.js LTS 22+ → giải nén → nhấp đúp `CHAY-WEBSITE.cmd`. Không cần Python hoặc npm install cho bản đã build. Đọc README trong ZIP.
