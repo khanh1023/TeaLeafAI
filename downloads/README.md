@@ -43,3 +43,12 @@ Bản cập nhật bổ sung sơ đồ tổng quan CNN, ví dụ tích chập–
 - [Tải bảng đánh giá và ma trận nhầm lẫn trong Word](https://github.com/khanh1023/TeaLeafAI/raw/refs/heads/main/downloads/TeaLeafAI-danh-gia-lai.docx).
 - [Tải trọn bộ kết quả JSON, CSV, ảnh và Word](https://github.com/khanh1023/TeaLeafAI/raw/refs/heads/main/downloads/TeaLeafAI-danh-gia-lai.zip).
 - [Xem báo cáo đối chiếu Keras, ONNX Python và đường xử lý trên trình duyệt](../training/reports/reevaluation/REPORT.md).
+
+## Nội dung và hình chương 3 — kết quả đo ngày 22/11/2026
+
+- [Word riêng mục 3.3: Đánh giá hiệu quả mô hình](https://github.com/khanh1023/TeaLeafAI/raw/refs/heads/main/downloads/TeaLeafAI-muc-3-3-danh-gia.docx).
+- [Word đầy đủ mục 3.2 và 3.3: 10 tiểu mục, 11 hình, bảng chỉnh sửa được](https://github.com/khanh1023/TeaLeafAI/raw/refs/heads/main/downloads/TeaLeafAI-chuong-3-ket-qua-danh-gia.docx).
+- [ZIP gồm Word, từng hình PNG/SVG/PDF, văn bản và số liệu JSON/CSV](https://github.com/khanh1023/TeaLeafAI/raw/refs/heads/main/downloads/TeaLeafAI-chuong-3-anh-va-so-lieu.zip).
+- [Xem kết quả và nguồn bằng chứng](../training/reports/evaluation-20261122/README.md).
+
+Accuracy trên 329 ảnh test là 69,30% với Keras/ONNX Python và 66,87% với đường xử lý thật của trình duyệt. Điểm All bao gồm cả train; test là bộ nội bộ đã dùng trong phát triển. ResNet50/VGG16 được ghi rõ chưa thực nghiệm. Biểu đồ có bản PNG 300 dpi và vector; ảnh giao diện giữ độ phân giải chụp thật.

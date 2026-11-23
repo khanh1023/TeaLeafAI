@@ -1,0 +1,56 @@
+{
+  "captured_at": "2026-11-22T11:02:10.670Z",
+  "scope": "Unedited screenshot of actual result-panel region after choosing frozen held-out healthy file through UI and clicking Analyze. This is a UI demonstration, not an independent field experiment.",
+  "record": {
+    "id": "4123243f451358ff",
+    "label": "healthy",
+    "source": "original",
+    "original": "DuLieuGoc/healthy/UNADJUSTEDNONRAW_thumb_208.jpg",
+    "raw_sha256": "4123243f451358ff7fe0a24f36c0dafa4dee7decf2a7c123457d0b91a258bc07",
+    "pixel_sha256": "4fb42f96cb5c4c6215603c50ca93a7a5371f5710bb0be536d97ddb512e60bedb",
+    "phash": "a8789c87b398dcca",
+    "original_size": [
+      768,
+      1024
+    ],
+    "sha256": "6badadb946398a953aea934dc3dc9e730562b1050622d5f0125a0791366d177d",
+    "group": "4123243f451358ff",
+    "split": "test",
+    "path": "test/healthy/original-4123243f451358ff.jpg"
+  },
+  "result": {
+    "filename": "original-4123243f451358ff.jpg",
+    "date": "2026-11-22T11:02:10.651Z",
+    "predicted_class": "healthy",
+    "predicted_label": "Lá khỏe mạnh",
+    "confidence": 0.9894126057624817,
+    "probabilities": {
+      "algal_leaf": 0.0008954266086220741,
+      "anthracnose": 0.0000035002226468350273,
+      "bird_eye_spot": 0.00004378419544082135,
+      "brown_blight": 0.0013783270260319114,
+      "gray_light": 0.003101808251813054,
+      "healthy": 0.9894126057624817,
+      "red_leaf_spot": 0.004185067489743233,
+      "white_spot": 0.0009794221259653568
+    },
+    "engine": "browser",
+    "model_version": "mobilenetv2-expanded-20261117"
+  },
+  "model_sha256": "b0ab25d82c74a52882e87c4d0d0fb3d7120ab4c7834ffe36d1a1e4e8990d32ea",
+  "browser_version": "156.0.8078.79",
+  "url": "http://127.0.0.1:5183/chan-doan",
+  "viewport_css_px": {
+    "width": 1440,
+    "height": 1100
+  },
+  "device_scale_factor": 1.2,
+  "region_css_px": {
+    "x": 731,
+    "y": 327.4375,
+    "width": 557,
+    "height": 712.40625
+  },
+  "region_definition": "x/y/width from .result-panel bounding box; bottom from last .result-panel .prob row plus20CSSpx. Captures result heading,top1 andall8scores,excludes JSONbutton and long advice. No DOM or bitmap editing.",
+  "screenshot": "web-result-example-panel.png"
+}

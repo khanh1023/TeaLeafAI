@@ -1,0 +1,199 @@
+{
+  "evaluated_at": "2026-11-22T11:01:08.913Z",
+  "run_id": "2026-11-22T11-00-47.483Z",
+  "engine": "browser",
+  "model_version": "mobilenetv2-expanded-20261117",
+  "onnx_sha256": "b0ab25d82c74a52882e87c4d0d0fb3d7120ab4c7834ffe36d1a1e4e8990d32ea",
+  "dataset_manifest_sha256": "585cabd7be1741675fa5bed31c14116b9f72f7eca11d40610313ddb15cd48707",
+  "test_images": 329,
+  "correct": 220,
+  "accuracy": 0.668693009118541,
+  "preprocessing": "Actual frontend readImagePixels(): createImageBitmap -> Canvas drawImage 224x224 -> raw RGB 0–255 -> ONNX Runtime Web WASM.",
+  "user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+  "browser_version": "156.0.8078.79",
+  "device": {
+    "user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+    "platform": "Linux x86_64",
+    "hardware_concurrency": 3,
+    "device_memory_gib": 8,
+    "language": "en-US",
+    "device_pixel_ratio": 1,
+    "viewport": {
+      "width": 1280,
+      "height": 900
+    },
+    "cross_origin_isolated": false,
+    "secure_context": true,
+    "runtime": {
+      "wasm_threads": 1,
+      "wasm_proxy": true,
+      "wasm_simd": null
+    }
+  },
+  "host": {
+    "platform": "linux",
+    "release": "6.18.57",
+    "architecture": "x64",
+    "cpu_model": "INTEL(R) XEON(R) PLATINUM 8573C",
+    "logical_cpus": 3,
+    "total_memory_bytes": 10452459520,
+    "node": "v24.22.1"
+  },
+  "runtime": {
+    "package": "onnxruntime-web",
+    "version": "1.20.1",
+    "execution_provider": "wasm",
+    "wasm_threads": 1,
+    "wasm_proxy": true,
+    "wasm_simd": null
+  },
+  "model_downloads": 1,
+  "image_uploads": 0,
+  "external_requests": 0,
+  "uncaught_browser_errors": [],
+  "elapsed_seconds": 19.993,
+  "timing_definitions": {
+    "browser_diagnose_ms": "Browser performance.now() immediately before await diagnose(file) to after resolve; includes image decode/Canvas resize, model execution, tensor/output handling, and cached metadata. File construction, disk I/O, base64 encoding, and Playwright transport are excluded. First call additionally includes model download/hash/WASM import/session initialization.",
+    "browser_model_execution_stage_ms": "Approximate execution stage: onProgress 75% to 100%; includes tensor construction, session.run, output copying and predictionResult; excludes image decoding and session initialization. This is not a direct isolated kernel benchmark.",
+    "warm_summary": "First cold call excluded; 328 remaining held-out samples in manifest order. Ten extra deterministic samples are summarized separately, not counted as additional test observations.",
+    "model_download_ms": "PerformanceResourceTiming.duration for initial .onnx resource from request start to response end on localhost. Not internet download performance. WASM resource timing also recorded.",
+    "automation_and_serialization_overhead_ms": "Node page.evaluate round-trip minus browser diagnose wall time; includes IPC, payload/file preparation and result serialization, not model latency.",
+    "environment_limit": "Single headless Chromium process on this Cloud Linux host, with concurrent work potentially sharing CPU. No inference or deployment-performance claim for other devices."
+  },
+  "initial_timing": {
+    "first_record": "02a14f33dcb13e1d",
+    "cold_diagnose_ms": 1548.3000000000466,
+    "model_download_resources": [
+      {
+        "url": "http://127.0.0.1:5183/model/tea-leaf.onnx?v=b0ab25d82c74",
+        "initiator_type": "fetch",
+        "start_time_ms": 1169.4000000000233,
+        "response_end_ms": 1295.0999999999767,
+        "duration_ms": 125.69999999995343,
+        "transfer_size_bytes": 9580647,
+        "encoded_body_size_bytes": 9580347,
+        "decoded_body_size_bytes": 9580347
+      }
+    ],
+    "model_download_ms": 125.69999999995343,
+    "download_module_and_hash_stage_ms": 238.09999999997672,
+    "session_initialization_stage_ms": 1103.4000000000233,
+    "progress_phases": [
+      {
+        "percent": 5,
+        "message": "Đang đọc và chuẩn bị ảnh…",
+        "elapsed_ms": 0.20000000001164153
+      },
+      {
+        "percent": 10,
+        "message": "Đang tải mô hình AI về thiết bị (9.1 MB)…",
+        "elapsed_ms": 19.100000000034925
+      },
+      {
+        "percent": 45,
+        "message": "Đang khởi tạo bộ phân tích trên thiết bị…",
+        "elapsed_ms": 257.20000000001164
+      },
+      {
+        "percent": 75,
+        "message": "Đang phân tích ảnh trên thiết bị…",
+        "elapsed_ms": 1360.600000000035
+      },
+      {
+        "percent": 100,
+        "message": "Hoàn tất",
+        "elapsed_ms": 1548.3000000000466
+      }
+    ]
+  },
+  "warm_timing": {
+    "diagnose": {
+      "count": 328,
+      "mean_ms": 41.86250000000042,
+      "median_ms": 40.29999999998836,
+      "p95_ms": 51.40000000002328,
+      "min_ms": 35.20000000001164,
+      "max_ms": 77.79999999998836,
+      "percentile_definition": "p95 uses nearest-rank ceil(0.95*n); median averages the two middle values for even n."
+    },
+    "model_execution_stage": {
+      "count": 328,
+      "mean_ms": 37.78689024390219,
+      "median_ms": 36.40000000002328,
+      "p95_ms": 44.5,
+      "min_ms": 32.59999999997672,
+      "max_ms": 74.09999999997672,
+      "percentile_definition": "p95 uses nearest-rank ceil(0.95*n); median averages the two middle values for even n."
+    },
+    "evaluate_roundtrip": {
+      "count": 328,
+      "mean_ms": 49.386472609756076,
+      "median_ms": 47.89140800000041,
+      "p95_ms": 61.27844399999958,
+      "min_ms": 40.36608400000023,
+      "max_ms": 89.83622100000048,
+      "percentile_definition": "p95 uses nearest-rank ceil(0.95*n); median averages the two middle values for even n."
+    },
+    "automation_overhead": {
+      "count": 328,
+      "mean_ms": 7.5239726097556465,
+      "median_ms": 6.89708450001217,
+      "p95_ms": 12.13230799998928,
+      "min_ms": 3.2455579999550537,
+      "max_ms": 21.530005999988134,
+      "percentile_definition": "p95 uses nearest-rank ceil(0.95*n); median averages the two middle values for even n."
+    },
+    "disk_read": {
+      "count": 328,
+      "mean_ms": 0.4363206250000963,
+      "median_ms": 0.31916199999886885,
+      "p95_ms": 1.1389890000000378,
+      "min_ms": 0.1186280000001716,
+      "max_ms": 11.440183000000616,
+      "percentile_definition": "p95 uses nearest-rank ceil(0.95*n); median averages the two middle values for even n."
+    },
+    "base64_encode": {
+      "count": 328,
+      "mean_ms": 0.026005768292692688,
+      "median_ms": 0.0158795000002101,
+      "p95_ms": 0.06456900000011956,
+      "min_ms": 0.006993999999394873,
+      "max_ms": 0.42030700000032084,
+      "percentile_definition": "p95 uses nearest-rank ceil(0.95*n); median averages the two middle values for even n."
+    }
+  },
+  "repeat_warm_timing": {
+    "selection": "Ten indices floor(i*(n-1)/9), i=0..9, in frozen test manifest order; one additional warm call per selected sample.",
+    "indices": [
+      0,
+      36,
+      72,
+      109,
+      145,
+      182,
+      218,
+      255,
+      291,
+      328
+    ],
+    "diagnose": {
+      "count": 10,
+      "mean_ms": 39.3,
+      "median_ms": 38.94999999998254,
+      "p95_ms": 43.199999999953434,
+      "min_ms": 37,
+      "max_ms": 43.199999999953434,
+      "percentile_definition": "p95 uses nearest-rank ceil(0.95*n); median averages the two middle values for even n."
+    },
+    "model_execution_stage": {
+      "count": 10,
+      "mean_ms": 35.62999999999884,
+      "median_ms": 35.64999999999418,
+      "p95_ms": 39.09999999997672,
+      "min_ms": 33,
+      "max_ms": 39.09999999997672,
+      "percentile_definition": "p95 uses nearest-rank ceil(0.95*n); median averages the two middle values for even n."
+    }
+  },
+  "measurement_schedule": "Final complete run was started only after the parent reported native all-splits/robustness inference complete; parent report plotting and file I/O could still share the Cloud host. The UI demonstration was captured before this final run in a separate browser process. Timing is descriptive, not a controlled cross-engine benchmark."
+}

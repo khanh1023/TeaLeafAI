@@ -1,0 +1,151 @@
+{
+  "generator": "scripts/generate_evaluation_context_figures.py",
+  "evidence_policy": "Measured records only; no retraining, fabricated comparisons, or new causal claims.",
+  "format": {
+    "figure_width_inches": 9,
+    "png_dpi": 300,
+    "font": "DejaVu Sans",
+    "minimum_native_font_pt": 12,
+    "additional_formats": [
+      "SVG",
+      "PDF"
+    ]
+  },
+  "source_sha256": {
+    "training/evaluation.json": "a6dfb8304cf13f53380ee01be9c73b5b726cd124285ec1015bb18b3bbf5ce8d0",
+    "training/reports/expanded-dataset-summary.json": "b3e8f60024c24510d4d35dea6ae908b1175831737f05dfdebe2a07fc7d2f69a1"
+  },
+  "figures": [
+    {
+      "section": "3.2.1",
+      "paths": {
+        "png": "/workspace/work/TeaLeafAI/training/reports/evaluation-20261122/figures/3-2-1-training-history.png",
+        "svg": "/workspace/work/TeaLeafAI/training/reports/evaluation-20261122/figures/3-2-1-training-history.svg",
+        "pdf": "/workspace/work/TeaLeafAI/training/reports/evaluation-20261122/figures/3-2-1-training-history.pdf"
+      },
+      "caption": "Diễn biến Accuracy và loss ở hai giai đoạn huấn luyện. Giai đoạn bộ phân loại chạy 14 epoch và chọn epoch 9; tinh chỉnh chạy 6 epoch và chọn epoch 3 theo validation loss. Các đường cong được trích trực tiếp từ nhật ký đã lưu, không huấn luyện lại.",
+      "source": "training/evaluation.json: training.history, training.selected_epoch, training.fine_tuning.history, training.fine_tuning.selected_validation_loss",
+      "notes": [
+        "Không nối epoch giữa hai giai đoạn thành một đường liên tục.",
+        "Loss huấn luyện có trọng số lớp và ảnh tăng cường; validation không tăng cường. Không so sánh cơ học độ cao hai đường loss.",
+        "Các mốc được đánh dấu là checkpoint được chọn, không phải epoch có train accuracy cao nhất."
+      ],
+      "values": {
+        "head_epochs": 14,
+        "head_selected_epoch": 9,
+        "finetune_epochs": 6,
+        "finetune_selected_epoch": 3
+      }
+    },
+    {
+      "section": "3.3.4",
+      "paths": {
+        "png": "/workspace/work/TeaLeafAI/training/reports/evaluation-20261122/figures/3-3-4-comparison-evidence.png",
+        "svg": "/workspace/work/TeaLeafAI/training/reports/evaluation-20261122/figures/3-3-4-comparison-evidence.svg",
+        "pdf": "/workspace/work/TeaLeafAI/training/reports/evaluation-20261122/figures/3-3-4-comparison-evidence.pdf"
+      },
+      "caption": "Tình trạng bằng chứng cho so sánh kiến trúc trong hồ sơ dự án. MobileNetV2 có checkpoint, mã huấn luyện và kết quả test; chưa có thực nghiệm tương ứng để so sánh với ResNet50 hoặc VGG16. Hình không biểu diễn hoặc suy đoán độ chính xác của các mô hình chưa thực nghiệm.",
+      "source": [
+        "backend/models/tea_leaf_mobilenetv2.keras",
+        "training/train_expanded.py",
+        "training/finetune_expanded.py",
+        "training/reports/reevaluation/native.json",
+        "training/reports/reevaluation/browser-metrics.json"
+      ],
+      "notes": [
+        "Không tái sử dụng các số 95% hoặc bảng ResNet50/VGG16 chưa được kiểm chứng.",
+        "Không xem Keras/ONNX/ONNX Runtime Web là các kiến trúc khác nhau.",
+        "Chưa thực nghiệm là giới hạn bằng chứng hiện tại, không phải kết luận mô hình kém hơn."
+      ],
+      "values": {
+        "architectures": [
+          [
+            "MobileNetV2",
+            "Có bằng chứng",
+            "Có bằng chứng",
+            "Có bằng chứng"
+          ],
+          [
+            "ResNet50",
+            "Chưa thực nghiệm",
+            "Chưa thực nghiệm",
+            "Chưa thực nghiệm"
+          ],
+          [
+            "VGG16",
+            "Chưa thực nghiệm",
+            "Chưa thực nghiệm",
+            "Chưa thực nghiệm"
+          ]
+        ],
+        "accuracy_claims_in_figure": false
+      }
+    },
+    {
+      "section": "3.3.5",
+      "paths": {
+        "png": "/workspace/work/TeaLeafAI/training/reports/evaluation-20261122/figures/3-3-5-class-distribution.png",
+        "svg": "/workspace/work/TeaLeafAI/training/reports/evaluation-20261122/figures/3-3-5-class-distribution.svg",
+        "pdf": "/workspace/work/TeaLeafAI/training/reports/evaluation-20261122/figures/3-3-5-class-distribution.pdf"
+      },
+      "caption": "Phân bố 2.197 ảnh theo tám lớp và ba tập train/validation/test. Lớp healthy có 673 ảnh, chiếm 30,63% toàn bộ dữ liệu. Đây là đặc điểm phân bố mẫu cần cân nhắc khi đọc Accuracy và macro F1; chưa phải bằng chứng nhân quả về sai số của mô hình.",
+      "source": "training/reports/expanded-dataset-summary.json: counts, split_counts, total_images; training/evaluation.json: classes",
+      "notes": [
+        "Tổng các tập: train 1.541, validation 327, test 329 ảnh.",
+        "Giữ nguyên tên kỹ thuật gray_light theo dữ liệu nguồn.",
+        "Không suy diễn thêm ảnh healthy tự bảo đảm cải thiện khả năng khái quát."
+      ],
+      "values": {
+        "total_images": 2197,
+        "counts": {
+          "anthracnose": 99,
+          "algal_leaf": 265,
+          "bird_eye_spot": 99,
+          "brown_blight": 305,
+          "gray_light": 281,
+          "healthy": 673,
+          "red_leaf_spot": 333,
+          "white_spot": 142
+        },
+        "split_counts": {
+          "train": {
+            "anthracnose": 69,
+            "algal_leaf": 185,
+            "bird_eye_spot": 70,
+            "brown_blight": 216,
+            "gray_light": 197,
+            "healthy": 472,
+            "red_leaf_spot": 232,
+            "white_spot": 100
+          },
+          "val": {
+            "anthracnose": 15,
+            "algal_leaf": 41,
+            "bird_eye_spot": 15,
+            "brown_blight": 44,
+            "gray_light": 42,
+            "healthy": 100,
+            "red_leaf_spot": 49,
+            "white_spot": 21
+          },
+          "test": {
+            "anthracnose": 15,
+            "algal_leaf": 39,
+            "bird_eye_spot": 14,
+            "brown_blight": 45,
+            "gray_light": 42,
+            "healthy": 101,
+            "red_leaf_spot": 52,
+            "white_spot": 21
+          }
+        },
+        "split_totals": {
+          "train": 1541,
+          "val": 327,
+          "test": 329
+        },
+        "healthy_share_percent": 30.632680928538917
+      }
+    }
+  ]
+}

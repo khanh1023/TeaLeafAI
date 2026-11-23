@@ -1,0 +1,530 @@
+{
+  "3-2-4-prediction-examples": [
+    {
+      "record": {
+        "id": "4123243f451358ff",
+        "label": "healthy",
+        "source": "original",
+        "original": "DuLieuGoc/healthy/UNADJUSTEDNONRAW_thumb_208.jpg",
+        "raw_sha256": "4123243f451358ff7fe0a24f36c0dafa4dee7decf2a7c123457d0b91a258bc07",
+        "pixel_sha256": "4fb42f96cb5c4c6215603c50ca93a7a5371f5710bb0be536d97ddb512e60bedb",
+        "phash": "a8789c87b398dcca",
+        "original_size": [
+          768,
+          1024
+        ],
+        "sha256": "6badadb946398a953aea934dc3dc9e730562b1050622d5f0125a0791366d177d",
+        "group": "4123243f451358ff",
+        "split": "test",
+        "path": "test/healthy/original-4123243f451358ff.jpg"
+      },
+      "prediction": {
+        "id": "4123243f451358ff",
+        "path": "test/healthy/original-4123243f451358ff.jpg",
+        "source": "original",
+        "actual": "healthy",
+        "predicted": "healthy",
+        "probabilities": {
+          "algal_leaf": 0.0008954266086220741,
+          "anthracnose": 3.5002226468350273e-06,
+          "bird_eye_spot": 4.378419544082135e-05,
+          "brown_blight": 0.0013783270260319114,
+          "gray_light": 0.003101808251813054,
+          "healthy": 0.9894126057624817,
+          "red_leaf_spot": 0.004185067489743233,
+          "white_spot": 0.0009794221259653568
+        },
+        "correct": true,
+        "cold_start": false,
+        "timing": {
+          "browser_diagnose_ms": 38.300000000046566,
+          "browser_model_execution_stage_ms": 35.800000000046566,
+          "progress_phases": [
+            {
+              "percent": 5,
+              "message": "Đang đọc và chuẩn bị ảnh…",
+              "elapsed_ms": 0
+            },
+            {
+              "percent": 75,
+              "message": "Đang phân tích ảnh trên thiết bị…",
+              "elapsed_ms": 2.5
+            },
+            {
+              "percent": 100,
+              "message": "Hoàn tất",
+              "elapsed_ms": 38.300000000046566
+            }
+          ],
+          "node_file_read_ms": 0.27699399999983143,
+          "node_base64_encode_ms": 0.031756999998833635,
+          "node_evaluate_roundtrip_ms": 45.09589699999924,
+          "automation_and_serialization_overhead_ms": 6.795896999952674
+        }
+      }
+    },
+    {
+      "record": {
+        "id": "02a14f33dcb13e1d",
+        "label": "anthracnose",
+        "source": "original",
+        "original": "DuLieuGoc/Anthracnose/IMG_20220503_143344.jpg",
+        "raw_sha256": "02a14f33dcb13e1db641d4fc0b03dd9a5ed5e28919886a35f0b10a4a3f09a18d",
+        "pixel_sha256": "f1674ef1e09a4a97d0af91595caeadd18fea0c27dbed37d2f075f00ca7619bee",
+        "phash": "aa5b90b583d29e53",
+        "original_size": [
+          3120,
+          4160
+        ],
+        "sha256": "2b078fdcd0b636829e3df48377e85b8a49739459f2dead60c2843a2618b6c80c",
+        "group": "02a14f33dcb13e1d",
+        "split": "test",
+        "path": "test/anthracnose/original-02a14f33dcb13e1d.jpg"
+      },
+      "prediction": {
+        "id": "02a14f33dcb13e1d",
+        "path": "test/anthracnose/original-02a14f33dcb13e1d.jpg",
+        "source": "original",
+        "actual": "anthracnose",
+        "predicted": "anthracnose",
+        "probabilities": {
+          "algal_leaf": 8.303923095809296e-05,
+          "anthracnose": 0.640515923500061,
+          "bird_eye_spot": 0.31320920586586,
+          "brown_blight": 0.00019164114200975746,
+          "gray_light": 0.045489389449357986,
+          "healthy": 3.1842137104831636e-05,
+          "red_leaf_spot": 0.00047640447155572474,
+          "white_spot": 2.6355583031545393e-06
+        },
+        "correct": true,
+        "cold_start": true,
+        "timing": {
+          "browser_diagnose_ms": 1548.3000000000466,
+          "browser_model_execution_stage_ms": 187.70000000001164,
+          "progress_phases": [
+            {
+              "percent": 5,
+              "message": "Đang đọc và chuẩn bị ảnh…",
+              "elapsed_ms": 0.20000000001164153
+            },
+            {
+              "percent": 10,
+              "message": "Đang tải mô hình AI về thiết bị (9.1 MB)…",
+              "elapsed_ms": 19.100000000034925
+            },
+            {
+              "percent": 45,
+              "message": "Đang khởi tạo bộ phân tích trên thiết bị…",
+              "elapsed_ms": 257.20000000001164
+            },
+            {
+              "percent": 75,
+              "message": "Đang phân tích ảnh trên thiết bị…",
+              "elapsed_ms": 1360.600000000035
+            },
+            {
+              "percent": 100,
+              "message": "Hoàn tất",
+              "elapsed_ms": 1548.3000000000466
+            }
+          ],
+          "node_file_read_ms": 0.3435020000001714,
+          "node_base64_encode_ms": 0.016252000000349653,
+          "node_evaluate_roundtrip_ms": 1567.5820169999997,
+          "automation_and_serialization_overhead_ms": 19.282016999953157
+        }
+      }
+    },
+    {
+      "record": {
+        "id": "910e1f75d06c65fc",
+        "label": "brown_blight",
+        "source": "original",
+        "original": "DuLieuGoc/brown blight/UNADJUSTEDNONRAW_thumb_106.jpg",
+        "raw_sha256": "910e1f75d06c65fc7e0b38a1655990e179ea06a78c06112e3826361f866af2db",
+        "pixel_sha256": "40a6c7a58420cdf63687f812a043349883e48ed151caf4a026b124a813520b25",
+        "phash": "ae0c85fcd6e3c321",
+        "original_size": [
+          768,
+          1024
+        ],
+        "sha256": "c16e664421ec6c220643c4cd336ab2aed0952e35ba3ca24c0200a381252fa90a",
+        "group": "910e1f75d06c65fc",
+        "split": "test",
+        "path": "test/brown_blight/original-910e1f75d06c65fc.jpg"
+      },
+      "prediction": {
+        "id": "910e1f75d06c65fc",
+        "path": "test/brown_blight/original-910e1f75d06c65fc.jpg",
+        "source": "original",
+        "actual": "brown_blight",
+        "predicted": "brown_blight",
+        "probabilities": {
+          "algal_leaf": 0.1353999674320221,
+          "anthracnose": 1.9622331819846295e-05,
+          "bird_eye_spot": 2.5230328901670873e-06,
+          "brown_blight": 0.6232373714447021,
+          "gray_light": 0.0017892313189804554,
+          "healthy": 3.428486888878979e-05,
+          "red_leaf_spot": 0.0006604722584597766,
+          "white_spot": 0.2388564944267273
+        },
+        "correct": true,
+        "cold_start": false,
+        "timing": {
+          "browser_diagnose_ms": 43.40000000002328,
+          "browser_model_execution_stage_ms": 40.70000000001164,
+          "progress_phases": [
+            {
+              "percent": 5,
+              "message": "Đang đọc và chuẩn bị ảnh…",
+              "elapsed_ms": 0.1000000000349246
+            },
+            {
+              "percent": 75,
+              "message": "Đang phân tích ảnh trên thiết bị…",
+              "elapsed_ms": 2.7000000000116415
+            },
+            {
+              "percent": 100,
+              "message": "Hoàn tất",
+              "elapsed_ms": 43.40000000002328
+            }
+          ],
+          "node_file_read_ms": 0.5175410000001648,
+          "node_base64_encode_ms": 0.024218999999902735,
+          "node_evaluate_roundtrip_ms": 48.64801999999963,
+          "automation_and_serialization_overhead_ms": 5.24801999997635
+        }
+      }
+    },
+    {
+      "record": {
+        "id": "4aa029b4210443a0",
+        "label": "gray_light",
+        "source": "original",
+        "original": "DuLieuGoc/gray light/IMG_20220503_135801.jpg",
+        "raw_sha256": "4aa029b4210443a04934b88e4d60a8300731b2cac1b88098608bce188af50960",
+        "pixel_sha256": "bbd3f8d87ddef315c166b26f0c3d992389f3a3d770cc579cca0b56e145db9910",
+        "phash": "8849b5b35395b65a",
+        "original_size": [
+          3120,
+          4160
+        ],
+        "sha256": "c560959ad06451c62fa98be8ec9bf0a6582bf934bb008cb1ea9eb284178a124b",
+        "group": "4aa029b4210443a0",
+        "split": "test",
+        "path": "test/gray_light/original-4aa029b4210443a0.jpg"
+      },
+      "prediction": {
+        "id": "4aa029b4210443a0",
+        "path": "test/gray_light/original-4aa029b4210443a0.jpg",
+        "source": "original",
+        "actual": "gray_light",
+        "predicted": "gray_light",
+        "probabilities": {
+          "algal_leaf": 0.001014932757243514,
+          "anthracnose": 0.029728766530752182,
+          "bird_eye_spot": 0.3076257109642029,
+          "brown_blight": 0.0005528088076971471,
+          "gray_light": 0.6592677235603333,
+          "healthy": 0.0008915127837099135,
+          "red_leaf_spot": 0.0008795681642368436,
+          "white_spot": 3.902032767655328e-05
+        },
+        "correct": true,
+        "cold_start": false,
+        "timing": {
+          "browser_diagnose_ms": 50.20000000001164,
+          "browser_model_execution_stage_ms": 47.100000000034925,
+          "progress_phases": [
+            {
+              "percent": 5,
+              "message": "Đang đọc và chuẩn bị ảnh…",
+              "elapsed_ms": 0.09999999997671694
+            },
+            {
+              "percent": 75,
+              "message": "Đang phân tích ảnh trên thiết bị…",
+              "elapsed_ms": 3.099999999976717
+            },
+            {
+              "percent": 100,
+              "message": "Hoàn tất",
+              "elapsed_ms": 50.20000000001164
+            }
+          ],
+          "node_file_read_ms": 0.3466760000001159,
+          "node_base64_encode_ms": 0.020508000000518223,
+          "node_evaluate_roundtrip_ms": 56.318262000000686,
+          "automation_and_serialization_overhead_ms": 6.118261999989045
+        }
+      }
+    }
+  ],
+  "3-2-5-correct-and-wrong": [
+    {
+      "record": {
+        "id": "02a14f33dcb13e1d",
+        "label": "anthracnose",
+        "source": "original",
+        "original": "DuLieuGoc/Anthracnose/IMG_20220503_143344.jpg",
+        "raw_sha256": "02a14f33dcb13e1db641d4fc0b03dd9a5ed5e28919886a35f0b10a4a3f09a18d",
+        "pixel_sha256": "f1674ef1e09a4a97d0af91595caeadd18fea0c27dbed37d2f075f00ca7619bee",
+        "phash": "aa5b90b583d29e53",
+        "original_size": [
+          3120,
+          4160
+        ],
+        "sha256": "2b078fdcd0b636829e3df48377e85b8a49739459f2dead60c2843a2618b6c80c",
+        "group": "02a14f33dcb13e1d",
+        "split": "test",
+        "path": "test/anthracnose/original-02a14f33dcb13e1d.jpg"
+      },
+      "prediction": {
+        "id": "02a14f33dcb13e1d",
+        "path": "test/anthracnose/original-02a14f33dcb13e1d.jpg",
+        "source": "original",
+        "actual": "anthracnose",
+        "predicted": "anthracnose",
+        "probabilities": {
+          "algal_leaf": 8.303923095809296e-05,
+          "anthracnose": 0.640515923500061,
+          "bird_eye_spot": 0.31320920586586,
+          "brown_blight": 0.00019164114200975746,
+          "gray_light": 0.045489389449357986,
+          "healthy": 3.1842137104831636e-05,
+          "red_leaf_spot": 0.00047640447155572474,
+          "white_spot": 2.6355583031545393e-06
+        },
+        "correct": true,
+        "cold_start": true,
+        "timing": {
+          "browser_diagnose_ms": 1548.3000000000466,
+          "browser_model_execution_stage_ms": 187.70000000001164,
+          "progress_phases": [
+            {
+              "percent": 5,
+              "message": "Đang đọc và chuẩn bị ảnh…",
+              "elapsed_ms": 0.20000000001164153
+            },
+            {
+              "percent": 10,
+              "message": "Đang tải mô hình AI về thiết bị (9.1 MB)…",
+              "elapsed_ms": 19.100000000034925
+            },
+            {
+              "percent": 45,
+              "message": "Đang khởi tạo bộ phân tích trên thiết bị…",
+              "elapsed_ms": 257.20000000001164
+            },
+            {
+              "percent": 75,
+              "message": "Đang phân tích ảnh trên thiết bị…",
+              "elapsed_ms": 1360.600000000035
+            },
+            {
+              "percent": 100,
+              "message": "Hoàn tất",
+              "elapsed_ms": 1548.3000000000466
+            }
+          ],
+          "node_file_read_ms": 0.3435020000001714,
+          "node_base64_encode_ms": 0.016252000000349653,
+          "node_evaluate_roundtrip_ms": 1567.5820169999997,
+          "automation_and_serialization_overhead_ms": 19.282016999953157
+        }
+      }
+    },
+    {
+      "record": {
+        "id": "ca192122d2b3fc4b",
+        "label": "anthracnose",
+        "source": "original",
+        "original": "DuLieuGoc/Anthracnose/IMG_20220503_143433.jpg",
+        "raw_sha256": "ca192122d2b3fc4bc2858b9121a2f0ced1832e4067b08a3a56b844395c1f6c6d",
+        "pixel_sha256": "25260cbef865bd0d3f079eb137a12886175bf961320a651929fa936b2b6f84e8",
+        "phash": "ae40a58bd6cf9c0d",
+        "original_size": [
+          3120,
+          4160
+        ],
+        "sha256": "c4499ab665d8218381c9f1de3feb7e32c0f8aa420a91ce4ab543087ee053ca40",
+        "group": "ca192122d2b3fc4b",
+        "split": "test",
+        "path": "test/anthracnose/original-ca192122d2b3fc4b.jpg"
+      },
+      "prediction": {
+        "id": "ca192122d2b3fc4b",
+        "path": "test/anthracnose/original-ca192122d2b3fc4b.jpg",
+        "source": "original",
+        "actual": "anthracnose",
+        "predicted": "anthracnose",
+        "probabilities": {
+          "algal_leaf": 2.3647396574233426e-07,
+          "anthracnose": 0.9999032020568848,
+          "bird_eye_spot": 1.8131529486709042e-06,
+          "brown_blight": 1.8413433622299635e-07,
+          "gray_light": 5.430779310700018e-06,
+          "healthy": 2.7901558841136875e-10,
+          "red_leaf_spot": 8.912730845622718e-05,
+          "white_spot": 1.6727912388603272e-09
+        },
+        "correct": true,
+        "cold_start": false,
+        "timing": {
+          "browser_diagnose_ms": 77.10000000003492,
+          "browser_model_execution_stage_ms": 71.40000000002328,
+          "progress_phases": [
+            {
+              "percent": 5,
+              "message": "Đang đọc và chuẩn bị ảnh…",
+              "elapsed_ms": 0
+            },
+            {
+              "percent": 75,
+              "message": "Đang phân tích ảnh trên thiết bị…",
+              "elapsed_ms": 5.7000000000116415
+            },
+            {
+              "percent": 100,
+              "message": "Hoàn tất",
+              "elapsed_ms": 77.10000000003492
+            }
+          ],
+          "node_file_read_ms": 0.5804410000000644,
+          "node_base64_encode_ms": 0.028629999999793654,
+          "node_evaluate_roundtrip_ms": 89.83622100000048,
+          "automation_and_serialization_overhead_ms": 12.736220999965553
+        }
+      }
+    },
+    {
+      "record": {
+        "id": "275970443915acb1",
+        "label": "anthracnose",
+        "source": "original",
+        "original": "DuLieuGoc/Anthracnose/IMG_20220503_143630.jpg",
+        "raw_sha256": "275970443915acb1a43bcaae196fe7fd1b645feaaf7c88affc46d181c2bf65f2",
+        "pixel_sha256": "69094c2c60d113a685521e01496b24d4ca5c9a7f85a39764939d6527dc9f7684",
+        "phash": "aa6de433866d8e92",
+        "original_size": [
+          4160,
+          3120
+        ],
+        "sha256": "c0b6f8f00b2ea7c5cec70573e23bd784167d7e8a64464ca68a6667bf7ccee4d3",
+        "group": "275970443915acb1",
+        "split": "test",
+        "path": "test/anthracnose/original-275970443915acb1.jpg"
+      },
+      "prediction": {
+        "id": "275970443915acb1",
+        "path": "test/anthracnose/original-275970443915acb1.jpg",
+        "source": "original",
+        "actual": "anthracnose",
+        "predicted": "bird_eye_spot",
+        "probabilities": {
+          "algal_leaf": 0.0009357734816148877,
+          "anthracnose": 0.35537657141685486,
+          "bird_eye_spot": 0.5892617702484131,
+          "brown_blight": 0.00028681059484370053,
+          "gray_light": 0.04783029109239578,
+          "healthy": 0.0026080452371388674,
+          "red_leaf_spot": 0.003622116055339575,
+          "white_spot": 7.857920718379319e-05
+        },
+        "correct": false,
+        "cold_start": false,
+        "timing": {
+          "browser_diagnose_ms": 40.20000000001164,
+          "browser_model_execution_stage_ms": 36.59999999997672,
+          "progress_phases": [
+            {
+              "percent": 5,
+              "message": "Đang đọc và chuẩn bị ảnh…",
+              "elapsed_ms": 0
+            },
+            {
+              "percent": 75,
+              "message": "Đang phân tích ảnh trên thiết bị…",
+              "elapsed_ms": 3.6000000000349246
+            },
+            {
+              "percent": 100,
+              "message": "Hoàn tất",
+              "elapsed_ms": 40.20000000001164
+            }
+          ],
+          "node_file_read_ms": 0.49767700000029436,
+          "node_base64_encode_ms": 0.017835999999988417,
+          "node_evaluate_roundtrip_ms": 46.10712599999988,
+          "automation_and_serialization_overhead_ms": 5.907125999988239
+        }
+      }
+    },
+    {
+      "record": {
+        "id": "33a644ee4de6bf8a",
+        "label": "anthracnose",
+        "source": "original",
+        "original": "DuLieuGoc/Anthracnose/IMG_20220503_144214.jpg",
+        "raw_sha256": "33a644ee4de6bf8af4483ff01decf5ab62b000c9bdb1a57e5e1de4c6c2a50dcd",
+        "pixel_sha256": "5c7ec1bc8387bd0504cf356ac55c85dd4f99fdccb07c69f4c0de58cdc88f1879",
+        "phash": "aa17a17ec5008f6f",
+        "original_size": [
+          3120,
+          4160
+        ],
+        "sha256": "7b68fc2830ded814b81a17d51fe89510b994ecf7da0cc849183997766828dfc1",
+        "group": "33a644ee4de6bf8a",
+        "split": "test",
+        "path": "test/anthracnose/original-33a644ee4de6bf8a.jpg"
+      },
+      "prediction": {
+        "id": "33a644ee4de6bf8a",
+        "path": "test/anthracnose/original-33a644ee4de6bf8a.jpg",
+        "source": "original",
+        "actual": "anthracnose",
+        "predicted": "bird_eye_spot",
+        "probabilities": {
+          "algal_leaf": 0.0007973666652105749,
+          "anthracnose": 0.05478684604167938,
+          "bird_eye_spot": 0.9277006387710571,
+          "brown_blight": 0.0018088031793013215,
+          "gray_light": 0.011965001933276653,
+          "healthy": 0.0006797699606977403,
+          "red_leaf_spot": 0.0013711166102439165,
+          "white_spot": 0.0008904689457267523
+        },
+        "correct": false,
+        "cold_start": false,
+        "timing": {
+          "browser_diagnose_ms": 41.70000000001164,
+          "browser_model_execution_stage_ms": 38.20000000001164,
+          "progress_phases": [
+            {
+              "percent": 5,
+              "message": "Đang đọc và chuẩn bị ảnh…",
+              "elapsed_ms": 0.1000000000349246
+            },
+            {
+              "percent": 75,
+              "message": "Đang phân tích ảnh trên thiết bị…",
+              "elapsed_ms": 3.5
+            },
+            {
+              "percent": 100,
+              "message": "Hoàn tất",
+              "elapsed_ms": 41.70000000001164
+            }
+          ],
+          "node_file_read_ms": 11.440183000000616,
+          "node_base64_encode_ms": 0.06456900000011956,
+          "node_evaluate_roundtrip_ms": 63.230005999999776,
+          "automation_and_serialization_overhead_ms": 21.530005999988134
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,2655 @@
+{
+  "evaluated_at": "2026-11-22T11:00:19.833683+00:00",
+  "model_version": "mobilenetv2-expanded-20261117",
+  "classes": [
+    "algal_leaf",
+    "anthracnose",
+    "bird_eye_spot",
+    "brown_blight",
+    "gray_light",
+    "healthy",
+    "red_leaf_spot",
+    "white_spot"
+  ],
+  "model_hashes": {
+    "keras": "cbcc9b33a4d054c3f26d1c2135421aa6d311b813087bfa4563fd9f44b183b1f4",
+    "onnx": "b0ab25d82c74a52882e87c4d0d0fb3d7120ab4c7834ffe36d1a1e4e8990d32ea"
+  },
+  "model_bytes": {
+    "keras": 25034775,
+    "onnx": 9580347
+  },
+  "dataset_manifest_sha256": "585cabd7be1741675fa5bed31c14116b9f72f7eca11d40610313ddb15cd48707",
+  "all_image_sha256_verified": true,
+  "groups_and_exact_hashes_disjoint": true,
+  "retrained": false,
+  "split_changed": false,
+  "preprocessing": "Pillow RGB bilinear 224x224; float32 0–255; Rescaling inside model; no augmentation for split scores.",
+  "software": {
+    "python": "3.12.14",
+    "tensorflow": "2.21.0",
+    "onnxruntime": "1.32.0",
+    "numpy": "2.3.5",
+    "pillow": "13.0.0"
+  },
+  "splits": {
+    "train": {
+      "keras": {
+        "accuracy": 0.9338092147955873,
+        "correct": 1439,
+        "incorrect": 102,
+        "test_images": 1541,
+        "balanced_accuracy": 0.9417676525632331,
+        "macro_precision": 0.9352381722630927,
+        "macro_recall": 0.9417676525632331,
+        "macro_f1": 0.9365756086113923,
+        "weighted_precision": 0.9373424561337284,
+        "weighted_recall": 0.9338092147955873,
+        "weighted_f1": 0.9339202502676378,
+        "classification_report": {
+          "algal_leaf": {
+            "precision": 0.9573170731707317,
+            "recall": 0.8486486486486486,
+            "f1-score": 0.8997134670487106,
+            "support": 185.0
+          },
+          "anthracnose": {
+            "precision": 1.0,
+            "recall": 0.9855072463768116,
+            "f1-score": 0.9927007299270073,
+            "support": 69.0
+          },
+          "bird_eye_spot": {
+            "precision": 0.9722222222222222,
+            "recall": 1.0,
+            "f1-score": 0.9859154929577465,
+            "support": 70.0
+          },
+          "brown_blight": {
+            "precision": 0.9567307692307693,
+            "recall": 0.9212962962962963,
+            "f1-score": 0.9386792452830188,
+            "support": 216.0
+          },
+          "gray_light": {
+            "precision": 0.8193832599118943,
+            "recall": 0.9441624365482234,
+            "f1-score": 0.8773584905660378,
+            "support": 197.0
+          },
+          "healthy": {
+            "precision": 0.9663157894736842,
+            "recall": 0.972457627118644,
+            "f1-score": 0.9693769799366421,
+            "support": 472.0
+          },
+          "red_leaf_spot": {
+            "precision": 0.9478672985781991,
+            "recall": 0.8620689655172413,
+            "f1-score": 0.9029345372460497,
+            "support": 232.0
+          },
+          "white_spot": {
+            "precision": 0.8620689655172413,
+            "recall": 1.0,
+            "f1-score": 0.9259259259259259,
+            "support": 100.0
+          },
+          "accuracy": 0.9338092147955873,
+          "macro avg": {
+            "precision": 0.9352381722630927,
+            "recall": 0.9417676525632331,
+            "f1-score": 0.9365756086113923,
+            "support": 1541.0
+          },
+          "weighted avg": {
+            "precision": 0.9373424561337284,
+            "recall": 0.9338092147955873,
+            "f1-score": 0.9339202502676378,
+            "support": 1541.0
+          }
+        },
+        "confusion_matrix": [
+          [
+            157,
+            0,
+            0,
+            2,
+            11,
+            2,
+            5,
+            8
+          ],
+          [
+            0,
+            68,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            70,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            2,
+            0,
+            0,
+            199,
+            6,
+            1,
+            1,
+            7
+          ],
+          [
+            2,
+            0,
+            1,
+            0,
+            186,
+            5,
+            3,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            2,
+            9,
+            459,
+            2,
+            0
+          ],
+          [
+            3,
+            0,
+            0,
+            5,
+            15,
+            8,
+            200,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            100
+          ]
+        ]
+      },
+      "onnx": {
+        "accuracy": 0.9338092147955873,
+        "correct": 1439,
+        "incorrect": 102,
+        "test_images": 1541,
+        "balanced_accuracy": 0.9417676525632331,
+        "macro_precision": 0.9352381722630927,
+        "macro_recall": 0.9417676525632331,
+        "macro_f1": 0.9365756086113923,
+        "weighted_precision": 0.9373424561337284,
+        "weighted_recall": 0.9338092147955873,
+        "weighted_f1": 0.9339202502676378,
+        "classification_report": {
+          "algal_leaf": {
+            "precision": 0.9573170731707317,
+            "recall": 0.8486486486486486,
+            "f1-score": 0.8997134670487106,
+            "support": 185.0
+          },
+          "anthracnose": {
+            "precision": 1.0,
+            "recall": 0.9855072463768116,
+            "f1-score": 0.9927007299270073,
+            "support": 69.0
+          },
+          "bird_eye_spot": {
+            "precision": 0.9722222222222222,
+            "recall": 1.0,
+            "f1-score": 0.9859154929577465,
+            "support": 70.0
+          },
+          "brown_blight": {
+            "precision": 0.9567307692307693,
+            "recall": 0.9212962962962963,
+            "f1-score": 0.9386792452830188,
+            "support": 216.0
+          },
+          "gray_light": {
+            "precision": 0.8193832599118943,
+            "recall": 0.9441624365482234,
+            "f1-score": 0.8773584905660378,
+            "support": 197.0
+          },
+          "healthy": {
+            "precision": 0.9663157894736842,
+            "recall": 0.972457627118644,
+            "f1-score": 0.9693769799366421,
+            "support": 472.0
+          },
+          "red_leaf_spot": {
+            "precision": 0.9478672985781991,
+            "recall": 0.8620689655172413,
+            "f1-score": 0.9029345372460497,
+            "support": 232.0
+          },
+          "white_spot": {
+            "precision": 0.8620689655172413,
+            "recall": 1.0,
+            "f1-score": 0.9259259259259259,
+            "support": 100.0
+          },
+          "accuracy": 0.9338092147955873,
+          "macro avg": {
+            "precision": 0.9352381722630927,
+            "recall": 0.9417676525632331,
+            "f1-score": 0.9365756086113923,
+            "support": 1541.0
+          },
+          "weighted avg": {
+            "precision": 0.9373424561337284,
+            "recall": 0.9338092147955873,
+            "f1-score": 0.9339202502676378,
+            "support": 1541.0
+          }
+        },
+        "confusion_matrix": [
+          [
+            157,
+            0,
+            0,
+            2,
+            11,
+            2,
+            5,
+            8
+          ],
+          [
+            0,
+            68,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            70,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            2,
+            0,
+            0,
+            199,
+            6,
+            1,
+            1,
+            7
+          ],
+          [
+            2,
+            0,
+            1,
+            0,
+            186,
+            5,
+            3,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            2,
+            9,
+            459,
+            2,
+            0
+          ],
+          [
+            3,
+            0,
+            0,
+            5,
+            15,
+            8,
+            200,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            100
+          ]
+        ]
+      },
+      "top1_disagreements": 0,
+      "max_probability_error": 1.4573335647583008e-05
+    },
+    "val": {
+      "keras": {
+        "accuracy": 0.6391437308868502,
+        "correct": 209,
+        "incorrect": 118,
+        "test_images": 327,
+        "balanced_accuracy": 0.625782030106943,
+        "macro_precision": 0.6017223720311119,
+        "macro_recall": 0.625782030106943,
+        "macro_f1": 0.6092024344058901,
+        "weighted_precision": 0.6490658012748258,
+        "weighted_recall": 0.6391437308868502,
+        "weighted_f1": 0.6401996118233713,
+        "classification_report": {
+          "algal_leaf": {
+            "precision": 0.4827586206896552,
+            "recall": 0.34146341463414637,
+            "f1-score": 0.4,
+            "support": 41.0
+          },
+          "anthracnose": {
+            "precision": 0.6875,
+            "recall": 0.7333333333333333,
+            "f1-score": 0.7096774193548387,
+            "support": 15.0
+          },
+          "bird_eye_spot": {
+            "precision": 0.5789473684210527,
+            "recall": 0.7333333333333333,
+            "f1-score": 0.6470588235294118,
+            "support": 15.0
+          },
+          "brown_blight": {
+            "precision": 0.5192307692307693,
+            "recall": 0.6136363636363636,
+            "f1-score": 0.5625,
+            "support": 44.0
+          },
+          "gray_light": {
+            "precision": 0.37254901960784315,
+            "recall": 0.4523809523809524,
+            "f1-score": 0.40860215053763443,
+            "support": 42.0
+          },
+          "healthy": {
+            "precision": 0.9247311827956989,
+            "recall": 0.86,
+            "f1-score": 0.8911917098445595,
+            "support": 100.0
+          },
+          "red_leaf_spot": {
+            "precision": 0.5813953488372093,
+            "recall": 0.5102040816326531,
+            "f1-score": 0.5434782608695652,
+            "support": 49.0
+          },
+          "white_spot": {
+            "precision": 0.6666666666666666,
+            "recall": 0.7619047619047619,
+            "f1-score": 0.7111111111111111,
+            "support": 21.0
+          },
+          "accuracy": 0.6391437308868502,
+          "macro avg": {
+            "precision": 0.6017223720311119,
+            "recall": 0.625782030106943,
+            "f1-score": 0.6092024344058901,
+            "support": 327.0
+          },
+          "weighted avg": {
+            "precision": 0.6490658012748258,
+            "recall": 0.6391437308868502,
+            "f1-score": 0.6401996118233713,
+            "support": 327.0
+          }
+        },
+        "confusion_matrix": [
+          [
+            14,
+            0,
+            0,
+            6,
+            11,
+            2,
+            4,
+            4
+          ],
+          [
+            0,
+            11,
+            3,
+            0,
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            3,
+            11,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            3,
+            0,
+            0,
+            27,
+            5,
+            0,
+            6,
+            3
+          ],
+          [
+            4,
+            2,
+            4,
+            4,
+            19,
+            3,
+            6,
+            0
+          ],
+          [
+            1,
+            0,
+            0,
+            1,
+            9,
+            86,
+            2,
+            1
+          ],
+          [
+            3,
+            0,
+            1,
+            13,
+            6,
+            1,
+            25,
+            0
+          ],
+          [
+            4,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            16
+          ]
+        ]
+      },
+      "onnx": {
+        "accuracy": 0.6391437308868502,
+        "correct": 209,
+        "incorrect": 118,
+        "test_images": 327,
+        "balanced_accuracy": 0.625782030106943,
+        "macro_precision": 0.6017223720311119,
+        "macro_recall": 0.625782030106943,
+        "macro_f1": 0.6092024344058901,
+        "weighted_precision": 0.6490658012748258,
+        "weighted_recall": 0.6391437308868502,
+        "weighted_f1": 0.6401996118233713,
+        "classification_report": {
+          "algal_leaf": {
+            "precision": 0.4827586206896552,
+            "recall": 0.34146341463414637,
+            "f1-score": 0.4,
+            "support": 41.0
+          },
+          "anthracnose": {
+            "precision": 0.6875,
+            "recall": 0.7333333333333333,
+            "f1-score": 0.7096774193548387,
+            "support": 15.0
+          },
+          "bird_eye_spot": {
+            "precision": 0.5789473684210527,
+            "recall": 0.7333333333333333,
+            "f1-score": 0.6470588235294118,
+            "support": 15.0
+          },
+          "brown_blight": {
+            "precision": 0.5192307692307693,
+            "recall": 0.6136363636363636,
+            "f1-score": 0.5625,
+            "support": 44.0
+          },
+          "gray_light": {
+            "precision": 0.37254901960784315,
+            "recall": 0.4523809523809524,
+            "f1-score": 0.40860215053763443,
+            "support": 42.0
+          },
+          "healthy": {
+            "precision": 0.9247311827956989,
+            "recall": 0.86,
+            "f1-score": 0.8911917098445595,
+            "support": 100.0
+          },
+          "red_leaf_spot": {
+            "precision": 0.5813953488372093,
+            "recall": 0.5102040816326531,
+            "f1-score": 0.5434782608695652,
+            "support": 49.0
+          },
+          "white_spot": {
+            "precision": 0.6666666666666666,
+            "recall": 0.7619047619047619,
+            "f1-score": 0.7111111111111111,
+            "support": 21.0
+          },
+          "accuracy": 0.6391437308868502,
+          "macro avg": {
+            "precision": 0.6017223720311119,
+            "recall": 0.625782030106943,
+            "f1-score": 0.6092024344058901,
+            "support": 327.0
+          },
+          "weighted avg": {
+            "precision": 0.6490658012748258,
+            "recall": 0.6391437308868502,
+            "f1-score": 0.6401996118233713,
+            "support": 327.0
+          }
+        },
+        "confusion_matrix": [
+          [
+            14,
+            0,
+            0,
+            6,
+            11,
+            2,
+            4,
+            4
+          ],
+          [
+            0,
+            11,
+            3,
+            0,
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            3,
+            11,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            3,
+            0,
+            0,
+            27,
+            5,
+            0,
+            6,
+            3
+          ],
+          [
+            4,
+            2,
+            4,
+            4,
+            19,
+            3,
+            6,
+            0
+          ],
+          [
+            1,
+            0,
+            0,
+            1,
+            9,
+            86,
+            2,
+            1
+          ],
+          [
+            3,
+            0,
+            1,
+            13,
+            6,
+            1,
+            25,
+            0
+          ],
+          [
+            4,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            16
+          ]
+        ]
+      },
+      "top1_disagreements": 0,
+      "max_probability_error": 1.2934207916259766e-05
+    },
+    "test": {
+      "keras": {
+        "accuracy": 0.6930091185410334,
+        "correct": 228,
+        "incorrect": 101,
+        "test_images": 329,
+        "balanced_accuracy": 0.6605355178374981,
+        "macro_precision": 0.6423816321400355,
+        "macro_recall": 0.6605355178374981,
+        "macro_f1": 0.6452781104275389,
+        "weighted_precision": 0.7024362780729158,
+        "weighted_recall": 0.6930091185410334,
+        "weighted_f1": 0.6933047572355886,
+        "classification_report": {
+          "algal_leaf": {
+            "precision": 0.5,
+            "recall": 0.38461538461538464,
+            "f1-score": 0.43478260869565216,
+            "support": 39.0
+          },
+          "anthracnose": {
+            "precision": 0.6923076923076923,
+            "recall": 0.6,
+            "f1-score": 0.6428571428571429,
+            "support": 15.0
+          },
+          "bird_eye_spot": {
+            "precision": 0.6111111111111112,
+            "recall": 0.7857142857142857,
+            "f1-score": 0.6875,
+            "support": 14.0
+          },
+          "brown_blight": {
+            "precision": 0.5686274509803921,
+            "recall": 0.6444444444444445,
+            "f1-score": 0.6041666666666666,
+            "support": 45.0
+          },
+          "gray_light": {
+            "precision": 0.4489795918367347,
+            "recall": 0.5238095238095238,
+            "f1-score": 0.4835164835164835,
+            "support": 42.0
+          },
+          "healthy": {
+            "precision": 0.9489795918367347,
+            "recall": 0.9207920792079208,
+            "f1-score": 0.9346733668341709,
+            "support": 101.0
+          },
+          "red_leaf_spot": {
+            "precision": 0.7619047619047619,
+            "recall": 0.6153846153846154,
+            "f1-score": 0.6808510638297872,
+            "support": 52.0
+          },
+          "white_spot": {
+            "precision": 0.6071428571428571,
+            "recall": 0.8095238095238095,
+            "f1-score": 0.6938775510204082,
+            "support": 21.0
+          },
+          "accuracy": 0.6930091185410334,
+          "macro avg": {
+            "precision": 0.6423816321400355,
+            "recall": 0.6605355178374981,
+            "f1-score": 0.6452781104275389,
+            "support": 329.0
+          },
+          "weighted avg": {
+            "precision": 0.7024362780729158,
+            "recall": 0.6930091185410334,
+            "f1-score": 0.6933047572355886,
+            "support": 329.0
+          }
+        },
+        "confusion_matrix": [
+          [
+            15,
+            0,
+            0,
+            4,
+            11,
+            1,
+            2,
+            6
+          ],
+          [
+            0,
+            9,
+            5,
+            0,
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            3,
+            11,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            2,
+            0,
+            0,
+            29,
+            4,
+            1,
+            4,
+            5
+          ],
+          [
+            5,
+            1,
+            2,
+            8,
+            22,
+            1,
+            3,
+            0
+          ],
+          [
+            2,
+            0,
+            0,
+            2,
+            4,
+            93,
+            0,
+            0
+          ],
+          [
+            4,
+            0,
+            0,
+            7,
+            7,
+            2,
+            32,
+            0
+          ],
+          [
+            2,
+            0,
+            0,
+            1,
+            0,
+            0,
+            1,
+            17
+          ]
+        ]
+      },
+      "onnx": {
+        "accuracy": 0.6930091185410334,
+        "correct": 228,
+        "incorrect": 101,
+        "test_images": 329,
+        "balanced_accuracy": 0.6605355178374981,
+        "macro_precision": 0.6423816321400355,
+        "macro_recall": 0.6605355178374981,
+        "macro_f1": 0.6452781104275389,
+        "weighted_precision": 0.7024362780729158,
+        "weighted_recall": 0.6930091185410334,
+        "weighted_f1": 0.6933047572355886,
+        "classification_report": {
+          "algal_leaf": {
+            "precision": 0.5,
+            "recall": 0.38461538461538464,
+            "f1-score": 0.43478260869565216,
+            "support": 39.0
+          },
+          "anthracnose": {
+            "precision": 0.6923076923076923,
+            "recall": 0.6,
+            "f1-score": 0.6428571428571429,
+            "support": 15.0
+          },
+          "bird_eye_spot": {
+            "precision": 0.6111111111111112,
+            "recall": 0.7857142857142857,
+            "f1-score": 0.6875,
+            "support": 14.0
+          },
+          "brown_blight": {
+            "precision": 0.5686274509803921,
+            "recall": 0.6444444444444445,
+            "f1-score": 0.6041666666666666,
+            "support": 45.0
+          },
+          "gray_light": {
+            "precision": 0.4489795918367347,
+            "recall": 0.5238095238095238,
+            "f1-score": 0.4835164835164835,
+            "support": 42.0
+          },
+          "healthy": {
+            "precision": 0.9489795918367347,
+            "recall": 0.9207920792079208,
+            "f1-score": 0.9346733668341709,
+            "support": 101.0
+          },
+          "red_leaf_spot": {
+            "precision": 0.7619047619047619,
+            "recall": 0.6153846153846154,
+            "f1-score": 0.6808510638297872,
+            "support": 52.0
+          },
+          "white_spot": {
+            "precision": 0.6071428571428571,
+            "recall": 0.8095238095238095,
+            "f1-score": 0.6938775510204082,
+            "support": 21.0
+          },
+          "accuracy": 0.6930091185410334,
+          "macro avg": {
+            "precision": 0.6423816321400355,
+            "recall": 0.6605355178374981,
+            "f1-score": 0.6452781104275389,
+            "support": 329.0
+          },
+          "weighted avg": {
+            "precision": 0.7024362780729158,
+            "recall": 0.6930091185410334,
+            "f1-score": 0.6933047572355886,
+            "support": 329.0
+          }
+        },
+        "confusion_matrix": [
+          [
+            15,
+            0,
+            0,
+            4,
+            11,
+            1,
+            2,
+            6
+          ],
+          [
+            0,
+            9,
+            5,
+            0,
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            3,
+            11,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            2,
+            0,
+            0,
+            29,
+            4,
+            1,
+            4,
+            5
+          ],
+          [
+            5,
+            1,
+            2,
+            8,
+            22,
+            1,
+            3,
+            0
+          ],
+          [
+            2,
+            0,
+            0,
+            2,
+            4,
+            93,
+            0,
+            0
+          ],
+          [
+            4,
+            0,
+            0,
+            7,
+            7,
+            2,
+            32,
+            0
+          ],
+          [
+            2,
+            0,
+            0,
+            1,
+            0,
+            0,
+            1,
+            17
+          ]
+        ]
+      },
+      "top1_disagreements": 0,
+      "max_probability_error": 1.1801719665527344e-05
+    },
+    "all": {
+      "keras": {
+        "accuracy": 0.8538916704597178,
+        "correct": 1876,
+        "incorrect": 321,
+        "test_images": 2197,
+        "balanced_accuracy": 0.8525436140556286,
+        "macro_precision": 0.839665883901817,
+        "macro_recall": 0.8525436140556286,
+        "macro_f1": 0.8434608555711782,
+        "weighted_precision": 0.8583525228328025,
+        "weighted_recall": 0.8538916704597178,
+        "weighted_f1": 0.8539477031685618,
+        "classification_report": {
+          "algal_leaf": {
+            "precision": 0.8340807174887892,
+            "recall": 0.7018867924528301,
+            "f1-score": 0.7622950819672131,
+            "support": 265.0
+          },
+          "anthracnose": {
+            "precision": 0.9072164948453608,
+            "recall": 0.8888888888888888,
+            "f1-score": 0.8979591836734694,
+            "support": 99.0
+          },
+          "bird_eye_spot": {
+            "precision": 0.8440366972477065,
+            "recall": 0.9292929292929293,
+            "f1-score": 0.8846153846153846,
+            "support": 99.0
+          },
+          "brown_blight": {
+            "precision": 0.819935691318328,
+            "recall": 0.8360655737704918,
+            "f1-score": 0.827922077922078,
+            "support": 305.0
+          },
+          "gray_light": {
+            "precision": 0.6941896024464832,
+            "recall": 0.8078291814946619,
+            "f1-score": 0.7467105263157895,
+            "support": 281.0
+          },
+          "healthy": {
+            "precision": 0.9579579579579579,
+            "recall": 0.9479940564635958,
+            "f1-score": 0.9529499626587006,
+            "support": 673.0
+          },
+          "red_leaf_spot": {
+            "precision": 0.8682432432432432,
+            "recall": 0.7717717717717718,
+            "f1-score": 0.8171701112877583,
+            "support": 333.0
+          },
+          "white_spot": {
+            "precision": 0.7916666666666666,
+            "recall": 0.9366197183098591,
+            "f1-score": 0.8580645161290322,
+            "support": 142.0
+          },
+          "accuracy": 0.8538916704597178,
+          "macro avg": {
+            "precision": 0.839665883901817,
+            "recall": 0.8525436140556286,
+            "f1-score": 0.8434608555711782,
+            "support": 2197.0
+          },
+          "weighted avg": {
+            "precision": 0.8583525228328025,
+            "recall": 0.8538916704597178,
+            "f1-score": 0.8539477031685618,
+            "support": 2197.0
+          }
+        },
+        "confusion_matrix": [
+          [
+            186,
+            0,
+            0,
+            12,
+            33,
+            5,
+            11,
+            18
+          ],
+          [
+            0,
+            88,
+            9,
+            0,
+            2,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            6,
+            92,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            7,
+            0,
+            0,
+            255,
+            15,
+            2,
+            11,
+            15
+          ],
+          [
+            11,
+            3,
+            7,
+            12,
+            227,
+            9,
+            12,
+            0
+          ],
+          [
+            3,
+            0,
+            0,
+            5,
+            22,
+            638,
+            4,
+            1
+          ],
+          [
+            10,
+            0,
+            1,
+            25,
+            28,
+            11,
+            257,
+            1
+          ],
+          [
+            6,
+            0,
+            0,
+            2,
+            0,
+            0,
+            1,
+            133
+          ]
+        ]
+      },
+      "onnx": {
+        "accuracy": 0.8538916704597178,
+        "correct": 1876,
+        "incorrect": 321,
+        "test_images": 2197,
+        "balanced_accuracy": 0.8525436140556286,
+        "macro_precision": 0.839665883901817,
+        "macro_recall": 0.8525436140556286,
+        "macro_f1": 0.8434608555711782,
+        "weighted_precision": 0.8583525228328025,
+        "weighted_recall": 0.8538916704597178,
+        "weighted_f1": 0.8539477031685618,
+        "classification_report": {
+          "algal_leaf": {
+            "precision": 0.8340807174887892,
+            "recall": 0.7018867924528301,
+            "f1-score": 0.7622950819672131,
+            "support": 265.0
+          },
+          "anthracnose": {
+            "precision": 0.9072164948453608,
+            "recall": 0.8888888888888888,
+            "f1-score": 0.8979591836734694,
+            "support": 99.0
+          },
+          "bird_eye_spot": {
+            "precision": 0.8440366972477065,
+            "recall": 0.9292929292929293,
+            "f1-score": 0.8846153846153846,
+            "support": 99.0
+          },
+          "brown_blight": {
+            "precision": 0.819935691318328,
+            "recall": 0.8360655737704918,
+            "f1-score": 0.827922077922078,
+            "support": 305.0
+          },
+          "gray_light": {
+            "precision": 0.6941896024464832,
+            "recall": 0.8078291814946619,
+            "f1-score": 0.7467105263157895,
+            "support": 281.0
+          },
+          "healthy": {
+            "precision": 0.9579579579579579,
+            "recall": 0.9479940564635958,
+            "f1-score": 0.9529499626587006,
+            "support": 673.0
+          },
+          "red_leaf_spot": {
+            "precision": 0.8682432432432432,
+            "recall": 0.7717717717717718,
+            "f1-score": 0.8171701112877583,
+            "support": 333.0
+          },
+          "white_spot": {
+            "precision": 0.7916666666666666,
+            "recall": 0.9366197183098591,
+            "f1-score": 0.8580645161290322,
+            "support": 142.0
+          },
+          "accuracy": 0.8538916704597178,
+          "macro avg": {
+            "precision": 0.839665883901817,
+            "recall": 0.8525436140556286,
+            "f1-score": 0.8434608555711782,
+            "support": 2197.0
+          },
+          "weighted avg": {
+            "precision": 0.8583525228328025,
+            "recall": 0.8538916704597178,
+            "f1-score": 0.8539477031685618,
+            "support": 2197.0
+          }
+        },
+        "confusion_matrix": [
+          [
+            186,
+            0,
+            0,
+            12,
+            33,
+            5,
+            11,
+            18
+          ],
+          [
+            0,
+            88,
+            9,
+            0,
+            2,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            6,
+            92,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            7,
+            0,
+            0,
+            255,
+            15,
+            2,
+            11,
+            15
+          ],
+          [
+            11,
+            3,
+            7,
+            12,
+            227,
+            9,
+            12,
+            0
+          ],
+          [
+            3,
+            0,
+            0,
+            5,
+            22,
+            638,
+            4,
+            1
+          ],
+          [
+            10,
+            0,
+            1,
+            25,
+            28,
+            11,
+            257,
+            1
+          ],
+          [
+            6,
+            0,
+            0,
+            2,
+            0,
+            0,
+            1,
+            133
+          ]
+        ]
+      },
+      "includes_training_images": true,
+      "interpretation": "Descriptive pooled score, not held-out generalization."
+    }
+  },
+  "majority_baseline": {
+    "selected_from": "train label counts",
+    "class": "healthy",
+    "test_metrics": {
+      "accuracy": 0.3069908814589666,
+      "correct": 101,
+      "incorrect": 228,
+      "test_images": 329,
+      "balanced_accuracy": 0.125,
+      "macro_precision": 0.03837386018237082,
+      "macro_recall": 0.125,
+      "macro_f1": 0.05872093023255814,
+      "weighted_precision": 0.09424340129895327,
+      "weighted_recall": 0.3069908814589666,
+      "weighted_f1": 0.144214321057468,
+      "classification_report": {
+        "algal_leaf": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 39.0
+        },
+        "anthracnose": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 15.0
+        },
+        "bird_eye_spot": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 14.0
+        },
+        "brown_blight": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 45.0
+        },
+        "gray_light": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 42.0
+        },
+        "healthy": {
+          "precision": 0.3069908814589666,
+          "recall": 1.0,
+          "f1-score": 0.4697674418604651,
+          "support": 101.0
+        },
+        "red_leaf_spot": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 52.0
+        },
+        "white_spot": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 21.0
+        },
+        "accuracy": 0.3069908814589666,
+        "macro avg": {
+          "precision": 0.03837386018237082,
+          "recall": 0.125,
+          "f1-score": 0.05872093023255814,
+          "support": 329.0
+        },
+        "weighted avg": {
+          "precision": 0.09424340129895327,
+          "recall": 0.3069908814589666,
+          "f1-score": 0.144214321057468,
+          "support": 329.0
+        }
+      },
+      "confusion_matrix": [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          39,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          15,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          14,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          45,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          42,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          101,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          52,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          21,
+          0,
+          0
+        ]
+      ]
+    }
+  },
+  "robustness": {
+    "engine": "ONNX CPU",
+    "fixed_test_images": 329,
+    "baseline": {
+      "accuracy": 0.6930091185410334,
+      "correct": 228,
+      "incorrect": 101,
+      "test_images": 329,
+      "balanced_accuracy": 0.6605355178374981,
+      "macro_precision": 0.6423816321400355,
+      "macro_recall": 0.6605355178374981,
+      "macro_f1": 0.6452781104275389,
+      "weighted_precision": 0.7024362780729158,
+      "weighted_recall": 0.6930091185410334,
+      "weighted_f1": 0.6933047572355886,
+      "classification_report": {
+        "algal_leaf": {
+          "precision": 0.5,
+          "recall": 0.38461538461538464,
+          "f1-score": 0.43478260869565216,
+          "support": 39.0
+        },
+        "anthracnose": {
+          "precision": 0.6923076923076923,
+          "recall": 0.6,
+          "f1-score": 0.6428571428571429,
+          "support": 15.0
+        },
+        "bird_eye_spot": {
+          "precision": 0.6111111111111112,
+          "recall": 0.7857142857142857,
+          "f1-score": 0.6875,
+          "support": 14.0
+        },
+        "brown_blight": {
+          "precision": 0.5686274509803921,
+          "recall": 0.6444444444444445,
+          "f1-score": 0.6041666666666666,
+          "support": 45.0
+        },
+        "gray_light": {
+          "precision": 0.4489795918367347,
+          "recall": 0.5238095238095238,
+          "f1-score": 0.4835164835164835,
+          "support": 42.0
+        },
+        "healthy": {
+          "precision": 0.9489795918367347,
+          "recall": 0.9207920792079208,
+          "f1-score": 0.9346733668341709,
+          "support": 101.0
+        },
+        "red_leaf_spot": {
+          "precision": 0.7619047619047619,
+          "recall": 0.6153846153846154,
+          "f1-score": 0.6808510638297872,
+          "support": 52.0
+        },
+        "white_spot": {
+          "precision": 0.6071428571428571,
+          "recall": 0.8095238095238095,
+          "f1-score": 0.6938775510204082,
+          "support": 21.0
+        },
+        "accuracy": 0.6930091185410334,
+        "macro avg": {
+          "precision": 0.6423816321400355,
+          "recall": 0.6605355178374981,
+          "f1-score": 0.6452781104275389,
+          "support": 329.0
+        },
+        "weighted avg": {
+          "precision": 0.7024362780729158,
+          "recall": 0.6930091185410334,
+          "f1-score": 0.6933047572355886,
+          "support": 329.0
+        }
+      },
+      "confusion_matrix": [
+        [
+          15,
+          0,
+          0,
+          4,
+          11,
+          1,
+          2,
+          6
+        ],
+        [
+          0,
+          9,
+          5,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          3,
+          11,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          2,
+          0,
+          0,
+          29,
+          4,
+          1,
+          4,
+          5
+        ],
+        [
+          5,
+          1,
+          2,
+          8,
+          22,
+          1,
+          3,
+          0
+        ],
+        [
+          2,
+          0,
+          0,
+          2,
+          4,
+          93,
+          0,
+          0
+        ],
+        [
+          4,
+          0,
+          0,
+          7,
+          7,
+          2,
+          32,
+          0
+        ],
+        [
+          2,
+          0,
+          0,
+          1,
+          0,
+          0,
+          1,
+          17
+        ]
+      ]
+    },
+    "predefined_conditions": [
+      [
+        "brightness_065",
+        "Độ sáng ×0,65"
+      ],
+      [
+        "brightness_135",
+        "Độ sáng ×1,35"
+      ],
+      [
+        "blur_2",
+        "Mờ Gaussian, bán kính 2 px"
+      ],
+      [
+        "resolution_32",
+        "Giảm về 32 × 32 rồi phóng lại"
+      ],
+      [
+        "jpeg_35",
+        "Nén JPEG quality 35"
+      ],
+      [
+        "rotation_15",
+        "Xoay +15°"
+      ]
+    ],
+    "conditions": [
+      {
+        "condition": "brightness_065",
+        "label": "Độ sáng ×0,65",
+        "metrics": {
+          "accuracy": 0.6595744680851063,
+          "correct": 217,
+          "incorrect": 112,
+          "test_images": 329,
+          "balanced_accuracy": 0.5992502478269806,
+          "macro_precision": 0.593105717019195,
+          "macro_recall": 0.5992502478269806,
+          "macro_f1": 0.5819517789611968,
+          "weighted_precision": 0.6708044714079998,
+          "weighted_recall": 0.6595744680851063,
+          "weighted_f1": 0.6521253177396857,
+          "classification_report": {
+            "algal_leaf": {
+              "precision": 0.5555555555555556,
+              "recall": 0.2564102564102564,
+              "f1-score": 0.3508771929824561,
+              "support": 39.0
+            },
+            "anthracnose": {
+              "precision": 0.42857142857142855,
+              "recall": 0.6,
+              "f1-score": 0.5,
+              "support": 15.0
+            },
+            "bird_eye_spot": {
+              "precision": 0.46153846153846156,
+              "recall": 0.42857142857142855,
+              "f1-score": 0.4444444444444444,
+              "support": 14.0
+            },
+            "brown_blight": {
+              "precision": 0.47058823529411764,
+              "recall": 0.7111111111111111,
+              "f1-score": 0.5663716814159292,
+              "support": 45.0
+            },
+            "gray_light": {
+              "precision": 0.4523809523809524,
+              "recall": 0.4523809523809524,
+              "f1-score": 0.4523809523809524,
+              "support": 42.0
+            },
+            "healthy": {
+              "precision": 0.912621359223301,
+              "recall": 0.9306930693069307,
+              "f1-score": 0.9215686274509803,
+              "support": 101.0
+            },
+            "red_leaf_spot": {
+              "precision": 0.7435897435897436,
+              "recall": 0.5576923076923077,
+              "f1-score": 0.6373626373626373,
+              "support": 52.0
+            },
+            "white_spot": {
+              "precision": 0.72,
+              "recall": 0.8571428571428571,
+              "f1-score": 0.782608695652174,
+              "support": 21.0
+            },
+            "accuracy": 0.6595744680851063,
+            "macro avg": {
+              "precision": 0.593105717019195,
+              "recall": 0.5992502478269806,
+              "f1-score": 0.5819517789611968,
+              "support": 329.0
+            },
+            "weighted avg": {
+              "precision": 0.6708044714079998,
+              "recall": 0.6595744680851063,
+              "f1-score": 0.6521253177396857,
+              "support": 329.0
+            }
+          },
+          "confusion_matrix": [
+            [
+              10,
+              0,
+              0,
+              10,
+              11,
+              3,
+              0,
+              5
+            ],
+            [
+              0,
+              9,
+              5,
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              7,
+              6,
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            [
+              1,
+              1,
+              0,
+              32,
+              3,
+              1,
+              5,
+              2
+            ],
+            [
+              2,
+              2,
+              2,
+              13,
+              19,
+              1,
+              3,
+              0
+            ],
+            [
+              2,
+              0,
+              0,
+              3,
+              1,
+              94,
+              1,
+              0
+            ],
+            [
+              2,
+              1,
+              0,
+              10,
+              6,
+              4,
+              29,
+              0
+            ],
+            [
+              1,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1,
+              18
+            ]
+          ]
+        },
+        "delta_accuracy_percentage_points": -3.3434650455927084
+      },
+      {
+        "condition": "brightness_135",
+        "label": "Độ sáng ×1,35",
+        "metrics": {
+          "accuracy": 0.6322188449848024,
+          "correct": 208,
+          "incorrect": 121,
+          "test_images": 329,
+          "balanced_accuracy": 0.5745644894159746,
+          "macro_precision": 0.6012035650468044,
+          "macro_recall": 0.5745644894159746,
+          "macro_f1": 0.5791425074663488,
+          "weighted_precision": 0.6242664830244142,
+          "weighted_recall": 0.6322188449848024,
+          "weighted_f1": 0.6218522837549764,
+          "classification_report": {
+            "algal_leaf": {
+              "precision": 0.4642857142857143,
+              "recall": 0.3333333333333333,
+              "f1-score": 0.3880597014925373,
+              "support": 39.0
+            },
+            "anthracnose": {
+              "precision": 0.6363636363636364,
+              "recall": 0.4666666666666667,
+              "f1-score": 0.5384615384615384,
+              "support": 15.0
+            },
+            "bird_eye_spot": {
+              "precision": 0.5789473684210527,
+              "recall": 0.7857142857142857,
+              "f1-score": 0.6666666666666666,
+              "support": 14.0
+            },
+            "brown_blight": {
+              "precision": 0.5,
+              "recall": 0.5555555555555556,
+              "f1-score": 0.5263157894736842,
+              "support": 45.0
+            },
+            "gray_light": {
+              "precision": 0.3953488372093023,
+              "recall": 0.40476190476190477,
+              "f1-score": 0.4,
+              "support": 42.0
+            },
+            "healthy": {
+              "precision": 0.7983193277310925,
+              "recall": 0.9405940594059405,
+              "f1-score": 0.8636363636363636,
+              "support": 101.0
+            },
+            "red_leaf_spot": {
+              "precision": 0.6363636363636364,
+              "recall": 0.5384615384615384,
+              "f1-score": 0.5833333333333334,
+              "support": 52.0
+            },
+            "white_spot": {
+              "precision": 0.8,
+              "recall": 0.5714285714285714,
+              "f1-score": 0.6666666666666666,
+              "support": 21.0
+            },
+            "accuracy": 0.6322188449848024,
+            "macro avg": {
+              "precision": 0.6012035650468044,
+              "recall": 0.5745644894159746,
+              "f1-score": 0.5791425074663488,
+              "support": 329.0
+            },
+            "weighted avg": {
+              "precision": 0.6242664830244142,
+              "recall": 0.6322188449848024,
+              "f1-score": 0.6218522837549764,
+              "support": 329.0
+            }
+          },
+          "confusion_matrix": [
+            [
+              13,
+              0,
+              0,
+              7,
+              9,
+              5,
+              3,
+              2
+            ],
+            [
+              0,
+              7,
+              5,
+              0,
+              2,
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              2,
+              11,
+              0,
+              0,
+              0,
+              1,
+              0
+            ],
+            [
+              2,
+              0,
+              0,
+              25,
+              6,
+              5,
+              6,
+              1
+            ],
+            [
+              4,
+              2,
+              3,
+              7,
+              17,
+              5,
+              4,
+              0
+            ],
+            [
+              3,
+              0,
+              0,
+              1,
+              2,
+              95,
+              0,
+              0
+            ],
+            [
+              4,
+              0,
+              0,
+              8,
+              7,
+              5,
+              28,
+              0
+            ],
+            [
+              2,
+              0,
+              0,
+              2,
+              0,
+              4,
+              1,
+              12
+            ]
+          ]
+        },
+        "delta_accuracy_percentage_points": -6.079027355623101
+      },
+      {
+        "condition": "blur_2",
+        "label": "Mờ Gaussian, bán kính 2 px",
+        "metrics": {
+          "accuracy": 0.574468085106383,
+          "correct": 189,
+          "incorrect": 140,
+          "test_images": 329,
+          "balanced_accuracy": 0.4553552539319866,
+          "macro_precision": 0.5251953865100417,
+          "macro_recall": 0.4553552539319866,
+          "macro_f1": 0.44891513358962276,
+          "weighted_precision": 0.5734387027569083,
+          "weighted_recall": 0.574468085106383,
+          "weighted_f1": 0.5279920780936428,
+          "classification_report": {
+            "algal_leaf": {
+              "precision": 0.42857142857142855,
+              "recall": 0.3076923076923077,
+              "f1-score": 0.3582089552238806,
+              "support": 39.0
+            },
+            "anthracnose": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1-score": 0.0,
+              "support": 15.0
+            },
+            "bird_eye_spot": {
+              "precision": 0.46153846153846156,
+              "recall": 0.42857142857142855,
+              "f1-score": 0.4444444444444444,
+              "support": 14.0
+            },
+            "brown_blight": {
+              "precision": 0.43103448275862066,
+              "recall": 0.5555555555555556,
+              "f1-score": 0.4854368932038835,
+              "support": 45.0
+            },
+            "gray_light": {
+              "precision": 0.8333333333333334,
+              "recall": 0.11904761904761904,
+              "f1-score": 0.20833333333333334,
+              "support": 42.0
+            },
+            "healthy": {
+              "precision": 0.6482758620689655,
+              "recall": 0.9306930693069307,
+              "f1-score": 0.7642276422764228,
+              "support": 101.0
+            },
+            "red_leaf_spot": {
+              "precision": 0.5238095238095238,
+              "recall": 0.6346153846153846,
+              "f1-score": 0.5739130434782609,
+              "support": 52.0
+            },
+            "white_spot": {
+              "precision": 0.875,
+              "recall": 0.6666666666666666,
+              "f1-score": 0.7567567567567568,
+              "support": 21.0
+            },
+            "accuracy": 0.574468085106383,
+            "macro avg": {
+              "precision": 0.5251953865100417,
+              "recall": 0.4553552539319866,
+              "f1-score": 0.44891513358962276,
+              "support": 329.0
+            },
+            "weighted avg": {
+              "precision": 0.5734387027569083,
+              "recall": 0.574468085106383,
+              "f1-score": 0.5279920780936428,
+              "support": 329.0
+            }
+          },
+          "confusion_matrix": [
+            [
+              12,
+              0,
+              0,
+              14,
+              0,
+              9,
+              2,
+              2
+            ],
+            [
+              0,
+              0,
+              7,
+              3,
+              0,
+              2,
+              3,
+              0
+            ],
+            [
+              0,
+              0,
+              6,
+              0,
+              0,
+              6,
+              2,
+              0
+            ],
+            [
+              3,
+              0,
+              0,
+              25,
+              0,
+              4,
+              13,
+              0
+            ],
+            [
+              6,
+              0,
+              0,
+              8,
+              5,
+              16,
+              7,
+              0
+            ],
+            [
+              3,
+              0,
+              0,
+              2,
+              0,
+              94,
+              2,
+              0
+            ],
+            [
+              4,
+              0,
+              0,
+              3,
+              1,
+              11,
+              33,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              3,
+              0,
+              3,
+              1,
+              14
+            ]
+          ]
+        },
+        "delta_accuracy_percentage_points": -11.854103343465038
+      },
+      {
+        "condition": "resolution_32",
+        "label": "Giảm về 32 × 32 rồi phóng lại",
+        "metrics": {
+          "accuracy": 0.3738601823708207,
+          "correct": 123,
+          "incorrect": 206,
+          "test_images": 329,
+          "balanced_accuracy": 0.20349405819702848,
+          "macro_precision": 0.23829029879379393,
+          "macro_recall": 0.20349405819702848,
+          "macro_f1": 0.17991795430832233,
+          "weighted_precision": 0.32298995475752296,
+          "weighted_recall": 0.3738601823708207,
+          "weighted_f1": 0.29058089070232773,
+          "classification_report": {
+            "algal_leaf": {
+              "precision": 0.4117647058823529,
+              "recall": 0.1794871794871795,
+              "f1-score": 0.25,
+              "support": 39.0
+            },
+            "anthracnose": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1-score": 0.0,
+              "support": 15.0
+            },
+            "bird_eye_spot": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1-score": 0.0,
+              "support": 14.0
+            },
+            "brown_blight": {
+              "precision": 0.29545454545454547,
+              "recall": 0.28888888888888886,
+              "f1-score": 0.29213483146067415,
+              "support": 45.0
+            },
+            "gray_light": {
+              "precision": 0.5,
+              "recall": 0.047619047619047616,
+              "f1-score": 0.08695652173913043,
+              "support": 42.0
+            },
+            "healthy": {
+              "precision": 0.3991031390134529,
+              "recall": 0.8811881188118812,
+              "f1-score": 0.5493827160493827,
+              "support": 101.0
+            },
+            "red_leaf_spot": {
+              "precision": 0.3,
+              "recall": 0.23076923076923078,
+              "f1-score": 0.2608695652173913,
+              "support": 52.0
+            },
+            "white_spot": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1-score": 0.0,
+              "support": 21.0
+            },
+            "accuracy": 0.3738601823708207,
+            "macro avg": {
+              "precision": 0.23829029879379393,
+              "recall": 0.20349405819702848,
+              "f1-score": 0.17991795430832233,
+              "support": 329.0
+            },
+            "weighted avg": {
+              "precision": 0.32298995475752296,
+              "recall": 0.3738601823708207,
+              "f1-score": 0.29058089070232773,
+              "support": 329.0
+            }
+          },
+          "confusion_matrix": [
+            [
+              7,
+              0,
+              0,
+              10,
+              0,
+              20,
+              2,
+              0
+            ],
+            [
+              0,
+              0,
+              1,
+              0,
+              0,
+              11,
+              3,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              1,
+              0,
+              13,
+              0,
+              0
+            ],
+            [
+              3,
+              0,
+              0,
+              13,
+              0,
+              15,
+              14,
+              0
+            ],
+            [
+              3,
+              0,
+              0,
+              6,
+              2,
+              29,
+              2,
+              0
+            ],
+            [
+              3,
+              0,
+              0,
+              2,
+              0,
+              89,
+              7,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              9,
+              2,
+              28,
+              12,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              3,
+              0,
+              18,
+              0,
+              0
+            ]
+          ]
+        },
+        "delta_accuracy_percentage_points": -31.914893617021274
+      },
+      {
+        "condition": "jpeg_35",
+        "label": "Nén JPEG quality 35",
+        "metrics": {
+          "accuracy": 0.5440729483282675,
+          "correct": 179,
+          "incorrect": 150,
+          "test_images": 329,
+          "balanced_accuracy": 0.4005767266287068,
+          "macro_precision": 0.4849241196974552,
+          "macro_recall": 0.4005767266287068,
+          "macro_f1": 0.4017074093439492,
+          "weighted_precision": 0.5401973767782414,
+          "weighted_recall": 0.5440729483282675,
+          "weighted_f1": 0.5124532554916759,
+          "classification_report": {
+            "algal_leaf": {
+              "precision": 0.42857142857142855,
+              "recall": 0.07692307692307693,
+              "f1-score": 0.13043478260869565,
+              "support": 39.0
+            },
+            "anthracnose": {
+              "precision": 0.4444444444444444,
+              "recall": 0.26666666666666666,
+              "f1-score": 0.3333333333333333,
+              "support": 15.0
+            },
+            "bird_eye_spot": {
+              "precision": 0.3333333333333333,
+              "recall": 0.07142857142857142,
+              "f1-score": 0.11764705882352941,
+              "support": 14.0
+            },
+            "brown_blight": {
+              "precision": 0.3670886075949367,
+              "recall": 0.6444444444444445,
+              "f1-score": 0.46774193548387094,
+              "support": 45.0
+            },
+            "gray_light": {
+              "precision": 0.25,
+              "recall": 0.2857142857142857,
+              "f1-score": 0.26666666666666666,
+              "support": 42.0
+            },
+            "healthy": {
+              "precision": 0.7815126050420168,
+              "recall": 0.9207920792079208,
+              "f1-score": 0.8454545454545455,
+              "support": 101.0
+            },
+            "red_leaf_spot": {
+              "precision": 0.5471698113207547,
+              "recall": 0.5576923076923077,
+              "f1-score": 0.5523809523809524,
+              "support": 52.0
+            },
+            "white_spot": {
+              "precision": 0.7272727272727273,
+              "recall": 0.38095238095238093,
+              "f1-score": 0.5,
+              "support": 21.0
+            },
+            "accuracy": 0.5440729483282675,
+            "macro avg": {
+              "precision": 0.4849241196974552,
+              "recall": 0.4005767266287068,
+              "f1-score": 0.4017074093439492,
+              "support": 329.0
+            },
+            "weighted avg": {
+              "precision": 0.5401973767782414,
+              "recall": 0.5440729483282675,
+              "f1-score": 0.5124532554916759,
+              "support": 329.0
+            }
+          },
+          "confusion_matrix": [
+            [
+              3,
+              0,
+              0,
+              16,
+              8,
+              4,
+              7,
+              1
+            ],
+            [
+              0,
+              4,
+              2,
+              0,
+              4,
+              3,
+              2,
+              0
+            ],
+            [
+              0,
+              3,
+              1,
+              1,
+              5,
+              3,
+              1,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              29,
+              4,
+              4,
+              5,
+              2
+            ],
+            [
+              1,
+              2,
+              0,
+              15,
+              12,
+              7,
+              5,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              2,
+              4,
+              93,
+              1,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              10,
+              7,
+              5,
+              29,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              6,
+              4,
+              0,
+              3,
+              8
+            ]
+          ]
+        },
+        "delta_accuracy_percentage_points": -14.893617021276595
+      },
+      {
+        "condition": "rotation_15",
+        "label": "Xoay +15°",
+        "metrics": {
+          "accuracy": 0.6747720364741642,
+          "correct": 222,
+          "incorrect": 107,
+          "test_images": 329,
+          "balanced_accuracy": 0.5980153441168292,
+          "macro_precision": 0.6290147143540044,
+          "macro_recall": 0.5980153441168292,
+          "macro_f1": 0.6077276331305936,
+          "weighted_precision": 0.6890054526009749,
+          "weighted_recall": 0.6747720364741642,
+          "weighted_f1": 0.6779021063836198,
+          "classification_report": {
+            "algal_leaf": {
+              "precision": 0.4594594594594595,
+              "recall": 0.4358974358974359,
+              "f1-score": 0.4473684210526316,
+              "support": 39.0
+            },
+            "anthracnose": {
+              "precision": 0.5714285714285714,
+              "recall": 0.5333333333333333,
+              "f1-score": 0.5517241379310345,
+              "support": 15.0
+            },
+            "bird_eye_spot": {
+              "precision": 0.6666666666666666,
+              "recall": 0.42857142857142855,
+              "f1-score": 0.5217391304347826,
+              "support": 14.0
+            },
+            "brown_blight": {
+              "precision": 0.5272727272727272,
+              "recall": 0.6444444444444445,
+              "f1-score": 0.58,
+              "support": 45.0
+            },
+            "gray_light": {
+              "precision": 0.38,
+              "recall": 0.4523809523809524,
+              "f1-score": 0.41304347826086957,
+              "support": 42.0
+            },
+            "healthy": {
+              "precision": 0.9405940594059405,
+              "recall": 0.9405940594059405,
+              "f1-score": 0.9405940594059405,
+              "support": 101.0
+            },
+            "red_leaf_spot": {
+              "precision": 0.8048780487804879,
+              "recall": 0.6346153846153846,
+              "f1-score": 0.7096774193548387,
+              "support": 52.0
+            },
+            "white_spot": {
+              "precision": 0.6818181818181818,
+              "recall": 0.7142857142857143,
+              "f1-score": 0.6976744186046512,
+              "support": 21.0
+            },
+            "accuracy": 0.6747720364741642,
+            "macro avg": {
+              "precision": 0.6290147143540044,
+              "recall": 0.5980153441168292,
+              "f1-score": 0.6077276331305936,
+              "support": 329.0
+            },
+            "weighted avg": {
+              "precision": 0.6890054526009749,
+              "recall": 0.6747720364741642,
+              "f1-score": 0.6779021063836198,
+              "support": 329.0
+            }
+          },
+          "confusion_matrix": [
+            [
+              17,
+              0,
+              0,
+              8,
+              9,
+              1,
+              0,
+              4
+            ],
+            [
+              0,
+              8,
+              3,
+              0,
+              3,
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              3,
+              6,
+              0,
+              5,
+              0,
+              0,
+              0
+            ],
+            [
+              4,
+              0,
+              0,
+              29,
+              5,
+              1,
+              3,
+              3
+            ],
+            [
+              7,
+              3,
+              0,
+              9,
+              19,
+              2,
+              2,
+              0
+            ],
+            [
+              3,
+              0,
+              0,
+              1,
+              2,
+              95,
+              0,
+              0
+            ],
+            [
+              6,
+              0,
+              0,
+              6,
+              6,
+              1,
+              33,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              2,
+              1,
+              1,
+              2,
+              15
+            ]
+          ]
+        },
+        "delta_accuracy_percentage_points": -1.8237082066869248
+      }
+    ],
+    "scope": "Single deterministic artificial perturbation at a time; not an independent field trial or causal explanation of original errors."
+  },
+  "elapsed_seconds": 120.13835622599998,
+  "limitations": [
+    "All includes train images; test score is the main held-out measure.",
+    "Repeated internal test used in development; not externally field validated.",
+    "Source disease labels inherited; incomplete plant/session identities.",
+    "Robustness probes are diagnostic only; no checkpoint selected or tuned using them."
+  ]
+}

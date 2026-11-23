@@ -1,0 +1,98 @@
+3.3.1. Đánh giá độ chính xác (Accuracy)
+
+Accuracy là tỷ lệ số ảnh được phân loại đúng trên tổng số ảnh đánh giá: Accuracy = số dự đoán đúng / tổng số ảnh. Với hệ thống website, cần đánh giá cả tiền xử lý trong trình duyệt và suy luận thay vì chỉ dùng kết quả Python.
+
+Trên 329 ảnh test nội bộ, đường xử lý trình duyệt đạt 220/329 ảnh đúng, tương đương 66,87%; có 109 ảnh sai. Cùng checkpoint trên Python đạt 228/329, tương đương 69,30%. Chênh lệch là 2,43 điểm phần trăm.
+
+Kết quả cho thấy hệ thống có khả năng phân loại trong phạm vi bộ dữ liệu, nhưng còn nhiều trường hợp nhầm lẫn. Cần tiếp tục cải thiện mô hình và kiểm định trên ảnh thực địa mới trước khi kết luận về khả năng sử dụng rộng rãi.
+
+Chỉ số | Keras/ONNX Python | Trình duyệt
+Accuracy | 69,30% | 66,87%
+Số đúng / tổng | 228/329 | 220/329
+
+[Chèn ảnh: 3-3-1-accuracy.png]
+So sánh tỷ lệ đúng và sai trên cùng tập test.
+
+3.3.2. Đánh giá Precision, Recall và F1-score
+
+Precision của mỗi lớp được tính bằng TP/(TP+FP), Recall bằng TP/(TP+FN), và F1 = 2 × Precision × Recall/(Precision+Recall). Chỉ số macro lấy trung bình đều của tám lớp sau khi tính từng lớp. F1 macro không được thay bằng phép tính trực tiếp từ Precision macro và Recall macro.
+
+Đường xử lý trình duyệt đạt Precision macro 61,44%, Recall macro 63,97% và F1 macro 62,23%. F1 weighted đạt 67,45% do có trọng số theo số ảnh từng lớp. Healthy có F1 89,58%, trong khi gray_light chỉ đạt 35,16%.
+
+Các chỉ số cho thấy chất lượng giữa các lớp chưa đồng đều. Lớp healthy có 101 ảnh test còn bird_eye_spot chỉ có 14 ảnh, vì vậy cần đọc kết quả cùng số mẫu hỗ trợ và chỉ số macro; không suy diễn độ tin cậy của toàn bộ mô hình từ riêng nhóm lá khỏe.
+
+Chỉ số | Keras/ONNX Python | Trình duyệt
+Precision macro | 64,24% | 61,44%
+Recall macro | 66,05% | 63,97%
+F1 macro | 64,53% | 62,23%
+F1 weighted | 69,33% | 67,45%
+
+Nhãn nguồn | Precision | Recall | F1 | Số ảnh
+algal_leaf | 56,67% | 43,59% | 49,28% | 39
+anthracnose | 52,38% | 73,33% | 61,11% | 15
+bird_eye_spot | 56,25% | 64,29% | 60,00% | 14
+brown_blight | 58,82% | 66,67% | 62,50% | 45
+gray_light | 32,65% | 38,10% | 35,16% | 42
+healthy | 94,51% | 85,15% | 89,58% | 101
+red_leaf_spot | 75,00% | 69,23% | 72,00% | 52
+white_spot | 65,22% | 71,43% | 68,18% | 21
+
+[Chèn ảnh: 3-3-2-precision-recall-f1.png]
+Precision, Recall và F1 của từng lớp trên trình duyệt.
+
+3.3.3. Ma trận nhầm lẫn (Confusion Matrix)
+
+Ma trận nhầm lẫn có tám hàng và tám cột. Hàng là nhãn dữ liệu, cột là nhãn dự đoán; các ô trên đường chéo biểu thị ảnh được phân loại đúng. Hình trình bày cả số ảnh và tỷ lệ theo từng hàng để hạn chế ảnh hưởng của số mẫu không đều.
+
+Trên trình duyệt, healthy đúng 86/101, gray_light đúng 16/42 và algal_leaf đúng 17/39. Những nhầm lẫn lớn gồm 11 ảnh healthy → gray_light; 10 ảnh gray_light → brown_blight; 10 ảnh algal_leaf → gray_light.
+
+Tỷ lệ đúng trên đường chéo khác biệt rõ giữa các lớp. Ma trận xác định các nhóm cần cải thiện, nhưng chưa đủ để giải thích nguyên nhân sinh học hay quy lỗi cho một đặc điểm ảnh riêng lẻ.
+
+[Chèn ảnh: 3-3-3-confusion-matrix-browser.png]
+Ma trận nhầm lẫn trình duyệt, chuẩn hóa theo nhãn dữ liệu.
+
+3.3.4. So sánh hiệu quả giữa các mô hình phân loại
+
+Trong phạm vi mã nguồn và kết quả hiện có, MobileNetV2 là kiến trúc có checkpoint, chương trình huấn luyện và dữ liệu đánh giá có thể tái lập. Chưa có checkpoint hoặc kết quả huấn luyện ResNet50/VGG16 trên cùng bộ chia, nên chưa đủ cơ sở so sánh định lượng ba kiến trúc hoặc kết luận MobileNetV2 vượt trội tuyệt đối.
+
+Keras và ONNX Python là hai cách thực thi cùng MobileNetV2, không phải hai kiến trúc. Hai bản khớp nhãn top-1 trên cả 329 ảnh test. File Keras có 25,03 MB và ONNX có 9,58 MB (MB = 10⁶ byte); file Keras còn chứa trạng thái phục vụ huấn luyện, nên chênh lệch này không phải so sánh số tham số giữa các kiến trúc.
+
+Đường cơ sở luôn dự đoán lớp xuất hiện nhiều nhất trong train, healthy, đạt 30,70% trên test. Đây là đối chứng đơn giản đã tính trên cùng dữ liệu, không thay thế thử nghiệm với các mạng khác. Muốn so sánh kiến trúc, cần huấn luyện và đánh giá các mô hình trên cùng bộ chia và cùng điều kiện đo.
+
+Kiến trúc | Bằng chứng thực nghiệm | Accuracy trên test
+MobileNetV2 | Có | 66,87% (trình duyệt)
+ResNet50 | Chưa thực nghiệm | Chưa có số liệu
+VGG16 | Chưa thực nghiệm | Chưa có số liệu
+
+Cách thực thi MobileNetV2 | Dung lượng file | Accuracy test
+Keras / Python | 25,03 MB | 69,30%
+ONNX / Python | 9,58 MB | 69,30%
+ONNX Runtime Web | 9,58 MB | 66,87%
+
+[Chèn ảnh: 3-3-4-comparison-evidence.png]
+Phạm vi bằng chứng thực nghiệm của các kiến trúc được đề cập.
+
+3.3.5. Phân tích các yếu tố ảnh hưởng đến kết quả
+
+Chất lượng ảnh được kiểm tra bằng sáu điều kiện nhân tạo được xác định trước: giảm/tăng sáng, làm mờ Gaussian, giảm độ phân giải, nén JPEG và xoay ảnh. Mỗi điều kiện được áp dụng riêng cho cùng 329 ảnh test, giữ nguyên checkpoint và đường suy luận ONNX Python; báo cáo đầy đủ các mức đã thử, không chọn mức tốt nhất.
+
+Kết quả cho thấy ảnh giảm độ phân giải và ảnh bị nén/mờ có thể làm giảm Accuracy rõ rệt trong thí nghiệm này. Đây là phép thử độ nhạy với biến đổi nhân tạo, không mô phỏng đầy đủ môi trường thực địa và không chứng minh nguyên nhân của từng ảnh sai ban đầu. Điều kiện ảnh chuẩn trong bảng là ảnh sau tiền xử lý, chưa áp dụng các biến đổi thử nghiệm.
+
+Phân bố dữ liệu cũng là yếu tố cần xem xét: healthy có 673 ảnh, trong khi anthracnose và bird_eye_spot mỗi lớp chỉ có 99 ảnh. Dù đã dùng trọng số lớp, kết quả theo lớp vẫn khác nhau. Ngoài ra, thiếu thông tin đầy đủ theo cây/phiên chụp và nhãn kế thừa nguồn công khai giới hạn độ tin cậy khi khái quát ngoài bộ dữ liệu.
+
+Nền ảnh phức tạp, điều kiện ánh sáng và góc chụp cần được kiểm chứng thêm bằng tập ảnh thực địa có nhãn. Hướng cải thiện gồm kiểm tra nhãn các lớp dễ nhầm, bổ sung ảnh đa dạng theo cây/phiên chụp, thống nhất tiền xử lý giữa Python và trình duyệt, và đánh giá trên tập ngoài nguồn trước khi triển khai rộng.
+
+Điều kiện (ONNX Python) | Đúng /329 | Accuracy | Chênh lệch (điểm %)
+Ảnh chuẩn | 228 | 69,30% | 0,00
+Độ sáng ×0,65 | 217 | 65,96% | -3,34
+Độ sáng ×1,35 | 208 | 63,22% | -6,08
+Mờ Gaussian, bán kính 2 px | 189 | 57,45% | -11,85
+Giảm về 32 × 32 rồi phóng lại | 123 | 37,39% | -31,91
+Nén JPEG quality 35 | 179 | 54,41% | -14,89
+Xoay +15° | 222 | 67,48% | -1,82
+
+[Chèn ảnh: 3-3-5-sensitivity.png]
+Độ nhạy Accuracy với các biến đổi ảnh nhân tạo.
+
+[Chèn ảnh: 3-3-5-class-distribution.png]
+Phân bố số ảnh train, validation và test của tám lớp.
