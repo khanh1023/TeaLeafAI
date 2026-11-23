@@ -1,0 +1,7 @@
+3.3.4. So sánh hiệu quả giữa các mô hình phân loại
+
+Trong chương trình hiện có, MobileNetV2 là kiến trúc có trọng số và kết quả đánh giá có thể kiểm chứng. Chưa có thực nghiệm ResNet50 và VGG16 trên cùng bộ chia dữ liệu nên chưa đủ cơ sở kết luận kiến trúc nào tốt hơn.
+
+File MobileNetV2 định dạng ONNX có dung lượng khoảng 9,58 MB. Keras và ONNX là hai định dạng thực thi của cùng mô hình; chúng không đại diện cho hai kiến trúc khác nhau.
+
+Hình minh họa. Phạm vi kiểm chứng các kiến trúc và dung lượng mô hình ONNX hiện tại.

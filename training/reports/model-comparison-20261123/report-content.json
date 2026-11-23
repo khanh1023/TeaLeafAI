@@ -1,0 +1,42 @@
+{
+  "title": "3.3.4. So sánh hiệu quả giữa các mô hình phân loại",
+  "paragraphs": [
+    "Trong chương trình hiện có, MobileNetV2 là kiến trúc có trọng số và kết quả đánh giá có thể kiểm chứng. Chưa có thực nghiệm ResNet50 và VGG16 trên cùng bộ chia dữ liệu nên chưa đủ cơ sở kết luận kiến trúc nào tốt hơn.",
+    "File MobileNetV2 định dạng ONNX có dung lượng khoảng 9,58 MB. Keras và ONNX là hai định dạng thực thi của cùng mô hình; chúng không đại diện cho hai kiến trúc khác nhau."
+  ],
+  "caption": "Hình minh họa. Phạm vi kiểm chứng các kiến trúc và dung lượng mô hình ONNX hiện tại.",
+  "headers": [
+    "Kiến trúc",
+    "Trọng số đã huấn luyện",
+    "Kết quả kiểm thử"
+  ],
+  "rows": [
+    [
+      "MobileNetV2",
+      "Có",
+      "Có"
+    ],
+    [
+      "ResNet50",
+      "Chưa có",
+      "Chưa có"
+    ],
+    [
+      "VGG16",
+      "Chưa có",
+      "Chưa có"
+    ]
+  ],
+  "onnx_bytes": 9580347,
+  "onnx_decimal_mb": 9.580347,
+  "onnx_sha256": "b0ab25d82c74a52882e87c4d0d0fb3d7120ab4c7834ffe36d1a1e4e8990d32ea",
+  "model_version": "mobilenetv2-expanded-20261117",
+  "mb_definition": "MB = 1,000,000 bytes",
+  "scope": "Existing verified checkpoint and recorded test only; no new training, predictions or invented comparisons.",
+  "sources": [
+    "training/reports/evaluation-20261122/data/native-results.json",
+    "training/reports/evaluation-20261122/data/browser-metrics.json",
+    "frontend/public/model/manifest.json",
+    "frontend/public/model/tea-leaf.onnx"
+  ]
+}

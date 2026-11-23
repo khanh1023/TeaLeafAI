@@ -1,5 +1,7 @@
 # So sánh MobileNetV2, ResNet50 và VGG16 — mục 3.3.4
 
+Đã có [hình và văn bản ngắn mục 3.3.4](../training/reports/model-comparison-20261123/README.md) để dán vào báo cáo: phạm vi kiểm chứng hiện có và dung lượng ONNX khoảng 9,58 MB. [Tải Word](https://raw.githubusercontent.com/khanh1023/TeaLeafAI/main/downloads/TeaLeafAI-muc-3-3-4-so-sanh-mo-hinh.docx). Phần này chưa xếp hạng Accuracy hoặc tốc độ của ba mạng.
+
 [Mở trên Google Colab](https://colab.research.google.com/github/khanh1023/TeaLeafAI/blob/main/training/Compare_Models_Colab.ipynb) · [Tải notebook](https://raw.githubusercontent.com/khanh1023/TeaLeafAI/main/downloads/TeaLeafAI-so-sanh-mo-hinh.ipynb)
 
 Notebook chuẩn bị một **thí nghiệm mới**, chưa chứa kết quả huấn luyện. Chọn **Runtime → Change runtime type → T4 GPU**, rồi **Runtime → Run all**. Dùng gói Colab miễn phí khi Google cấp GPU; hạn mức và thời lượng phiên do Google quyết định. Không cần Colab Pro, API key hoặc kết nối Drive. Máy Cloud dùng chuẩn bị notebook chỉ có CPU; chưa thực hiện huấn luyện ba mạng trên GPU.

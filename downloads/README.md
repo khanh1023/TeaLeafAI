@@ -1,10 +1,20 @@
 # Tải TeaLeafAI chạy sẵn
 
+## Ảnh và nội dung mục 3.3.4 để dán vào báo cáo
+
+- [Word gồm văn bản, bảng chỉnh sửa được và hình](https://raw.githubusercontent.com/khanh1023/TeaLeafAI/main/downloads/TeaLeafAI-muc-3-3-4-so-sanh-mo-hinh.docx).
+- [Ảnh phạm vi kiểm chứng, PNG 300 dpi](../training/reports/model-comparison-20261123/3-3-4-pham-vi-kiem-chung.png).
+- [ZIP gồm Word, PNG/SVG/PDF, văn bản và số liệu](https://raw.githubusercontent.com/khanh1023/TeaLeafAI/main/downloads/TeaLeafAI-muc-3-3-4-anh-va-noi-dung.zip).
+
+Bản ngắn nêu rõ MobileNetV2 có hồ sơ kiểm chứng, file ONNX khoảng 9,58 MB và ResNet50/VGG16 chưa có thực nghiệm so sánh trên cùng bộ chia.
+
 ## So sánh ba mô hình — Google Colab
 
 [Mở notebook MobileNetV2/ResNet50/VGG16](https://colab.research.google.com/github/khanh1023/TeaLeafAI/blob/main/training/Compare_Models_Colab.ipynb) · [Tải notebook](https://raw.githubusercontent.com/khanh1023/TeaLeafAI/main/downloads/TeaLeafAI-so-sanh-mo-hinh.ipynb) · [Quy trình và cách đọc kết quả](../docs/MODEL_COMPARISON.md).
 
 Chọn GPU rồi Run all để chạy thí nghiệm mới trên cùng bộ chia 70/15/15; sau khi hoàn thành sẽ xuất Word, bảng, biểu đồ và số liệu thật. Notebook hiện chưa có kết quả huấn luyện. GPU miễn phí phụ thuộc hạn mức Colab.
+
+## Bản website chạy sẵn
 
 [Tải TeaLeafAI-ready.zip](https://github.com/khanh1023/TeaLeafAI/raw/refs/heads/main/downloads/TeaLeafAI-ready.zip) — khoảng 43 MiB, gồm mã nguồn, mô hình và website đã build.
 

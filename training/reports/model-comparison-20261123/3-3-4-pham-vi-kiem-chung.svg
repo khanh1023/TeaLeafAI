@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="720pt" height="446.4pt" viewBox="0 0 720 446.4" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-11-23T14:48:06.192923</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.10.8, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 446.4
+L 720 446.4
+L 720 0
+L 0 0
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="table_1">
+    <g id="patch_2">
+     <path d="M 43.2 141.732
+L 201.6 141.732
+L 201.6 98.208
+L 43.2 98.208
+z
+" style="fill: #21694f; stroke: #dbe5dc; stroke-width: 0.8; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_1">
+     <text style="font-weight: 700; font-size: 14px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #ffffff" x="122.4" y="123.833125" transform="rotate(-0 122.4 123.833125)">Kiến trúc</text>
+    </g>
+    <g id="patch_3">
+     <path d="M 201.6 141.732
+L 455.04 141.732
+L 455.04 98.208
+L 201.6 98.208
+z
+" style="fill: #21694f; stroke: #dbe5dc; stroke-width: 0.8; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_2">
+     <text style="font-weight: 700; font-size: 14px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #ffffff" x="328.32" y="124.585625" transform="rotate(-0 328.32 124.585625)">Trọng số đã huấn luyện</text>
+    </g>
+    <g id="patch_4">
+     <path d="M 455.04 141.732
+L 676.8 141.732
+L 676.8 98.208
+L 455.04 98.208
+z
+" style="fill: #21694f; stroke: #dbe5dc; stroke-width: 0.8; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_3">
+     <text style="font-weight: 700; font-size: 14px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #ffffff" x="565.92" y="124.907188" transform="rotate(-0 565.92 124.907188)">Kết quả kiểm thử</text>
+    </g>
+    <g id="patch_5">
+     <path d="M 43.2 185.256
+L 201.6 185.256
+L 201.6 141.732
+L 43.2 141.732
+z
+" style="fill: #edf4e9; stroke: #dbe5dc; stroke-width: 0.8; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_4">
+     <text style="font-weight: 700; font-size: 14px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #21694f" x="122.4" y="167.357125" transform="rotate(-0 122.4 167.357125)">MobileNetV2</text>
+    </g>
+    <g id="patch_6">
+     <path d="M 201.6 185.256
+L 455.04 185.256
+L 455.04 141.732
+L 201.6 141.732
+z
+" style="fill: #edf4e9; stroke: #dbe5dc; stroke-width: 0.8; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_5">
+     <text style="font-weight: 700; font-size: 14px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #21694f" x="328.32" y="167.357125" transform="rotate(-0 328.32 167.357125)">Có</text>
+    </g>
+    <g id="patch_7">
+     <path d="M 455.04 185.256
+L 676.8 185.256
+L 676.8 141.732
+L 455.04 141.732
+z
+" style="fill: #edf4e9; stroke: #dbe5dc; stroke-width: 0.8; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_6">
+     <text style="font-weight: 700; font-size: 14px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #21694f" x="565.92" y="167.357125" transform="rotate(-0 565.92 167.357125)">Có</text>
+    </g>
+    <g id="patch_8">
+     <path d="M 43.2 228.78
+L 201.6 228.78
+L 201.6 185.256
+L 43.2 185.256
+z
+" style="fill: #f8faf7; stroke: #dbe5dc; stroke-width: 0.8; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_7">
+     <text style="font-size: 14px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #69766d" x="122.4" y="210.881125" transform="rotate(-0 122.4 210.881125)">ResNet50</text>
+    </g>
+    <g id="patch_9">
+     <path d="M 201.6 228.78
+L 455.04 228.78
+L 455.04 185.256
+L 201.6 185.256
+z
+" style="fill: #f8faf7; stroke: #dbe5dc; stroke-width: 0.8; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_8">
+     <text style="font-size: 14px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #69766d" x="328.32" y="210.881125" transform="rotate(-0 328.32 210.881125)">Chưa có</text>
+    </g>
+    <g id="patch_10">
+     <path d="M 455.04 228.78
+L 676.8 228.78
+L 676.8 185.256
+L 455.04 185.256
+z
+" style="fill: #f8faf7; stroke: #dbe5dc; stroke-width: 0.8; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_9">
+     <text style="font-size: 14px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #69766d" x="565.92" y="210.881125" transform="rotate(-0 565.92 210.881125)">Chưa có</text>
+    </g>
+    <g id="patch_11">
+     <path d="M 43.2 272.304
+L 201.6 272.304
+L 201.6 228.78
+L 43.2 228.78
+z
+" style="fill: #f8faf7; stroke: #dbe5dc; stroke-width: 0.8; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_10">
+     <text style="font-size: 14px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #69766d" x="122.4" y="254.405125" transform="rotate(-0 122.4 254.405125)">VGG16</text>
+    </g>
+    <g id="patch_12">
+     <path d="M 201.6 272.304
+L 455.04 272.304
+L 455.04 228.78
+L 201.6 228.78
+z
+" style="fill: #f8faf7; stroke: #dbe5dc; stroke-width: 0.8; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_11">
+     <text style="font-size: 14px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #69766d" x="328.32" y="254.405125" transform="rotate(-0 328.32 254.405125)">Chưa có</text>
+    </g>
+    <g id="patch_13">
+     <path d="M 455.04 272.304
+L 676.8 272.304
+L 676.8 228.78
+L 455.04 228.78
+z
+" style="fill: #f8faf7; stroke: #dbe5dc; stroke-width: 0.8; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_12">
+     <text style="font-size: 14px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #69766d" x="565.92" y="254.405125" transform="rotate(-0 565.92 254.405125)">Chưa có</text>
+    </g>
+   </g>
+  </g>
+  <g id="patch_14">
+   <path d="M 43.2 385.2432
+L 676.8 385.2432
+Q 682.56 385.2432 682.56 381.672
+L 682.56 301.32
+Q 682.56 297.7488 676.8 297.7488
+L 43.2 297.7488
+Q 37.44 297.7488 37.44 301.32
+L 37.44 381.672
+Q 37.44 385.2432 43.2 385.2432
+z
+" style="fill: #edf4e9"/>
+  </g>
+  <g id="text_13">
+   <text style="font-weight: 700; font-size: 21px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #193e32" x="43.2" y="33.48" transform="rotate(-0 43.2 33.48)">PHẠM VI KIỂM CHỨNG CÁC MÔ HÌNH</text>
+  </g>
+  <g id="text_14">
+   <text style="font-size: 14px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #617468" x="43.2" y="60.264" transform="rotate(-0 43.2 60.264)">Tình trạng hồ sơ mô hình và kết quả đánh giá hiện có</text>
+  </g>
+  <g id="text_15">
+   <text style="font-weight: 700; font-size: 19px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #21694f" x="61.2" y="327.6576" transform="rotate(-0 61.2 327.6576)">MobileNetV2 — file ONNX: 9,58 MB</text>
+  </g>
+  <g id="text_16">
+   <text style="font-size: 14px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #325647" x="61.2" y="354.4416" transform="rotate(-0 61.2 354.4416)">Keras và ONNX: hai định dạng của cùng mô hình.</text>
+  </g>
+  <g id="text_17">
+   <text style="font-size: 13px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #617468" x="43.2" y="417.384" transform="rotate(-0 43.2 417.384)">Chưa đủ thực nghiệm để xếp hạng độ chính xác giữa ba kiến trúc.</text>
+  </g>
+ </g>
+</svg>
