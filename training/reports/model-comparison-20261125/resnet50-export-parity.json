@@ -1,0 +1,170 @@
+{
+  "model": {
+    "id": "resnet50",
+    "name": "ResNet50",
+    "file": "resnet50.onnx",
+    "format": "onnx",
+    "model_version": "resnet50-comparison-20261125-7543319d1d",
+    "input_name": "images",
+    "output_name": "probabilities",
+    "input_shape": [
+      1,
+      224,
+      224,
+      3
+    ],
+    "size_bytes": 95019177,
+    "sha256": "bc0d3442103a415adbe8270a313065cc12ca158b93361605b950efd7abcb1e77",
+    "keras_sha256": "7543319d1d02b92882ef0c4fcae03f824262418531d1a5be56500c9b9a887a13",
+    "total_parameters": 23851016,
+    "parity_samples": 23,
+    "parity_max_absolute_error": 4.231929779052734e-06,
+    "parity_top1_disagreements": 0,
+    "native_test": {
+      "accuracy": 0.7507598784194529,
+      "macro_f1": 0.7228241863039548,
+      "correct": 247,
+      "test_images": 329
+    }
+  },
+  "samples": [
+    {
+      "id": "02a14f33dcb13e1d",
+      "max_absolute_error": 7.748603820800781e-07,
+      "keras_class": "gray_light",
+      "onnx_class": "gray_light"
+    },
+    {
+      "id": "5e7a1a1df8b8c451",
+      "max_absolute_error": 5.047768354415894e-07,
+      "keras_class": "algal_leaf",
+      "onnx_class": "algal_leaf"
+    },
+    {
+      "id": "9efb5f5cc16aae9b",
+      "max_absolute_error": 3.166496753692627e-07,
+      "keras_class": "algal_leaf",
+      "onnx_class": "algal_leaf"
+    },
+    {
+      "id": "732a87a7e0f3afae",
+      "max_absolute_error": 1.8477439880371094e-06,
+      "keras_class": "bird_eye_spot",
+      "onnx_class": "bird_eye_spot"
+    },
+    {
+      "id": "cff96c02381f1cd6",
+      "max_absolute_error": 6.556510925292969e-07,
+      "keras_class": "bird_eye_spot",
+      "onnx_class": "bird_eye_spot"
+    },
+    {
+      "id": "9cc3fb7fbda59a8d",
+      "max_absolute_error": 4.231929779052734e-06,
+      "keras_class": "brown_blight",
+      "onnx_class": "brown_blight"
+    },
+    {
+      "id": "070c06b83cc1f61b",
+      "max_absolute_error": 1.6093254089355469e-06,
+      "keras_class": "gray_light",
+      "onnx_class": "gray_light"
+    },
+    {
+      "id": "4aa029b4210443a0",
+      "max_absolute_error": 1.1920928955078125e-07,
+      "keras_class": "gray_light",
+      "onnx_class": "gray_light"
+    },
+    {
+      "id": "4123243f451358ff",
+      "max_absolute_error": 1.1920928955078125e-07,
+      "keras_class": "healthy",
+      "onnx_class": "healthy"
+    },
+    {
+      "id": "2b92dc2ee25ee4fe",
+      "max_absolute_error": 1.1920928955078125e-07,
+      "keras_class": "healthy",
+      "onnx_class": "healthy"
+    },
+    {
+      "id": "a41383f97d50d8d7",
+      "max_absolute_error": 2.384185791015625e-07,
+      "keras_class": "red_leaf_spot",
+      "onnx_class": "red_leaf_spot"
+    },
+    {
+      "id": "56d5719d04460217",
+      "max_absolute_error": 2.384185791015625e-07,
+      "keras_class": "red_leaf_spot",
+      "onnx_class": "red_leaf_spot"
+    },
+    {
+      "id": "a478fe4d3ce08251",
+      "max_absolute_error": 1.4156103134155273e-07,
+      "keras_class": "white_spot",
+      "onnx_class": "white_spot"
+    },
+    {
+      "id": "2103743b68fe50f0",
+      "max_absolute_error": 3.5762786865234375e-07,
+      "keras_class": "white_spot",
+      "onnx_class": "white_spot"
+    },
+    {
+      "id": "e92cf1338093b47f",
+      "max_absolute_error": 8.940696716308594e-07,
+      "keras_class": "gray_light",
+      "onnx_class": "gray_light"
+    },
+    {
+      "id": "c4f533f65b0e9975",
+      "max_absolute_error": 8.344650268554688e-07,
+      "keras_class": "algal_leaf",
+      "onnx_class": "algal_leaf"
+    },
+    {
+      "id": "3f9a2e4ad0fd2084",
+      "max_absolute_error": 2.115964889526367e-06,
+      "keras_class": "gray_light",
+      "onnx_class": "gray_light"
+    },
+    {
+      "id": "fa0318bbe2034c82",
+      "max_absolute_error": 1.1920928955078125e-07,
+      "keras_class": "healthy",
+      "onnx_class": "healthy"
+    },
+    {
+      "id": "adcad2ce6e7bd2ff",
+      "max_absolute_error": 1.0132789611816406e-06,
+      "keras_class": "red_leaf_spot",
+      "onnx_class": "red_leaf_spot"
+    },
+    {
+      "id": "5128d224bf628410",
+      "max_absolute_error": 9.834766387939453e-07,
+      "keras_class": "red_leaf_spot",
+      "onnx_class": "red_leaf_spot"
+    },
+    {
+      "id": "7d29bd6c8d8d40c3",
+      "max_absolute_error": 6.984919309616089e-10,
+      "keras_class": "healthy",
+      "onnx_class": "healthy"
+    },
+    {
+      "id": "46cc94f306a34920",
+      "max_absolute_error": 1.1920928955078125e-07,
+      "keras_class": "healthy",
+      "onnx_class": "healthy"
+    },
+    {
+      "id": "9be4c50407058d02",
+      "max_absolute_error": 2.531308496145357e-14,
+      "keras_class": "healthy",
+      "onnx_class": "healthy"
+    }
+  ]
+}

@@ -1,5 +1,7 @@
 # So sánh MobileNetV2, ResNet50 và VGG16 — mục 3.3.4
 
+**Cập nhật 25/11/2026:** đã huấn luyện và kiểm thử thật cả ba mạng. Có thể [chạy từng mạng hoặc cả ba ngay trên website](https://tea-leaf-ai.vercel.app/so-sanh), gán nhãn ảnh đã thử và xuất Word/CSV. Xem [hướng dẫn sử dụng](TRY_THREE_MODELS.md) và [bằng chứng thực nghiệm Python](../training/reports/model-comparison-20261125/README.md). Các bản Word ngày 23/11 bên dưới là hồ sơ trước khi có thực nghiệm này.
+
 Đã có [hình và văn bản ngắn mục 3.3.4](../training/reports/model-comparison-20261123/README.md) để dán vào báo cáo: phạm vi kiểm chứng hiện có và dung lượng ONNX khoảng 9,58 MB. [Tải Word](https://raw.githubusercontent.com/khanh1023/TeaLeafAI/main/downloads/TeaLeafAI-muc-3-3-4-so-sanh-mo-hinh.docx). Phần này chưa xếp hạng Accuracy hoặc tốc độ của ba mạng.
 
 [Mở trên Google Colab](https://colab.research.google.com/github/khanh1023/TeaLeafAI/blob/main/training/Compare_Models_Colab.ipynb) · [Tải notebook](https://raw.githubusercontent.com/khanh1023/TeaLeafAI/main/downloads/TeaLeafAI-so-sanh-mo-hinh.ipynb)

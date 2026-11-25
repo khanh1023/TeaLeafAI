@@ -1,5 +1,11 @@
 # Tải TeaLeafAI chạy sẵn
 
+## Thử cả ba mô hình trên web và xuất Word
+
+[Mở MobileNetV2, ResNet50 và VGG16](https://tea-leaf-ai.vercel.app/so-sanh) · [Hướng dẫn](../docs/TRY_THREE_MODELS.md). Chọn ảnh, chạy riêng từng mạng hoặc cả ba, gán nhãn nếu đã biết rồi tải Word/CSV từ dữ liệu đã thử. Mô hình được tải khi bấm chạy; ảnh không gửi lên máy chủ.
+
+[Word kết quả thực nghiệm Python trên 329 ảnh](https://raw.githubusercontent.com/khanh1023/TeaLeafAI/main/downloads/TeaLeafAI-thuc-nghiem-3-mo-hinh.docx) · [ZIP chứa số liệu, dự đoán, bảng và hình](https://raw.githubusercontent.com/khanh1023/TeaLeafAI/main/downloads/TeaLeafAI-thuc-nghiem-3-mo-hinh.zip). Đây là bộ thí nghiệm mới ngày 25/11/2026, không phải số liệu hiệu suất trình duyệt hay checkpoint MobileNetV2 đã fine-tune ở trang Phân tích.
+
 ## Ảnh và nội dung mục 3.3.4 để dán vào báo cáo
 
 - [Word gồm văn bản, bảng chỉnh sửa được và hình](https://raw.githubusercontent.com/khanh1023/TeaLeafAI/main/downloads/TeaLeafAI-muc-3-3-4-so-sanh-mo-hinh.docx).

@@ -6,6 +6,8 @@ import json
 import zipfile
 
 ROOT=Path(__file__).resolve().parents[1]
+if (ROOT/'frontend/public/model/comparison/manifest.json').exists():
+    raise SystemExit('This is the historical23/11 report. Three models now exist; use docs/TRY_THREE_MODELS.md and the25/11 evidence instead.')
 os.environ.setdefault('MPLCONFIGDIR',str(ROOT/'training/.cache/matplotlib'))
 import matplotlib
 matplotlib.use('Agg')

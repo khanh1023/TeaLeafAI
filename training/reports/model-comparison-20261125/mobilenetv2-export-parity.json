@@ -1,0 +1,170 @@
+{
+  "model": {
+    "id": "mobilenetv2",
+    "name": "MobileNetV2",
+    "file": "mobilenetv2.onnx",
+    "format": "onnx",
+    "model_version": "mobilenetv2-comparison-20261125-e30cc1b5b9",
+    "input_name": "images",
+    "output_name": "probabilities",
+    "input_shape": [
+      1,
+      224,
+      224,
+      3
+    ],
+    "size_bytes": 9572204,
+    "sha256": "2a7ae82e2ffb80950b4038772f69fe25ab71ed48243f5f99f1c0c2308b357eca",
+    "keras_sha256": "e30cc1b5b9fd2e7a53208260ab346092c6d5d26152487dd347cba0ef57ef2822",
+    "total_parameters": 2422984,
+    "parity_samples": 23,
+    "parity_max_absolute_error": 6.735324859619141e-06,
+    "parity_top1_disagreements": 0,
+    "native_test": {
+      "accuracy": 0.6747720364741642,
+      "macro_f1": 0.6289875247719463,
+      "correct": 222,
+      "test_images": 329
+    }
+  },
+  "samples": [
+    {
+      "id": "02a14f33dcb13e1d",
+      "max_absolute_error": 4.6193599700927734e-07,
+      "keras_class": "anthracnose",
+      "onnx_class": "anthracnose"
+    },
+    {
+      "id": "5e7a1a1df8b8c451",
+      "max_absolute_error": 8.344650268554688e-07,
+      "keras_class": "white_spot",
+      "onnx_class": "white_spot"
+    },
+    {
+      "id": "9efb5f5cc16aae9b",
+      "max_absolute_error": 1.8477439880371094e-06,
+      "keras_class": "algal_leaf",
+      "onnx_class": "algal_leaf"
+    },
+    {
+      "id": "732a87a7e0f3afae",
+      "max_absolute_error": 2.6226043701171875e-06,
+      "keras_class": "bird_eye_spot",
+      "onnx_class": "bird_eye_spot"
+    },
+    {
+      "id": "cff96c02381f1cd6",
+      "max_absolute_error": 2.205371856689453e-06,
+      "keras_class": "anthracnose",
+      "onnx_class": "anthracnose"
+    },
+    {
+      "id": "9cc3fb7fbda59a8d",
+      "max_absolute_error": 2.294778823852539e-06,
+      "keras_class": "brown_blight",
+      "onnx_class": "brown_blight"
+    },
+    {
+      "id": "070c06b83cc1f61b",
+      "max_absolute_error": 6.735324859619141e-06,
+      "keras_class": "bird_eye_spot",
+      "onnx_class": "bird_eye_spot"
+    },
+    {
+      "id": "4aa029b4210443a0",
+      "max_absolute_error": 2.205371856689453e-06,
+      "keras_class": "gray_light",
+      "onnx_class": "gray_light"
+    },
+    {
+      "id": "4123243f451358ff",
+      "max_absolute_error": 1.7881393432617188e-07,
+      "keras_class": "healthy",
+      "onnx_class": "healthy"
+    },
+    {
+      "id": "2b92dc2ee25ee4fe",
+      "max_absolute_error": 5.471520125865936e-09,
+      "keras_class": "healthy",
+      "onnx_class": "healthy"
+    },
+    {
+      "id": "a41383f97d50d8d7",
+      "max_absolute_error": 3.039836883544922e-06,
+      "keras_class": "red_leaf_spot",
+      "onnx_class": "red_leaf_spot"
+    },
+    {
+      "id": "56d5719d04460217",
+      "max_absolute_error": 2.3469328880310059e-07,
+      "keras_class": "red_leaf_spot",
+      "onnx_class": "red_leaf_spot"
+    },
+    {
+      "id": "a478fe4d3ce08251",
+      "max_absolute_error": 2.771615982055664e-06,
+      "keras_class": "algal_leaf",
+      "onnx_class": "algal_leaf"
+    },
+    {
+      "id": "2103743b68fe50f0",
+      "max_absolute_error": 3.516674041748047e-06,
+      "keras_class": "white_spot",
+      "onnx_class": "white_spot"
+    },
+    {
+      "id": "e92cf1338093b47f",
+      "max_absolute_error": 6.496906280517578e-06,
+      "keras_class": "gray_light",
+      "onnx_class": "gray_light"
+    },
+    {
+      "id": "c4f533f65b0e9975",
+      "max_absolute_error": 1.1324882507324219e-06,
+      "keras_class": "red_leaf_spot",
+      "onnx_class": "red_leaf_spot"
+    },
+    {
+      "id": "3f9a2e4ad0fd2084",
+      "max_absolute_error": 2.562999725341797e-06,
+      "keras_class": "brown_blight",
+      "onnx_class": "brown_blight"
+    },
+    {
+      "id": "fa0318bbe2034c82",
+      "max_absolute_error": 4.231929779052734e-06,
+      "keras_class": "healthy",
+      "onnx_class": "healthy"
+    },
+    {
+      "id": "adcad2ce6e7bd2ff",
+      "max_absolute_error": 1.2516975402832031e-06,
+      "keras_class": "brown_blight",
+      "onnx_class": "brown_blight"
+    },
+    {
+      "id": "5128d224bf628410",
+      "max_absolute_error": 2.294778823852539e-06,
+      "keras_class": "red_leaf_spot",
+      "onnx_class": "red_leaf_spot"
+    },
+    {
+      "id": "7d29bd6c8d8d40c3",
+      "max_absolute_error": 1.0913936421275139e-09,
+      "keras_class": "healthy",
+      "onnx_class": "healthy"
+    },
+    {
+      "id": "46cc94f306a34920",
+      "max_absolute_error": 1.1920928955078125e-07,
+      "keras_class": "healthy",
+      "onnx_class": "healthy"
+    },
+    {
+      "id": "9be4c50407058d02",
+      "max_absolute_error": 1.9354047253727913e-09,
+      "keras_class": "healthy",
+      "onnx_class": "healthy"
+    }
+  ]
+}

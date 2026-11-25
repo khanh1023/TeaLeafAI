@@ -1,0 +1,39 @@
+{
+  "config": {
+    "protocol": "frozen-imagenet-common-head-v1",
+    "seed": 42,
+    "epochs": 20,
+    "augmented_views": 2,
+    "feature_batch": 16,
+    "dataset_manifest_sha256": "585cabd7be1741675fa5bed31c14116b9f72f7eca11d40610313ddb15cd48707",
+    "script_sha256": "ba587fe13f53ba3be181ff5b961c302d7b664f2337d2c87acab4cedc7fd5588d",
+    "dtype": "float32",
+    "models": [
+      "MobileNetV2",
+      "ResNet50",
+      "VGG16"
+    ],
+    "head_batch": 32,
+    "head": "GAP -> Dropout .3 -> Dense128 ReLU -> Dropout .2 -> Dense8 softmax",
+    "optimizer": "Adam 1e-3, ReduceLROnPlateau factor .3 patience2 min_lr1e-6",
+    "checkpoint": "minimum validation loss; EarlyStopping patience5 min_delta1e-4",
+    "augmentation": "original + deterministic mirror/rotation ±15 degrees/brightness/contrast .85–1.15 views; train only"
+  },
+  "environment": {
+    "python": "3.12.14",
+    "tensorflow": "2.21.0",
+    "keras": "3.15.1",
+    "numpy": "2.3.5",
+    "pillow": "13.0.0",
+    "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+    "gpus": [],
+    "logical_devices": [
+      "/device:CPU:0"
+    ],
+    "build": {
+      "is_cuda_build": false,
+      "is_rocm_build": false,
+      "is_tensorrt_build": false
+    }
+  }
+}

@@ -1,5 +1,7 @@
 # Mục 3.3.4 — bản ngắn, ảnh và nội dung
 
+**Hồ sơ ngày 23/11/2026.** Đã có [thực nghiệm đầy đủ ngày 25/11](../model-comparison-20261125/README.md) và [chức năng chạy ba mô hình trên website](https://tea-leaf-ai.vercel.app/so-sanh). Nội dung bên dưới phản ánh thời điểm trước khi huấn luyện ResNet50/VGG16.
+
 - [Tải Word](https://raw.githubusercontent.com/khanh1023/TeaLeafAI/main/downloads/TeaLeafAI-muc-3-3-4-so-sanh-mo-hinh.docx).
 - [PNG 300 dpi](3-3-4-pham-vi-kiem-chung.png), [SVG](3-3-4-pham-vi-kiem-chung.svg), [PDF](3-3-4-pham-vi-kiem-chung.pdf).
 - [Văn bản](noi-dung-muc-3-3-4.txt), [nguồn và số liệu](report-content.json).

@@ -1,0 +1,197 @@
+{
+  "sample_id": "4123243f451358ff",
+  "actual": "healthy",
+  "filename": "original-4123243f451358ff.jpg",
+  "browser": "156.0.8078.79",
+  "viewport": {
+    "width": 1440,
+    "height": 1100
+  },
+  "catalog": {
+    "protocol_id": "comparison-frozen-20261125-seed42-f6e180e12cf5454e",
+    "classes": [
+      "algal_leaf",
+      "anthracnose",
+      "bird_eye_spot",
+      "brown_blight",
+      "gray_light",
+      "healthy",
+      "red_leaf_spot",
+      "white_spot"
+    ],
+    "dataset_manifest_sha256": "585cabd7be1741675fa5bed31c14116b9f72f7eca11d40610313ddb15cd48707",
+    "training": "Official ImageNet backbone frozen; identical head and budget; same group70/15/15 split.",
+    "preprocessing": "Raw RGB float32 0–255,224x224; architecture-specific normalization embedded in each model.",
+    "models": [
+      {
+        "id": "mobilenetv2",
+        "name": "MobileNetV2",
+        "file": "mobilenetv2.onnx",
+        "format": "onnx",
+        "model_version": "mobilenetv2-comparison-20261125-e30cc1b5b9",
+        "input_name": "images",
+        "output_name": "probabilities",
+        "input_shape": [
+          1,
+          224,
+          224,
+          3
+        ],
+        "size_bytes": 9572204,
+        "sha256": "2a7ae82e2ffb80950b4038772f69fe25ab71ed48243f5f99f1c0c2308b357eca",
+        "keras_sha256": "e30cc1b5b9fd2e7a53208260ab346092c6d5d26152487dd347cba0ef57ef2822",
+        "total_parameters": 2422984,
+        "parity_samples": 23,
+        "parity_max_absolute_error": 0.000006735324859619141,
+        "parity_top1_disagreements": 0,
+        "native_test": {
+          "accuracy": 0.6747720364741642,
+          "macro_f1": 0.6289875247719463,
+          "correct": 222,
+          "test_images": 329
+        }
+      },
+      {
+        "id": "resnet50",
+        "name": "ResNet50",
+        "file": "resnet50.onnx",
+        "format": "onnx",
+        "model_version": "resnet50-comparison-20261125-7543319d1d",
+        "input_name": "images",
+        "output_name": "probabilities",
+        "input_shape": [
+          1,
+          224,
+          224,
+          3
+        ],
+        "size_bytes": 95019177,
+        "sha256": "bc0d3442103a415adbe8270a313065cc12ca158b93361605b950efd7abcb1e77",
+        "keras_sha256": "7543319d1d02b92882ef0c4fcae03f824262418531d1a5be56500c9b9a887a13",
+        "total_parameters": 23851016,
+        "parity_samples": 23,
+        "parity_max_absolute_error": 0.000004231929779052734,
+        "parity_top1_disagreements": 0,
+        "native_test": {
+          "accuracy": 0.7507598784194529,
+          "macro_f1": 0.7228241863039548,
+          "correct": 247,
+          "test_images": 329
+        }
+      },
+      {
+        "id": "vgg16",
+        "name": "VGG16",
+        "file": "vgg16.onnx",
+        "format": "onnx",
+        "model_version": "vgg16-comparison-20261125-584236a157",
+        "input_name": "images",
+        "output_name": "probabilities",
+        "input_shape": [
+          1,
+          224,
+          224,
+          3
+        ],
+        "size_bytes": 59138052,
+        "sha256": "df8f97b5e8f012509ef8540e80dc887d143d1b8b352246ef508012be10c5a84b",
+        "keras_sha256": "584236a157f83f74074ad0fd13ad3ac7214ec07256ac63a22cb422aba6a9474f",
+        "total_parameters": 14781384,
+        "parity_samples": 23,
+        "parity_max_absolute_error": 7.152557373046875e-7,
+        "parity_top1_disagreements": 0,
+        "native_test": {
+          "accuracy": 0.6960486322188449,
+          "macro_f1": 0.6606906368016092,
+          "correct": 229,
+          "test_images": 329
+        }
+      }
+    ]
+  },
+  "trials": [
+    {
+      "image_sha256": "6badadb946398a953aea934dc3dc9e730562b1050622d5f0125a0791366d177d",
+      "protocol_id": "comparison-frozen-20261125-seed42-f6e180e12cf5454e",
+      "filename": "original-4123243f451358ff.jpg",
+      "actual_label": "healthy",
+      "results": {
+        "mobilenetv2": {
+          "predicted_class": "healthy",
+          "predicted_label": "Lá khỏe mạnh",
+          "confidence": 0.9857344627380371,
+          "probabilities": {
+            "algal_leaf": 0.0019541846122592688,
+            "anthracnose": 0.0000018127921066479757,
+            "bird_eye_spot": 0.000011572436051210389,
+            "brown_blight": 0.001279350952245295,
+            "gray_light": 0.002865687943994999,
+            "healthy": 0.9857344627380371,
+            "red_leaf_spot": 0.007612909190356731,
+            "white_spot": 0.0005400052177719772
+          },
+          "engine": "browser",
+          "model_version": "mobilenetv2-comparison-20261125-e30cc1b5b9",
+          "model_id": "mobilenetv2",
+          "model_name": "MobileNetV2",
+          "model_sha256": "2a7ae82e2ffb80950b4038772f69fe25ab71ed48243f5f99f1c0c2308b357eca",
+          "inference_ms": 53,
+          "load_ms": 160.1999999997206,
+          "first_run_after_load": true,
+          "model_bytes": 9572204
+        },
+        "resnet50": {
+          "predicted_class": "healthy",
+          "predicted_label": "Lá khỏe mạnh",
+          "confidence": 0.998018741607666,
+          "probabilities": {
+            "algal_leaf": 0.00005499605686054565,
+            "anthracnose": 0.000010052510333480313,
+            "bird_eye_spot": 0.00005185895133763552,
+            "brown_blight": 0.000006685147582174977,
+            "gray_light": 0.000561223307158798,
+            "healthy": 0.998018741607666,
+            "red_leaf_spot": 0.0012889106292277575,
+            "white_spot": 0.000007650523002666887
+          },
+          "engine": "browser",
+          "model_version": "resnet50-comparison-20261125-7543319d1d",
+          "model_id": "resnet50",
+          "model_name": "ResNet50",
+          "model_sha256": "bc0d3442103a415adbe8270a313065cc12ca158b93361605b950efd7abcb1e77",
+          "inference_ms": 412.20000000018626,
+          "load_ms": 942.4000000003725,
+          "first_run_after_load": true,
+          "model_bytes": 95019177
+        },
+        "vgg16": {
+          "predicted_class": "healthy",
+          "predicted_label": "Lá khỏe mạnh",
+          "confidence": 0.6676168441772461,
+          "probabilities": {
+            "algal_leaf": 0.02068730816245079,
+            "anthracnose": 0.2011217474937439,
+            "bird_eye_spot": 0.0061003295704722404,
+            "brown_blight": 0.012014294974505901,
+            "gray_light": 0.07356755435466766,
+            "healthy": 0.6676168441772461,
+            "red_leaf_spot": 0.0025230422616004944,
+            "white_spot": 0.01636885479092598
+          },
+          "engine": "browser",
+          "model_version": "vgg16-comparison-20261125-584236a157",
+          "model_id": "vgg16",
+          "model_name": "VGG16",
+          "model_sha256": "df8f97b5e8f012509ef8540e80dc887d143d1b8b352246ef508012be10c5a84b",
+          "inference_ms": 1340.6000000000931,
+          "load_ms": 563.7000000001863,
+          "first_run_after_load": true,
+          "model_bytes": 59138052
+        }
+      },
+      "date": "2026-11-25T06:51:39.652Z"
+    }
+  ],
+  "uncaught_errors": [],
+  "image_uploads": 0
+}

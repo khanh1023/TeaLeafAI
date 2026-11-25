@@ -1,5 +1,12 @@
 # TeaLeafAI · Nhận diện bệnh lá chè
 
+## Chạy thử ba mô hình trên website
+
+**[Mở trang Thử 3 mô hình](https://tea-leaf-ai.vercel.app/so-sanh)**: chọn ảnh/camera, chạy MobileNetV2, ResNet50 hoặc VGG16, đối chiếu cùng ảnh và tải Word/CSV từ kết quả đã thử. Có thể gán nhãn thực tế để tính Accuracy trên các ảnh chung; không lấy điểm softmax làm Accuracy. [Hướng dẫn](docs/TRY_THREE_MODELS.md) · [Thực nghiệm Python và bằng chứng ngày 25/11/2026](training/reports/model-comparison-20261125/README.md).
+
+Ba mạng là checkpoint thật được huấn luyện cùng quy trình chuyển giao backbone đóng băng. Trang Phân tích vẫn dùng bản MobileNetV2 đã fine-tune; hai bộ đánh giá được phân biệt theo phiên bản.
+
+
 Website tiếng Việt phân loại ảnh lá chè bằng MobileNetV2 thành **8 lớp: 7 bệnh và lá khỏe mạnh**. Bản mặc định chạy mô hình **ngay trong trình duyệt** bằng ONNX Runtime Web: không cần tài khoản, API key, dịch vụ AI trả phí hay máy chủ Python.
 
 - Website: https://tea-leaf-ai.vercel.app

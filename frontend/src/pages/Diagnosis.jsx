@@ -78,6 +78,7 @@ export default function Diagnosis() {
   const probabilities = result ? [...CLASSES].map((item) => ({ ...item, value: result.probabilities?.[item.key] || 0 })).sort((a, b) => b.value - a.value) : [];
   return <section className="page">
     <div className="page-title"><span className="eyebrow">TỪ MỘT CHIẾC LÁ, HIỂU THÊM VỀ VƯỜN CHÈ</span><h1>Phân tích ảnh lá chè</h1><p>Chọn ảnh có sẵn hoặc chụp bằng camera. AI sẽ đối chiếu với 8 nhóm trong dữ liệu huấn luyện.</p></div>
+    <p className="comparison-entry">Muốn đối chiếu ResNet50 và VGG16? <Link to="/so-sanh">Thử cả ba mô hình trên cùng một ảnh</Link>.</p>
     <div className="diagnosis-layout">
       <div className="panel upload-panel">
         <div className="panel-heading"><span className="step-badge">01</span><h2>Ảnh lá chè của bạn</h2></div>

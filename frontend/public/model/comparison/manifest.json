@@ -1,0 +1,102 @@
+{
+  "protocol_id": "comparison-frozen-20261125-seed42-f6e180e12cf5454e",
+  "classes": [
+    "algal_leaf",
+    "anthracnose",
+    "bird_eye_spot",
+    "brown_blight",
+    "gray_light",
+    "healthy",
+    "red_leaf_spot",
+    "white_spot"
+  ],
+  "dataset_manifest_sha256": "585cabd7be1741675fa5bed31c14116b9f72f7eca11d40610313ddb15cd48707",
+  "training": "Official ImageNet backbone frozen; identical head and budget; same group70/15/15 split.",
+  "preprocessing": "Raw RGB float32 0–255,224x224; architecture-specific normalization embedded in each model.",
+  "models": [
+    {
+      "id": "mobilenetv2",
+      "name": "MobileNetV2",
+      "file": "mobilenetv2.onnx",
+      "format": "onnx",
+      "model_version": "mobilenetv2-comparison-20261125-e30cc1b5b9",
+      "input_name": "images",
+      "output_name": "probabilities",
+      "input_shape": [
+        1,
+        224,
+        224,
+        3
+      ],
+      "size_bytes": 9572204,
+      "sha256": "2a7ae82e2ffb80950b4038772f69fe25ab71ed48243f5f99f1c0c2308b357eca",
+      "keras_sha256": "e30cc1b5b9fd2e7a53208260ab346092c6d5d26152487dd347cba0ef57ef2822",
+      "total_parameters": 2422984,
+      "parity_samples": 23,
+      "parity_max_absolute_error": 6.735324859619141e-06,
+      "parity_top1_disagreements": 0,
+      "native_test": {
+        "accuracy": 0.6747720364741642,
+        "macro_f1": 0.6289875247719463,
+        "correct": 222,
+        "test_images": 329
+      }
+    },
+    {
+      "id": "resnet50",
+      "name": "ResNet50",
+      "file": "resnet50.onnx",
+      "format": "onnx",
+      "model_version": "resnet50-comparison-20261125-7543319d1d",
+      "input_name": "images",
+      "output_name": "probabilities",
+      "input_shape": [
+        1,
+        224,
+        224,
+        3
+      ],
+      "size_bytes": 95019177,
+      "sha256": "bc0d3442103a415adbe8270a313065cc12ca158b93361605b950efd7abcb1e77",
+      "keras_sha256": "7543319d1d02b92882ef0c4fcae03f824262418531d1a5be56500c9b9a887a13",
+      "total_parameters": 23851016,
+      "parity_samples": 23,
+      "parity_max_absolute_error": 4.231929779052734e-06,
+      "parity_top1_disagreements": 0,
+      "native_test": {
+        "accuracy": 0.7507598784194529,
+        "macro_f1": 0.7228241863039548,
+        "correct": 247,
+        "test_images": 329
+      }
+    },
+    {
+      "id": "vgg16",
+      "name": "VGG16",
+      "file": "vgg16.onnx",
+      "format": "onnx",
+      "model_version": "vgg16-comparison-20261125-584236a157",
+      "input_name": "images",
+      "output_name": "probabilities",
+      "input_shape": [
+        1,
+        224,
+        224,
+        3
+      ],
+      "size_bytes": 59138052,
+      "sha256": "df8f97b5e8f012509ef8540e80dc887d143d1b8b352246ef508012be10c5a84b",
+      "keras_sha256": "584236a157f83f74074ad0fd13ad3ac7214ec07256ac63a22cb422aba6a9474f",
+      "total_parameters": 14781384,
+      "parity_samples": 23,
+      "parity_max_absolute_error": 7.152557373046875e-07,
+      "parity_top1_disagreements": 0,
+      "native_test": {
+        "accuracy": 0.6960486322188449,
+        "macro_f1": 0.6606906368016092,
+        "correct": 229,
+        "test_images": 329
+      }
+    }
+  ]
+}

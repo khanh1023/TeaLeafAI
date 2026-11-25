@@ -1,0 +1,170 @@
+{
+  "model": {
+    "id": "vgg16",
+    "name": "VGG16",
+    "file": "vgg16.onnx",
+    "format": "onnx",
+    "model_version": "vgg16-comparison-20261125-584236a157",
+    "input_name": "images",
+    "output_name": "probabilities",
+    "input_shape": [
+      1,
+      224,
+      224,
+      3
+    ],
+    "size_bytes": 59138052,
+    "sha256": "df8f97b5e8f012509ef8540e80dc887d143d1b8b352246ef508012be10c5a84b",
+    "keras_sha256": "584236a157f83f74074ad0fd13ad3ac7214ec07256ac63a22cb422aba6a9474f",
+    "total_parameters": 14781384,
+    "parity_samples": 23,
+    "parity_max_absolute_error": 7.152557373046875e-07,
+    "parity_top1_disagreements": 0,
+    "native_test": {
+      "accuracy": 0.6960486322188449,
+      "macro_f1": 0.6606906368016092,
+      "correct": 229,
+      "test_images": 329
+    }
+  },
+  "samples": [
+    {
+      "id": "02a14f33dcb13e1d",
+      "max_absolute_error": 1.7881393432617188e-07,
+      "keras_class": "gray_light",
+      "onnx_class": "gray_light"
+    },
+    {
+      "id": "5e7a1a1df8b8c451",
+      "max_absolute_error": 1.1920928955078125e-07,
+      "keras_class": "brown_blight",
+      "onnx_class": "brown_blight"
+    },
+    {
+      "id": "9efb5f5cc16aae9b",
+      "max_absolute_error": 1.043081283569336e-07,
+      "keras_class": "algal_leaf",
+      "onnx_class": "algal_leaf"
+    },
+    {
+      "id": "732a87a7e0f3afae",
+      "max_absolute_error": 2.384185791015625e-07,
+      "keras_class": "bird_eye_spot",
+      "onnx_class": "bird_eye_spot"
+    },
+    {
+      "id": "cff96c02381f1cd6",
+      "max_absolute_error": 6.258487701416016e-07,
+      "keras_class": "bird_eye_spot",
+      "onnx_class": "bird_eye_spot"
+    },
+    {
+      "id": "9cc3fb7fbda59a8d",
+      "max_absolute_error": 1.1175870895385742e-08,
+      "keras_class": "brown_blight",
+      "onnx_class": "brown_blight"
+    },
+    {
+      "id": "070c06b83cc1f61b",
+      "max_absolute_error": 1.4901161193847656e-07,
+      "keras_class": "gray_light",
+      "onnx_class": "gray_light"
+    },
+    {
+      "id": "4aa029b4210443a0",
+      "max_absolute_error": 1.6391277313232422e-07,
+      "keras_class": "gray_light",
+      "onnx_class": "gray_light"
+    },
+    {
+      "id": "4123243f451358ff",
+      "max_absolute_error": 7.152557373046875e-07,
+      "keras_class": "healthy",
+      "onnx_class": "healthy"
+    },
+    {
+      "id": "2b92dc2ee25ee4fe",
+      "max_absolute_error": 1.1920928955078125e-07,
+      "keras_class": "healthy",
+      "onnx_class": "healthy"
+    },
+    {
+      "id": "a41383f97d50d8d7",
+      "max_absolute_error": 6.556510925292969e-07,
+      "keras_class": "algal_leaf",
+      "onnx_class": "algal_leaf"
+    },
+    {
+      "id": "56d5719d04460217",
+      "max_absolute_error": 4.76837158203125e-07,
+      "keras_class": "red_leaf_spot",
+      "onnx_class": "red_leaf_spot"
+    },
+    {
+      "id": "a478fe4d3ce08251",
+      "max_absolute_error": 3.8743019104003906e-07,
+      "keras_class": "white_spot",
+      "onnx_class": "white_spot"
+    },
+    {
+      "id": "2103743b68fe50f0",
+      "max_absolute_error": 4.842877388000488e-08,
+      "keras_class": "white_spot",
+      "onnx_class": "white_spot"
+    },
+    {
+      "id": "e92cf1338093b47f",
+      "max_absolute_error": 5.960464477539062e-07,
+      "keras_class": "algal_leaf",
+      "onnx_class": "algal_leaf"
+    },
+    {
+      "id": "c4f533f65b0e9975",
+      "max_absolute_error": 2.384185791015625e-07,
+      "keras_class": "algal_leaf",
+      "onnx_class": "algal_leaf"
+    },
+    {
+      "id": "3f9a2e4ad0fd2084",
+      "max_absolute_error": 7.450580596923828e-08,
+      "keras_class": "algal_leaf",
+      "onnx_class": "algal_leaf"
+    },
+    {
+      "id": "fa0318bbe2034c82",
+      "max_absolute_error": 3.5762786865234375e-07,
+      "keras_class": "healthy",
+      "onnx_class": "healthy"
+    },
+    {
+      "id": "adcad2ce6e7bd2ff",
+      "max_absolute_error": 2.682209014892578e-07,
+      "keras_class": "gray_light",
+      "onnx_class": "gray_light"
+    },
+    {
+      "id": "5128d224bf628410",
+      "max_absolute_error": 1.7881393432617188e-07,
+      "keras_class": "gray_light",
+      "onnx_class": "gray_light"
+    },
+    {
+      "id": "7d29bd6c8d8d40c3",
+      "max_absolute_error": 1.257285475730896e-08,
+      "keras_class": "healthy",
+      "onnx_class": "healthy"
+    },
+    {
+      "id": "46cc94f306a34920",
+      "max_absolute_error": 9.313225746154785e-10,
+      "keras_class": "healthy",
+      "onnx_class": "healthy"
+    },
+    {
+      "id": "9be4c50407058d02",
+      "max_absolute_error": 1.1920928955078125e-07,
+      "keras_class": "healthy",
+      "onnx_class": "healthy"
+    }
+  ]
+}
