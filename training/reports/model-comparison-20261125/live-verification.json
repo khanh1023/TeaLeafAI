@@ -1,0 +1,20 @@
+{
+  "verified_at": "2026-11-25T07:04:35.822828+00:00",
+  "url": "https://tea-leaf-ai.vercel.app/so-sanh",
+  "deployed_application_commit": "d31a012ae4502be8bf0e2c7602882ee873d6d89f",
+  "protocol_id": "comparison-frozen-20261125-seed42-f6e180e12cf5454e",
+  "browser": "156.0.8078.79",
+  "passed": [
+    "all three genuine ONNX model downloads and predictions",
+    "individual model reruns",
+    "same-file deduplication",
+    "ground truth correction",
+    "actual DOCX and CSV downloads",
+    "390px and320px page layout",
+    "zero image uploads"
+  ],
+  "sample_id": "4123243f451358ff",
+  "sample_count": 1,
+  "scope": "Functional validation on one held-out sample, not a new accuracy evaluation.",
+  "https": "System-trust HTTPS verified; Chromium QA used a test-only pin for the environment interception certificate. Application HTTPS unchanged."
+}

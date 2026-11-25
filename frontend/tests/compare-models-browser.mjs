@@ -14,7 +14,9 @@ const manifest = JSON.parse(await readFile(path.join(root, 'training/reports/exp
 const record = manifest.find(item => item.split === 'test' && item.label === 'healthy');
 const photo = path.join(root, 'training/dataset', record.path);
 const browser = await chromium.launch({ headless: true, executablePath: process.env.CHROMIUM_PATH || '/usr/bin/chromium',
-  args: ['--no-sandbox', '--disable-dev-shm-usage'] });
+  // Optional, test-only pin for environments whose HTTPS proxy CA is absent from Chromium.
+  args: ['--no-sandbox', '--disable-dev-shm-usage', ...(process.env.TEALEAF_QA_TRUSTED_SPKI
+    ? ['--ignore-certificate-errors-spki-list=' + process.env.TEALEAF_QA_TRUSTED_SPKI] : [])] });
 const errors = [], requests = [];
 try {
   const page = await browser.newPage({ viewport: { width: 1440, height: 1100 }, acceptDownloads: true });
@@ -61,7 +63,7 @@ try {
   await page.evaluate(() => { document.activeElement?.blur(); window.scrollTo(0, 0); });
   await page.screenshot({ path: path.join(output, 'three-models-desktop.png'), fullPage: true });
   const saved = await page.evaluate(() => JSON.parse(localStorage.getItem('teaLeafComparisonTrialsV1')));
-  const catalog = await page.evaluate(async () => (await import('/src/comparison-api.js')).comparisonCatalog());
+  const catalog = await page.evaluate(async url => (await fetch(url, { cache: 'no-cache' })).json(), base + '/model/comparison/manifest.json');
   const data = { sample_id: record.id, actual: record.label, filename: path.basename(photo), browser: browser.version(),
     viewport: { width: 1440, height: 1100 }, catalog, trials: saved, uncaught_errors: errors,
     image_uploads: requests.filter(request => request.method === 'POST').length };
