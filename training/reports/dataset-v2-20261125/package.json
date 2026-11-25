@@ -1,10 +1,30 @@
 {
   "filename": "TeaLeafAI-dataset-v2-20261125.zip",
-  "size_bytes": 255012191,
-  "sha256": "9cd26fbac645fd4a85e5b493a29ada5b09a380582eb6b08dbc152c4bbd2fe890",
+  "size_bytes": 255012357,
+  "sha256": "acc711fbc56ca597207fa76047d520f9f387efbf3a42b527bc15e8348fbccfd0",
   "release_tag": "dataset-v2-20261125",
-  "download_url": "https://github.com/khanh1023/TeaLeafAI/releases/download/dataset-v2-20261125/TeaLeafAI-dataset-v2-20261125.zip",
   "manifest_sha256": "47a24012c4f67957c9ec98b997e37404575738d068ec004c415ab7bd03ecf001",
   "training_evaluation_images": 6840,
-  "reserve_images": 4
+  "reserve_images": 4,
+  "parts": [
+    {
+      "filename": "TeaLeafAI-dataset-v2-20261125.zip.part01",
+      "size_bytes": 90000000,
+      "sha256": "0d92acc541c0ee97d4b0f22b1316aec110e65b5d41360a6713ff2710f78742ae",
+      "download_url": "https://raw.githubusercontent.com/khanh1023/TeaLeafAI/870581940b65c6e1afc8163b92732ff0657f4443/TeaLeafAI-dataset-v2-20261125.zip.part01"
+    },
+    {
+      "filename": "TeaLeafAI-dataset-v2-20261125.zip.part02",
+      "size_bytes": 90000000,
+      "sha256": "d92a8abaffd0695566c870ed75b78490db30e88bad3a6089b580f10086ed2c90",
+      "download_url": "https://raw.githubusercontent.com/khanh1023/TeaLeafAI/870581940b65c6e1afc8163b92732ff0657f4443/TeaLeafAI-dataset-v2-20261125.zip.part02"
+    },
+    {
+      "filename": "TeaLeafAI-dataset-v2-20261125.zip.part03",
+      "size_bytes": 75012357,
+      "sha256": "dee71c3de2ed575c9df55049ebc795d443b250fb107b407f379113d84bcd0a96",
+      "download_url": "https://raw.githubusercontent.com/khanh1023/TeaLeafAI/870581940b65c6e1afc8163b92732ff0657f4443/TeaLeafAI-dataset-v2-20261125.zip.part03"
+    }
+  ],
+  "data_ref": "870581940b65c6e1afc8163b92732ff0657f4443"
 }

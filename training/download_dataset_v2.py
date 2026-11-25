@@ -42,9 +42,26 @@ def main():
         archive_path = cache / package['filename']
         if not archive_path.exists():
             partial = archive_path.with_suffix('.zip.part')
-            request = urllib.request.Request(package['download_url'], headers={'User-Agent': 'TeaLeafAI-dataset-v2'})
-            with urllib.request.urlopen(request, timeout=120) as response, partial.open('wb') as file:
-                shutil.copyfileobj(response, file, length=1024 * 1024)
+            if package.get('parts'):
+                for part in package['parts']:
+                    part_path = cache / part['filename']
+                    if not part_path.exists() or digest(part_path) != part['sha256']:
+                        part_partial = part_path.with_suffix(part_path.suffix + '.partial')
+                        request = urllib.request.Request(part['download_url'], headers={'User-Agent': 'TeaLeafAI-dataset-v2'})
+                        with urllib.request.urlopen(request, timeout=120) as response, part_partial.open('wb') as file:
+                            shutil.copyfileobj(response, file, length=1024 * 1024)
+                        if digest(part_partial) != part['sha256']:
+                            part_partial.unlink(); raise SystemExit('Downloaded part checksum mismatch.')
+                        part_partial.replace(part_path)
+                    print(f"Verified archive part: {part['filename']}", flush=True)
+                with partial.open('wb') as assembled:
+                    for part in package['parts']:
+                        with (cache / part['filename']).open('rb') as file:
+                            shutil.copyfileobj(file, assembled, length=1024 * 1024)
+            else:
+                request = urllib.request.Request(package['download_url'], headers={'User-Agent': 'TeaLeafAI-dataset-v2'})
+                with urllib.request.urlopen(request, timeout=120) as response, partial.open('wb') as file:
+                    shutil.copyfileobj(response, file, length=1024 * 1024)
             if digest(partial) != package['sha256']:
                 partial.unlink()
                 raise SystemExit('Downloaded archive checksum mismatch.')

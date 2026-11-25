@@ -10,13 +10,13 @@ Từ thư mục TeaLeafAI sau khi cập nhật mã nguồn:
 python training/download_dataset_v2.py
 ```
 
-Lệnh này chỉ cần Python, tự tải ZIP từ [bản phát hành dataset-v2-20261125](https://github.com/khanh1023/TeaLeafAI/releases/tag/dataset-v2-20261125), đối chiếu SHA-256 và giải nén vào `training/dataset-v2`. Không ghi đè thư mục đã có. Nếu đã tải ZIP về, dùng:
+Lệnh này chỉ cần Python, tự tải ba phần dữ liệu từ GitHub, đối chiếu SHA-256 từng phần, ghép thành ZIP và giải nén vào `training/dataset-v2`. [Trang tải dataset-v2-20261125](https://github.com/khanh1023/TeaLeafAI/releases/tag/dataset-v2-20261125) có hướng dẫn tương ứng. Các phần được lưu riêng ở tag dữ liệu để không đưa ảnh vào lịch sử mã nguồn chính. Không ghi đè thư mục đã có. Nếu đã tải ZIP hoàn chỉnh từ cuộc trò chuyện về máy, dùng:
 
 ```powershell
 python training/download_dataset_v2.py --archive "C:\duong-dan\TeaLeafAI-dataset-v2-20261125.zip"
 ```
 
-Cũng có thể giải nén ZIP bằng Windows: bên trong có thư mục `dataset-v2`; đặt thư mục này trong `TeaLeafAI/training`. Không trộn ảnh của phiên bản này với các tập train/val/test cũ.
+Cũng có thể giải nén ZIP hoàn chỉnh bằng Windows: bên trong có thư mục `dataset-v2`; đặt thư mục này trong `TeaLeafAI/training`. Các tệp `.part01` đến `.part03` trên GitHub là từng đoạn của một ZIP, cần tải đủ và ghép theo đúng thứ tự; lệnh Python ở trên tự làm việc này. Không trộn ảnh của phiên bản này với các tập train/val/test cũ.
 
 ## Số lượng và bộ chia
 

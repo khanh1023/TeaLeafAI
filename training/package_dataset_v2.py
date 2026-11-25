@@ -13,6 +13,8 @@ def main():
     parser.add_argument('--data', type=Path, default=ROOT / 'training/dataset-v2')
     parser.add_argument('--output', type=Path, required=True)
     parser.add_argument('--reports', type=Path, default=ROOT / 'training/reports/dataset-v2-20261125')
+    parser.add_argument('--parts-dir', type=Path, help='Optionally split into GitHub-compatible files under 100 MB.')
+    parser.add_argument('--parts-ref', default='dataset-v2-20261125-data')
     args = parser.parse_args()
     records = json.loads((args.data / 'manifest.json').read_text(encoding='utf-8'))
     reserve = json.loads((args.data / 'reserve.json').read_text(encoding='utf-8'))
@@ -51,6 +53,20 @@ def main():
                    download_url='https://github.com/khanh1023/TeaLeafAI/releases/download/dataset-v2-20261125/' + args.output.name,
                    manifest_sha256=summary['manifest_sha256'],
                    training_evaluation_images=summary['total_images'], reserve_images=summary['reserve_images'])
+    if args.parts_dir:
+        args.parts_dir.mkdir(parents=True, exist_ok=True)
+        parts = []
+        with args.output.open('rb') as file:
+            index = 1
+            while chunk := file.read(90_000_000):
+                name = args.output.name + f'.part{index:02}'
+                (args.parts_dir / name).write_bytes(chunk)
+                parts.append(dict(filename=name, size_bytes=len(chunk), sha256=hashlib.sha256(chunk).hexdigest(),
+                                  download_url=f'https://raw.githubusercontent.com/khanh1023/TeaLeafAI/{args.parts_ref}/{name}'))
+                index += 1
+        package.pop('download_url')
+        package['parts'] = parts
+        package['data_ref'] = args.parts_ref
     (args.reports / 'package.json').write_text(json.dumps(package, ensure_ascii=False, indent=2), encoding='utf-8')
     (args.reports / 'SHA256SUMS.txt').write_text(f"{h.hexdigest()}  {args.output.name}\n", encoding='utf-8')
     print(json.dumps(package, indent=2))
