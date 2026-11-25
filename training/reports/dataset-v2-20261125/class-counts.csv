@@ -1,0 +1,10 @@
+﻿class,previous,train,val,test,total,change
+algal_leaf,265,515,110,110,735,470
+anthracnose,99,69,15,15,99,0
+bird_eye_spot,99,69,15,15,99,0
+brown_blight,305,599,128,128,855,550
+gray_light,281,941,201,202,1344,1063
+healthy,673,2178,467,467,3112,2439
+red_leaf_spot,333,318,68,68,454,121
+white_spot,142,99,22,21,142,0
+TOTAL,2197,4788,1026,1026,6840,4643

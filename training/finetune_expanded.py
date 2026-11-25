@@ -3,15 +3,17 @@ import os
 from pathlib import Path
 os.environ.setdefault('TF_CPP_MIN_LOG_LEVEL','2');os.environ.setdefault('TF_NUM_INTRAOP_THREADS','2');os.environ.setdefault('TF_NUM_INTEROP_THREADS','1');os.environ.setdefault('OMP_NUM_THREADS','2')
 os.environ.setdefault('MPLCONFIGDIR',str(Path(__file__).resolve().parent/'.cache/matplotlib'))
-import argparse,collections,json,time,datetime,shutil
+import argparse,collections,hashlib,json,time,datetime,shutil
 import numpy as np
 from PIL import Image
 import tensorflow as tf
 from sklearn.metrics import accuracy_score,balanced_accuracy_score,classification_report,confusion_matrix,f1_score
 ROOT=Path(__file__).resolve().parents[1]
-p=argparse.ArgumentParser(description=__doc__);p.add_argument('--initial',type=Path,required=True);p.add_argument('--output',type=Path,required=True);p.add_argument('--epochs',type=int,default=6);args=p.parse_args();args.output.mkdir(parents=True,exist_ok=True)
-DATA=ROOT/'training/dataset';records=json.loads((DATA/'manifest.json').read_text());classes=json.loads((DATA/'classes.json').read_text())
+p=argparse.ArgumentParser(description=__doc__);p.add_argument('--initial',type=Path,required=True);p.add_argument('--output',type=Path,required=True);p.add_argument('--epochs',type=int,default=6);p.add_argument('--data',type=Path,default=ROOT/'training/dataset');args=p.parse_args();args.output.mkdir(parents=True,exist_ok=True)
+DATA=args.data.resolve();manifest_bytes=(DATA/'manifest.json').read_bytes();records=json.loads(manifest_bytes);classes=json.loads((DATA/'classes.json').read_text())
 initial_report=json.loads((args.initial/'evaluation.json').read_text());tf.keras.utils.set_random_seed(42);started=time.time()
+if initial_report['dataset_manifest_sha256']!=hashlib.sha256(manifest_bytes).hexdigest():raise SystemExit('Initial checkpoint was trained on a different dataset split. Train a fresh head on this version first.')
+if initial_report['classes']!=classes:raise SystemExit('Initial checkpoint class order differs from this dataset.')
 model=tf.keras.models.load_model(args.initial/'tea_leaf_mobilenetv2.keras',compile=False)
 backbone=next(layer for layer in model.layers if layer.name.startswith('mobilenetv2'))
 backbone.trainable=True

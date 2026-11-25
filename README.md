@@ -125,6 +125,8 @@ Backend chạy cổng 9000, frontend chạy 5173. Khi dùng API, ảnh được 
 
 ## 8. Huấn luyện, dữ liệu và giới hạn
 
+**Bộ dữ liệu mở rộng v2 ngày 25/11/2026:** có **6.840 ảnh**, gồm **3.112 ảnh lá khỏe**, chia đúng **4.788 train / 1.026 validation / 1.026 test (70/15/15)**. [Tải dữ liệu, xem bảng 8 lớp và nguồn ảnh](docs/DATASET_V2.md). Chạy `python training/download_dataset_v2.py` để tải và khôi phục vào `training/dataset-v2`. Đây là dữ liệu chuẩn bị cho lần huấn luyện mới; các checkpoint và chỉ số trên website hiện tại vẫn thuộc bộ v1 mô tả dưới đây.
+
 Mô hình đang dùng đã được huấn luyện lại với **2.197 ảnh**, gồm **673 ảnh healthy**, nhiều hơn từng lớp bệnh. Bộ chia theo nhóm ảnh gần trùng có 1.541 ảnh train, 327 validation và 329 test (xấp xỉ 70/15/15). Dữ liệu gốc được giữ nguyên; ảnh trùng nội dung có nhãn mâu thuẫn không tham gia lần huấn luyện này.
 
 - [Tải bộ dữ liệu đã chia](https://github.com/khanh1023/TeaLeafAI/raw/refs/heads/main/downloads/TeaLeafAI-training-data.zip), khoảng 75 MiB; tải riêng với bản website.

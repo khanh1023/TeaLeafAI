@@ -7,6 +7,9 @@ venv/
 # Raw datasets and local model outputs (existing tracked files stay tracked)
 DuLieuGoc/
 training/dataset/
+training/dataset-v2/
+training/dataset-v2-*/
+downloads/TeaLeafAI-dataset-v2-20261125.zip
 backend/models/*.keras
 backend/models/*.h5
 backend/models/*.weights.h5

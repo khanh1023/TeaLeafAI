@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "verified_images": 6844,
+  "training_evaluation_images": 6840,
+  "reserve_images": 4,
+  "checked_neighbour_pairs": 816,
+  "manifest_sha256": "47a24012c4f67957c9ec98b997e37404575738d068ec004c415ab7bd03ecf001",
+  "checks": [
+    "All JPEG files decoded; RGB and bounded to 512 px",
+    "Every file SHA-256 matched manifest",
+    "Exact global 70/15/15 and per-class rounding within one image",
+    "No repeated raw, normalized pixel or stored image SHA-256",
+    "No cross-split perceptual groups or confirmed pHash neighbours (one <=4 bits and both <=10 bits)",
+    "Healthy is larger than every individual disease class"
+  ],
+  "limitation": "Fingerprint checks cannot prove plant/capture-session independence without source identities."
+}

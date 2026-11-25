@@ -1,0 +1,10 @@
+{
+  "filename": "TeaLeafAI-dataset-v2-20261125.zip",
+  "size_bytes": 255012191,
+  "sha256": "9cd26fbac645fd4a85e5b493a29ada5b09a380582eb6b08dbc152c4bbd2fe890",
+  "release_tag": "dataset-v2-20261125",
+  "download_url": "https://github.com/khanh1023/TeaLeafAI/releases/download/dataset-v2-20261125/TeaLeafAI-dataset-v2-20261125.zip",
+  "manifest_sha256": "47a24012c4f67957c9ec98b997e37404575738d068ec004c415ab7bd03ecf001",
+  "training_evaluation_images": 6840,
+  "reserve_images": 4
+}

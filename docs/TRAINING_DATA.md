@@ -1,5 +1,7 @@
 # Bộ dữ liệu bổ sung và quy trình huấn luyện
 
+> Có phiên bản mở rộng mới ngày 25/11/2026: [Bộ dữ liệu v2 và hướng dẫn tải](DATASET_V2.md). Nội dung bên dưới mô tả bộ v1 đã dùng cho các checkpoint và kết quả cũ; giữ nguyên để tái lập thực nghiệm.
+
 Bản huấn luyện này có 2.197 ảnh sau lọc, gồm 673 ảnh lá khỏe, nhiều hơn từng lớp bệnh. Các ảnh gốc trong DuLieuGoc không bị sửa, xóa hoặc tự đổi nhãn. Ảnh bị trùng nội dung nhưng có nhãn mâu thuẫn được loại khỏi lần huấn luyện; nhật ký nằm trong exclusions.json.
 
 ## Nguồn ảnh và giấy phép

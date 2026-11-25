@@ -1,0 +1,80 @@
+[
+  {
+    "full_phash": "ae3bd0e41b87691c",
+    "group": "000121b6bbbbb8f2",
+    "id": "000121b6bbbbb8f2",
+    "label": "healthy",
+    "original": "Healthy_538.jpg",
+    "original_size": [
+      1024,
+      1024
+    ],
+    "path": "reserve/healthy/tea_bangladesh_v4-000121b6bbbbb8f2.jpg",
+    "phash": "ae33e47092c39ac7",
+    "pixel_sha256": "d5d2cd26f7bd2b36a925624aa8f57a34dbd9332f1b64f158dc119ef69f8ecc66",
+    "raw_sha256": "000121b6bbbbb8f20f8080f471a1d9d3e33d7273472af2cbfed749f6a6ab4910",
+    "sha256": "baa200e6df85c7b519a258353430ff431d2b5c5869858dc2ac51a3eea88bc025",
+    "source": "tea_bangladesh_v4",
+    "split": "reserve"
+  },
+  {
+    "full_phash": "aac2973c619b66cc",
+    "group": "0076d2bd10ad6216",
+    "id": "0076d2bd10ad6216",
+    "label": "healthy",
+    "original": "Project-AgML/teaLeafBD_disease_classification@068914a550e65791dcb488e4ef9a828d710bff3c:default/train/row=1875",
+    "original_size": [
+      1200,
+      1600
+    ],
+    "path": "reserve/healthy/tealeafbd_v4-0076d2bd10ad6216.jpg",
+    "phash": "ab3f95c2c888cee1",
+    "pixel_sha256": "b91997e18e74ec7bab119c21e1170b3b14c72f2444d58b202e76f22f380384c1",
+    "raw_sha256": "0076d2bd10ad6216b35239e8611d0d50cba949fec7639e2341cbedf2d407f723",
+    "sha256": "62c928fbeda54742914ec9a6e2b370fea40ee0c412b10a792410356b21a75a6b",
+    "source": "tealeafbd_v4",
+    "source_label": 3,
+    "source_row": 1875,
+    "split": "reserve"
+  },
+  {
+    "full_phash": "a41adb25659a9e2d",
+    "group": "0080b6ab0eafa3fe",
+    "id": "0080b6ab0eafa3fe",
+    "label": "healthy",
+    "original": "Project-AgML/teaLeafBD_disease_classification@068914a550e65791dcb488e4ef9a828d710bff3c:default/train/row=1284",
+    "original_size": [
+      1200,
+      1600
+    ],
+    "path": "reserve/healthy/tealeafbd_v4-0080b6ab0eafa3fe.jpg",
+    "phash": "a837854e9e8b98d5",
+    "pixel_sha256": "e5a14c0be8db76aea6d54932d08b55a7d0af7b6766dd6f6418e2afcd5274a7e7",
+    "raw_sha256": "0080b6ab0eafa3fe045b0885cf8cc829aac8b29d658fb7b11c71f3f26934059c",
+    "sha256": "64c0810c00be1cc3dd5b4a9441f788f27cab1a825f25dfdac8c1540058c28df7",
+    "source": "tealeafbd_v4",
+    "source_label": 3,
+    "source_row": 1284,
+    "split": "reserve"
+  },
+  {
+    "full_phash": "a1719ece6731989c",
+    "group": "00ed424d56ae64dc",
+    "id": "00ed424d56ae64dc",
+    "label": "healthy",
+    "original": "Project-AgML/teaLeafBD_disease_classification@068914a550e65791dcb488e4ef9a828d710bff3c:default/train/row=1524",
+    "original_size": [
+      1200,
+      900
+    ],
+    "path": "reserve/healthy/tealeafbd_v4-00ed424d56ae64dc.jpg",
+    "phash": "b170989e8ec765c9",
+    "pixel_sha256": "f1ee5f8b798b24f02dba0cd3581277998c548da346ad9d06412dc8351d12cae2",
+    "raw_sha256": "00ed424d56ae64dcf17010caef6eba3bbb0a0d441fd99113dc8e55f45199b27b",
+    "sha256": "81af0a4a3fe4054a1b2a98eb97ebec617b2ef91c9218dbc079a4aa8c06124fcb",
+    "source": "tealeafbd_v4",
+    "source_label": 3,
+    "source_row": 1524,
+    "split": "reserve"
+  }
+]
