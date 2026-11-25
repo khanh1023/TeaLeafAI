@@ -1,0 +1,78 @@
+{
+  "title": "3.3.4. So sánh hiệu quả giữa các mô hình phân loại",
+  "intro": "Để đánh giá lựa chọn kiến trúc, đề tài thực nghiệm MobileNetV2, ResNet50 và VGG16 trên cùng bộ dữ liệu gồm 1.541 ảnh huấn luyện, 327 ảnh validation và 329 ảnh kiểm thử, xấp xỉ tỷ lệ 70/15/15. Cả ba sử dụng trọng số ImageNet, bỏ bộ phân loại gốc và bổ sung GAP, Dropout, Dense128, Dropout và Dense8 Softmax. Backbone được giữ cố định khi huấn luyện. Ảnh được đưa về kích thước 224 × 224; tăng cường dữ liệu chỉ áp dụng cho train. Mỗi mạng có ngân sách tối đa 20 epoch, sử dụng trọng số lớp và chọn checkpoint theo validation loss.",
+  "quality_analysis": "ResNet50 đạt Accuracy 75,08% và F1-score macro 72,28%, cao nhất trong lần thực nghiệm này. VGG16 đạt Accuracy 69,60%, còn MobileNetV2 đạt 67,48%. ResNet50 thể hiện chất lượng phân loại cao hơn trên bộ test đã xét; ưu thế về quy mô và thời gian xử lý được phân tích tiếp ở Bảng 3.10.",
+  "quality_headers": [
+    "Tiêu chí",
+    "ResNet50",
+    "VGG16",
+    "MobileNetV2"
+  ],
+  "quality_rows": [
+    [
+      "Số ảnh phân loại đúng / tổng",
+      "247/329",
+      "229/329",
+      "222/329"
+    ],
+    [
+      "Accuracy",
+      "75,08%",
+      "69,60%",
+      "67,48%"
+    ],
+    [
+      "Precision macro",
+      "71,82%",
+      "65,46%",
+      "62,55%"
+    ],
+    [
+      "Recall macro",
+      "74,42%",
+      "67,08%",
+      "64,05%"
+    ],
+    [
+      "F1-score macro",
+      "72,28%",
+      "66,07%",
+      "62,90%"
+    ]
+  ],
+  "resource_rows": [
+    [
+      "Tổng tham số (triệu)",
+      "23,85",
+      "14,78",
+      "2,42"
+    ],
+    [
+      "File Keras suy luận (MB)",
+      "96,08",
+      "59,23",
+      "10,30"
+    ],
+    [
+      "File ONNX triển khai (MB)",
+      "95,02",
+      "59,14",
+      "9,57"
+    ],
+    [
+      "Trung vị suy luận CPU (ms/ảnh)",
+      "315,82",
+      "282,13",
+      "152,49"
+    ]
+  ],
+  "measurement": "Các chỉ số Accuracy, Precision, Recall và F1-score trong bảng được đo bằng TensorFlow/Keras trên cùng 329 ảnh test; các chỉ số macro lấy trung bình đều của tám lớp. Dung lượng tính theo MB = 10⁶ byte; file Keras không chứa trạng thái optimizer. Thời gian đo trên cùng CPU Intel Xeon Platinum 8573C với mức cấp phát 2 vCPU, batch 1; làm nóng 10 lần rồi đo 60 lần gọi, bảng ghi trung vị, không gồm đọc/resize ảnh, tải hay khởi tạo mô hình.",
+  "efficiency": "MobileNetV2 có quy mô nhỏ nhất, khoảng 2,42 triệu tham số và file ONNX 9,57 MB; tương ứng ở ResNet50 là 95,02 MB và VGG16 là 59,14 MB. Trung vị suy luận CPU của MobileNetV2 đạt 152,49 ms/ảnh, thấp nhất trong điều kiện đo. Các số đo này cho thấy ưu thế về kích thước tệp và thời gian xử lý của MobileNetV2 trong cấu hình khảo sát.",
+  "conclusion": "MobileNetV2 được lựa chọn cho hướng triển khai website gọn nhẹ, nơi dung lượng tải và tốc độ phản hồi là các tiêu chí cần cân nhắc bên cạnh độ chính xác. ResNet50 phù hợp hơn nếu ưu tiên chất lượng phân loại trong thí nghiệm này. Việc lựa chọn mô hình vì vậy phụ thuộc vào yêu cầu ứng dụng và sự cân bằng giữa chất lượng phân loại, dung lượng và thời gian phản hồi.",
+  "limitations": "Đây là thí nghiệm đối chiếu mới ngày 25/11/2026, dùng backbone đóng băng và một seed 42, chưa phải tìm cấu hình tối ưu cho từng kiến trúc. Các số liệu trên không phải Accuracy hay thời gian đo trên Canvas/WASM của website; chúng cũng khác đợt đánh giá checkpoint MobileNetV2 đã fine-tune ở trang Phân tích. Tập test là dữ liệu nội bộ đã sử dụng trong phát triển, chưa phải kiểm định thực địa độc lập.",
+  "caption": "Hình minh họa. Độ chính xác, F1-score macro và thời gian suy luận CPU của ba mô hình.",
+  "source_sha256": {
+    "training/reports/model-comparison-20261125/comparison.json": "7079fe039b1893c47f9b669ec6970ac51b4ef49172dfb22b1f7955cbf67f2da0",
+    "frontend/public/model/comparison/manifest.json": "1aa5f55380abeedc0ff17e74c23991cf7dcd05aba1f208c1b5ff0d2cc839c160"
+  }
+}

@@ -1,5 +1,11 @@
 # Tải TeaLeafAI chạy sẵn
 
+## Word hoàn chỉnh mục 3.3.4 — kết quả thực nghiệm ba mô hình
+
+[Tải Word gồm nội dung, Bảng 3.9, Bảng 3.10 và hình](https://raw.githubusercontent.com/khanh1023/TeaLeafAI/main/downloads/TeaLeafAI-muc-3-3-4-bao-cao-hoan-chinh.docx) · [Tải kèm ảnh PNG/SVG/PDF và văn bản](https://raw.githubusercontent.com/khanh1023/TeaLeafAI/main/downloads/TeaLeafAI-muc-3-3-4-bao-cao-va-hinh.zip).
+
+Dùng kết quả ngày 25/11/2026 trên cùng 329 ảnh: ResNet50 đạt 75,08%, VGG16 đạt 69,60%, MobileNetV2 đạt 67,48%. Accuracy/F1 và thời gian CPU được đo bằng TensorFlow/Keras; dung lượng ONNX được ghi riêng. Đây không phải Accuracy hoặc thời gian suy luận của các ảnh người dùng đã thử trên trình duyệt. [Nguồn và văn bản](../training/reports/model-comparison-20261125/section-3-3-4/).
+
 ## Thử cả ba mô hình trên web và xuất Word
 
 [Mở MobileNetV2, ResNet50 và VGG16](https://tea-leaf-ai.vercel.app/so-sanh) · [Hướng dẫn](../docs/TRY_THREE_MODELS.md). Chọn ảnh, chạy riêng từng mạng hoặc cả ba, gán nhãn nếu đã biết rồi tải Word/CSV từ dữ liệu đã thử. Mô hình được tải khi bấm chạy; ảnh không gửi lên máy chủ.
