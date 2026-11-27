@@ -9,6 +9,8 @@ DuLieuGoc/
 training/dataset/
 training/dataset-v2/
 training/dataset-v2-*/
+training/dataset-v3/
+downloads/TeaLeafAI-dataset-v3-*.zip
 downloads/TeaLeafAI-dataset-v2-20261125.zip
 backend/models/*.keras
 backend/models/*.h5

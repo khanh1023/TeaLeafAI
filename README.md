@@ -125,6 +125,13 @@ Backend chạy cổng 9000, frontend chạy 5173. Khi dùng API, ảnh được 
 
 ## 8. Huấn luyện, dữ liệu và giới hạn
 
+**Bộ dữ liệu mở rộng v3 đã kiểm tra:** **8.280 ảnh** (+1.440), gồm 3.435 ảnh khỏe;
+chia đúng **5.796 train / 1.242 validation / 1.242 test**. Mọi ảnh v2 giữ nguyên tập cũ.
+[Bảng số lượng, nguồn và điều kiện sử dụng](docs/DATASET_V3.md).
+Sau khi có v2, chạy `python training/download_dataset_v3.py` để khôi phục từ gói ảnh
+bổ sung có sẵn trong mã nguồn. Bộ dữ liệu mới tự nó chưa chứng minh Accuracy >90%.
+Chỉ coi website đã dùng v3 khi manifest mô hình đang phục vụ ghi đúng phiên bản v3.
+
 **Phiên bản mô hình hiện tại dùng bộ v2:** có **6.840 ảnh**, gồm **3.112 ảnh lá khỏe**, chia đúng **4.788 train / 1.026 validation / 1.026 test (70/15/15)**. [Tải dữ liệu, xem bảng 8 lớp và nguồn ảnh](docs/DATASET_V2.md). Chạy `python training/download_dataset_v2.py` để khôi phục dữ liệu. Checkpoint mới được khởi tạo từ ImageNet; không tiếp tục checkpoint v1 trên bộ chia mới.
 
 Mô hình chính MobileNetV2 sau fine-tuning đạt **84,60% Accuracy** và **0,7564 macro-F1** trên **1.026 ảnh test nội bộ**, đo bằng Keras/ONNX Python với resize Pillow. Bảng so sánh độc lập giữa ba backbone đóng băng trên cùng bộ chia: MobileNetV2 **82,16%**, ResNet50 **85,58%**, VGG16 **83,14%**. Không thay điểm MobileNetV2 trong bảng này bằng điểm mô hình chính đã fine-tune. [Báo cáo hiện tại, dữ liệu dự đoán và bản Word](training/reports/retraining-v2-20261127/README.md).

@@ -1,0 +1,7 @@
+{
+  "passed": true,
+  "restored_split_images": 8280,
+  "restored_reserve_images": 10,
+  "method": "download_dataset_v3.py from bundled delta and SHA-verified v2; every image rehashed",
+  "manifest_sha256": "7d5c63d8cb76142c5a296c4cb5b599de5a2484b8206af4d65396804beaec8e26"
+}

@@ -1,0 +1,170 @@
+[
+  {
+    "label": "red_leaf_spot",
+    "label_conflict": false,
+    "matches": null,
+    "original": "test data/Tea red leaf spot/1.jpg",
+    "reason": "image_too_small",
+    "source": "hu_red_spot_2019"
+  },
+  {
+    "label": "red_leaf_spot",
+    "label_conflict": false,
+    "matches": "e913fa16c2585b9e",
+    "original": "Project-AgML/tea_leaf_disease_classification@d44a9aff2f0f71aae523b22b5f0f821c68bf18ea:red_leaf_spot/20211227_161557.jpg",
+    "reason": "reencoded_or_rotated_full_frame_duplicate",
+    "source": "datta_camera_named"
+  },
+  {
+    "label": "red_leaf_spot",
+    "label_conflict": false,
+    "matches": "10996b076aade70e",
+    "original": "test data/Tea red leaf spot/10.jpg",
+    "reason": "reencoded_or_rotated_full_frame_duplicate",
+    "source": "hu_red_spot_2019"
+  },
+  {
+    "label": "red_leaf_spot",
+    "label_conflict": false,
+    "matches": "916b8b7fca6277da",
+    "original": "test data/Tea red leaf spot/11.jpg",
+    "reason": "reencoded_or_rotated_full_frame_duplicate",
+    "source": "hu_red_spot_2019"
+  },
+  {
+    "label": "red_leaf_spot",
+    "label_conflict": false,
+    "matches": "e35dc4dd500bddd5",
+    "original": "test data/Tea red leaf spot/12.jpg",
+    "reason": "reencoded_or_rotated_full_frame_duplicate",
+    "source": "hu_red_spot_2019"
+  },
+  {
+    "label": "red_leaf_spot",
+    "label_conflict": false,
+    "matches": "dca8550c693ba48b",
+    "original": "test data/Tea red leaf spot/15.jpg",
+    "reason": "reencoded_or_rotated_full_frame_duplicate",
+    "source": "hu_red_spot_2019"
+  },
+  {
+    "label": "red_leaf_spot",
+    "label_conflict": false,
+    "matches": "6f1f4231c0f347ba",
+    "original": "test data/Tea red leaf spot/16.jpg",
+    "reason": "reencoded_or_rotated_full_frame_duplicate",
+    "source": "hu_red_spot_2019"
+  },
+  {
+    "label": "red_leaf_spot",
+    "label_conflict": false,
+    "matches": "6f1f4231c0f347ba",
+    "original": "test data/Tea red leaf spot/17.jpg",
+    "reason": "reencoded_or_rotated_full_frame_duplicate",
+    "source": "hu_red_spot_2019"
+  },
+  {
+    "label": "red_leaf_spot",
+    "label_conflict": false,
+    "matches": "d8afee211542f9b4",
+    "original": "test data/Tea red leaf spot/18.jpg",
+    "reason": "reencoded_or_rotated_full_frame_duplicate",
+    "source": "hu_red_spot_2019"
+  },
+  {
+    "label": "red_leaf_spot",
+    "label_conflict": false,
+    "matches": "10996b076aade70e",
+    "original": "test data/Tea red leaf spot/19.jpg",
+    "reason": "reencoded_or_rotated_full_frame_duplicate",
+    "source": "hu_red_spot_2019"
+  },
+  {
+    "label": "red_leaf_spot",
+    "label_conflict": false,
+    "matches": "f34ec0b395781b8a",
+    "original": "test data/Tea red leaf spot/20.jpg",
+    "reason": "reencoded_or_rotated_full_frame_duplicate",
+    "source": "hu_red_spot_2019"
+  },
+  {
+    "label": "red_leaf_spot",
+    "label_conflict": false,
+    "matches": "b343179b604d3a20",
+    "original": "test data/Tea red leaf spot/3.jpg",
+    "reason": "reencoded_or_rotated_full_frame_duplicate",
+    "source": "hu_red_spot_2019"
+  },
+  {
+    "label": "red_leaf_spot",
+    "label_conflict": false,
+    "matches": "c04e717d820753be",
+    "original": "test data/Tea red leaf spot/8.jpg",
+    "reason": "reencoded_or_rotated_full_frame_duplicate",
+    "source": "hu_red_spot_2019"
+  },
+  {
+    "label": "red_leaf_spot",
+    "label_conflict": false,
+    "matches": "3277740a483642f2",
+    "original": "train data/Tea red leaf spot/12.jpg",
+    "reason": "reencoded_or_rotated_full_frame_duplicate",
+    "source": "hu_red_spot_2019"
+  },
+  {
+    "label": "red_leaf_spot",
+    "label_conflict": false,
+    "matches": "445336a301f2b74a",
+    "original": "train data/Tea red leaf spot/13.jpg",
+    "reason": "reencoded_or_rotated_full_frame_duplicate",
+    "source": "hu_red_spot_2019"
+  },
+  {
+    "label": "red_leaf_spot",
+    "label_conflict": false,
+    "matches": "77f5bc6f81715163",
+    "original": "train data/Tea red leaf spot/15.jpg",
+    "reason": "reencoded_or_rotated_full_frame_duplicate",
+    "source": "hu_red_spot_2019"
+  },
+  {
+    "label": "red_leaf_spot",
+    "label_conflict": false,
+    "matches": "2c45bd207bd33fe3",
+    "original": "train data/Tea red leaf spot/16.jpg",
+    "reason": "reencoded_or_rotated_full_frame_duplicate",
+    "source": "hu_red_spot_2019"
+  },
+  {
+    "label": "red_leaf_spot",
+    "label_conflict": false,
+    "matches": "ded9f77db84f53e8",
+    "original": "train data/Tea red leaf spot/19.jpg",
+    "reason": "reencoded_or_rotated_full_frame_duplicate",
+    "source": "hu_red_spot_2019"
+  },
+  {
+    "label": "red_leaf_spot",
+    "label_conflict": false,
+    "matches": "dd3eb3b31931e06a",
+    "original": "train data/Tea red leaf spot/20.jpg",
+    "reason": "reencoded_or_rotated_full_frame_duplicate",
+    "source": "hu_red_spot_2019"
+  },
+  {
+    "label": "red_leaf_spot",
+    "label_conflict": false,
+    "matches": "95abff6a8ddad9c2",
+    "original": "train data/Tea red leaf spot/3.jpg",
+    "reason": "reencoded_or_rotated_full_frame_duplicate",
+    "source": "hu_red_spot_2019"
+  },
+  {
+    "label": "red_leaf_spot",
+    "label_conflict": false,
+    "matches": "6afabfdda11fd60f",
+    "original": "train data/Tea red leaf spot/8.jpg",
+    "reason": "reencoded_or_rotated_full_frame_duplicate",
+    "source": "hu_red_spot_2019"
+  }
+]

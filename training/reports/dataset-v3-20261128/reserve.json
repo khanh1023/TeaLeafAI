@@ -1,0 +1,192 @@
+[
+  {
+    "capture_group": "datta:healthy:20220101_0936",
+    "full_phash": "ad69c292363dcbd0",
+    "group": "002d59871f5ec1b1",
+    "id": "002d59871f5ec1b1",
+    "label": "healthy",
+    "original": "Project-AgML/tea_leaf_disease_classification@d44a9aff2f0f71aae523b22b5f0f821c68bf18ea:healthy/20220101_093642.jpg",
+    "original_size": [
+      256,
+      256
+    ],
+    "path": "reserve/healthy/datta_camera_named-002d59871f5ec1b1.jpg",
+    "phash": "aa1cb5dad6c8ccc1",
+    "pixel_sha256": "b211be4ac9f585ed851577dc3798c7c9d97c84eaa766c7d5fa9220fca0e3016e",
+    "raw_sha256": "002d59871f5ec1b15d2ca95ba9ae7464c0357ff26edafb76b6ef5eedc574ec26",
+    "sha256": "fe8a4a05b27d6c3e5f466a6a31803245183ae7087b2f3cf5f8d366d39f27945a",
+    "source": "datta_camera_named",
+    "split": "reserve"
+  },
+  {
+    "capture_group": "datta:healthy:20220101_0902",
+    "full_phash": "af38d0c06f3f94a4",
+    "group": "00cba5796eac7fab",
+    "id": "00cba5796eac7fab",
+    "label": "healthy",
+    "original": "Project-AgML/tea_leaf_disease_classification@d44a9aff2f0f71aae523b22b5f0f821c68bf18ea:healthy/20220101_090224.jpg",
+    "original_size": [
+      256,
+      256
+    ],
+    "path": "reserve/healthy/datta_camera_named-00cba5796eac7fab.jpg",
+    "phash": "aa39f479c2e08bc3",
+    "pixel_sha256": "8f27cc5e8ebe7cf41c29d40875d8e6d396e2e7492d35633b164ae4a410dc8291",
+    "raw_sha256": "00cba5796eac7faba11d1126ec7e01f20f5430f3d99e8242f544a9e5f5cd25a9",
+    "sha256": "2a23b54fe151880dee120653e5a470bed0ad47ad722eb58df05cce2ed861d9d3",
+    "source": "datta_camera_named",
+    "split": "reserve"
+  },
+  {
+    "capture_group": "datta:healthy:20220101_0949",
+    "full_phash": "a74c9ab4d993891b",
+    "group": "023887e41ce3d324",
+    "id": "023887e41ce3d324",
+    "label": "healthy",
+    "original": "Project-AgML/tea_leaf_disease_classification@d44a9aff2f0f71aae523b22b5f0f821c68bf18ea:healthy/20220101_094926.jpg",
+    "original_size": [
+      256,
+      256
+    ],
+    "path": "reserve/healthy/datta_camera_named-023887e41ce3d324.jpg",
+    "phash": "aa669525d296ce9a",
+    "pixel_sha256": "f73c07106ee8f8f475789b3e62698e1240a4910712ce73c7188e07fbe28d649b",
+    "raw_sha256": "023887e41ce3d32498cfe16b1e38fbc25f7318a77e02a8b0490401370a5e1643",
+    "sha256": "f22443eb860a4ca19022940c8a0de1a33f414c4a2152ea5e3904c042b71c827a",
+    "source": "datta_camera_named",
+    "split": "reserve"
+  },
+  {
+    "capture_group": "datta:healthy:20220101_0951",
+    "full_phash": "ad96c26934363b99",
+    "group": "03a9ba7c6f75849f",
+    "id": "03a9ba7c6f75849f",
+    "label": "healthy",
+    "original": "Project-AgML/tea_leaf_disease_classification@d44a9aff2f0f71aae523b22b5f0f821c68bf18ea:healthy/20220101_095149.jpg",
+    "original_size": [
+      256,
+      256
+    ],
+    "path": "reserve/healthy/datta_camera_named-03a9ba7c6f75849f.jpg",
+    "phash": "aa15d0dacdcdc4e4",
+    "pixel_sha256": "f6c5a99a0c17f5002d3385f0b50694c4145562edcfe4c624801e716e8c588999",
+    "raw_sha256": "03a9ba7c6f75849f94d0a5ea8594dbe7ec00c31de248e482fd528d0437be9ccc",
+    "sha256": "91c334619a4c55f51e7f11547beb72481911ffca2b55be3fab2b2c80512f0c68",
+    "source": "datta_camera_named",
+    "split": "reserve"
+  },
+  {
+    "capture_group": "datta:healthy:20220101_0951",
+    "full_phash": "a53296339e639867",
+    "group": "05836f397f542109",
+    "id": "05836f397f542109",
+    "label": "healthy",
+    "original": "Project-AgML/tea_leaf_disease_classification@d44a9aff2f0f71aae523b22b5f0f821c68bf18ea:healthy/20220101_095122.jpg",
+    "original_size": [
+      256,
+      256
+    ],
+    "path": "reserve/healthy/datta_camera_named-05836f397f542109.jpg",
+    "phash": "aa7af5a980ad8785",
+    "pixel_sha256": "e4744a83f22cdfb1d5da0aa08a4e754f300c9b91579205211cb9c89908331892",
+    "raw_sha256": "05836f397f542109120c8772688edfd71e9eff28989188b186118d6ac1cd138a",
+    "sha256": "3137cceadc7bb5579258ffc83fc0a6cc93e28a330362dfe7b4900c898991311e",
+    "source": "datta_camera_named",
+    "split": "reserve"
+  },
+  {
+    "capture_group": "datta:healthy:20220101_1033",
+    "full_phash": "b63c8bc7cc9a8919",
+    "group": "0587a313e962d624",
+    "id": "0587a313e962d624",
+    "label": "healthy",
+    "original": "Project-AgML/tea_leaf_disease_classification@d44a9aff2f0f71aae523b22b5f0f821c68bf18ea:healthy/20220101_103317.jpg",
+    "original_size": [
+      256,
+      256
+    ],
+    "path": "reserve/healthy/datta_camera_named-0587a313e962d624.jpg",
+    "phash": "ae0fa5f486819e17",
+    "pixel_sha256": "7a946d2a68388539a610b701971ee5e753e32df57200d404d0d9c907af3430c0",
+    "raw_sha256": "0587a313e962d6243401f396cbf44a5136d86b489bc408e3917dcc528e156724",
+    "sha256": "969c5bc2ec9d3341daa44a83e12bf5b94a473aca27b8ca7e55714da9f2fb8840",
+    "source": "datta_camera_named",
+    "split": "reserve"
+  },
+  {
+    "capture_group": "datta:healthy:20220101_0915",
+    "full_phash": "af3e9081795e0fa1",
+    "group": "0612d924dbfff335",
+    "id": "0612d924dbfff335",
+    "label": "healthy",
+    "original": "Project-AgML/tea_leaf_disease_classification@d44a9aff2f0f71aae523b22b5f0f821c68bf18ea:healthy/20220101_091532.jpg",
+    "original_size": [
+      256,
+      256
+    ],
+    "path": "reserve/healthy/datta_camera_named-0612d924dbfff335.jpg",
+    "phash": "af1aa1f8d7819a43",
+    "pixel_sha256": "dcb1426248a6c5a9d243c7c46443fb13c4fa7e920f98410e9d716f5f0c8bb37a",
+    "raw_sha256": "0612d924dbfff3359e64e167495c29139466659259c4509f6ccb52e84fe72c66",
+    "sha256": "96b93428c704121f7fb2287eecf8572b9a0135fe27885448d3e45ffcb8c249bc",
+    "source": "datta_camera_named",
+    "split": "reserve"
+  },
+  {
+    "capture_group": "datta:healthy:20220101_0903",
+    "full_phash": "a5319acf898ced1c",
+    "group": "06569ce77b958730",
+    "id": "06569ce77b958730",
+    "label": "healthy",
+    "original": "Project-AgML/tea_leaf_disease_classification@d44a9aff2f0f71aae523b22b5f0f821c68bf18ea:healthy/20220101_090302.jpg",
+    "original_size": [
+      256,
+      256
+    ],
+    "path": "reserve/healthy/datta_camera_named-06569ce77b958730.jpg",
+    "phash": "ab17a47894f89ac9",
+    "pixel_sha256": "c51893fec41691de50a741e046aa89725d7533703e5180dc21c5ae520ca4460f",
+    "raw_sha256": "06569ce77b95873036a70678c184cc6430c1a41f1e491ee3c090a039e0b5023f",
+    "sha256": "a5156163da347609f33890c1c5faa48b6e468a15a5e14399fee484222e98454e",
+    "source": "datta_camera_named",
+    "split": "reserve"
+  },
+  {
+    "capture_group": "datta:healthy:20220101_0917",
+    "full_phash": "a6db9acdcdcc8c10",
+    "group": "079ebdfb22f583e5",
+    "id": "079ebdfb22f583e5",
+    "label": "healthy",
+    "original": "Project-AgML/tea_leaf_disease_classification@d44a9aff2f0f71aae523b22b5f0f821c68bf18ea:healthy/20220101_091752.jpg",
+    "original_size": [
+      256,
+      256
+    ],
+    "path": "reserve/healthy/datta_camera_named-079ebdfb22f583e5.jpg",
+    "phash": "aa4aa529c7559f86",
+    "pixel_sha256": "27548f04b966ada0c800a77299cf5b610c776380d6ac4de5238541c51e5526d3",
+    "raw_sha256": "079ebdfb22f583e578a5bc3e59f32e92ea70bb492d9bd8eb53ef7f346f601872",
+    "sha256": "7ed7f42fd56801e35cee2870e496ef2cd7e5fdbb1f00d978d0e05f6f2e32ba99",
+    "source": "datta_camera_named",
+    "split": "reserve"
+  },
+  {
+    "capture_group": "datta:healthy:20220101_1044",
+    "full_phash": "b1249393c9dbccc9",
+    "group": "07d23f8cb34c5909",
+    "id": "07d23f8cb34c5909",
+    "label": "healthy",
+    "original": "Project-AgML/tea_leaf_disease_classification@d44a9aff2f0f71aae523b22b5f0f821c68bf18ea:healthy/20220101_104447.jpg",
+    "original_size": [
+      256,
+      256
+    ],
+    "path": "reserve/healthy/datta_camera_named-07d23f8cb34c5909.jpg",
+    "phash": "be0bb4bdd0b4c292",
+    "pixel_sha256": "dad1a4e13fd326396dd0c1edd1f37a4f70deb8dbfa398f11564fe4319855c226",
+    "raw_sha256": "07d23f8cb34c5909b979f174f0178ea78c82ca47eafc9453b3c368b8427cea51",
+    "sha256": "b6901d6ca43afd69143b28560982b408c76207214f3132c643adc77088529481",
+    "source": "datta_camera_named",
+    "split": "reserve"
+  }
+]

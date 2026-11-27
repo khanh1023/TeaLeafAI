@@ -1,0 +1,23 @@
+{
+  "passed": true,
+  "verified_images": 8290,
+  "training_evaluation_images": 8280,
+  "reserve_images": 10,
+  "checked_neighbour_pairs": 888,
+  "manifest_sha256": "7d5c63d8cb76142c5a296c4cb5b599de5a2484b8206af4d65396804beaec8e26",
+  "checks": [
+    "All JPEG files decoded; RGB and bounded to 512 px",
+    "Every file SHA-256 matched manifest",
+    "Exact global 70/15/15 and per-class rounding within one image",
+    "No repeated raw, normalized pixel or stored image SHA-256",
+    "No cross-split perceptual groups or confirmed pHash neighbours (one <=4 bits and both <=10 bits)",
+    "Healthy is larger than every individual disease class",
+    "Every frozen v2 photo retains its label, bytes and split",
+    "Every selected Datta capture-minute family stays in one split",
+    "Datta image_* offline augmentations excluded"
+  ],
+  "limitation": "Fingerprint checks cannot prove plant/capture-session independence without source identities.",
+  "previous_assignments_verified": 6840,
+  "capture_families_verified": 654,
+  "added_images": 1440
+}
