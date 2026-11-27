@@ -27,7 +27,7 @@ File ONNX khoảng 9,57 MB (MobileNetV2), 95,02 MB (ResNet50), 59,14 MB (VGG16),
 
 Ứng dụng dùng file tĩnh và ONNX Runtime Web, không cần API trả phí. Việc lưu trữ/băng thông vẫn phụ thuộc hạn mức gói hosting. Không tự thay đổi mô hình ở trang Phân tích khi chọn mạng đối chiếu.
 
-[Kết quả kiểm thử Python trên 329 ảnh và toàn bộ bằng chứng](../training/reports/model-comparison-20261125/README.md) · [Quy trình tái lập](MODEL_COMPARISON.md).
+[Kết quả hiện tại trên 1.026 ảnh test v2 và toàn bộ bằng chứng](../training/reports/retraining-v2-20261127/README.md) · [Quy trình tái lập](RETRAINING_V2.md). Bộ kiểm thử 329 ảnh ngày 25/11/2026 là hồ sơ v1 lịch sử.
 
 ## Chạy mã nguồn hiện tại trên máy
 

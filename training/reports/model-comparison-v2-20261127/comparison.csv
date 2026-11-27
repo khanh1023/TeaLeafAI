@@ -1,0 +1,4 @@
+﻿Mô hình,Accuracy (%),Precision macro (%),Recall macro (%),F1 macro (%),File Keras (MB),Tham số,Warm median (ms/ảnh)
+MobileNetV2,82.16,69.25,75.63,71.73,10.30,2422984,151.92
+ResNet50,85.58,77.30,82.98,79.58,96.08,23851016,305.77
+VGG16,83.14,74.75,81.13,77.37,59.23,14781384,184.24

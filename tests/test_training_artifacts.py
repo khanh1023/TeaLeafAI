@@ -11,11 +11,21 @@ ROOT = Path(__file__).resolve().parents[1]
 class TrainingArtifactsTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.manifest_bytes = (ROOT / 'training/reports/expanded-dataset-manifest.json').read_bytes()
-        cls.records = json.loads(cls.manifest_bytes)
-        cls.summary = json.loads((ROOT / 'training/reports/expanded-dataset-summary.json').read_text())
-        cls.evaluation = json.loads((ROOT / 'training/evaluation.json').read_text())
         cls.model = json.loads((ROOT / 'frontend/public/model/manifest.json').read_text())
+        expected = cls.model['dataset_manifest_sha256']
+        reports = ROOT / 'training/reports'
+        candidates = [(reports / 'expanded-dataset-manifest.json', reports / 'expanded-dataset-summary.json')]
+        candidates.extend((path, path.parent / 'split_summary.json')
+                          for path in sorted(reports.glob('dataset-*/manifest.json')))
+        matched = [(manifest, summary) for manifest, summary in candidates
+                   if manifest.exists() and hashlib.sha256(manifest.read_bytes()).hexdigest() == expected]
+        if not matched:
+            raise AssertionError('Served model has no matching versioned dataset manifest: ' + expected)
+        manifest_path, summary_path = matched[0]
+        cls.manifest_bytes = manifest_path.read_bytes()
+        cls.records = json.loads(cls.manifest_bytes)
+        cls.summary = json.loads(summary_path.read_text())
+        cls.evaluation = json.loads((ROOT / 'training/evaluation.json').read_text())
 
     def test_groups_and_duplicate_content_do_not_cross_splits(self):
         for field in ['group', 'raw_sha256', 'pixel_sha256', 'sha256']:
@@ -42,6 +52,8 @@ class TrainingArtifactsTests(unittest.TestCase):
         matrix = self.evaluation['confusion_matrix']
         n = sum(sum(row) for row in matrix)
         self.assertEqual(n, sum(r['split'] == 'test' for r in self.records))
+        self.assertEqual(n, self.evaluation['test_images'])
+        self.assertEqual(len(self.records), self.model['training_images'])
         accuracy = sum(matrix[i][i] for i in range(len(matrix))) / n
         self.assertAlmostEqual(accuracy, self.evaluation['accuracy'])
         self.assertAlmostEqual(accuracy, self.model['test_accuracy'])

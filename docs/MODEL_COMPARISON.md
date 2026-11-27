@@ -1,5 +1,7 @@
 # So sánh MobileNetV2, ResNet50 và VGG16 — mục 3.3.4
 
+> **Phiên bản hiện tại:** cả ba mạng đã được huấn luyện lại trên bộ 6.840 ảnh v2, đánh giá cùng 1.026 ảnh test. Xem [báo cáo v2, Word và hình](../training/reports/retraining-v2-20261127/README.md) và [cách tái lập](RETRAINING_V2.md). Nội dung về 2.197 ảnh/329 test và notebook bên dưới là quy trình v1 được giữ để đối chiếu lịch sử, không phải điểm của website hiện tại.
+
 [Tải Word hoàn chỉnh mục 3.3.4](https://raw.githubusercontent.com/khanh1023/TeaLeafAI/main/downloads/TeaLeafAI-muc-3-3-4-bao-cao-hoan-chinh.docx): nội dung báo cáo, hai bảng chỉnh sửa được và hình từ thực nghiệm đã hoàn thành; phân biệt kết quả kiểm thử Python với kết quả trình duyệt.
 
 **Cập nhật 25/11/2026:** đã huấn luyện và kiểm thử thật cả ba mạng. Có thể [chạy từng mạng hoặc cả ba ngay trên website](https://tea-leaf-ai.vercel.app/so-sanh), gán nhãn ảnh đã thử và xuất Word/CSV. Xem [hướng dẫn sử dụng](TRY_THREE_MODELS.md) và [bằng chứng thực nghiệm Python](../training/reports/model-comparison-20261125/README.md). Các bản Word ngày 23/11 bên dưới là hồ sơ trước khi có thực nghiệm này.

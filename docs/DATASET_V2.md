@@ -1,5 +1,7 @@
 # Bộ dữ liệu lá chè mở rộng v2 — 25/11/2026
 
+> Bộ này đã được dùng để huấn luyện và đánh giá các checkpoint mới ngày 27/11/2026. Xem [kết quả huấn luyện v2](RETRAINING_V2.md). Bản ZIP dữ liệu vẫn giữ nguyên; việc huấn luyện mới không thay bộ chia hoặc checksum ảnh.
+
 Đây là phiên bản dữ liệu mới, dùng để huấn luyện lại và đánh giá lại mô hình. Thư mục `training/dataset` và các kết quả cũ được giữ nguyên; dữ liệu mới nằm ở `training/dataset-v2`. Việc thêm dữ liệu không tự thay trọng số trên website và không chứng minh độ chính xác tăng lên.
 
 ## Tải bộ đã chia sẵn

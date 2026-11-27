@@ -1,0 +1,45 @@
+{
+  "config": {
+    "protocol": "frozen-imagenet-common-head-v2-20261127",
+    "seed": 42,
+    "epochs": 30,
+    "augmented_views": 2,
+    "feature_batch": 32,
+    "dataset_manifest_sha256": "47a24012c4f67957c9ec98b997e37404575738d068ec004c415ab7bd03ecf001",
+    "script_sha256": "cfd42a73b3a9d2fa4241eb91cdbcda13352243561495efd58ba3bba18abc79af",
+    "split_counts": {
+      "train": 4788,
+      "test": 1026,
+      "val": 1026
+    },
+    "feature_execution": "tf.function dynamic-batch float32 forward; same frozen weights and tensors",
+    "dtype": "float32",
+    "models": [
+      "MobileNetV2",
+      "ResNet50",
+      "VGG16"
+    ],
+    "head_batch": 32,
+    "head": "GAP -> Dropout .3 -> Dense128 ReLU -> Dropout .2 -> Dense8 softmax",
+    "optimizer": "Adam 1e-3, ReduceLROnPlateau factor .3 patience2 min_lr1e-6",
+    "checkpoint": "minimum validation loss; EarlyStopping patience5 min_delta1e-4",
+    "augmentation": "original + deterministic mirror/rotation ±15 degrees/brightness/contrast .85–1.15 views; train only"
+  },
+  "environment": {
+    "python": "3.12.14",
+    "tensorflow": "2.21.0",
+    "keras": "3.15.1",
+    "numpy": "2.3.5",
+    "pillow": "13.0.0",
+    "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+    "gpus": [],
+    "logical_devices": [
+      "/device:CPU:0"
+    ],
+    "build": {
+      "is_cuda_build": false,
+      "is_rocm_build": false,
+      "is_tensorrt_build": false
+    }
+  }
+}

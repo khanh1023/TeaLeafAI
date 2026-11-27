@@ -1,0 +1,27 @@
+# Huấn luyện và đánh giá với dữ liệu v2
+
+Kết quả dưới đây được tạo từ checkpoint, ma trận và dự đoán thật. Trạng thái triển khai được xác nhận riêng, không suy ra từ việc sinh báo cáo.
+
+Bộ v2 có 6.840 ảnh: 4.788 train, 1.026 validation và 1.026 test, đúng tỷ lệ tổng 70/15/15. Ảnh tăng cường chỉ áp dụng cho train; bốn ảnh dự phòng không tham gia đánh giá.
+
+MobileNetV2 dùng checkpoint sau fine-tuning các lớp cuối, được chọn theo validation loss trước khi đánh giá test.
+
+Với Python/Pillow và Keras, checkpoint mặc định phân loại đúng 868/1.026 ảnh test, Accuracy 84,60%, Precision macro 72,83%, Recall macro 80,81% và F1 macro 75,64%.
+
+Quy tắc luôn đoán lớp nhiều nhất trong train, healthy, đúng 467/1.026 ảnh (45,52%). Đây là đường cơ sở trên cùng v2, không phải một mạng CNN được huấn luyện.
+
+Ba mô hình so sánh bên dưới đều dùng backbone ImageNet đóng băng và cùng quy trình head/augmentation/budget. MobileNetV2 trong bảng là checkpoint thí nghiệm so sánh, được phân biệt với checkpoint mặc định. Kết quả của hai phiên bản không được ghép để xếp hạng.
+
+Thời gian đối chiếu là lời gọi toàn mô hình TensorFlow eager sau warm-up, batch 1, không gồm đọc ảnh, resize, tải mô hình hoặc mạng. Không dùng thời gian này làm tốc độ trình duyệt.
+
+Kết quả thuộc bộ test nội bộ theo nhóm ảnh, chưa phải kiểm định thực địa độc lập. Thông tin cây/phiên chụp nguồn còn thiếu. Không so sánh trực tiếp số Accuracy v1 và v2 để kết luận mức cải thiện, vì ảnh và bộ chia đã thay đổi.
+
+ONNX/Python của checkpoint mặc định được kiểm tra trên đủ 1.026 tensor test; đúng 868/1.026, Accuracy 84,60%. Đối chiếu Keras–ONNX là kiểm tra chuyển đổi cùng mô hình, không phải hai kiến trúc.
+
+Đường xử lý Canvas và ONNX Runtime Web trong Chromium đạt 863/1.026, Accuracy 84,11%, F1 macro 75,86%. Đây là phép đo riêng trên đủ test; khác biệt với Python có thể đến từ đọc/đổi kích thước ảnh.
+
+[Báo cáo, Word, hình và toàn bộ bằng chứng](../training/reports/retraining-v2-20261127/README.md) · [Nguồn và bộ chia dữ liệu](DATASET_V2.md).
+
+Manifest SHA-256: `47a24012c4f67957c9ec98b997e37404575738d068ec004c415ab7bd03ecf001`.
+
+Báo cáo v1 trên 2.197 ảnh/test 329 ảnh tiếp tục được giữ làm lịch sử. Tài liệu và ZIP cũ không mặc nhiên là phiên bản v2.

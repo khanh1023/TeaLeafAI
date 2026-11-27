@@ -1,0 +1,24 @@
+{
+  "recorded_at": "2026-11-27T14:53:09.734767+00:00",
+  "source_base_commit": "4daacdb9b8f5cc25015a5499fb720f80113dd1f7",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "dataset_manifest_sha256": "47a24012c4f67957c9ec98b997e37404575738d068ec004c415ab7bd03ecf001",
+  "scripts": {
+    "training/train_expanded.py": "aa6f460497973559df572778e4a36d52cd88317cd17ca8531b638e24c7843457",
+    "training/finetune_expanded.py": "6a858ce04e6515010771d0c43bd3e04ecd39d91cc765098cac8bbbcd60756fdb",
+    "training/compare_models.py": "cfd42a73b3a9d2fa4241eb91cdbcda13352243561495efd58ba3bba18abc79af",
+    "training/run_v2_pipeline.py": "4ae0abfc844121cd30471f3ccc649f365fa9fef239c77587773eadaac355c8a9",
+    "training/export_browser_model.py": "15c6ea7600d34e2f957c8b877792b9966a43039fb002751656ccce6065844cc4",
+    "training/export_comparison_models.py": "ece5142f32bc03ee86bf9a3bd71eb4c56da19895948416c0d8fbe49a5fb516ce",
+    "training/export_metadata.py": "c555aace2734dc7585bc96e54694792b3f410bb9e3de2085e816c0b417e168ac"
+  },
+  "runtime": {
+    "cpu_quota": "200000 100000",
+    "memory_limit_bytes": 8589934592,
+    "TF_ENABLE_ONEDNN_OPTS": "1",
+    "TF_NUM_INTRAOP_THREADS": "2",
+    "TF_NUM_INTEROP_THREADS": "1",
+    "OMP_NUM_THREADS": "2"
+  },
+  "note": "Training and export code has uncommitted v2 changes listed by SHA; publication commit is recorded after artifact and browser verification."
+}

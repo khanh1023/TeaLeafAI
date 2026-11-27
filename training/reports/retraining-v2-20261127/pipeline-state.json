@@ -1,0 +1,14 @@
+{
+  "stage": "staging-ready",
+  "dataset_manifest_sha256": "47a24012c4f67957c9ec98b997e37404575738d068ec004c415ab7bd03ecf001",
+  "updated_at": "2026-11-27T16:21:57.257957+00:00",
+  "runtime": {
+    "TF_ENABLE_ONEDNN_OPTS": "1",
+    "TF_NUM_INTRAOP_THREADS": "2",
+    "TF_NUM_INTEROP_THREADS": "1",
+    "OMP_NUM_THREADS": "2"
+  },
+  "exports": "/workspace/work/v2-training-20261126/exports",
+  "reports": "/workspace/work/v2-training-20261126/export-reports",
+  "publication": "Not deployed. Promote only after tests and real browser QA."
+}

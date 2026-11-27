@@ -9,11 +9,12 @@ from PIL import Image
 import tensorflow as tf
 from sklearn.metrics import accuracy_score,balanced_accuracy_score,classification_report,confusion_matrix,f1_score
 ROOT=Path(__file__).resolve().parents[1]
-p=argparse.ArgumentParser(description=__doc__);p.add_argument('--initial',type=Path,required=True);p.add_argument('--output',type=Path,required=True);p.add_argument('--epochs',type=int,default=6);p.add_argument('--data',type=Path,default=ROOT/'training/dataset');args=p.parse_args();args.output.mkdir(parents=True,exist_ok=True)
+p=argparse.ArgumentParser(description=__doc__);p.add_argument('--initial',type=Path,required=True);p.add_argument('--output',type=Path,required=True);p.add_argument('--epochs',type=int,default=6);p.add_argument('--data',type=Path,default=ROOT/'training/dataset');p.add_argument('--cache-images',action='store_true',help='Cache decoded float32 images in RAM; disabled by default for larger datasets.');args=p.parse_args();args.output.mkdir(parents=True,exist_ok=True)
 DATA=args.data.resolve();manifest_bytes=(DATA/'manifest.json').read_bytes();records=json.loads(manifest_bytes);classes=json.loads((DATA/'classes.json').read_text())
 initial_report=json.loads((args.initial/'evaluation.json').read_text());tf.keras.utils.set_random_seed(42);started=time.time()
 if initial_report['dataset_manifest_sha256']!=hashlib.sha256(manifest_bytes).hexdigest():raise SystemExit('Initial checkpoint was trained on a different dataset split. Train a fresh head on this version first.')
 if initial_report['classes']!=classes:raise SystemExit('Initial checkpoint class order differs from this dataset.')
+if initial_report.get('model_sha256') and initial_report['model_sha256']!=hashlib.sha256((args.initial/'tea_leaf_mobilenetv2.keras').read_bytes()).hexdigest():raise SystemExit('Initial checkpoint hash differs from its training report.')
 model=tf.keras.models.load_model(args.initial/'tea_leaf_mobilenetv2.keras',compile=False)
 backbone=next(layer for layer in model.layers if layer.name.startswith('mobilenetv2'))
 backbone.trainable=True
@@ -31,7 +32,8 @@ def load_image(path,label):
 def split(name,train=False):
  subset=[r for r in records if r['split']==name]
  paths=[str(DATA/r['path']) for r in subset];labels=[classes.index(r['label']) for r in subset]
- ds=tf.data.Dataset.from_tensor_slices((paths,labels)).map(load_image,num_parallel_calls=2).cache().with_options(options)
+ ds=tf.data.Dataset.from_tensor_slices((paths,labels)).map(load_image,num_parallel_calls=2).with_options(options)
+ if args.cache_images:ds=ds.cache()
  if train:ds=ds.shuffle(len(subset),seed=42)
  ds=ds.batch(16)
  if train:ds=ds.map(lambda x,y:(augmentation(x,training=True),y),num_parallel_calls=1)
@@ -53,9 +55,13 @@ for offset in range(0,len(entries),16):
 probs=np.concatenate(probabilities);truth=np.array([classes.index(r['label']) for r in entries]);pred=probs.argmax(1)
 report=initial_report.copy()
 report.update({'accuracy':float(accuracy_score(truth,pred)),'balanced_accuracy':float(balanced_accuracy_score(truth,pred)),'macro_f1':float(f1_score(truth,pred,average='macro')),'weighted_f1':float(f1_score(truth,pred,average='weighted')),'classification_report':classification_report(truth,pred,target_names=classes,labels=list(range(8)),output_dict=True,zero_division=0),'confusion_matrix':confusion_matrix(truth,pred,labels=list(range(8))).tolist(),'trained_at':datetime.datetime.now(datetime.timezone.utc).isoformat(),'elapsed_seconds':initial_report['elapsed_seconds']+time.time()-started})
-report['initial_head_test_metrics']={k:initial_report[k] for k in ['accuracy','balanced_accuracy','macro_f1']}
+if all(k in initial_report for k in ['accuracy','balanced_accuracy','macro_f1']):
+ report['initial_head_test_metrics']={k:initial_report[k] for k in ['accuracy','balanced_accuracy','macro_f1']}
 report['training']['fine_tuning']={'maximum_epochs':args.epochs,'epochs_completed':len(history.history['loss']),'learning_rate_initial':1e-5,'layers':'last 30 layers of MobileNetV2, BatchNormalization frozen; backbone called with training=False','initial_validation_loss':base_loss,'initial_validation_accuracy':base_accuracy,'selected':'finetuned' if min(history.history['val_loss'])<base_loss else 'initial_head','selected_validation_loss':min(base_loss,min(history.history['val_loss'])),'selection':'minimum validation loss, with initial model kept unless validation improves','history':{k:[float(x) for x in v] for k,v in history.history.items()}}
-report['limitations'].append('A preliminary frozen-head evaluation was performed on the same held-out test partition; final model selection used validation loss only. This is development evaluation, not external certification.')
+if 'initial_head_test_metrics' in report:report['limitations'].append('A preliminary frozen-head evaluation was performed on the same held-out test partition; final model selection used validation loss only. This is development evaluation, not external certification.')
+report.pop('evaluation_status',None)
+report['test_images']=len(truth)
+report['model_sha256']=hashlib.sha256(best.read_bytes()).hexdigest()
 report['dataset']=json.loads((DATA/'split_summary.json').read_text())
 (args.output/'evaluation.json').write_text(json.dumps(report,ensure_ascii=False,indent=2));(args.output/'classes.json').write_text(json.dumps(classes,indent=2));np.savez_compressed(args.output/'test_predictions.npz',truth=truth,probabilities=probs)
 print(json.dumps({k:report[k] for k in ['accuracy','balanced_accuracy','macro_f1','test_images','elapsed_seconds']},indent=2),flush=True)

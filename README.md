@@ -2,27 +2,27 @@
 
 ## Chạy thử ba mô hình trên website
 
-**[Mở trang Thử 3 mô hình](https://tea-leaf-ai.vercel.app/so-sanh)**: chọn ảnh/camera, chạy MobileNetV2, ResNet50 hoặc VGG16, đối chiếu cùng ảnh và tải Word/CSV từ kết quả đã thử. Có thể gán nhãn thực tế để tính Accuracy trên các ảnh chung; không lấy điểm softmax làm Accuracy. [Hướng dẫn](docs/TRY_THREE_MODELS.md) · [Thực nghiệm Python và bằng chứng ngày 25/11/2026](training/reports/model-comparison-20261125/README.md).
+**[Mở trang Thử 3 mô hình](https://tea-leaf-ai.vercel.app/so-sanh)**: chọn ảnh/camera, chạy MobileNetV2, ResNet50 hoặc VGG16, đối chiếu cùng ảnh và tải Word/CSV từ kết quả đã thử. Có thể gán nhãn thực tế để tính Accuracy trên các ảnh chung; không lấy điểm softmax làm Accuracy. [Hướng dẫn](docs/TRY_THREE_MODELS.md) · [Huấn luyện lại và bằng chứng trên dữ liệu v2](docs/RETRAINING_V2.md).
 
-Ba mạng là checkpoint thật được huấn luyện cùng quy trình chuyển giao backbone đóng băng. Trang Phân tích vẫn dùng bản MobileNetV2 đã fine-tune; hai bộ đánh giá được phân biệt theo phiên bản.
+Ba mạng là checkpoint thật được huấn luyện mới trên bộ **6.840 ảnh v2**, cùng quy trình chuyển giao backbone đóng băng. Trang Phân tích dùng MobileNetV2 đã được fine-tune và chọn theo validation loss; kết quả của mô hình chính được phân biệt với bảng so sánh ba backbone đóng băng.
 
 
 Website tiếng Việt phân loại ảnh lá chè bằng MobileNetV2 thành **8 lớp: 7 bệnh và lá khỏe mạnh**. Bản mặc định chạy mô hình **ngay trong trình duyệt** bằng ONNX Runtime Web: không cần tài khoản, API key, dịch vụ AI trả phí hay máy chủ Python.
 
 - Website: https://tea-leaf-ai.vercel.app
-- Tải bản chạy sẵn: https://github.com/khanh1023/TeaLeafAI/releases/latest
+- Mã nguồn phiên bản hiện tại và hướng dẫn chạy: https://github.com/khanh1023/TeaLeafAI/releases/latest
 - Mã nguồn: https://github.com/khanh1023/TeaLeafAI
 
 ## 1. Cách chạy dễ nhất trên Windows
 
 1. Cài **Node.js LTS 22 trở lên** từ https://nodejs.org nếu máy chưa có.
-2. Tải `TeaLeafAI-ready.zip` trong mục **Releases**, giải nén toàn bộ.
+2. Tải **Source code (zip)** của bản phát hành hiện tại trong mục **Releases**, giải nén toàn bộ.
 3. Nhấp đúp **`CHAY-WEBSITE.cmd`**. Trình duyệt mở tại http://127.0.0.1:5173.
 4. Vào **Phân tích** → chọn hoặc kéo thả ảnh → **Phân tích ảnh**.
 
-Giữ cửa sổ chạy mở trong lúc sử dụng; nhấn Ctrl+C để dừng. Bản ZIP đã có giao diện được build, mô hình và WebAssembly nên không cần cài Python hoặc tải thư viện npm để dùng bản chạy sẵn. Node chỉ dùng để phục vụ file website trên máy. Không mở trực tiếp `index.html` bằng `file://` vì trình duyệt cần HTTP để tải mô hình.
+Giữ cửa sổ chạy mở trong lúc sử dụng; nhấn Ctrl+C để dừng. Bản mã nguồn có các mô hình ONNX hiện tại. Lần chạy đầu, file `.cmd` cài thư viện và build giao diện, cần Internet; không cần Python để dùng website. Không mở trực tiếp `index.html` bằng `file://` vì trình duyệt cần HTTP để tải mô hình.
 
-Nếu tải mã nguồn thay vì bản Release, file `.cmd` sẽ cài thư viện và build ở lần chạy đầu; cần Internet cho bước này. Nếu báo cổng 5173 đã dùng, đóng cửa sổ TeaLeafAI cũ rồi chạy lại.
+Các file `TeaLeafAI-ready.zip` và release `v2.0.0` trước đây là bản lưu v1, không chứa mô hình v2 hiện tại. Nếu báo cổng 5173 đã dùng, đóng cửa sổ TeaLeafAI cũ rồi chạy lại.
 
 ## 2. Chạy từ mã nguồn để phát triển
 
@@ -105,7 +105,7 @@ tests/                      Kiểm tra backend và chuẩn bị dataset
 .github/workflows/          Kiểm tra tự động khi push/PR
 ```
 
-Ảnh đầu vào: RGB float32, kích thước 224×224, **pixel thô 0–255**. Mô hình đã chứa lớp `Rescaling(1/127.5, offset=-1)`, vì vậy không chuẩn hóa ảnh thêm lần nữa. Đã sửa lỗi backend cũ chuẩn hóa hai lần. Bản ONNX hiện tại được so với Keras trên 9 ảnh; nhãn top-1 khớp toàn bộ, sai số xác suất lớn nhất khoảng `8.17e-6`. Kiểm tra này chứng minh việc chuyển định dạng, **không phải đánh giá độ chính xác trên dữ liệu mới**.
+Ảnh đầu vào: RGB float32, kích thước 224×224, **pixel thô 0–255**. Mỗi mô hình chứa chuẩn hóa phù hợp kiến trúc: MobileNetV2 rescale về [-1,1], ResNet50/VGG16 đổi RGB sang BGR và trừ mean ImageNet. Không chuẩn hóa lần nữa ở ứng dụng. Cả bốn bản ONNX được đối chiếu với Keras trên toàn bộ **1.026 ảnh test v2**, không có nhãn top-1 bất đồng; sai số xác suất lớn nhất dưới `2.1e-5`. Đây là kiểm tra chuyển định dạng; Accuracy được báo riêng theo mô hình và cách tiền xử lý.
 
 ## 7. Backend Python tùy chọn
 
@@ -125,15 +125,21 @@ Backend chạy cổng 9000, frontend chạy 5173. Khi dùng API, ảnh được 
 
 ## 8. Huấn luyện, dữ liệu và giới hạn
 
-**Bộ dữ liệu mở rộng v2 ngày 25/11/2026:** có **6.840 ảnh**, gồm **3.112 ảnh lá khỏe**, chia đúng **4.788 train / 1.026 validation / 1.026 test (70/15/15)**. [Tải dữ liệu, xem bảng 8 lớp và nguồn ảnh](docs/DATASET_V2.md). Chạy `python training/download_dataset_v2.py` để tải và khôi phục vào `training/dataset-v2`. Đây là dữ liệu chuẩn bị cho lần huấn luyện mới; các checkpoint và chỉ số trên website hiện tại vẫn thuộc bộ v1 mô tả dưới đây.
+**Phiên bản mô hình hiện tại dùng bộ v2:** có **6.840 ảnh**, gồm **3.112 ảnh lá khỏe**, chia đúng **4.788 train / 1.026 validation / 1.026 test (70/15/15)**. [Tải dữ liệu, xem bảng 8 lớp và nguồn ảnh](docs/DATASET_V2.md). Chạy `python training/download_dataset_v2.py` để khôi phục dữ liệu. Checkpoint mới được khởi tạo từ ImageNet; không tiếp tục checkpoint v1 trên bộ chia mới.
 
-Mô hình đang dùng đã được huấn luyện lại với **2.197 ảnh**, gồm **673 ảnh healthy**, nhiều hơn từng lớp bệnh. Bộ chia theo nhóm ảnh gần trùng có 1.541 ảnh train, 327 validation và 329 test (xấp xỉ 70/15/15). Dữ liệu gốc được giữ nguyên; ảnh trùng nội dung có nhãn mâu thuẫn không tham gia lần huấn luyện này.
+Mô hình chính MobileNetV2 sau fine-tuning đạt **84,60% Accuracy** và **0,7564 macro-F1** trên **1.026 ảnh test nội bộ**, đo bằng Keras/ONNX Python với resize Pillow. Bảng so sánh độc lập giữa ba backbone đóng băng trên cùng bộ chia: MobileNetV2 **82,16%**, ResNet50 **85,58%**, VGG16 **83,14%**. Không thay điểm MobileNetV2 trong bảng này bằng điểm mô hình chính đã fine-tune. [Báo cáo hiện tại, dữ liệu dự đoán và bản Word](training/reports/retraining-v2-20261127/README.md).
+
+Chọn checkpoint theo validation loss; tập test không tham gia chọn epoch. Trên Chromium qua đúng luồng xử lý của website, mô hình chính đạt **84,11% (863/1.026 ảnh đúng)**; Keras/ONNX Python đạt **84,60% (868/1.026)**. Canvas và Pillow resize khác nhau nên hai số liệu được công bố riêng. Các bộ test v1/v2 khác nhau nên không suy ra mức tăng chất lượng từ việc so sánh trực tiếp hai phần trăm. Đây chưa phải kiểm định thực địa độc lập tại Việt Nam.
+
+### Các kết quả v1 được giữ để đối chiếu lịch sử
+
+Mô hình v1 trước đây được huấn luyện với **2.197 ảnh**, gồm **673 ảnh healthy**. Bộ chia có 1.541 ảnh train, 327 validation và 329 test. Dữ liệu và kết quả này không phải phiên bản đang triển khai.
 
 - [Tải bộ dữ liệu đã chia](https://github.com/khanh1023/TeaLeafAI/raw/refs/heads/main/downloads/TeaLeafAI-training-data.zip), khoảng 75 MiB; tải riêng với bản website.
 - [Nguồn ảnh, giấy phép và lệnh tái tạo/huấn luyện](docs/TRAINING_DATA.md).
-- [Báo cáo huấn luyện](training/REPORT.md), [số liệu chi tiết](training/evaluation.json) và [môi trường phần mềm](docs/MOI_TRUONG_PHAN_MEM.md).
+- [Báo cáo v1 đã lưu](training/reports/retraining-v1-20261117/REPORT.md), [số liệu v1](training/reports/retraining-v1-20261117/evaluation.json) và [môi trường phần mềm](docs/MOI_TRUONG_PHAN_MEM.md).
 
-Accuracy test nội bộ là **69,30% trên 329 ảnh**, macro F1 **0,6453**. Đây là kết quả trên các nguồn dữ liệu công khai đã chia, chưa phải kiểm định thực địa độc lập. Không so sánh trực tiếp với báo cáo cũ vì bộ ảnh và cách chia đã thay đổi. Thêm ảnh không tự bảo đảm tăng độ chính xác. Báo cáo cũ được lưu tại `training/reports/previous-evaluation.json`.
+Accuracy v1 là **69,30% trên 329 ảnh**, macro F1 **0,6453**. Đây là kết quả lịch sử trên bộ v1; báo cáo trước v1 vẫn được giữ tại `training/reports/previous-evaluation.json`.
 
 [Đánh giá lại ngày 18/11/2026](training/reports/reevaluation/REPORT.md) tái lập **228/329 ảnh đúng (69,30%)** với Keras/ONNX Python. Đường xử lý ảnh trên trình duyệt Chromium đạt **220/329 (66,87%)**; cần phân biệt hai cách tiền xử lý khi trích số liệu. Mức 94,5% trên 400 ảnh trong bản Word người dùng cung cấp chưa được tái lập bằng mô hình và bộ test hiện tại.
 
@@ -143,7 +149,7 @@ Accuracy test nội bộ là **69,30% trên 329 ảnh**, macro F1 **0,6453**. Đ
 
 [Ảnh và nội dung ngắn mục 3.3.4](training/reports/model-comparison-20261123/README.md) nêu phạm vi kiểm chứng hiện có, file ONNX khoảng 9,58 MB và có [bản Word](https://raw.githubusercontent.com/khanh1023/TeaLeafAI/main/downloads/TeaLeafAI-muc-3-3-4-so-sanh-mo-hinh.docx). Chưa xếp hạng Accuracy hoặc tốc độ của ba kiến trúc.
 
-Quy trình mở rộng dùng `download_expansion_sources.py`, `expand_dataset.py`, `train_expanded.py` và `finetune_expanded.py`. Các script cũ `prepare_dataset.py`, `train.py`, `evaluate.py` vẫn được giữ để tham khảo; không chạy lại bộ chia cũ lên dữ liệu đã chia nếu muốn tái tạo báo cáo mới.
+Quy trình v2 được tái tạo bằng `training/run_v2_pipeline.py --run-dir training/runs/v2` sau khi khôi phục dữ liệu và cài thư viện huấn luyện. Script huấn luyện, đánh giá và xuất vào staging, không tự thay file website hoặc đẩy GitHub. Các script chuẩn bị dữ liệu và báo cáo v1 được giữ để tái lập theo đúng phiên bản cũ.
 
 Sau khi huấn luyện lại, xuất mô hình browser bằng [training/export_browser_model.py](training/export_browser_model.py), theo [docs/LOCAL_SETUP.md](docs/LOCAL_SETUP.md). Commit ONNX mới và manifest cùng nhau, rồi build lại website.
 

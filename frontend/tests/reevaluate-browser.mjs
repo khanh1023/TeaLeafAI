@@ -1,6 +1,7 @@
 /** Evaluate the unchanged held-out test files with the actual browser diagnose().
  * Run Vite first. Requires Playwright + Chromium (not part of lightweight CI).
- * TEALEAF_BASE_URL, TEALEAF_EVAL_OUTPUT, PLAYWRIGHT_MODULE, CHROMIUM_PATH supported.
+ * TEALEAF_BASE_URL, TEALEAF_EVAL_OUTPUT, TEALEAF_DATASET_DIR,
+ * TEALEAF_MANIFEST_PATH, PLAYWRIGHT_MODULE, CHROMIUM_PATH supported.
  * No historical report is overwritten: the default output uses a unique run directory.
  * Timing is local headless-browser timing, not a benchmark of users' devices/networks.
  */
@@ -13,12 +14,15 @@ import path from 'node:path';
 import {fileURLToPath, pathToFileURL} from 'node:url';
 
 const root = fileURLToPath(new URL('../../', import.meta.url));
+const data = path.resolve(process.env.TEALEAF_DATASET_DIR || path.join(root, 'training/dataset'));
+const manifestPath = path.resolve(process.env.TEALEAF_MANIFEST_PATH || (process.env.TEALEAF_DATASET_DIR
+  ? path.join(data, 'manifest.json') : path.join(root, 'training/reports/expanded-dataset-manifest.json')));
 const runId = new Date().toISOString().replaceAll(':','-');
 const output = path.resolve(process.env.TEALEAF_EVAL_OUTPUT || path.join(root, 'training/reports', `browser-evaluation-${runId}`));
 const base = (process.env.TEALEAF_BASE_URL || 'http://127.0.0.1:5179').replace(/\/$/,'');
 const moduleName = process.env.PLAYWRIGHT_MODULE || 'playwright';
 const {chromium} = await import(path.isAbsolute(moduleName) ? pathToFileURL(moduleName).href : moduleName);
-const manifestBytes = await readFile(path.join(root, 'training/reports/expanded-dataset-manifest.json'));
+const manifestBytes = await readFile(manifestPath);
 const manifest = JSON.parse(manifestBytes);
 const model = JSON.parse(await readFile(path.join(root, 'frontend/public/model/manifest.json'), 'utf8'));
 const lock = JSON.parse(await readFile(path.join(root, 'frontend/package-lock.json'), 'utf8'));
@@ -28,7 +32,8 @@ assert.equal(manifestSha, model.dataset_manifest_sha256);
 assert.equal(modelSha, model.sha256);
 if (process.env.TEALEAF_EXPECTED_MODEL_SHA256) assert.equal(modelSha, process.env.TEALEAF_EXPECTED_MODEL_SHA256);
 const entries = manifest.filter(r => r.split === 'test');
-assert.equal(entries.length,Number(process.env.TEALEAF_EXPECTED_TEST_COUNT || 329));
+assert.ok(entries.length > 1, 'Held-out evaluation needs test observations and a warm sample.');
+if (process.env.TEALEAF_EXPECTED_TEST_COUNT) assert.equal(entries.length, Number(process.env.TEALEAF_EXPECTED_TEST_COUNT));
 await mkdir(output,{recursive:true});
 const outputFile = path.join(output,'browser-predictions.json');
 try { await access(outputFile); throw new Error(`Output already exists; select a fresh TEALEAF_EVAL_OUTPUT: ${outputFile}`); }
@@ -43,7 +48,10 @@ function stats(values) {
     percentile_definition:'p95 uses nearest-rank ceil(0.95*n); median averages the two middle values for even n.'
   };
 }
-const browser = await chromium.launch({headless:true, ...(process.env.CHROMIUM_PATH ? {executablePath:process.env.CHROMIUM_PATH} : {})});
+const browser = await chromium.launch({headless:true,
+  args:['--no-sandbox','--disable-dev-shm-usage','--disk-cache-size=1', ...(process.env.TEALEAF_QA_TRUSTED_SPKI
+    ? ['--ignore-certificate-errors-spki-list='+process.env.TEALEAF_QA_TRUSTED_SPKI] : [])],
+  ...(process.env.CHROMIUM_PATH ? {executablePath:process.env.CHROMIUM_PATH} : {})});
 const predictions = [], errors = [], requests = [], repeats = [];
 const started = Date.now();
 let firstResources=[];
@@ -57,7 +65,7 @@ try {
 
   async function measure(record) {
     const readStart=nodePerformance.now();
-    const bytes=await readFile(path.join(root,'training/dataset',record.path));
+    const bytes=await readFile(path.join(data,record.path));
     const fileReadMs=nodePerformance.now()-readStart;
     assert.equal(createHash('sha256').update(bytes).digest('hex'),record.sha256);
     const encodeStart=nodePerformance.now();
@@ -129,7 +137,7 @@ try {
   const timingDefinitions={
     browser_diagnose_ms:'Browser performance.now() immediately before await diagnose(file) to after resolve; includes image decode/Canvas resize, model execution, tensor/output handling, and cached metadata. File construction, disk I/O, base64 encoding, and Playwright transport are excluded. First call additionally includes model download/hash/WASM import/session initialization.',
     browser_model_execution_stage_ms:'Approximate execution stage: onProgress 75% to 100%; includes tensor construction, session.run, output copying and predictionResult; excludes image decoding and session initialization. This is not a direct isolated kernel benchmark.',
-    warm_summary:'First cold call excluded; 328 remaining held-out samples in manifest order. Ten extra deterministic samples are summarized separately, not counted as additional test observations.',
+    warm_summary:`First cold call excluded; ${predictions.length-1} remaining held-out samples in manifest order. Ten extra deterministic samples are summarized separately, not counted as additional test observations.`,
     model_download_ms:'PerformanceResourceTiming.duration for initial .onnx resource from request start to response end on localhost. Not internet download performance. WASM resource timing also recorded.',
     automation_and_serialization_overhead_ms:'Node page.evaluate round-trip minus browser diagnose wall time; includes IPC, payload/file preparation and result serialization, not model latency.',
     environment_limit:'Single headless Chromium process on this Cloud Linux host, with concurrent work potentially sharing CPU. No inference or deployment-performance claim for other devices.'

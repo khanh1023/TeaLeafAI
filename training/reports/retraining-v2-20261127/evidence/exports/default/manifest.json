@@ -1,0 +1,52 @@
+{
+  "format": "onnx",
+  "file": "tea-leaf.onnx",
+  "input_name": "images",
+  "output_name": "probabilities",
+  "input_shape": [
+    1,
+    224,
+    224,
+    3
+  ],
+  "pixel_range": [
+    0,
+    255
+  ],
+  "normalization": "Embedded in model; do not normalize input twice.",
+  "classes": [
+    "algal_leaf",
+    "anthracnose",
+    "bird_eye_spot",
+    "brown_blight",
+    "gray_light",
+    "healthy",
+    "red_leaf_spot",
+    "white_spot"
+  ],
+  "sha256": "68c071560085fd136455a5c8bf23ff560a0abddb030a44d836fafae2358868d2",
+  "keras_sha256": "223a253d6619d19117c0c44e411f86916149a5d7f29851e72d284cff83febb03",
+  "size_bytes": 9580486,
+  "parity_samples": 1026,
+  "parity_max_absolute_error": 1.7583370208740234e-05,
+  "parity_top1_disagreements": 0,
+  "dataset_manifest_sha256": "47a24012c4f67957c9ec98b997e37404575738d068ec004c415ab7bd03ecf001",
+  "dataset_version": "dataset-v2-20261125",
+  "dataset_images": 6840,
+  "training_images": 6840,
+  "train_images": 4788,
+  "validation_images": 1026,
+  "test_images": 1026,
+  "split_totals": {
+    "train": 4788,
+    "test": 1026,
+    "val": 1026
+  },
+  "evaluation_scope": "Internal held-out group split; not independently field-validated.",
+  "test_accuracy": 0.8460038986354775,
+  "test_macro_f1": 0.7564406844329646,
+  "trained_at": "2026-11-27T15:02:58.574710+00:00",
+  "onnx_test_accuracy": 0.8460038986354775,
+  "onnx_test_macro_f1": 0.7564406844329646,
+  "model_version": "mobilenetv2-dataset-v2-20261127-223a253d66"
+}

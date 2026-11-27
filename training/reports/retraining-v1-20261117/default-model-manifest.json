@@ -1,0 +1,38 @@
+{
+  "format": "onnx",
+  "file": "tea-leaf.onnx",
+  "input_name": "images",
+  "output_name": "probabilities",
+  "input_shape": [
+    1,
+    224,
+    224,
+    3
+  ],
+  "pixel_range": [
+    0,
+    255
+  ],
+  "normalization": "Embedded in model; do not normalize input twice.",
+  "classes": [
+    "algal_leaf",
+    "anthracnose",
+    "bird_eye_spot",
+    "brown_blight",
+    "gray_light",
+    "healthy",
+    "red_leaf_spot",
+    "white_spot"
+  ],
+  "sha256": "b0ab25d82c74a52882e87c4d0d0fb3d7120ab4c7834ffe36d1a1e4e8990d32ea",
+  "size_bytes": 9580347,
+  "parity_max_absolute_error": 8.165836334228516e-06,
+  "parity_samples": 9,
+  "model_version": "mobilenetv2-expanded-20261117",
+  "trained_at": "2026-11-17T14:53:40.586411+00:00",
+  "dataset_manifest_sha256": "585cabd7be1741675fa5bed31c14116b9f72f7eca11d40610313ddb15cd48707",
+  "training_images": 2197,
+  "test_accuracy": 0.6930091185410334,
+  "test_macro_f1": 0.6452781104275389,
+  "evaluation_scope": "Internal held-out group split; not independently field-validated."
+}
