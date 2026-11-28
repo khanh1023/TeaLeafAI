@@ -124,12 +124,16 @@ def main():
         'Tăng cường dữ liệu chỉ áp dụng cho train. Ba lớp than thư, đốm mắt chim và đốm trắng chưa có ảnh độc lập bổ sung.',
         'Mô hình tiếp tục từ checkpoint v2 với kiểm tra toàn bộ phân chia cũ. Phần phân loại được thích nghi trước, '
         'sau đó tinh chỉnh các lớp cuối MobileNetV2, giữ BatchNormalization đóng băng. Checkpoint được chọn bằng validation loss; '
-        'tập test chỉ dùng tính kết quả sau khi hoàn tất lựa chọn.',
+        'tập test dùng tính kết quả sau mỗi lượt lựa chọn. Lượt v3 đầu đã được báo cáo trước khi tinh chỉnh tiếp, '
+        'nên kết quả cuối vẫn là đánh giá phát triển nội bộ, không phải phép thử mù mới.',
         f'Keras/ONNX Python đạt Accuracy {native["accuracy"]:.2%} ({native["correct"]}/{len(test)}), '
         f'balanced accuracy {native["balanced_accuracy"]:.2%}, macro-F1 {native["macro_f1"]:.4f}. '
         f'Luồng website thực tế trên Chromium đạt Accuracy {web["accuracy"]:.2%} ({web["correct"]}/{len(test)}), '
         f'balanced accuracy {web["balanced_accuracy"]:.2%}, macro-F1 {web["macro_f1"]:.4f}. '
-        'Hai kết quả được tách riêng do Canvas và Pillow xử lý ảnh khác nhau.',
+        + ('Hai kết quả được báo riêng. Website đã dùng cùng quy tắc bilinear chống răng cưa như Pillow; '
+         'bộ giải mã JPEG và quản lý màu của trình duyệt vẫn có thể tạo chênh lệch nhỏ.'
+         if browser.get('browser_resize') == 'pillow_bilinear_v1' else
+         'Hai kết quả được tách riêng do Canvas và Pillow xử lý ảnh khác nhau.'),
         ('Mô hình trên website đã vượt mục tiêu Accuracy 90% trên tập test nội bộ.' if web['accuracy'] > .90 else
          f'Kết quả website hiện chưa đạt mục tiêu trên 90%; giá trị đo được là {web["accuracy"]:.2%}. Không điều chỉnh tập test hoặc thay số liệu để đạt mốc đặt trước.'),
         'Đây là đánh giá nội bộ trên các nguồn đã thu thập, chưa phải kiểm định thực địa độc lập tại Việt Nam. '
@@ -140,9 +144,19 @@ def main():
         'Hu và cộng sự (2019), DOI 10.17632/dbjyfkn6jr.1 (CC BY 4.0, chỉ lớp Tea red leaf spot). '
         'Nhãn được kế thừa từ nhà cung cấp, chưa có xác minh mới bởi chuyên gia.'
     ]
+    inference = evaluation.get('inference_protocol')
+    if inference:
+        paragraph = ('Kết quả cuối là trung bình xác suất của ảnh gốc và ba hướng lật của cùng ảnh. '
+                     if inference['selected'] == 'four_flip_mean' else
+                     'Giữ dự đoán một hướng sau khi kiểm tra phương án trung bình bốn hướng lật. ')
+        paragraph += (f"Lựa chọn dựa trên validation loss: một hướng {inference['candidates']['single_view']['loss']:.4f}; "
+                      f"bốn hướng {inference['candidates']['four_flip_mean']['loss']:.4f}. "
+                      'Không chọn bằng Accuracy test và không tính các hướng lật thành ảnh dữ liệu độc lập.')
+        paragraphs.insert(4, paragraph)
     (args.output / 'noi-dung-bao-cao.txt').write_text('\n\n'.join(paragraphs), encoding='utf-8')
     doc = Document(); style = doc.styles['Normal']; style.font.name = 'Times New Roman'; style.font.size = Pt(12)
     doc.add_heading(paragraphs[0], 0)
+    # Keep the prose complete even when inference-selection details are present.
     for text in paragraphs[1:4]: doc.add_paragraph(text)
     doc.add_paragraph('Bảng: Số lượng ảnh của từng lớp sau mở rộng.')
     table = doc.add_table(rows=1, cols=5); table.style = 'Table Grid'
@@ -151,7 +165,9 @@ def main():
         values = [c, *[str(data['split_counts'][s][c]) for s in ['train','val','test']], str(data['counts'][c])]
         for cell, text in zip(table.add_row().cells, values): cell.text = text
     doc.add_picture(str(args.output / '01-so-luong-anh.png'), width=Inches(6))
-    for text in paragraphs[4:6]: doc.add_paragraph(text)
+    evaluation_start = 5 if inference else 4
+    if inference: doc.add_paragraph(paragraphs[4])
+    for text in paragraphs[evaluation_start:evaluation_start+2]: doc.add_paragraph(text)
     doc.add_picture(str(args.output / '02-qua-trinh-huan-luyen.png'), width=Inches(6))
     doc.add_paragraph('Bảng: Precision, Recall và F1-score trên luồng website thực tế.')
     table = doc.add_table(rows=1, cols=5); table.style = 'Table Grid'
@@ -160,7 +176,7 @@ def main():
         r = web['classification_report'][c]
         for cell, text in zip(table.add_row().cells, [c, f'{r["precision"]:.4f}', f'{r["recall"]:.4f}', f'{r["f1-score"]:.4f}', str(int(r['support']))]): cell.text = text
     doc.add_picture(str(args.output / '03-ma-tran-nham-lan-web.png'), width=Inches(6))
-    for text in paragraphs[6:]: doc.add_paragraph(text)
+    for text in paragraphs[evaluation_start+2:]: doc.add_paragraph(text)
     path = args.output / 'TeaLeafAI-ket-qua-huan-luyen-v3.docx'; doc.save(path)
     with zipfile.ZipFile(path) as archive: assert archive.testzip() is None
     readback = Document(path); assert len(readback.tables) == 2 and len(readback.inline_shapes) == 3

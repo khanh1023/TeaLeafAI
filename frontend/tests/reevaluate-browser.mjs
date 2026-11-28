@@ -1,7 +1,7 @@
 /** Evaluate the unchanged held-out test files with the actual browser diagnose().
  * Run Vite first. Requires Playwright + Chromium (not part of lightweight CI).
  * TEALEAF_BASE_URL, TEALEAF_EVAL_OUTPUT, TEALEAF_DATASET_DIR,
- * TEALEAF_MANIFEST_PATH, PLAYWRIGHT_MODULE, CHROMIUM_PATH supported.
+ * TEALEAF_MANIFEST_PATH, TEALEAF_EVAL_SPLIT (test/val), PLAYWRIGHT_MODULE, CHROMIUM_PATH supported.
  * No historical report is overwritten: the default output uses a unique run directory.
  * Timing is local headless-browser timing, not a benchmark of users' devices/networks.
  */
@@ -31,9 +31,12 @@ const modelSha = createHash('sha256').update(await readFile(path.join(root,'fron
 assert.equal(manifestSha, model.dataset_manifest_sha256);
 assert.equal(modelSha, model.sha256);
 if (process.env.TEALEAF_EXPECTED_MODEL_SHA256) assert.equal(modelSha, process.env.TEALEAF_EXPECTED_MODEL_SHA256);
-const entries = manifest.filter(r => r.split === 'test');
-assert.ok(entries.length > 1, 'Held-out evaluation needs test observations and a warm sample.');
-if (process.env.TEALEAF_EXPECTED_TEST_COUNT) assert.equal(entries.length, Number(process.env.TEALEAF_EXPECTED_TEST_COUNT));
+const evaluationSplit = process.env.TEALEAF_EVAL_SPLIT || 'test';
+assert.ok(['test','val'].includes(evaluationSplit));
+const entries = manifest.filter(r => r.split === evaluationSplit);
+assert.ok(entries.length > 1, 'Held-out evaluation needs observations and a warm sample.');
+const expectedCount = process.env.TEALEAF_EXPECTED_EVAL_COUNT || (evaluationSplit === 'test' ? process.env.TEALEAF_EXPECTED_TEST_COUNT : undefined);
+if (expectedCount) assert.equal(entries.length, Number(expectedCount));
 await mkdir(output,{recursive:true});
 const outputFile = path.join(output,'browser-predictions.json');
 try { await access(outputFile); throw new Error(`Output already exists; select a fresh TEALEAF_EVAL_OUTPUT: ${outputFile}`); }
@@ -161,8 +164,12 @@ try {
   };
   const metadata={
     evaluated_at:new Date().toISOString(),run_id:runId,engine:'browser',model_version:model.model_version,onnx_sha256:modelSha,
-    dataset_manifest_sha256:manifestSha,test_images:entries.length,correct,accuracy:correct/entries.length,
-    preprocessing:'Actual frontend readImagePixels(): createImageBitmap -> Canvas drawImage 224x224 -> raw RGB 0–255 -> ONNX Runtime Web WASM.',
+    dataset_manifest_sha256:manifestSha,evaluation_split:evaluationSplit,split_images:entries.length,
+    ...(evaluationSplit === 'test' ? {test_images:entries.length} : {validation_images:entries.length}),correct,accuracy:correct/entries.length,
+    preprocessing:model.browser_resize === 'pillow_bilinear_v1'
+      ? 'Actual frontend: createImageBitmap/HTML decoder -> native-size opaque Canvas RGB (long side capped at 2048) -> separable antialiased Pillow-convention bilinear 224x224 -> raw RGB 0–255 -> ONNX Runtime Web WASM.'
+      : 'Actual frontend readImagePixels(): createImageBitmap -> Canvas drawImage 224x224 -> raw RGB 0–255 -> ONNX Runtime Web WASM.',
+    browser_resize:model.browser_resize || 'canvas_legacy',
     user_agent:device.user_agent,browser_version:browser.version(),device,
     host:{platform:os.platform(),release:os.release(),architecture:os.arch(),cpu_model:os.cpus()[0]?.model,logical_cpus:os.cpus().length,total_memory_bytes:os.totalmem(),node:process.version},
     runtime:{package:'onnxruntime-web',version:lock.packages?.['node_modules/onnxruntime-web']?.version,execution_provider:'wasm',...device.runtime},

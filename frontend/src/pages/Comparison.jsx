@@ -76,7 +76,8 @@ export default function Comparison() {
       <p>Chọn MobileNetV2, ResNet50 hoặc VGG16 để phân tích cùng một ảnh lá chè, đối chiếu kết quả rồi tải dữ liệu vào báo cáo.</p>
     </div>
     <div className="comparison-intro"><ShieldCheck size={22}/><p>Ảnh được xử lý trên thiết bị. Mỗi mô hình chỉ tải khi bạn bấm chạy; cả ba khoảng {totalBytes ? `${number(totalBytes / 1e6)} MB` : '… MB'}.
-      <span>Các mô hình ở đây dùng chung quy trình huấn luyện cho thí nghiệm so sánh; kết quả có thể khác <Link to="/chan-doan">trang Phân tích</Link>.</span></p></div>
+      <span>Các mô hình ở đây dùng chung quy trình huấn luyện cho thí nghiệm so sánh; kết quả có thể khác <Link to="/chan-doan">trang Phân tích</Link>.</span>
+      {catalog?.dataset_version && <span>Bộ dữ liệu của thí nghiệm này: {catalog.dataset_version}{catalog.dataset_images ? ` · ${number(catalog.dataset_images)} ảnh` : ''}. Trang Phân tích có thể dùng phiên bản được cập nhật riêng.</span>}</p></div>
     <div className="comparison-upload panel">
       <div className="comparison-picture">{preview ? <><img src={preview} alt={`Ảnh đối chiếu: ${file.name}`}/><button className="remove" aria-label="Bỏ ảnh đối chiếu" disabled={busy} onClick={() => { setFile(null); setResults({}); setLastRun(null); setActual(''); }}><X size={18}/></button></> :
         <button className="dropzone" disabled={busy} onClick={() => picker.current?.click()} onDragOver={event => event.preventDefault()} onDrop={event => { event.preventDefault(); select(event.dataTransfer.files?.[0]); }}><Upload size={28}/><b>Chọn hoặc kéo thả ảnh lá chè</b><span>JPG, PNG, WEBP · tối đa 8 MB</span></button>}</div>

@@ -1,7 +1,7 @@
 /** Real UI inference QA for a versioned default model and three-model catalog.
  * Uses the actual built or live app; never mocks predictions or claims accuracy
  * from its one-image smoke sample. Compatible with Vite dev and production.
- * TEALEAF_BASE_URL, TEALEAF_DATASET_DIR, TEALEAF_QA_OUTPUT, PLAYWRIGHT_MODULE,
+ * TEALEAF_BASE_URL, TEALEAF_DATASET_DIR, TEALEAF_COMPARISON_DATASET_DIR, TEALEAF_QA_OUTPUT, PLAYWRIGHT_MODULE,
  * CHROMIUM_PATH, TEALEAF_QA_TRUSTED_SPKI and TEALEAF_QA_COMPARISON=0 supported.
  */
 import assert from 'node:assert/strict';
@@ -12,6 +12,7 @@ import { fileURLToPath, pathToFileURL } from 'node:url';
 
 const root = fileURLToPath(new URL('../../', import.meta.url));
 const data = path.resolve(process.env.TEALEAF_DATASET_DIR || path.join(root, 'training/dataset-v2'));
+const comparisonData = path.resolve(process.env.TEALEAF_COMPARISON_DATASET_DIR || data);
 const output = path.resolve(process.env.TEALEAF_QA_OUTPUT || `/workspace/work/v2-training-20261126/qa-${Date.now()}`);
 const base = (process.env.TEALEAF_BASE_URL || 'http://127.0.0.1:5184').replace(/\/$/, '');
 const runComparison = process.env.TEALEAF_QA_COMPARISON !== '0';
@@ -23,7 +24,11 @@ const records = JSON.parse(manifestBytes);
 const expectedModel = JSON.parse(await readFile(path.join(root, 'frontend/public/model/manifest.json'), 'utf8'));
 const expectedCatalog = JSON.parse(await readFile(path.join(root, 'frontend/public/model/comparison/manifest.json'), 'utf8'));
 assert.equal(expectedModel.dataset_manifest_sha256, datasetSha, 'Default model must use the requested dataset.');
-if (runComparison) assert.equal(expectedCatalog.dataset_manifest_sha256, datasetSha, 'Comparison models must use the requested dataset.');
+let comparisonDatasetSha;
+if (runComparison) {
+  comparisonDatasetSha = createHash('sha256').update(await readFile(path.join(comparisonData, 'manifest.json'))).digest('hex');
+  assert.equal(expectedCatalog.dataset_manifest_sha256, comparisonDatasetSha, 'Comparison models must use their requested versioned dataset.');
+}
 const sample = records.find(record => record.split === 'test' && record.label === 'healthy');
 assert.ok(sample, 'A frozen healthy test sample exists.');
 const photo = path.join(data, sample.path);
@@ -34,7 +39,7 @@ const browser = await chromium.launch({ headless: true,
   args: ['--no-sandbox', '--disable-dev-shm-usage', '--disk-cache-size=1', ...(process.env.TEALEAF_QA_TRUSTED_SPKI
     ? ['--ignore-certificate-errors-spki-list=' + process.env.TEALEAF_QA_TRUSTED_SPKI] : [])] });
 const errors = [], requests = [], failedResponses = [];
-const report = { base_url: base, dataset_manifest_sha256: datasetSha,
+const report = { base_url: base, dataset_manifest_sha256: datasetSha, comparison_dataset_manifest_sha256: comparisonDatasetSha,
   sample: { id: sample.id, label: sample.label, path: sample.path },
   scope: 'One-image functional UI smoke test; not a test-set accuracy measurement.' };
 
@@ -91,7 +96,7 @@ try {
   if (runComparison) {
     const actualCatalog = await comparison.evaluate(async () => (await fetch('/model/comparison/manifest.json', { cache: 'no-cache' })).json());
     assert.equal(actualCatalog.protocol_id, expectedCatalog.protocol_id);
-    assert.equal(actualCatalog.dataset_manifest_sha256, datasetSha);
+    assert.equal(actualCatalog.dataset_manifest_sha256, comparisonDatasetSha);
     await comparison.locator('input[aria-label="Chọn ảnh đối chiếu ba mô hình"]').setInputFiles(photo);
     await comparison.locator('#actual-label').selectOption(sample.label);
     await comparison.getByRole('button', { name: 'Chạy cả ba mô hình', exact: true }).click();

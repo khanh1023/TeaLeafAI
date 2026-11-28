@@ -30,6 +30,8 @@ def main():
     parser.add_argument('--manifest', type=Path, help='Manifest override; defaults to DATA/manifest.json.')
     parser.add_argument('--report', type=Path, help='Directory for parity JSON and final-test predictions.')
     parser.add_argument('--model-version', help='Explicit deployment version, otherwise derived from evidence/hash.')
+    parser.add_argument('--browser-resize', choices=['canvas_legacy', 'pillow_bilinear_v1'], default='canvas_legacy',
+                        help='Declare the browser resize contract; does not change native evaluation or ONNX input tensors.')
     parser.add_argument('--evaluate-test', action='store_true', help='Verify Keras/ONNX on every held-out test image.')
     args = parser.parse_args()
     if args.evaluate_test and (not args.data or not args.evaluation or not args.report):
@@ -111,15 +113,22 @@ def main():
     if not version and evaluation is not None:
         date = str(evaluation.get('trained_at', evaluation.get('completed_at', 'undated'))).split('T')[0].replace('-', '')
         version = f"mobilenetv2-{metadata.get('dataset_version', 'export')}-{date}-{checkpoint_sha[:10]}"
+    if version and args.browser_resize == 'pillow_bilinear_v1':
+        version += '-bilinear-v1'
     manifest = dict(format='onnx', file=onnx_path.name, input_name=session.get_inputs()[0].name,
                     output_name=session.get_outputs()[0].name, input_shape=[1, 224, 224, 3],
                     pixel_range=[0, 255], normalization='Embedded in model; do not normalize input twice.',
                     classes=classes, sha256=sha_file(onnx_path), keras_sha256=checkpoint_sha,
                     size_bytes=onnx_path.stat().st_size,
+                    browser_resize=args.browser_resize,
                     **{k: parity[k] for k in ['parity_samples', 'parity_max_absolute_error', 'parity_top1_disagreements']},
                     **metadata)
     if version:
         manifest['model_version'] = version
+    if evaluation and evaluation.get('inference_protocol'):
+        method = evaluation['inference_protocol']['selected']
+        manifest.update(inference_method=method, inference_views=4 if method == 'four_flip_mean' else 1,
+                        base_keras_sha256=evaluation['inference_protocol']['base_model_sha256'])
     (args.output / 'classes.json').write_text(json.dumps(classes, indent=2) + '\n', encoding='utf-8')
     (args.output / 'manifest.json').write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
     print(json.dumps(manifest, ensure_ascii=False, indent=2), flush=True)

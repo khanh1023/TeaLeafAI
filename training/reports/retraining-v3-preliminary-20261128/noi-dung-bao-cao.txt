@@ -1,0 +1,15 @@
+BỔ SUNG DỮ LIỆU VÀ ĐÁNH GIÁ MOBILENETV2 — PHIÊN BẢN V3
+
+Bộ dữ liệu được mở rộng thêm 1,440 ảnh sau lọc, đạt 8,280 ảnh. Chia 5,796 ảnh huấn luyện, 1,242 ảnh validation và 1,242 ảnh test, đúng tỷ lệ 70/15/15. Lớp healthy có 3,435 ảnh, nhiều hơn mỗi lớp bệnh.
+
+Ảnh trùng được loại trước khi chia; các nhóm ảnh tương tự và loạt chụp cùng phút được giữ trong một tập. Toàn bộ 6.840 ảnh v2 giữ nguyên nhãn, dữ liệu và tập cũ, không chuyển ảnh validation/test vào huấn luyện. Tăng cường dữ liệu chỉ áp dụng cho train. Ba lớp than thư, đốm mắt chim và đốm trắng chưa có ảnh độc lập bổ sung.
+
+Mô hình tiếp tục từ checkpoint v2 với kiểm tra toàn bộ phân chia cũ. Phần phân loại được thích nghi trước, sau đó tinh chỉnh các lớp cuối MobileNetV2, giữ BatchNormalization đóng băng. Checkpoint được chọn bằng validation loss; tập test chỉ dùng tính kết quả sau khi hoàn tất lựa chọn.
+
+Keras/ONNX Python đạt Accuracy 86.47% (1074/1242), balanced accuracy 84.43%, macro-F1 0.8183. Luồng website thực tế trên Chromium đạt Accuracy 85.02% (1056/1242), balanced accuracy 83.50%, macro-F1 0.8043. Hai kết quả được tách riêng do Canvas và Pillow xử lý ảnh khác nhau.
+
+Kết quả website hiện chưa đạt mục tiêu trên 90%; giá trị đo được là 85.02%. Không điều chỉnh tập test hoặc thay số liệu để đạt mốc đặt trước.
+
+Đây là đánh giá nội bộ trên các nguồn đã thu thập, chưa phải kiểm định thực địa độc lập tại Việt Nam. Validation/test cũ đã được xem trong quá trình phát triển. Kết quả 84,60%/84,11% v2 được đo trên bộ test khác về số mẫu, không dùng chênh lệch trực tiếp giữa hai phiên bản để khẳng định mức cải thiện. Ba mô hình ở trang So sánh tiếp tục thuộc thí nghiệm v2 đóng băng và không đại diện cho một phép so sánh kiến trúc mới trên v3.
+
+Nguồn mới: Datta tea-leaf-disease qua Project-AgML (CC BY-NC 4.0, học thuật/phi thương mại, chỉ chọn tên ảnh dạng ngày giờ); Hu và cộng sự (2019), DOI 10.17632/dbjyfkn6jr.1 (CC BY 4.0, chỉ lớp Tea red leaf spot). Nhãn được kế thừa từ nhà cung cấp, chưa có xác minh mới bởi chuyên gia.

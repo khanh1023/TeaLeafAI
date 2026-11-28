@@ -1,0 +1,12 @@
+{
+  "filename": "TeaLeafAI-khoi-phuc-du-lieu-v3.zip",
+  "size_bytes": 15378612,
+  "sha256": "62225bb09cd28b7b4a4963756bc3d734faf7ed0bbc3dc5dcaf384b38a5b89228",
+  "archive_type": "Restore kit with bundled v3 additions and pinned v2 download dependency",
+  "full_dataset_images": 8280,
+  "full_split_counts": {
+    "train": 5796,
+    "val": 1242,
+    "test": 1242
+  }
+}

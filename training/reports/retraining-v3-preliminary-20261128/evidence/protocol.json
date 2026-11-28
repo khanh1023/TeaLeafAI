@@ -1,0 +1,36 @@
+{
+  "dataset_manifest_sha256": "7d5c63d8cb76142c5a296c4cb5b599de5a2484b8206af4d65396804beaec8e26",
+  "previous_manifest_sha256": "47a24012c4f67957c9ec98b997e37404575738d068ec004c415ab7bd03ecf001",
+  "initial_model_sha256": "223a253d6619d19117c0c44e411f86916149a5d7f29851e72d284cff83febb03",
+  "previous_assignments_verified": 6840,
+  "classes": [
+    "algal_leaf",
+    "anthracnose",
+    "bird_eye_spot",
+    "brown_blight",
+    "gray_light",
+    "healthy",
+    "red_leaf_spot",
+    "white_spot"
+  ],
+  "seed": 42,
+  "head_maximum_epochs": 4,
+  "fine_maximum_epochs": 18,
+  "fine_last_layers": 60,
+  "class_weight_exponent": 0.5,
+  "class_weights": {
+    "algal_leaf": 1.1538952651240153,
+    "anthracnose": 3.7325913449439794,
+    "bird_eye_spot": 3.7325913449439794,
+    "brown_blight": 1.1829233963468402,
+    "gray_light": 0.9107376108900584,
+    "healthy": 0.6322334210107134,
+    "red_leaf_spot": 1.2808143422224236,
+    "white_spot": 3.116143096901303
+  },
+  "selection": "Minimum unweighted validation cross-entropy across initial, head adaptation and fine-tuning; test unused for selection.",
+  "initial_validation_loss": 0.8140612840652466,
+  "initial_validation_accuracy": 0.7568438053131104,
+  "training_script_sha256": "ddfb2d9344b6833c9b14523aab9e14a4cc99181c3b9e4798e0006d621c99400c",
+  "created_at": "2026-11-27T20:22:16.938728+00:00"
+}

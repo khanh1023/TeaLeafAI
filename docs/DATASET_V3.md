@@ -72,6 +72,44 @@ ban đầu nếu validation không cải thiện. Giảm mức trọng số lớ
 đủ sang căn bậc hai, thích nghi phần phân loại rồi tinh chỉnh cuối MobileNetV2,
 đóng băng BatchNormalization. Test chỉ được tính sau khi chọn checkpoint xong.
 
+Để tái lập sau khi mô hình mặc định đã được cập nhật, tải đúng checkpoint v2
+từ commit đã chốt, rồi dùng đường dẫn tường minh:
+
+```powershell
+python training/download_v2_checkpoint.py
+python training/run_v3_pipeline.py --run-dir training/runs/v3 --initial training/runs/v2-initial/tea_leaf_mobilenetv2.keras --initial-report training/runs/v2-initial/evaluation.json
+```
+
+Các thư viện huấn luyện cần môi trường Python của dự án. Script khôi phục
+dữ liệu/checkpoint chỉ dùng thư viện chuẩn. Pipeline tạo kết quả và ONNX trong
+staging, không tự thay mô hình website hoặc đẩy GitHub.
+
+Lượt đầu v3 dùng 4 epoch thích nghi phần phân loại và tối đa 18 epoch tinh chỉnh
+60 lớp cuối. Khi đường validation còn cải thiện ở cuối ngân sách này, có thể
+chạy lượt tiếp nối đã định cấu hình: 100 lớp cuối, learning rate 5e-6, tối đa 24
+epoch và EarlyStopping theo validation loss (patience 6):
+
+```powershell
+python training/refine_dataset_v3.py --initial training/runs/v3/mobile-final --output training/runs/v3-refined/mobile-final
+```
+
+Kết quả test lượt đầu được giữ lại; lượt tiếp nối vẫn là đánh giá phát triển
+nội bộ trên cùng test, không được mô tả là một tập kiểm thử mù mới.
+
+Sau lượt tiếp nối, chỉ so sánh hai phương án suy luận trên validation: một hướng
+và trung bình xác suất của ảnh gốc/lật ngang/lật dọc/lật cả hai. Chọn bốn hướng
+chỉ khi validation cross-entropy giảm hơn 1e-4; nếu không giữ một hướng.
+
+```powershell
+python training/run_v3_pipeline.py --run-dir training/runs/v3-selected --select-inference-from training/runs/v3-refined
+```
+
+Các hướng lật dùng chung trọng số MobileNetV2, được chứa trong đồ thị ONNX,
+không phải bốn kiến trúc hay bốn ảnh test độc lập. Mô hình mặc định mới khai báo
+resize `pillow_bilinear_v1`: thu nhỏ bilinear chống răng cưa theo quy tắc Pillow.
+Ảnh trình duyệt có cạnh dài quá 2.048 được thu nhỏ trung gian để giới hạn bộ nhớ.
+Ba mạng của thí nghiệm so sánh v2 giữ luồng xử lý cũ, tránh trộn các kết quả đã lưu.
+
 Mục tiêu >90% phải được xác nhận bằng dự đoán thật; thêm ảnh không bảo đảm đạt
 mốc này. Báo cáo cả Accuracy, balanced accuracy, macro F1 và kết quả từng lớp.
 Validation/test v2 đã từng được xem trong quá trình phát triển, nên số liệu

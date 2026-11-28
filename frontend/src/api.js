@@ -31,7 +31,11 @@ export async function health() {
   const manifest = await metadata();
   return {
     status:'ok', engine:'browser', model_loaded:Boolean(loadedSession),
-    model_file_exists:true, classes:manifest.classes, model_bytes:manifest.size_bytes
+    model_file_exists:true, classes:manifest.classes, model_bytes:manifest.size_bytes,
+    model_version:manifest.model_version, dataset_version:manifest.dataset_version,
+    dataset_images:manifest.dataset_images, split_totals:manifest.split_totals,
+    browser_test_accuracy:manifest.browser_test_accuracy,
+    browser_test_images:manifest.browser_test_images
   };
 }
 
@@ -76,13 +80,13 @@ export async function diagnose(file, {onProgress} = {}) {
   }
   try {
     onProgress?.({message:'Đang đọc và chuẩn bị ảnh…',percent:5});
-    const data = await readImagePixels(file);
+    const manifest = await metadata();
+    const data = await readImagePixels(file, {resize:manifest.browser_resize || 'canvas_legacy'});
     const [session, ort] = await Promise.all([loadSession(onProgress),import('onnxruntime-web/wasm')]);
     onProgress?.({message:'Đang phân tích ảnh trên thiết bị…',percent:75});
     const output = await session.run({images:new ort.Tensor('float32',data,[1,224,224,3])});
     const result = predictionResult(output.probabilities.data);
     onProgress?.({message:'Hoàn tất',percent:100});
-    const manifest = await metadata();
     return {...result, model_version:manifest.model_version || manifest.sha256.slice(0,12)};
   } catch (error) {
     console.error('TeaLeafAI inference:', error);

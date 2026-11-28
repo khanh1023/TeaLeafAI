@@ -1,4 +1,5 @@
 import { rgbaToRGB } from './inference-utils.js';
+import { resizeRGBBilinear } from './bilinear-resize.js';
 
 async function loadHtmlImage(file) {
   const url = URL.createObjectURL(file);
@@ -34,19 +35,26 @@ async function loadImage(file) {
   return loadHtmlImage(file);
 }
 
-export async function readImagePixels(file) {
+export async function readImagePixels(file, {resize='canvas_legacy'} = {}) {
   const decoded = await loadImage(file);
   try {
     const canvas = document.createElement('canvas');
-    canvas.width = canvas.height = 224;
+    const bilinear = resize === 'pillow_bilinear_v1';
+    const width = decoded.image.naturalWidth || decoded.image.width;
+    const height = decoded.image.naturalHeight || decoded.image.height;
+    const scale = Math.min(1, 2048 / Math.max(width, height));
+    canvas.width = bilinear ? Math.max(1, Math.round(width * scale)) : 224;
+    canvas.height = bilinear ? Math.max(1, Math.round(height * scale)) : 224;
     let context;
     try { context = canvas.getContext('2d', {willReadFrequently:true}); }
     catch { context = canvas.getContext('2d'); }
     if (!context) throw new Error('Trình duyệt không tạo được vùng xử lý ảnh. Hãy thử Chrome, Edge hoặc Firefox mới nhất.');
     context.fillStyle = '#fff';
-    context.fillRect(0,0,224,224);
-    context.drawImage(decoded.image,0,0,224,224);
-    return rgbaToRGB(context.getImageData(0,0,224,224).data);
+    context.fillRect(0,0,canvas.width,canvas.height);
+    if (bilinear) context.imageSmoothingQuality = 'high';
+    context.drawImage(decoded.image,0,0,canvas.width,canvas.height);
+    const pixels = context.getImageData(0,0,canvas.width,canvas.height).data;
+    return bilinear ? resizeRGBBilinear(pixels,canvas.width,canvas.height) : rgbaToRGB(pixels);
   } catch (error) {
     if (error.name === 'SecurityError') {
       throw new Error('Trình duyệt đang chặn đọc điểm ảnh để phân tích. Hãy thử mở website bằng trình duyệt khác.', {cause:error});

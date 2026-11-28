@@ -1,0 +1,7 @@
+{
+  "passed": true,
+  "method": "Extracted the actual kit; reused SHA-verified v2 through a local link; restored and rehashed all v3 images with the bundled standard-library entry point",
+  "split_images": 8280,
+  "reserve_images": 10,
+  "manifest_sha256": "7d5c63d8cb76142c5a296c4cb5b599de5a2484b8206af4d65396804beaec8e26"
+}
