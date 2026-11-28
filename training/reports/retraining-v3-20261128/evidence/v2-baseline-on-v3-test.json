@@ -1,0 +1,159 @@
+{
+  "model_version": "mobilenetv2-dataset-v2-20261127-223a253d66",
+  "onnx_sha256": "68c071560085fd136455a5c8bf23ff560a0abddb030a44d836fafae2358868d2",
+  "training_dataset_manifest_sha256": "47a24012c4f67957c9ec98b997e37404575738d068ec004c415ab7bd03ecf001",
+  "dataset_manifest_sha256": "7d5c63d8cb76142c5a296c4cb5b599de5a2484b8206af4d65396804beaec8e26",
+  "evaluation_split": "test",
+  "test_images": 1242,
+  "correct": 969,
+  "accuracy": 0.7801932367149759,
+  "balanced_accuracy": 0.7463816939282801,
+  "macro_f1": 0.7068833582450944,
+  "classification_report": {
+    "algal_leaf": {
+      "precision": 0.6985294117647058,
+      "recall": 0.6129032258064516,
+      "f1-score": 0.6529209621993127,
+      "support": 155.0
+    },
+    "anthracnose": {
+      "precision": 0.7333333333333333,
+      "recall": 0.7333333333333333,
+      "f1-score": 0.7333333333333333,
+      "support": 15.0
+    },
+    "bird_eye_spot": {
+      "precision": 0.5769230769230769,
+      "recall": 1.0,
+      "f1-score": 0.7317073170731707,
+      "support": 15.0
+    },
+    "brown_blight": {
+      "precision": 0.7338709677419355,
+      "recall": 0.6148648648648649,
+      "f1-score": 0.6691176470588235,
+      "support": 148.0
+    },
+    "gray_light": {
+      "precision": 0.7763713080168776,
+      "recall": 0.7419354838709677,
+      "f1-score": 0.7587628865979381,
+      "support": 248.0
+    },
+    "healthy": {
+      "precision": 0.8445945945945946,
+      "recall": 0.970873786407767,
+      "f1-score": 0.9033423667570009,
+      "support": 515.0
+    },
+    "red_leaf_spot": {
+      "precision": 0.6962025316455697,
+      "recall": 0.44,
+      "f1-score": 0.5392156862745098,
+      "support": 125.0
+    },
+    "white_spot": {
+      "precision": 0.5454545454545454,
+      "recall": 0.8571428571428571,
+      "f1-score": 0.6666666666666666,
+      "support": 21.0
+    },
+    "accuracy": 0.7801932367149759,
+    "macro avg": {
+      "precision": 0.7006599711843299,
+      "recall": 0.7463816939282801,
+      "f1-score": 0.7068833582450944,
+      "support": 1242.0
+    },
+    "weighted avg": {
+      "precision": 0.7749798475988933,
+      "recall": 0.7801932367149759,
+      "f1-score": 0.7705348198084981,
+      "support": 1242.0
+    }
+  },
+  "confusion_matrix": [
+    [
+      95,
+      0,
+      0,
+      13,
+      11,
+      22,
+      7,
+      7
+    ],
+    [
+      0,
+      11,
+      4,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      15,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      18,
+      0,
+      0,
+      91,
+      20,
+      6,
+      7,
+      6
+    ],
+    [
+      17,
+      3,
+      7,
+      14,
+      184,
+      17,
+      6,
+      0
+    ],
+    [
+      2,
+      0,
+      0,
+      1,
+      8,
+      500,
+      4,
+      0
+    ],
+    [
+      3,
+      0,
+      0,
+      4,
+      14,
+      47,
+      55,
+      2
+    ],
+    [
+      1,
+      1,
+      0,
+      1,
+      0,
+      0,
+      0,
+      18
+    ]
+  ],
+  "preprocessing": "Pillow RGB bilinear 224x224, raw 0-255, native ONNX Runtime CPU",
+  "scope": "Fixed-checkpoint internal test evaluation; no training, checkpoint or inference-protocol selection."
+}

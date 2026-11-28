@@ -1,0 +1,65 @@
+{
+  "dataset_manifest_sha256": "7d5c63d8cb76142c5a296c4cb5b599de5a2484b8206af4d65396804beaec8e26",
+  "base_model_sha256": "3dd931566b6969b81f138a2d8f72f087d4f9191f96bf058532eae32bbc5dd4bc",
+  "betas": [
+    0,
+    0.25,
+    0.5,
+    0.75,
+    1
+  ],
+  "weights": [
+    1.1538952589035034,
+    3.732591390609741,
+    3.732591390609741,
+    1.182923436164856,
+    0.9107376337051392,
+    0.6322334408760071,
+    1.280814290046692,
+    3.116142988204956
+  ],
+  "selection": "Minimum validation cross-entropy among fixed beta grid, requiring Accuracy and macro-F1 not below beta=0. No test used for this selection.",
+  "formula": "q[c] = (p[c] / training_class_weight[c]**beta) / sum_j(p[j] / training_class_weight[j]**beta)",
+  "earlier_internal_test_already_reported": true,
+  "script_sha256": "1c036d870b7e9214b14736b5273dc4c803043e45eac2380a47598d791f7d142b",
+  "selected_beta": 0.75,
+  "candidates": [
+    {
+      "beta": 0,
+      "loss": 0.3253753185272217,
+      "accuracy": 0.8792270531400966,
+      "macro_f1": 0.8290616613035626
+    },
+    {
+      "beta": 0.25,
+      "loss": 0.32304808497428894,
+      "accuracy": 0.8784219001610306,
+      "macro_f1": 0.8283629988835391
+    },
+    {
+      "beta": 0.5,
+      "loss": 0.32166311144828796,
+      "accuracy": 0.8792270531400966,
+      "macro_f1": 0.8327311196696283
+    },
+    {
+      "beta": 0.75,
+      "loss": 0.32122012972831726,
+      "accuracy": 0.8792270531400966,
+      "macro_f1": 0.832926477247528
+    },
+    {
+      "beta": 1,
+      "loss": 0.3217184841632843,
+      "accuracy": 0.8776167471819646,
+      "macro_f1": 0.836915048431675
+    }
+  ],
+  "selected_validation": {
+    "beta": 0.75,
+    "loss": 0.32122012972831726,
+    "accuracy": 0.8792270531400966,
+    "macro_f1": 0.832926477247528
+  },
+  "selected_at": "2026-11-28T09:27:49.977717+00:00"
+}

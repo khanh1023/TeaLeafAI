@@ -1,0 +1,28 @@
+{
+  "dataset_manifest_sha256": "7d5c63d8cb76142c5a296c4cb5b599de5a2484b8206af4d65396804beaec8e26",
+  "base_model_sha256": "963ba24e0ae891cc2b7511ceb0f1ad99d70e60165b63103885f09cc084665022",
+  "selected": "four_flip_mean",
+  "validation_images": 1242,
+  "candidates": {
+    "single_view": {
+      "loss": 0.359234094619751,
+      "accuracy": 0.8743961352657005,
+      "macro_f1": 0.8363215008754126
+    },
+    "four_flip_mean": {
+      "loss": 0.3253753185272217,
+      "accuracy": 0.8792270531400966,
+      "macro_f1": 0.8290616613035626
+    }
+  },
+  "views": [
+    "original",
+    "horizontal_flip",
+    "vertical_flip",
+    "both_flips"
+  ],
+  "selection": "Choose four-flip arithmetic probability mean only if validation cross-entropy improves by >1e-4; otherwise single view. No test input used for this selection.",
+  "dataset_sample_count_unchanged": true,
+  "script_sha256": "a8429f07383e997aecd0948e22517d6393037113f2c456447f10a3b5a5cdad45",
+  "selected_at": "2026-11-28T04:49:32.676659+00:00"
+}

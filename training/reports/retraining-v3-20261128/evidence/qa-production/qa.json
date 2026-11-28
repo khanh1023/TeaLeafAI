@@ -1,0 +1,118 @@
+{
+  "base_url": "http://127.0.0.1:5185",
+  "dataset_manifest_sha256": "7d5c63d8cb76142c5a296c4cb5b599de5a2484b8206af4d65396804beaec8e26",
+  "comparison_dataset_manifest_sha256": "47a24012c4f67957c9ec98b997e37404575738d068ec004c415ab7bd03ecf001",
+  "sample": {
+    "id": "013c5f21e728e61d",
+    "label": "healthy",
+    "path": "test/healthy/tealeafbd_v4-013c5f21e728e61d.jpg"
+  },
+  "scope": "One-image functional UI smoke test; not a test-set accuracy measurement.",
+  "default": {
+    "predicted_class": "healthy",
+    "predicted_label": "Lá khỏe mạnh",
+    "confidence": 0.9999975562095642,
+    "probabilities": {
+      "algal_leaf": 1.2240014335418437e-8,
+      "anthracnose": 9.990288083556662e-14,
+      "bird_eye_spot": 7.10800708114516e-14,
+      "brown_blight": 9.178269949616791e-11,
+      "gray_light": 0.0000024699190817045746,
+      "healthy": 0.9999975562095642,
+      "red_leaf_spot": 2.4102590145957947e-8,
+      "white_spot": 3.4433291145415015e-15
+    },
+    "engine": "browser",
+    "model_version": "mobilenetv2-dataset-v3-20261128-20261128-dec907ce47-bilinear-v1",
+    "id": "474c6d8c-205b-483a-b3e8-082c988101b8",
+    "date": "2026-11-28T09:40:31.823Z",
+    "filename": "tealeafbd_v4-013c5f21e728e61d.jpg"
+  },
+  "system_dataset_version": "dataset-v3-20261128",
+  "comparison": {
+    "image_sha256": "10cec2a393dbe8a0d332157be20927cbc2eb3d96e5333361e23138589f55b557",
+    "protocol_id": "comparison-frozen-dataset-v2-20261127-seed42-0369e1708c7d3660",
+    "filename": "tealeafbd_v4-013c5f21e728e61d.jpg",
+    "actual_label": "healthy",
+    "results": {
+      "mobilenetv2": {
+        "predicted_class": "healthy",
+        "predicted_label": "Lá khỏe mạnh",
+        "confidence": 0.9947627186775208,
+        "probabilities": {
+          "algal_leaf": 0.0003880845906678587,
+          "anthracnose": 1.1972310254293461e-8,
+          "bird_eye_spot": 2.8076336811011515e-9,
+          "brown_blight": 0.00002560369102866389,
+          "gray_light": 0.004585282877087593,
+          "healthy": 0.9947627186775208,
+          "red_leaf_spot": 0.0002382727398071438,
+          "white_spot": 2.326497217097767e-8
+        },
+        "engine": "browser",
+        "model_version": "mobilenetv2-comparison-frozen-dataset-v2-20261127-e2d33685ae",
+        "model_id": "mobilenetv2",
+        "model_name": "MobileNetV2",
+        "model_sha256": "1a599203e05f86da5ddd9501b131515a74490d049bee379965c149cc161b1fc7",
+        "inference_ms": 197.5,
+        "load_ms": 2140,
+        "first_run_after_load": true,
+        "model_bytes": 9572101
+      },
+      "resnet50": {
+        "predicted_class": "healthy",
+        "predicted_label": "Lá khỏe mạnh",
+        "confidence": 0.996860146522522,
+        "probabilities": {
+          "algal_leaf": 0.00020278425654396415,
+          "anthracnose": 3.45151605074534e-8,
+          "bird_eye_spot": 7.933264782877814e-7,
+          "brown_blight": 0.00002891868462029379,
+          "gray_light": 0.0027652897406369448,
+          "healthy": 0.996860146522522,
+          "red_leaf_spot": 0.00014207937056198716,
+          "white_spot": 8.09187117312149e-9
+        },
+        "engine": "browser",
+        "model_version": "resnet50-comparison-frozen-dataset-v2-20261127-404798d0e2",
+        "model_id": "resnet50",
+        "model_name": "ResNet50",
+        "model_sha256": "ae39b9e876ba06b17a3c9ad5d55772c42e26de838734b97470853d6d393e8af4",
+        "inference_ms": 311.20000000298023,
+        "load_ms": 5692.39999999851,
+        "first_run_after_load": true,
+        "model_bytes": 95019178
+      },
+      "vgg16": {
+        "predicted_class": "healthy",
+        "predicted_label": "Lá khỏe mạnh",
+        "confidence": 0.9490758180618286,
+        "probabilities": {
+          "algal_leaf": 0.0005215980345383286,
+          "anthracnose": 5.899680743937097e-9,
+          "bird_eye_spot": 1.5361884209141863e-8,
+          "brown_blight": 0.00007551135058747604,
+          "gray_light": 0.049929119646549225,
+          "healthy": 0.9490758180618286,
+          "red_leaf_spot": 0.0003979089087806642,
+          "white_spot": 4.565428923797299e-9
+        },
+        "engine": "browser",
+        "model_version": "vgg16-comparison-frozen-dataset-v2-20261127-807c49bd11",
+        "model_id": "vgg16",
+        "model_name": "VGG16",
+        "model_sha256": "e97e931036e3c10de5c972ccb91e2d5043f61b9999c242d8f199bc24902b15c8",
+        "inference_ms": 1094.5999999977648,
+        "load_ms": 2970.5,
+        "first_run_after_load": true,
+        "model_bytes": 59138054
+      }
+    },
+    "date": "2026-11-28T09:40:47.306Z"
+  },
+  "browser": "156.0.8078.79",
+  "tested_at": "2026-11-28T09:40:48.011Z",
+  "uncaught_errors": [],
+  "image_uploads": 0,
+  "passed": true
+}

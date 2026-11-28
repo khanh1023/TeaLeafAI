@@ -11,22 +11,23 @@
     "red_leaf_spot",
     "white_spot"
   ],
-  "model_sha256": "223a253d6619d19117c0c44e411f86916149a5d7f29851e72d284cff83febb03",
-  "dataset_manifest_sha256": "47a24012c4f67957c9ec98b997e37404575738d068ec004c415ab7bd03ecf001",
+  "model_sha256": "dec907ce47e279f832a66154d9fb2e3b0fff7df4afdf81bcc424cb8e300e88da",
+  "dataset_manifest_sha256": "7d5c63d8cb76142c5a296c4cb5b599de5a2484b8206af4d65396804beaec8e26",
   "dataset": {
     "actual_ratios": {
       "test": 0.15,
       "train": 0.7,
       "val": 0.15
     },
+    "added_images": 1440,
     "counts": {
-      "algal_leaf": 735,
+      "algal_leaf": 1032,
       "anthracnose": 99,
       "bird_eye_spot": 99,
-      "brown_blight": 855,
-      "gray_light": 1344,
-      "healthy": 3112,
-      "red_leaf_spot": 454,
+      "brown_blight": 982,
+      "gray_light": 1655,
+      "healthy": 3435,
+      "red_leaf_spot": 836,
       "white_spot": 142
     },
     "exact_conflict_ids": [
@@ -37,33 +38,36 @@
       "c83b1f961811f492",
       "f80371b54851b5d8"
     ],
-    "excluded_count": 1907,
-    "grouping": "Rotation/mirror-canonical full-image and green-region 64-bit pHash: one distance <=4 AND both distances <=10; transitive union",
-    "groups": 6470,
-    "groups_by_split": {
-      "test": 1026,
-      "train": 4418,
-      "val": 1026
-    },
+    "excluded_count": 21,
+    "groups": 7112,
     "largest_group": 14,
     "limitations": [
       "Source labels inherited from publishers; no new expert diagnosis performed.",
       "Plant and capture-session identities are incomplete; perceptual groups reduce, but cannot eliminate, all leakage.",
       "No reliable new independent source was found for anthracnose, bird_eye_spot or white_spot; these classes are not inflated with synthetic photos.",
       "Offline augmented sources without parent identities, ambiguous blight/rust labels, pests and non-tea leaves excluded.",
-      "Splits are new. Old accuracy values and old checkpoints do not constitute evaluation on this version.",
-      "Healthy is deliberately the largest class; use class weights and report macro metrics to account for imbalance."
+      "Datta camera-pattern filenames are a proxy for source captures, not proof of original/raw identity; image_* augmentations are excluded.",
+      "New Datta photos with the same label and timestamp minute are grouped; missing plant IDs still prevent proving complete independence.",
+      "The old validation/test have been inspected during prior development; expanded evaluation is internal, not a blind external field test.",
+      "New sources add five matching classes, not new independent samples for anthracnose, bird_eye_spot or white_spot.",
+      "Healthy remains the largest class; report macro and per-class metrics. Additional photos cannot guarantee a 90% accuracy.",
+      "The new Datta source is declared CC BY-NC 4.0: academic/non-commercial use with attribution; do not relicense it as unrestricted commercial data."
     ],
-    "manifest_sha256": "47a24012c4f67957c9ec98b997e37404575738d068ec004c415ab7bd03ecf001",
-    "previous_manifest_sha256": "585cabd7be1741675fa5bed31c14116b9f72f7eca11d40610313ddb15cd48707",
-    "previous_total_images": 2197,
-    "reserve_images": 4,
-    "reserve_reason": "New healthy singleton photos retained outside training/evaluation to allow exact integer 70/15/15.",
+    "manifest_sha256": "7d5c63d8cb76142c5a296c4cb5b599de5a2484b8206af4d65396804beaec8e26",
+    "omitted_source_rows": {
+      "offline_augmentation_filename": 3436,
+      "unsupported_helopeltis": 1000
+    },
+    "previous_assignments_preserved": true,
+    "previous_manifest_sha256": "47a24012c4f67957c9ec98b997e37404575738d068ec004c415ab7bd03ecf001",
+    "previous_total_images": 6840,
+    "reserve_images": 10,
     "seed": 42,
-    "source_candidates_before_reserve": 6844,
     "source_counts": {
+      "datta_camera_named": 1420,
       "habiganj_v1": 412,
       "hibiscus_tea_raw_v4": 192,
+      "hu_red_spot_2019": 20,
       "mendeley_rrff_v2": 914,
       "original": 879,
       "tea_bangladesh_v4": 1576,
@@ -173,433 +177,691 @@
         "repo": "Project-AgML/Hibiscus_Tea_disease_classification",
         "revision": "995934b58fe3530bfdf8e9ec87689b12d6426165",
         "source_parquet_url": "https://huggingface.co/datasets/Project-AgML/Hibiscus_Tea_disease_classification/resolve/995934b58fe3530bfdf8e9ec87689b12d6426165/raw/train-00000-of-00001.parquet"
+      },
+      {
+        "citation": "Datta tea-leaf-disease dataset; pinned Project-AgML mirror; used by Balasundaram et al. (2025), DOI 10.1016/j.rineng.2024.103784",
+        "dataset_url": "https://www.kaggle.com/datasets/saikatdatta1994/tea-leaf-disease",
+        "eligibility": "Camera-pattern filenames only; all image_* offline augmentations and helopeltis excluded. Filename is a provenance proxy, not proof of an unmodified camera original.",
+        "file": "tea-six-classes.parquet",
+        "id": "datta_camera_named",
+        "license": "CC BY-NC 4.0 (mirror declaration; academic/non-commercial use only)",
+        "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
+        "repo": "Project-AgML/tea_leaf_disease_classification",
+        "revision": "d44a9aff2f0f71aae523b22b5f0f821c68bf18ea",
+        "sha256": "ad72b6e9a2abfb9f157000e3c377162b2a7525e5788d1f57fde066ce627975ba",
+        "url": "https://huggingface.co/datasets/Project-AgML/tea_leaf_disease_classification/resolve/d44a9aff2f0f71aae523b22b5f0f821c68bf18ea/data/train-00000-of-00001.parquet"
+      },
+      {
+        "citation": "Hu, Wu, Zhang & Wan (2019), Data for: A Low Shot Learning Method for Tea Leaf’s Disease Identification, DOI 10.17632/dbjyfkn6jr.1",
+        "dataset_url": "https://data.mendeley.com/datasets/dbjyfkn6jr/1",
+        "eligibility": "Only Tea red leaf spot folders; ambiguous leaf blight and unsupported red scab excluded. Publisher train/test directories are combined before our grouped split.",
+        "file": "hu2019-data.zip",
+        "id": "hu_red_spot_2019",
+        "license": "CC BY 4.0",
+        "license_url": "https://creativecommons.org/licenses/by/4.0/",
+        "sha256": "ee55070e3f15dbe4ca2ac6ee13664e89a67e327e537fc3bff49d2453cc7a60ea",
+        "url": "https://data.mendeley.com/public-files/datasets/dbjyfkn6jr/files/a99df65a-78d7-408b-800a-c8bff1ad176d/file_downloaded"
       }
     ],
     "split_counts": {
       "test": {
-        "algal_leaf": 110,
+        "algal_leaf": 155,
         "anthracnose": 15,
         "bird_eye_spot": 15,
-        "brown_blight": 128,
-        "gray_light": 202,
-        "healthy": 467,
-        "red_leaf_spot": 68,
+        "brown_blight": 148,
+        "gray_light": 248,
+        "healthy": 515,
+        "red_leaf_spot": 125,
         "white_spot": 21
       },
       "train": {
-        "algal_leaf": 515,
+        "algal_leaf": 722,
         "anthracnose": 69,
         "bird_eye_spot": 69,
-        "brown_blight": 599,
-        "gray_light": 941,
-        "healthy": 2178,
-        "red_leaf_spot": 318,
+        "brown_blight": 687,
+        "gray_light": 1159,
+        "healthy": 2405,
+        "red_leaf_spot": 586,
         "white_spot": 99
       },
       "val": {
-        "algal_leaf": 110,
+        "algal_leaf": 155,
         "anthracnose": 15,
         "bird_eye_spot": 15,
-        "brown_blight": 128,
-        "gray_light": 201,
-        "healthy": 467,
-        "red_leaf_spot": 68,
+        "brown_blight": 147,
+        "gray_light": 248,
+        "healthy": 515,
+        "red_leaf_spot": 125,
         "white_spot": 22
       }
     },
-    "split_method": "Exact global and floor/ceil per-class integer quotas; perceptual families assigned intact; deterministic seed 42",
+    "split_method": "All frozen v2 assignments preserved; exact global/floor-ceil per-class quotas solved as grouped integer allocation with seed 42. New capture-minute families stay intact.",
     "split_totals": {
-      "test": 1026,
-      "train": 4788,
-      "val": 1026
+      "test": 1242,
+      "train": 5796,
+      "val": 1242
     },
     "target_ratios": {
       "test": 0.15,
       "train": 0.7,
       "val": 0.15
     },
-    "total_images": 6840,
-    "version": "dataset-v2-20261125"
+    "total_images": 8280,
+    "version": "dataset-v3-20261128"
   },
-  "feature_extraction_train_val_seconds": 278.44733870799973,
-  "head_training_seconds": 39.442481994628906,
-  "training": {
-    "seed": 42,
-    "maximum_epochs": 30,
-    "epochs_completed": 22,
-    "selected_epoch": 17,
-    "selection": "minimum validation loss; test unused until final evaluation",
-    "backbone": "fresh official ImageNet MobileNetV2, frozen",
-    "head": "Dropout .3 → Dense128 ReLU → Dropout .2 → Dense8 softmax",
-    "class_weights": {
-      "brown_blight": 0.9991652754590985,
-      "algal_leaf": 1.162135922330097,
-      "red_leaf_spot": 1.8820754716981132,
-      "gray_light": 0.6360255047821467,
-      "healthy": 0.27479338842975204,
-      "anthracnose": 8.673913043478262,
-      "bird_eye_spot": 8.673913043478262,
-      "white_spot": 6.045454545454546
-    },
-    "augmented_views": 2,
-    "optimizer": "Adam",
-    "learning_rate": 0.001,
-    "head_batch_size": 32,
-    "augmentation": "2 deterministic training-only views per original: horizontal flip, +/-15 degree rotation, brightness/contrast .85–1.15",
-    "feature_cache_equivalence": "Backbone is frozen; train classifier on cached features, then save the complete raw-RGB-input model.",
-    "feature_execution": "tf.function with dynamic batch signature; float32, inference mode",
-    "history": {
-      "accuracy": [
-        0.6249651908874512,
-        0.7317599654197693,
-        0.7583542466163635,
-        0.7802144289016724,
-        0.7889167070388794,
-        0.8052074909210205,
-        0.8317320942878723,
-        0.8408521413803101,
-        0.8461431264877319,
-        0.8502506017684937,
-        0.8581871390342712,
-        0.8581175208091736,
-        0.8626427054405212,
-        0.8602756857872009,
-        0.8632692694664001,
-        0.867307186126709,
-        0.8709969520568848,
-        0.869326114654541,
-        0.869743824005127,
-        0.869117259979248,
-        0.8739209175109863,
-        0.8726677894592285
-      ],
-      "loss": [
-        1.1428565979003906,
-        0.7387882471084595,
-        0.6367338299751282,
-        0.5478557348251343,
-        0.5144206285476685,
-        0.47925958037376404,
-        0.39482346177101135,
-        0.3675365746021271,
-        0.34887033700942993,
-        0.3484979271888733,
-        0.3181263208389282,
-        0.31130439043045044,
-        0.30837348103523254,
-        0.3002229332923889,
-        0.30717965960502625,
-        0.2952074110507965,
-        0.28121012449264526,
-        0.28345605731010437,
-        0.2889038920402527,
-        0.2792920470237732,
-        0.2783433794975281,
-        0.2834565043449402
-      ],
-      "val_accuracy": [
-        0.7153996229171753,
-        0.7699804902076721,
-        0.7553606033325195,
-        0.77582848072052,
-        0.7797271013259888,
-        0.7865496873855591,
-        0.8001949191093445,
-        0.8001949191093445,
-        0.7972709536552429,
-        0.7992202639579773,
-        0.7943469882011414,
-        0.7992202639579773,
-        0.8021442294120789,
-        0.8040935397148132,
-        0.7992202639579773,
-        0.8011695742607117,
-        0.8021442294120789,
-        0.803118884563446,
-        0.803118884563446,
-        0.8001949191093445,
-        0.8021442294120789,
-        0.8011695742607117
-      ],
-      "val_loss": [
-        0.7397304773330688,
-        0.6241042613983154,
-        0.66488116979599,
-        0.5946869850158691,
-        0.610535204410553,
-        0.6016506552696228,
-        0.5459924340248108,
-        0.5229647159576416,
-        0.5417081117630005,
-        0.5390578508377075,
-        0.5201857686042786,
-        0.5137878656387329,
-        0.5173105001449585,
-        0.5114368796348572,
-        0.5149374008178711,
-        0.5129749178886414,
-        0.5075059533119202,
-        0.5104451179504395,
-        0.5116909146308899,
-        0.5115903615951538,
-        0.5110911726951599,
-        0.5112758278846741
-      ],
-      "learning_rate": [
-        0.0010000000474974513,
-        0.0010000000474974513,
-        0.0010000000474974513,
-        0.0010000000474974513,
-        0.0010000000474974513,
-        0.0010000000474974513,
-        0.0003000000142492354,
-        0.0003000000142492354,
-        0.0003000000142492354,
-        0.0003000000142492354,
-        9.000000136438757e-05,
-        9.000000136438757e-05,
-        9.000000136438757e-05,
-        9.000000136438757e-05,
-        9.000000136438757e-05,
-        9.000000136438757e-05,
-        2.700000004551839e-05,
-        2.700000004551839e-05,
-        2.700000004551839e-05,
-        8.099999831756577e-06,
-        8.099999831756577e-06,
-        2.429999995001708e-06
-      ]
-    },
-    "fine_tuning": {
-      "maximum_epochs": 10,
-      "epochs_completed": 10,
-      "learning_rate_initial": 1e-05,
-      "layers": "last 30 layers of MobileNetV2, BatchNormalization frozen; backbone called with training=False",
-      "initial_validation_loss": 0.5506183505058289,
-      "initial_validation_accuracy": 0.7943469882011414,
-      "selected": "finetuned",
-      "selected_validation_loss": 0.5076905488967896,
-      "selection": "minimum validation loss, with initial model kept unless validation improves",
-      "history": {
-        "accuracy": [
-          0.7928153872489929,
-          0.8047201633453369,
-          0.817460298538208,
-          0.8249791264533997,
-          0.822472870349884,
-          0.8345864415168762,
-          0.8306182026863098,
-          0.8377193212509155,
-          0.8391813039779663,
-          0.8423141241073608
-        ],
-        "loss": [
-          0.5747675895690918,
-          0.5011243224143982,
-          0.45953941345214844,
-          0.44624093174934387,
-          0.4578547775745392,
-          0.41306573152542114,
-          0.4141649007797241,
-          0.4018116295337677,
-          0.39176079630851746,
-          0.37733224034309387
-        ],
-        "val_accuracy": [
-          0.7816764116287231,
-          0.7748538255691528,
-          0.7992202639579773,
-          0.7982456088066101,
-          0.7855750322341919,
-          0.7992202639579773,
-          0.7982456088066101,
-          0.7972709536552429,
-          0.8079922199249268,
-          0.8021442294120789
-        ],
-        "val_loss": [
-          0.5669344663619995,
-          0.5977240204811096,
-          0.5230860114097595,
-          0.5210362076759338,
-          0.5679973363876343,
-          0.5180341601371765,
-          0.5155049562454224,
-          0.5221215486526489,
-          0.5160890817642212,
-          0.5076905488967896
-        ],
-        "learning_rate": [
-          9.999999747378752e-06,
-          9.999999747378752e-06,
-          4.999999873689376e-06,
-          4.999999873689376e-06,
-          4.999999873689376e-06,
-          2.499999936844688e-06,
-          2.499999936844688e-06,
-          2.499999936844688e-06,
-          1.249999968422344e-06,
-          6.24999984211172e-07
-        ]
-      }
-    }
-  },
-  "trained_at": "2026-11-27T15:02:58.574710+00:00",
-  "elapsed_seconds": 1658.39488363266,
-  "limitations": [
-    "Internal held-out evaluation from the same source datasets; not an independent Vietnamese field trial.",
-    "Perceptual groups reduce duplicate leakage, but plant/session identifiers were not supplied for every source image.",
-    "Source labels are inherited from dataset publishers; conflicting exact duplicates are excluded rather than relabeled.",
-    "More healthy photos do not guarantee improved real-world specificity; per-class metrics are reported."
-  ],
-  "accuracy": 0.8460038986354775,
-  "balanced_accuracy": 0.808133998397641,
-  "macro_f1": 0.7564406844329646,
-  "weighted_f1": 0.8470707293357841,
+  "accuracy": 0.892914653784219,
+  "balanced_accuracy": 0.8602739114500388,
+  "macro_f1": 0.8495319766325284,
+  "weighted_f1": 0.8926189863598262,
   "classification_report": {
     "algal_leaf": {
-      "precision": 0.6638655462184874,
-      "recall": 0.7181818181818181,
-      "f1-score": 0.6899563318777293,
-      "support": 110.0
+      "precision": 0.825503355704698,
+      "recall": 0.7935483870967742,
+      "f1-score": 0.8092105263157895,
+      "support": 155.0
     },
     "anthracnose": {
-      "precision": 0.7333333333333333,
-      "recall": 0.7333333333333333,
-      "f1-score": 0.7333333333333333,
+      "precision": 0.9285714285714286,
+      "recall": 0.8666666666666667,
+      "f1-score": 0.896551724137931,
       "support": 15.0
     },
     "bird_eye_spot": {
-      "precision": 0.5769230769230769,
-      "recall": 1.0,
-      "f1-score": 0.7317073170731707,
+      "precision": 0.7777777777777778,
+      "recall": 0.9333333333333333,
+      "f1-score": 0.8484848484848485,
       "support": 15.0
     },
     "brown_blight": {
-      "precision": 0.7818181818181819,
-      "recall": 0.671875,
-      "f1-score": 0.7226890756302521,
-      "support": 128.0
+      "precision": 0.8194444444444444,
+      "recall": 0.7972972972972973,
+      "f1-score": 0.8082191780821918,
+      "support": 148.0
     },
     "gray_light": {
-      "precision": 0.8235294117647058,
-      "recall": 0.7623762376237624,
-      "f1-score": 0.7917737789203085,
-      "support": 202.0
+      "precision": 0.8588235294117647,
+      "recall": 0.8830645161290323,
+      "f1-score": 0.8707753479125249,
+      "support": 248.0
     },
     "healthy": {
-      "precision": 0.9763440860215054,
-      "recall": 0.9721627408993576,
-      "f1-score": 0.9742489270386266,
-      "support": 467.0
+      "precision": 0.963531669865643,
+      "recall": 0.974757281553398,
+      "f1-score": 0.9691119691119691,
+      "support": 515.0
     },
     "red_leaf_spot": {
-      "precision": 0.7083333333333334,
-      "recall": 0.75,
-      "f1-score": 0.7285714285714285,
-      "support": 68.0
+      "precision": 0.8879310344827587,
+      "recall": 0.824,
+      "f1-score": 0.8547717842323651,
+      "support": 125.0
     },
     "white_spot": {
-      "precision": 0.5625,
-      "recall": 0.8571428571428571,
-      "f1-score": 0.6792452830188679,
+      "precision": 0.68,
+      "recall": 0.8095238095238095,
+      "f1-score": 0.7391304347826086,
       "support": 21.0
     },
-    "accuracy": 0.8460038986354775,
+    "accuracy": 0.892914653784219,
     "macro avg": {
-      "precision": 0.728330871176578,
-      "recall": 0.808133998397641,
-      "f1-score": 0.7564406844329646,
-      "support": 1026.0
+      "precision": 0.8426979050323145,
+      "recall": 0.8602739114500388,
+      "f1-score": 0.8495319766325284,
+      "support": 1242.0
     },
     "weighted avg": {
-      "precision": 0.8528621632804942,
-      "recall": 0.8460038986354775,
-      "f1-score": 0.8470707293357841,
-      "support": 1026.0
+      "precision": 0.8931597911372888,
+      "recall": 0.892914653784219,
+      "f1-score": 0.8926189863598262,
+      "support": 1242.0
     }
   },
   "confusion_matrix": [
     [
-      79,
+      123,
       0,
       0,
-      11,
-      6,
-      0,
-      7,
-      7
-    ],
-    [
-      0,
-      11,
-      4,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    [
-      0,
-      0,
-      15,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    [
-      18,
-      0,
-      0,
-      86,
-      12,
-      1,
-      5,
-      6
-    ],
-    [
-      16,
-      3,
-      7,
-      9,
-      154,
-      7,
-      6,
-      0
-    ],
-    [
-      2,
-      0,
-      0,
-      1,
-      7,
-      454,
-      3,
-      0
-    ],
-    [
-      3,
-      0,
-      0,
-      2,
+      13,
       8,
       3,
-      51,
-      1
+      3,
+      5
+    ],
+    [
+      0,
+      13,
+      1,
+      0,
+      1,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      1,
+      14,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      11,
+      0,
+      0,
+      118,
+      13,
+      1,
+      2,
+      3
+    ],
+    [
+      9,
+      0,
+      3,
+      6,
+      219,
+      8,
+      3,
+      0
+    ],
+    [
+      3,
+      0,
+      0,
+      0,
+      6,
+      502,
+      4,
+      0
+    ],
+    [
+      2,
+      0,
+      0,
+      5,
+      8,
+      7,
+      103,
+      0
     ],
     [
       1,
-      1,
+      0,
+      0,
+      2,
+      0,
       0,
       1,
-      0,
-      0,
-      0,
-      18
+      17
     ]
   ],
-  "test_images": 1026
+  "test_images": 1242,
+  "training": {
+    "dataset_manifest_sha256": "7d5c63d8cb76142c5a296c4cb5b599de5a2484b8206af4d65396804beaec8e26",
+    "previous_manifest_sha256": "47a24012c4f67957c9ec98b997e37404575738d068ec004c415ab7bd03ecf001",
+    "initial_model_sha256": "223a253d6619d19117c0c44e411f86916149a5d7f29851e72d284cff83febb03",
+    "previous_assignments_verified": 6840,
+    "classes": [
+      "algal_leaf",
+      "anthracnose",
+      "bird_eye_spot",
+      "brown_blight",
+      "gray_light",
+      "healthy",
+      "red_leaf_spot",
+      "white_spot"
+    ],
+    "seed": 42,
+    "head_maximum_epochs": 4,
+    "fine_maximum_epochs": 18,
+    "fine_last_layers": 60,
+    "class_weight_exponent": 0.5,
+    "class_weights": {
+      "algal_leaf": 1.1538952651240153,
+      "anthracnose": 3.7325913449439794,
+      "bird_eye_spot": 3.7325913449439794,
+      "brown_blight": 1.1829233963468402,
+      "gray_light": 0.9107376108900584,
+      "healthy": 0.6322334210107134,
+      "red_leaf_spot": 1.2808143422224236,
+      "white_spot": 3.116143096901303
+    },
+    "selection": "Minimum unweighted validation cross-entropy; initial checkpoint retained unless validation improves. Test not used for checkpoint selection.",
+    "initial_validation_loss": 0.8140612840652466,
+    "initial_validation_accuracy": 0.7568438053131104,
+    "training_script_sha256": "ddfb2d9344b6833c9b14523aab9e14a4cc99181c3b9e4798e0006d621c99400c",
+    "created_at": "2026-11-27T20:22:16.938728+00:00",
+    "selected": "refinement",
+    "selected_validation_loss": 0.359234094619751,
+    "stages": [
+      {
+        "stage": "head_adaptation",
+        "maximum_epochs": 4,
+        "epochs_completed": 4,
+        "learning_rate_initial": 0.0001,
+        "trainable_parameters": 165000,
+        "elapsed_seconds": 547.6629955768585,
+        "history": {
+          "accuracy": [
+            0.7700138092041016,
+            0.7919254899024963,
+            0.8010696768760681,
+            0.8159075379371643
+          ],
+          "loss": [
+            0.6799159049987793,
+            0.5715633630752563,
+            0.5393432974815369,
+            0.5194768309593201
+          ],
+          "val_accuracy": [
+            0.760064423084259,
+            0.7809984087944031,
+            0.7858293056488037,
+            0.7842190265655518
+          ],
+          "val_loss": [
+            0.6116371154785156,
+            0.5812163949012756,
+            0.560804009437561,
+            0.5471642017364502
+          ],
+          "learning_rate": [
+            9.999999747378752e-05,
+            9.999999747378752e-05,
+            9.999999747378752e-05,
+            9.999999747378752e-05
+          ]
+        }
+      },
+      {
+        "stage": "fine_tuning",
+        "maximum_epochs": 18,
+        "epochs_completed": 18,
+        "learning_rate_initial": 1e-05,
+        "trainable_parameters": 2096776,
+        "elapsed_seconds": 3246.261260032654,
+        "history": {
+          "accuracy": [
+            0.8041753172874451,
+            0.8276397585868835,
+            0.8404071927070618,
+            0.8478260636329651,
+            0.8571428656578064,
+            0.8623188138008118,
+            0.8695651888847351,
+            0.8783643841743469,
+            0.8745686411857605,
+            0.8873360753059387,
+            0.8945824503898621,
+            0.9021739363670349,
+            0.9045893549919128,
+            0.9006211161613464,
+            0.9082125425338745,
+            0.910973072052002,
+            0.9113181233406067,
+            0.9106280207633972
+          ],
+          "loss": [
+            0.5583597421646118,
+            0.47851115465164185,
+            0.4592462480068207,
+            0.42956769466400146,
+            0.4154145121574402,
+            0.37932929396629333,
+            0.367129385471344,
+            0.3531736731529236,
+            0.33402249217033386,
+            0.3214956820011139,
+            0.2859700620174408,
+            0.27087435126304626,
+            0.26762309670448303,
+            0.26995429396629333,
+            0.25717517733573914,
+            0.24470047652721405,
+            0.23858173191547394,
+            0.245066836476326
+          ],
+          "val_accuracy": [
+            0.8140096664428711,
+            0.8317230343818665,
+            0.8164251446723938,
+            0.8325281739234924,
+            0.8325281739234924,
+            0.8462157845497131,
+            0.8486312627792358,
+            0.8478260636329651,
+            0.8486312627792358,
+            0.8518518805503845,
+            0.8510466814041138,
+            0.8558776378631592,
+            0.8599033951759338,
+            0.8615136742591858,
+            0.8647342920303345,
+            0.8647342920303345,
+            0.8623188138008118,
+            0.8735910058021545
+          ],
+          "val_loss": [
+            0.49586573243141174,
+            0.4687274992465973,
+            0.4738979935646057,
+            0.444385826587677,
+            0.4341573119163513,
+            0.41232436895370483,
+            0.4063013195991516,
+            0.4137097895145416,
+            0.42131665349006653,
+            0.39461246132850647,
+            0.38638144731521606,
+            0.38415950536727905,
+            0.3757490813732147,
+            0.3732268512248993,
+            0.3658074140548706,
+            0.36562347412109375,
+            0.38390135765075684,
+            0.373751699924469
+          ],
+          "learning_rate": [
+            9.999999747378752e-06,
+            9.999999747378752e-06,
+            9.999999747378752e-06,
+            9.999999747378752e-06,
+            9.999999747378752e-06,
+            9.999999747378752e-06,
+            9.999999747378752e-06,
+            9.999999747378752e-06,
+            9.999999747378752e-06,
+            4.999999873689376e-06,
+            4.999999873689376e-06,
+            4.999999873689376e-06,
+            4.999999873689376e-06,
+            4.999999873689376e-06,
+            4.999999873689376e-06,
+            4.999999873689376e-06,
+            4.999999873689376e-06,
+            4.999999873689376e-06
+          ]
+        }
+      },
+      {
+        "stage": "refinement",
+        "maximum_epochs": 24,
+        "epochs_completed": 17,
+        "trainable_parameters": 2302792,
+        "learning_rate_initial": 5e-06,
+        "elapsed_seconds": 2841.1662225723267,
+        "history": {
+          "accuracy": [
+            0.9071773886680603,
+            0.9142512083053589,
+            0.9159765243530273,
+            0.9161490797996521,
+            0.9271911382675171,
+            0.9271911382675171,
+            0.9275362491607666,
+            0.9351276755332947,
+            0.9359903335571289,
+            0.9335748553276062,
+            0.9335748553276062,
+            0.9409937858581543,
+            0.9380607604980469,
+            0.9430641531944275,
+            0.9439268708229065,
+            0.9377156496047974,
+            0.9442719221115112
+          ],
+          "loss": [
+            0.25581321120262146,
+            0.23454150557518005,
+            0.231256365776062,
+            0.2328023612499237,
+            0.21912714838981628,
+            0.20259380340576172,
+            0.20160925388336182,
+            0.1852775663137436,
+            0.17587853968143463,
+            0.18251584470272064,
+            0.17867226898670197,
+            0.1685936003923416,
+            0.16866080462932587,
+            0.16381192207336426,
+            0.16677266359329224,
+            0.16446463763713837,
+            0.1586662381887436
+          ],
+          "val_accuracy": [
+            0.8574879169464111,
+            0.8607085347175598,
+            0.8599033951759338,
+            0.8719806671142578,
+            0.8647342920303345,
+            0.8534621596336365,
+            0.8679549098014832,
+            0.8727858066558838,
+            0.8743961453437805,
+            0.8719806671142578,
+            0.8743961453437805,
+            0.8727858066558838,
+            0.8719806671142578,
+            0.8703703880310059,
+            0.8703703880310059,
+            0.8711755275726318,
+            0.8719806671142578
+          ],
+          "val_loss": [
+            0.38474392890930176,
+            0.38272181153297424,
+            0.3729533851146698,
+            0.3718542754650116,
+            0.38489285111427307,
+            0.38402122259140015,
+            0.36961182951927185,
+            0.36069628596305847,
+            0.3714611828327179,
+            0.3655608594417572,
+            0.359234094619751,
+            0.36393705010414124,
+            0.36555176973342896,
+            0.3661491274833679,
+            0.36881470680236816,
+            0.3694303631782532,
+            0.3728578984737396
+          ],
+          "learning_rate": [
+            4.999999873689376e-06,
+            4.999999873689376e-06,
+            4.999999873689376e-06,
+            4.999999873689376e-06,
+            4.999999873689376e-06,
+            4.999999873689376e-06,
+            2.499999936844688e-06,
+            2.499999936844688e-06,
+            2.499999936844688e-06,
+            2.499999936844688e-06,
+            1.249999968422344e-06,
+            1.249999968422344e-06,
+            1.249999968422344e-06,
+            6.24999984211172e-07,
+            6.24999984211172e-07,
+            3.12499992105586e-07,
+            3.12499992105586e-07
+          ]
+        }
+      }
+    ],
+    "refinement_protocol": {
+      "dataset_manifest_sha256": "7d5c63d8cb76142c5a296c4cb5b599de5a2484b8206af4d65396804beaec8e26",
+      "initial_model_sha256": "03357fbfe799e0f9a3a994e27b7e1d8734367a275a4ca129460d5113e8ef359d",
+      "classes": [
+        "algal_leaf",
+        "anthracnose",
+        "bird_eye_spot",
+        "brown_blight",
+        "gray_light",
+        "healthy",
+        "red_leaf_spot",
+        "white_spot"
+      ],
+      "seed": 42,
+      "maximum_epochs": 24,
+      "last_layers": 100,
+      "batch_size": 16,
+      "learning_rate": 5e-06,
+      "class_weight_exponent": 0.5,
+      "class_weights": {
+        "algal_leaf": 1.1538952651240153,
+        "anthracnose": 3.7325913449439794,
+        "bird_eye_spot": 3.7325913449439794,
+        "brown_blight": 1.1829233963468402,
+        "gray_light": 0.9107376108900584,
+        "healthy": 0.6322334210107134,
+        "red_leaf_spot": 1.2808143422224236,
+        "white_spot": 3.116143096901303
+      },
+      "initial_validation_loss": 0.36562347412109375,
+      "initial_validation_accuracy": 0.8647342920303345,
+      "selection": "Minimum unweighted validation cross-entropy; initial checkpoint retained unless validation improves. Test not used for checkpoint selection.",
+      "previous_internal_test_already_evaluated": true,
+      "motivation": "Validation learning curve was still improving near the original epoch budget; increase fine-tuning depth and budget while preserving all partitions.",
+      "training_script_sha256": "b54cb42ab1489f9db7f1c4afe26259b1f8d0d1991b74489494c852e05873ec4e",
+      "started_at": "2026-11-28T04:01:33.475685+00:00"
+    }
+  },
+  "elapsed_seconds": 6774.239470481873,
+  "trained_at": "2026-11-28T09:27:56.921704+00:00",
+  "target_accuracy": 0.9,
+  "target_met": false,
+  "limitations": [
+    "Source labels inherited from publishers; no new expert diagnosis performed.",
+    "Plant and capture-session identities are incomplete; perceptual groups reduce, but cannot eliminate, all leakage.",
+    "No reliable new independent source was found for anthracnose, bird_eye_spot or white_spot; these classes are not inflated with synthetic photos.",
+    "Offline augmented sources without parent identities, ambiguous blight/rust labels, pests and non-tea leaves excluded.",
+    "Datta camera-pattern filenames are a proxy for source captures, not proof of original/raw identity; image_* augmentations are excluded.",
+    "New Datta photos with the same label and timestamp minute are grouped; missing plant IDs still prevent proving complete independence.",
+    "The old validation/test have been inspected during prior development; expanded evaluation is internal, not a blind external field test.",
+    "New sources add five matching classes, not new independent samples for anthracnose, bird_eye_spot or white_spot.",
+    "Healthy remains the largest class; report macro and per-class metrics. Additional photos cannot guarantee a 90% accuracy.",
+    "The new Datta source is declared CC BY-NC 4.0: academic/non-commercial use with attribution; do not relicense it as unrestricted commercial data.",
+    "The warm-start v2 model was previously selected on the preserved v2 validation partition; expanded test results are internal development evidence.",
+    "More images and a 90% goal do not imply 90% measured accuracy. Use recorded predictions and per-class metrics.",
+    "A preliminary v3 internal test was evaluated before this continuation. The frozen test is reused for development reporting; it is not a new blind test. Further checkpoint selection used validation loss only.",
+    "Single-view/four-flip inference was selected using validation only. All flip views reuse the same source photo and are not independent test observations.",
+    "The development test has already been reported for preceding checkpoints. These are internal development results, not a fresh blind test.",
+    "A scalar correction of recorded training class weights was selected on validation. This is an additional exploratory development stage after previous test reports, not a fresh blind evaluation."
+  ],
+  "previous_internal_test_metrics": {
+    "accuracy": 0.8647342995169082,
+    "balanced_accuracy": 0.8443148327906002,
+    "macro_f1": 0.8182614689746973,
+    "test_images": 1242
+  },
+  "inference_protocol": {
+    "dataset_manifest_sha256": "7d5c63d8cb76142c5a296c4cb5b599de5a2484b8206af4d65396804beaec8e26",
+    "base_model_sha256": "963ba24e0ae891cc2b7511ceb0f1ad99d70e60165b63103885f09cc084665022",
+    "selected": "four_flip_mean",
+    "validation_images": 1242,
+    "candidates": {
+      "single_view": {
+        "loss": 0.359234094619751,
+        "accuracy": 0.8743961352657005,
+        "macro_f1": 0.8363215008754126
+      },
+      "four_flip_mean": {
+        "loss": 0.3253753185272217,
+        "accuracy": 0.8792270531400966,
+        "macro_f1": 0.8290616613035626
+      }
+    },
+    "views": [
+      "original",
+      "horizontal_flip",
+      "vertical_flip",
+      "both_flips"
+    ],
+    "selection": "Choose four-flip arithmetic probability mean only if validation cross-entropy improves by >1e-4; otherwise single view. No test input used for this selection.",
+    "dataset_sample_count_unchanged": true,
+    "script_sha256": "a8429f07383e997aecd0948e22517d6393037113f2c456447f10a3b5a5cdad45",
+    "selected_at": "2026-11-28T04:49:32.676659+00:00"
+  },
+  "base_checkpoint_test_metrics": {
+    "accuracy": 0.8800322061191627,
+    "balanced_accuracy": 0.8634462664870588,
+    "macro_f1": 0.843171886127873,
+    "test_images": 1242
+  },
+  "calibration_protocol": {
+    "dataset_manifest_sha256": "7d5c63d8cb76142c5a296c4cb5b599de5a2484b8206af4d65396804beaec8e26",
+    "base_model_sha256": "3dd931566b6969b81f138a2d8f72f087d4f9191f96bf058532eae32bbc5dd4bc",
+    "betas": [
+      0,
+      0.25,
+      0.5,
+      0.75,
+      1
+    ],
+    "weights": [
+      1.1538952589035034,
+      3.732591390609741,
+      3.732591390609741,
+      1.182923436164856,
+      0.9107376337051392,
+      0.6322334408760071,
+      1.280814290046692,
+      3.116142988204956
+    ],
+    "selection": "Minimum validation cross-entropy among fixed beta grid, requiring Accuracy and macro-F1 not below beta=0. No test used for this selection.",
+    "formula": "q[c] = (p[c] / training_class_weight[c]**beta) / sum_j(p[j] / training_class_weight[j]**beta)",
+    "earlier_internal_test_already_reported": true,
+    "script_sha256": "1c036d870b7e9214b14736b5273dc4c803043e45eac2380a47598d791f7d142b",
+    "selected_beta": 0.75,
+    "candidates": [
+      {
+        "beta": 0,
+        "loss": 0.3253753185272217,
+        "accuracy": 0.8792270531400966,
+        "macro_f1": 0.8290616613035626
+      },
+      {
+        "beta": 0.25,
+        "loss": 0.32304808497428894,
+        "accuracy": 0.8784219001610306,
+        "macro_f1": 0.8283629988835391
+      },
+      {
+        "beta": 0.5,
+        "loss": 0.32166311144828796,
+        "accuracy": 0.8792270531400966,
+        "macro_f1": 0.8327311196696283
+      },
+      {
+        "beta": 0.75,
+        "loss": 0.32122012972831726,
+        "accuracy": 0.8792270531400966,
+        "macro_f1": 0.832926477247528
+      },
+      {
+        "beta": 1,
+        "loss": 0.3217184841632843,
+        "accuracy": 0.8776167471819646,
+        "macro_f1": 0.836915048431675
+      }
+    ],
+    "selected_validation": {
+      "beta": 0.75,
+      "loss": 0.32122012972831726,
+      "accuracy": 0.8792270531400966,
+      "macro_f1": 0.832926477247528
+    },
+    "selected_at": "2026-11-28T09:27:49.977717+00:00"
+  },
+  "pre_calibration_test_metrics": {
+    "accuracy": 0.8913043478260869,
+    "balanced_accuracy": 0.8611155434829487,
+    "macro_f1": 0.8370757962003078,
+    "test_images": 1242
+  }
 }

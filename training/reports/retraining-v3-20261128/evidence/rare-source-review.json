@@ -1,0 +1,8 @@
+{
+  "source_article": "https://www.mdpi.com/2223-7747/14/8/1259",
+  "source_dataset": "https://huggingface.co/datasets/ttkqwe123/leaf_disease_detection",
+  "revision": "0ba09a22e77a79c2a6a3410c4c1c3313b0e02258",
+  "observed_access": "gated: auto",
+  "included": false,
+  "reason": "Only public metadata inspected; images require an approved account and their raw annotation/parent identities have not been verified. No gated image was downloaded."
+}

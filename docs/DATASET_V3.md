@@ -38,7 +38,7 @@ toàn bộ dữ liệu; ảnh cùng nhóm thị giác hoặc cùng phút chụp 
 
 Các nguồn v2 tiếp tục giữ điều kiện ban đầu. Không áp dụng lại một giấy phép
 chung cho toàn bộ dữ liệu. Việc mở rộng này **không bổ sung mẫu độc lập** cho
-than thư, đốm mắt chim và đốm trắng vì chưa tìm được nguồn nhãn tương ứng đáng tin cậy.
+thán thư, đốm mắt chim và đốm trắng vì chưa tìm được nguồn nhãn tương ứng đáng tin cậy.
 
 21 ảnh ứng viên bị loại do trùng. 3.436 bản tăng cường ngoại tuyến và 1.000 ảnh
 helopeltis từ nguồn Datta không được nhận làm ứng viên. Ảnh được EXIF-correct,
@@ -80,8 +80,14 @@ python training/download_v2_checkpoint.py
 python training/run_v3_pipeline.py --run-dir training/runs/v3 --initial training/runs/v2-initial/tea_leaf_mobilenetv2.keras --initial-report training/runs/v2-initial/evaluation.json
 ```
 
-Các thư viện huấn luyện cần môi trường Python của dự án. Script khôi phục
-dữ liệu/checkpoint chỉ dùng thư viện chuẩn. Pipeline tạo kết quả và ONNX trong
+Môi trường huấn luyện tham chiếu là **Python 3.12 trên Linux CPU**. Trong môi
+trường ảo Python, cài thư viện trước khi chạy lệnh huấn luyện:
+
+```powershell
+python -m pip install -r training/requirements-v3.txt
+```
+
+Script khôi phục dữ liệu/checkpoint chỉ dùng thư viện chuẩn. Pipeline tạo kết quả và ONNX trong
 staging, không tự thay mô hình website hoặc đẩy GitHub.
 
 Lượt đầu v3 dùng 4 epoch thích nghi phần phân loại và tối đa 18 epoch tinh chỉnh
@@ -109,6 +115,18 @@ không phải bốn kiến trúc hay bốn ảnh test độc lập. Mô hình m�
 resize `pillow_bilinear_v1`: thu nhỏ bilinear chống răng cưa theo quy tắc Pillow.
 Ảnh trình duyệt có cạnh dài quá 2.048 được thu nhỏ trung gian để giới hạn bộ nhớ.
 Ba mạng của thí nghiệm so sánh v2 giữ luồng xử lý cũ, tránh trộn các kết quả đã lưu.
+
+Lượt kiểm tra bổ sung không chọn đủ tám hướng quay/lật vì validation kém hơn
+bốn hướng. Bước cuối kiểm tra hiệu chỉnh trọng số lớp: `q[c] ∝ p[c] / w[c]^β`,
+với `w` là trọng số đã tính từ train và β thuộc lưới 0; 0,25; 0,5; 0,75; 1.
+Chỉ nhận phương án có Accuracy và macro-F1 validation không giảm, chọn loss
+nhỏ nhất. Đây là lựa chọn tham số trên validation, không thay dữ liệu hoặc
+dùng nhãn test để hiệu chỉnh. Kết quả test các lượt trước vẫn được giữ lại.
+
+```powershell
+python training/calibrate_class_weights_v3.py --initial training/runs/v3-selected/mobile-final --data training/dataset-v3 --output training/runs/v3-calibrated/mobile-final
+python training/run_v3_pipeline.py --run-dir training/runs/v3-calibrated
+```
 
 Mục tiêu >90% phải được xác nhận bằng dự đoán thật; thêm ảnh không bảo đảm đạt
 mốc này. Báo cáo cả Accuracy, balanced accuracy, macro F1 và kết quả từng lớp.

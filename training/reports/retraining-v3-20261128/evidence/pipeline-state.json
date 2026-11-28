@@ -1,0 +1,13 @@
+{
+  "started_at": "2026-11-28T09:29:52.202797+00:00",
+  "status": "staging-ready",
+  "stage": "complete",
+  "updated_at": "2026-11-28T09:32:48.996217+00:00",
+  "dataset_manifest_sha256": "7d5c63d8cb76142c5a296c4cb5b599de5a2484b8206af4d65396804beaec8e26",
+  "model_sha256": "dec907ce47e279f832a66154d9fb2e3b0fff7df4afdf81bcc424cb8e300e88da",
+  "test_accuracy": 0.892914653784219,
+  "macro_f1": 0.8495319766325284,
+  "test_images": 1242,
+  "target_met": false,
+  "next_step": "Review validation-selected evidence, run actual browser evaluation and publish verified artifacts."
+}

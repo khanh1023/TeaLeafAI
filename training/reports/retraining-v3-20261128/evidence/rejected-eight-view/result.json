@@ -1,0 +1,22 @@
+{
+  "dataset_manifest_sha256": "7d5c63d8cb76142c5a296c4cb5b599de5a2484b8206af4d65396804beaec8e26",
+  "base_model_sha256": "3dd931566b6969b81f138a2d8f72f087d4f9191f96bf058532eae32bbc5dd4bc",
+  "alternatives": [
+    "four_flip_mean",
+    "eight_dihedral_mean"
+  ],
+  "selection": "Adopt eight views only if validation Accuracy strictly improves, macro-F1 does not decrease and cross-entropy decreases by more than 1e-4. Otherwise retain four views.",
+  "previous_development_test_already_reported": true,
+  "test_images_read": 0,
+  "four_flip_mean": {
+    "loss": 0.3253753185272217,
+    "accuracy": 0.8792270531400966,
+    "macro_f1": 0.8290616613035626
+  },
+  "eight_dihedral_mean": {
+    "loss": 0.3430018723011017,
+    "accuracy": 0.8768115942028986,
+    "macro_f1": 0.8125713534578887
+  },
+  "adopt_eight": false
+}

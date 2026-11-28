@@ -75,7 +75,11 @@ def main():
     if evidence:
         selection = ([r for r in evidence['records'] if r['split'] == 'test'] if args.evaluate_test
                      else select_test_records(evidence, classes))
-        parity, predictions = parity_check(model, session, evidence, selection, classes)
+        # Reuse the traced inference graph instead of retracing/eager-dispatching
+        # every convolution for each individual parity image.
+        def compiled_model(images, training=False):
+            return inference(images)['probabilities']
+        parity, predictions = parity_check(compiled_model, session, evidence, selection, classes)
         if args.evaluate_test:
             expected = validate_evaluation(evaluation, classes, len(selection))
             if (parity['keras_test']['correct'] != expected['correct'] or
@@ -129,6 +133,9 @@ def main():
         method = evaluation['inference_protocol']['selected']
         manifest.update(inference_method=method, inference_views=4 if method == 'four_flip_mean' else 1,
                         base_keras_sha256=evaluation['inference_protocol']['base_model_sha256'])
+    if evaluation and evaluation.get('calibration_protocol'):
+        manifest.update(class_weight_correction_beta=evaluation['calibration_protocol']['selected_beta'],
+                        uncalibrated_keras_sha256=evaluation['calibration_protocol']['base_model_sha256'])
     (args.output / 'classes.json').write_text(json.dumps(classes, indent=2) + '\n', encoding='utf-8')
     (args.output / 'manifest.json').write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
     print(json.dumps(manifest, ensure_ascii=False, indent=2), flush=True)

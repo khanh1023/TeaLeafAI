@@ -1,0 +1,63 @@
+{
+  "format": "onnx",
+  "file": "tea-leaf.onnx",
+  "input_name": "images",
+  "output_name": "probabilities",
+  "input_shape": [
+    1,
+    224,
+    224,
+    3
+  ],
+  "pixel_range": [
+    0,
+    255
+  ],
+  "normalization": "Embedded in model; do not normalize input twice.",
+  "classes": [
+    "algal_leaf",
+    "anthracnose",
+    "bird_eye_spot",
+    "brown_blight",
+    "gray_light",
+    "healthy",
+    "red_leaf_spot",
+    "white_spot"
+  ],
+  "sha256": "7a183f15acbfbb9dd1e9bf8c0f4f27b3252ab8470f9a85596a5a5de27420a7cc",
+  "keras_sha256": "dec907ce47e279f832a66154d9fb2e3b0fff7df4afdf81bcc424cb8e300e88da",
+  "size_bytes": 9901767,
+  "browser_resize": "pillow_bilinear_v1",
+  "parity_samples": 1242,
+  "parity_max_absolute_error": 1.3113021850585938e-05,
+  "parity_top1_disagreements": 0,
+  "dataset_manifest_sha256": "7d5c63d8cb76142c5a296c4cb5b599de5a2484b8206af4d65396804beaec8e26",
+  "dataset_version": "dataset-v3-20261128",
+  "dataset_images": 8280,
+  "training_images": 8280,
+  "train_images": 5796,
+  "validation_images": 1242,
+  "test_images": 1242,
+  "split_totals": {
+    "train": 5796,
+    "test": 1242,
+    "val": 1242
+  },
+  "evaluation_scope": "Internal held-out group split; not independently field-validated.",
+  "test_accuracy": 0.892914653784219,
+  "test_macro_f1": 0.8495319766325286,
+  "trained_at": "2026-11-28T09:27:56.921704+00:00",
+  "onnx_test_accuracy": 0.892914653784219,
+  "onnx_test_macro_f1": 0.8495319766325284,
+  "model_version": "mobilenetv2-dataset-v3-20261128-20261128-dec907ce47-bilinear-v1",
+  "inference_method": "four_flip_mean",
+  "inference_views": 4,
+  "base_keras_sha256": "963ba24e0ae891cc2b7511ceb0f1ad99d70e60165b63103885f09cc084665022",
+  "class_weight_correction_beta": 0.75,
+  "uncalibrated_keras_sha256": "3dd931566b6969b81f138a2d8f72f087d4f9191f96bf058532eae32bbc5dd4bc",
+  "browser_test_accuracy": 0.892914653784219,
+  "browser_test_correct": 1109,
+  "browser_test_images": 1242,
+  "browser_evaluated_at": "2026-11-28T09:37:10.468Z",
+  "browser_evaluation_scope": "Internal development test, Chromium/WASM; not independent field validation."
+}

@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "uses_real_predictions": true,
+  "baseline_correct": 969,
+  "native_correct": 1074,
+  "test_images": 1242,
+  "editable_word_tables": 2,
+  "figures": 3
+}

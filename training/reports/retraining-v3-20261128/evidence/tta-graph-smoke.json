@@ -1,0 +1,8 @@
+{
+  "passed": true,
+  "serialization_without_custom_objects": true,
+  "four_shared_backbone_views": true,
+  "onnx_parity_max_absolute_error": 5.960464477539063e-08,
+  "onnx_bytes": 9769988,
+  "no_dataset_photos_used": true
+}

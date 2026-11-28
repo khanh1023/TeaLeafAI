@@ -1,0 +1,37 @@
+{
+  "dataset_manifest_sha256": "7d5c63d8cb76142c5a296c4cb5b599de5a2484b8206af4d65396804beaec8e26",
+  "initial_model_sha256": "03357fbfe799e0f9a3a994e27b7e1d8734367a275a4ca129460d5113e8ef359d",
+  "classes": [
+    "algal_leaf",
+    "anthracnose",
+    "bird_eye_spot",
+    "brown_blight",
+    "gray_light",
+    "healthy",
+    "red_leaf_spot",
+    "white_spot"
+  ],
+  "seed": 42,
+  "maximum_epochs": 24,
+  "last_layers": 100,
+  "batch_size": 16,
+  "learning_rate": 5e-06,
+  "class_weight_exponent": 0.5,
+  "class_weights": {
+    "algal_leaf": 1.1538952651240153,
+    "anthracnose": 3.7325913449439794,
+    "bird_eye_spot": 3.7325913449439794,
+    "brown_blight": 1.1829233963468402,
+    "gray_light": 0.9107376108900584,
+    "healthy": 0.6322334210107134,
+    "red_leaf_spot": 1.2808143422224236,
+    "white_spot": 3.116143096901303
+  },
+  "initial_validation_loss": 0.36562347412109375,
+  "initial_validation_accuracy": 0.8647342920303345,
+  "selection": "Minimum unweighted validation cross-entropy; initial checkpoint retained unless validation improves. Test not used for checkpoint selection.",
+  "previous_internal_test_already_evaluated": true,
+  "motivation": "Validation learning curve was still improving near the original epoch budget; increase fine-tuning depth and budget while preserving all partitions.",
+  "training_script_sha256": "b54cb42ab1489f9db7f1c4afe26259b1f8d0d1991b74489494c852e05873ec4e",
+  "started_at": "2026-11-28T04:01:33.475685+00:00"
+}

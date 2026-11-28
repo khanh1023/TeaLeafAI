@@ -1,0 +1,19 @@
+{
+  "filename": "tealeafbd_v4-013c5f21e728e61d.jpg",
+  "date": "2026-11-28T09:40:32.178Z",
+  "predicted_class": "healthy",
+  "predicted_label": "Lá khỏe mạnh",
+  "confidence": 0.9999975562095642,
+  "probabilities": {
+    "algal_leaf": 1.2240014335418437e-8,
+    "anthracnose": 9.990288083556662e-14,
+    "bird_eye_spot": 7.10800708114516e-14,
+    "brown_blight": 9.178269949616791e-11,
+    "gray_light": 0.0000024699190817045746,
+    "healthy": 0.9999975562095642,
+    "red_leaf_spot": 2.4102590145957947e-8,
+    "white_spot": 3.4433291145415015e-15
+  },
+  "engine": "browser",
+  "model_version": "mobilenetv2-dataset-v3-20261128-20261128-dec907ce47-bilinear-v1"
+}

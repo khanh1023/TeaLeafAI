@@ -86,6 +86,20 @@ def main():
                    target_accuracy=.90, native_target_met=native['accuracy'] > .90, browser_target_met=web['accuracy'] > .90,
                    selection=evaluation['training']['selection'], selected_validation_loss=evaluation['training']['selected_validation_loss'],
                    limitations=evaluation['limitations'])
+    if evaluation.get('calibration_protocol'):
+        summary['calibration_protocol'] = evaluation['calibration_protocol']
+    baseline_path = args.run / 'baseline-evaluation/evaluation.json'
+    baseline = json.loads(baseline_path.read_text()) if baseline_path.exists() else None
+    if baseline:
+        assert baseline['dataset_manifest_sha256'] == dataset_sha and baseline['test_images'] == len(test)
+        assert baseline['training_dataset_manifest_sha256'] == data['previous_manifest_sha256']
+        source = args.run / 'baseline-evaluation/predictions.npz'
+        predictions = np.load(source)
+        assert list(predictions['image_ids']) == [r['id'] for r in test]
+        assert scores(truth, predictions['probabilities'], classes)['confusion_matrix'] == baseline['confusion_matrix']
+        summary['fixed_v2_baseline'] = baseline
+        shutil.copyfile(baseline_path, evidence_dir / 'v2-baseline-on-v3-test.json')
+        shutil.copyfile(source, evidence_dir / 'v2-baseline-on-v3-test.npz')
     (args.output / 'summary.json').write_text(json.dumps(summary, ensure_ascii=False, indent=2))
     plt.rcParams.update({'font.family': 'DejaVu Sans', 'font.size': 10})
     def save(fig, name):
@@ -101,9 +115,12 @@ def main():
     for key, val_key, ax, title in [('loss', 'val_loss', axes[0], 'Hàm mất mát'), ('accuracy', 'val_accuracy', axes[1], 'Accuracy')]:
         training = [value for stage in history for value in stage['history'][key]]
         validation = [value for stage in history for value in stage['history'][val_key]]
-        ax.plot(range(1, len(training)+1), training, label='Train (có tăng cường)')
+        ax.plot(range(1, len(training)+1), training, label='Train (trọng số, tăng cường)' if key == 'loss' else 'Train (tăng cường)')
         ax.plot(range(1, len(validation)+1), validation, label='Validation')
-        ax.axvline(history[0]['epochs_completed']+.5, color='gray', linestyle=':', label='Bắt đầu fine-tuning')
+        completed = 0
+        for i, stage in enumerate(history[:-1]):
+            completed += stage['epochs_completed']
+            ax.axvline(completed+.5, color='gray', linestyle=':' if i == 0 else '--', label='Bắt đầu fine-tuning' if i == 0 else 'Tinh chỉnh sâu hơn')
         ax.set_xlabel('Epoch cộng dồn'); ax.set_title(title); ax.legend(fontsize=8); ax.grid(alpha=.2)
     save(fig, '02-qua-trinh-huan-luyen')
     fig, ax = plt.subplots(figsize=(8.5, 7)); cm = np.array(web['confusion_matrix'])
@@ -121,9 +138,10 @@ def main():
         f'Lớp healthy có {data["counts"]["healthy"]:,} ảnh, nhiều hơn mỗi lớp bệnh.',
         'Ảnh trùng được loại trước khi chia; các nhóm ảnh tương tự và loạt chụp cùng phút được giữ trong một tập. '
         'Toàn bộ 6.840 ảnh v2 giữ nguyên nhãn, dữ liệu và tập cũ, không chuyển ảnh validation/test vào huấn luyện. '
-        'Tăng cường dữ liệu chỉ áp dụng cho train. Ba lớp than thư, đốm mắt chim và đốm trắng chưa có ảnh độc lập bổ sung.',
+        'Tăng cường dữ liệu chỉ áp dụng cho train. Ba lớp thán thư, đốm mắt chim và đốm trắng chưa có ảnh độc lập bổ sung.',
         'Mô hình tiếp tục từ checkpoint v2 với kiểm tra toàn bộ phân chia cũ. Phần phân loại được thích nghi trước, '
         'sau đó tinh chỉnh các lớp cuối MobileNetV2, giữ BatchNormalization đóng băng. Checkpoint được chọn bằng validation loss; '
+        'loss train có trọng số lớp và tăng cường ảnh, validation dùng ảnh giữ nguyên và không trọng số. '
         'tập test dùng tính kết quả sau mỗi lượt lựa chọn. Lượt v3 đầu đã được báo cáo trước khi tinh chỉnh tiếp, '
         'nên kết quả cuối vẫn là đánh giá phát triển nội bộ, không phải phép thử mù mới.',
         f'Keras/ONNX Python đạt Accuracy {native["accuracy"]:.2%} ({native["correct"]}/{len(test)}), '
@@ -153,6 +171,22 @@ def main():
                       f"bốn hướng {inference['candidates']['four_flip_mean']['loss']:.4f}. "
                       'Không chọn bằng Accuracy test và không tính các hướng lật thành ảnh dữ liệu độc lập.')
         paragraphs.insert(4, paragraph)
+    if baseline:
+        paragraphs.insert(len(paragraphs)-1,
+            f'Đối chứng trên cùng {len(test):,} ảnh test v3 và cùng tiền xử lý Pillow: checkpoint MobileNetV2 v2 cũ '
+            f'đạt {baseline["accuracy"]:.2%} ({baseline["correct"]}/{len(test)}) với ONNX/Python; '
+            f'checkpoint v3 mới đạt {native["accuracy"]:.2%} ({native["correct"]}/{len(test)}). '
+            'Đây là so sánh trước/sau mở rộng và tinh chỉnh của cùng kiến trúc, không phải so sánh MobileNetV2 với ResNet50 hoặc VGG16.')
+    calibration = evaluation.get('calibration_protocol')
+    if calibration:
+        original = calibration['candidates'][0]
+        selected_calibration = calibration['selected_validation']
+        paragraphs.insert(len(paragraphs)-1,
+            f"Hiệu chỉnh trọng số lớp: xác suất đầu ra được chia cho trọng số huấn luyện của từng lớp lũy thừa β rồi chuẩn hóa lại. "
+            f"β = {calibration['selected_beta']} được chọn trong lưới 0; 0,25; 0,5; 0,75; 1 trên validation, "
+            f"yêu cầu Accuracy và macro-F1 không giảm. Validation loss giảm từ {original['loss']:.4f} xuống {selected_calibration['loss']:.4f}; "
+            f"macro-F1 tăng từ {original['macro_f1']:.4f} lên {selected_calibration['macro_f1']:.4f}. "
+            'Bước này không thay đổi ảnh hay cách chia dữ liệu. Các kết quả test trước hiệu chỉnh được lưu riêng; đây vẫn là đánh giá phát triển nội bộ.')
     (args.output / 'noi-dung-bao-cao.txt').write_text('\n\n'.join(paragraphs), encoding='utf-8')
     doc = Document(); style = doc.styles['Normal']; style.font.name = 'Times New Roman'; style.font.size = Pt(12)
     doc.add_heading(paragraphs[0], 0)

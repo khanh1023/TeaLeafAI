@@ -85,6 +85,20 @@ try {
   assert.equal(JSON.parse(await readFile(jsonFile, 'utf8')).model_version, expectedModel.model_version);
   await page.screenshot({ path: path.join(output, 'default-desktop.png'), fullPage: true });
   report.default = history[0];
+  await page.goto(base + '/quan-tri', {waitUntil:'networkidle'});
+  await page.getByRole('heading', {name:'Dữ liệu của mô hình hiện tại',exact:true}).waitFor();
+  const systemText = await page.locator('.admin-grid').innerText();
+  assert.ok(systemText.includes(expectedModel.dataset_version));
+  assert.ok(systemText.includes(expectedModel.dataset_images.toLocaleString('vi-VN')));
+  if (Number.isFinite(expectedModel.browser_test_accuracy)) {
+    assert.ok(systemText.includes((expectedModel.browser_test_accuracy*100).toLocaleString('vi-VN',{maximumFractionDigits:2})+'%'));
+  }
+  for (const width of [390,320]) {
+    await page.setViewportSize({width,height:844});
+    assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),`System page fits ${width}px.`);
+  }
+  await page.screenshot({path:path.join(output,'system-mobile.png'),fullPage:true});
+  report.system_dataset_version = expectedModel.dataset_version;
 
   // Releasing the default page context keeps memory bounded before large networks.
   await page.close();

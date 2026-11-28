@@ -1,0 +1,21 @@
+{
+  "passed": true,
+  "scope": "One-image native API functional smoke; not a test accuracy estimate",
+  "sample_id": "013c5f21e728e61d",
+  "http_status": 200,
+  "result": {
+    "predicted_class": "healthy",
+    "predicted_label": "Lá khỏe mạnh",
+    "confidence": 0.9999974370002747,
+    "probabilities": {
+      "algal_leaf": 1.2240263025375953e-08,
+      "anthracnose": 9.99039040513669e-14,
+      "bird_eye_spot": 7.108133119647711e-14,
+      "brown_blight": 9.178300480749968e-11,
+      "gray_light": 2.469949549777084e-06,
+      "healthy": 0.9999974370002747,
+      "red_leaf_spot": 2.410285304677018e-08,
+      "white_spot": 3.4434222881656994e-15
+    }
+  }
+}

@@ -1,0 +1,23 @@
+# Kết quả MobileNetV2 v3
+
+Bộ dữ liệu được mở rộng thêm 1,440 ảnh sau lọc, đạt 8,280 ảnh. Chia 5,796 ảnh huấn luyện, 1,242 ảnh validation và 1,242 ảnh test, đúng tỷ lệ 70/15/15. Lớp healthy có 3,435 ảnh, nhiều hơn mỗi lớp bệnh.
+
+Ảnh trùng được loại trước khi chia; các nhóm ảnh tương tự và loạt chụp cùng phút được giữ trong một tập. Toàn bộ 6.840 ảnh v2 giữ nguyên nhãn, dữ liệu và tập cũ, không chuyển ảnh validation/test vào huấn luyện. Tăng cường dữ liệu chỉ áp dụng cho train. Ba lớp thán thư, đốm mắt chim và đốm trắng chưa có ảnh độc lập bổ sung.
+
+Mô hình tiếp tục từ checkpoint v2 với kiểm tra toàn bộ phân chia cũ. Phần phân loại được thích nghi trước, sau đó tinh chỉnh các lớp cuối MobileNetV2, giữ BatchNormalization đóng băng. Checkpoint được chọn bằng validation loss; loss train có trọng số lớp và tăng cường ảnh, validation dùng ảnh giữ nguyên và không trọng số. tập test dùng tính kết quả sau mỗi lượt lựa chọn. Lượt v3 đầu đã được báo cáo trước khi tinh chỉnh tiếp, nên kết quả cuối vẫn là đánh giá phát triển nội bộ, không phải phép thử mù mới.
+
+Kết quả cuối là trung bình xác suất của ảnh gốc và ba hướng lật của cùng ảnh. Lựa chọn dựa trên validation loss: một hướng 0.3592; bốn hướng 0.3254. Không chọn bằng Accuracy test và không tính các hướng lật thành ảnh dữ liệu độc lập.
+
+Keras/ONNX Python đạt Accuracy 89.29% (1109/1242), balanced accuracy 86.03%, macro-F1 0.8495. Luồng website thực tế trên Chromium đạt Accuracy 89.29% (1109/1242), balanced accuracy 86.03%, macro-F1 0.8495. Hai kết quả được báo riêng. Website đã dùng cùng quy tắc bilinear chống răng cưa như Pillow; bộ giải mã JPEG và quản lý màu của trình duyệt vẫn có thể tạo chênh lệch nhỏ.
+
+Kết quả website hiện chưa đạt mục tiêu trên 90%; giá trị đo được là 89.29%. Không điều chỉnh tập test hoặc thay số liệu để đạt mốc đặt trước.
+
+Đây là đánh giá nội bộ trên các nguồn đã thu thập, chưa phải kiểm định thực địa độc lập tại Việt Nam. Validation/test cũ đã được xem trong quá trình phát triển. Kết quả 84,60%/84,11% v2 được đo trên bộ test khác về số mẫu, không dùng chênh lệch trực tiếp giữa hai phiên bản để khẳng định mức cải thiện. Ba mô hình ở trang So sánh tiếp tục thuộc thí nghiệm v2 đóng băng và không đại diện cho một phép so sánh kiến trúc mới trên v3.
+
+Đối chứng trên cùng 1,242 ảnh test v3 và cùng tiền xử lý Pillow: checkpoint MobileNetV2 v2 cũ đạt 78.02% (969/1242) với ONNX/Python; checkpoint v3 mới đạt 89.29% (1109/1242). Đây là so sánh trước/sau mở rộng và tinh chỉnh của cùng kiến trúc, không phải so sánh MobileNetV2 với ResNet50 hoặc VGG16.
+
+Hiệu chỉnh trọng số lớp: xác suất đầu ra được chia cho trọng số huấn luyện của từng lớp lũy thừa β rồi chuẩn hóa lại. β = 0.75 được chọn trong lưới 0; 0,25; 0,5; 0,75; 1 trên validation, yêu cầu Accuracy và macro-F1 không giảm. Validation loss giảm từ 0.3254 xuống 0.3212; macro-F1 tăng từ 0.8291 lên 0.8329. Bước này không thay đổi ảnh hay cách chia dữ liệu. Các kết quả test trước hiệu chỉnh được lưu riêng; đây vẫn là đánh giá phát triển nội bộ.
+
+Nguồn mới: Datta tea-leaf-disease qua Project-AgML (CC BY-NC 4.0, học thuật/phi thương mại, chỉ chọn tên ảnh dạng ngày giờ); Hu và cộng sự (2019), DOI 10.17632/dbjyfkn6jr.1 (CC BY 4.0, chỉ lớp Tea red leaf spot). Nhãn được kế thừa từ nhà cung cấp, chưa có xác minh mới bởi chuyên gia.
+
+[Word có bảng chỉnh sửa và 3 hình](TeaLeafAI-ket-qua-huan-luyen-v3.docx) · [Số liệu và giới hạn](summary.json) · [Văn bản để dán](noi-dung-bao-cao.txt)

@@ -1,0 +1,64 @@
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+  from starlette.testclient import TestClient as TestClient  # noqa
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1795858760.917892    4425 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+I0000 00:00:1795858761.311177    4425 cpu_feature_guard.cc:227] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX512F AVX512_VNNI AVX512_BF16 AVX512_FP16 AVX_VNNI FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1795858765.748074    4425 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+test_actual_image_format_is_checked (test_backend.InferenceContractTests.test_actual_image_format_is_checked) ... ok
+test_bad_image_is_rejected_before_model_load (test_backend.InferenceContractTests.test_bad_image_is_rejected_before_model_load) ... ok
+test_eight_class_output_labels_and_order (test_backend.InferenceContractTests.test_eight_class_output_labels_and_order) ... ok
+test_empty_and_unsupported_uploads (test_backend.InferenceContractTests.test_empty_and_unsupported_uploads) ... ok
+test_nonfinite_probabilities_are_rejected (test_backend.InferenceContractTests.test_nonfinite_probabilities_are_rejected) ... ok
+test_oversized_upload_is_rejected (test_backend.InferenceContractTests.test_oversized_upload_is_rejected) ... ok
+test_preprocessing_keeps_raw_pixel_range (test_backend.InferenceContractTests.test_preprocessing_keeps_raw_pixel_range) ... ok
+test_reordered_class_list_is_rejected (test_backend.InferenceContractTests.test_reordered_class_list_is_rejected) ... ok
+test_identical_files_deduplicate_and_conflicting_labels_fail (test_dataset.DatasetTests.test_identical_files_deduplicate_and_conflicting_labels_fail) ... ok
+test_three_images_produce_nonempty_splits (test_dataset.DatasetTests.test_three_images_produce_nonempty_splits) ... ok
+test_evaluation_cannot_be_attached_to_another_dataset (test_export_metadata.ExportMetadataTests.test_evaluation_cannot_be_attached_to_another_dataset) ... ok
+test_export_rejects_changed_manifest_wrong_class_order_and_cross_split_identity (test_export_metadata.ExportMetadataTests.test_export_rejects_changed_manifest_wrong_class_order_and_cross_split_identity) ... ok
+test_frozen_v1_and_v2_metadata_derive_counts_from_the_actual_manifests (test_export_metadata.ExportMetadataTests.test_frozen_v1_and_v2_metadata_derive_counts_from_the_actual_manifests) ... ok
+test_metrics_must_be_supported_by_the_confusion_matrix_and_test_count (test_export_metadata.ExportMetadataTests.test_metrics_must_be_supported_by_the_confusion_matrix_and_test_count) ... ok
+test_parity_verifies_actual_images_probabilities_and_held_out_metrics (test_export_metadata.ExportMetadataTests.test_parity_verifies_actual_images_probabilities_and_held_out_metrics) ... ok
+test_probability_tolerance_does_not_allow_different_top_one_labels (test_export_metadata.ExportMetadataTests.test_probability_tolerance_does_not_allow_different_top_one_labels) ... ok
+test_requested_evaluation_must_identify_the_checkpoint_even_when_json_is_empty (test_export_metadata.ExportMetadataTests.test_requested_evaluation_must_identify_the_checkpoint_even_when_json_is_empty) ... ok
+test_all_backbones_head_training_and_full_model_roundtrip (test_model_comparison.ComparisonTests.test_all_backbones_head_training_and_full_model_roundtrip) ... /workspace/work/TeaLeafAI/backend/.venv/lib/python3.12/site-packages/keras/src/backend/tensorflow/core.py:172: DeprecationWarning: __array__ implementation doesn't accept a copy keyword, so passing copy=False failed. __array__ must implement 'dtype' and 'copy' keyword arguments. To learn more, see the migration guide https://numpy.org/devdocs/numpy_2_0_migration_guide.html#adapting-to-changes-in-the-copy-keyword
+  return np.array(x)
+ok
+test_augmentation_is_repeatable_and_original_unchanged (test_model_comparison.ComparisonTests.test_augmentation_is_repeatable_and_original_unchanged) ... ok
+test_caffe_preprocessing_matches_official_models (test_model_comparison.ComparisonTests.test_caffe_preprocessing_matches_official_models) ... ok
+test_graph_feature_extraction_does_not_augment_validation (test_model_comparison.ComparisonTests.test_graph_feature_extraction_does_not_augment_validation) ... Bỏ bản sao trùng nội dung: /tmp/tmpjha_cgeo/algal_leaf/b.jpg
+Bỏ bản sao trùng nội dung: /tmp/tmpjha_cgeo/algal_leaf/b.jpg
+
+========== HOÀN TẤT ==========
+Đã chia dữ liệu theo tỷ lệ 70/15/15.
+
+Chi tiết:
+{
+  "healthy": {
+    "total": 3,
+    "train": 1,
+    "val": 1,
+    "test": 1
+  }
+}
+
+Thư mục kết quả: /tmp/tmpvskdl0vi/dataset
+
+Lưu ý:
+- Ảnh trong DuLieuGoc không bị xóa.
+- Chỉ thư mục training/dataset được tạo lại.
+- Cần huấn luyện lại mô hình sau khi chia dữ liệu.
+  val: 1/1
+ok
+test_imported_head_must_match_new_dataset_and_training_protocol (test_model_comparison.ComparisonTests.test_imported_head_must_match_new_dataset_and_training_protocol) ... ok
+test_pinned_manifest_images_and_group_isolation (test_model_comparison.ComparisonTests.test_pinned_manifest_images_and_group_isolation) ... ok
+test_counts_and_healthy_majority_match_the_report (test_training_artifacts.TrainingArtifactsTests.test_counts_and_healthy_majority_match_the_report) ... ok
+test_evaluation_matches_dataset_and_served_model (test_training_artifacts.TrainingArtifactsTests.test_evaluation_matches_dataset_and_served_model) ... ok
+test_groups_and_duplicate_content_do_not_cross_splits (test_training_artifacts.TrainingArtifactsTests.test_groups_and_duplicate_content_do_not_cross_splits) ... ok
+
+----------------------------------------------------------------------
+Ran 26 tests in 14.062s
+
+OK
